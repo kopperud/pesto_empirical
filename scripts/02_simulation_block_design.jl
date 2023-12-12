@@ -41,13 +41,14 @@ end
 #########################################
 λmean = 0.25
 μmean = λmean * 2 / 3
-sd = 0.2
+sd = 0.5
 
 λd = LogNormal(log(λmean), sd)
 μd = LogNormal(log(μmean), sd)
 
-λq = make_quantiles(λd, 3)
-μq = make_quantiles(μd, 3)
+n = 5
+λq = make_quantiles(λd, n)
+μq = make_quantiles(μd, n)
 
 λ, μ = allpairwise(λq, μq)
 
@@ -58,11 +59,17 @@ p1 = scatter(λ, μ, xlim = (0.0, 0.4), ylim = (0.0, 0.4),
     xlabel = "speciation rate (λ)",
     ylabel = "extinction rate (μ)")
 
+ϵ = μ ./ λ
+r = λ .- μ
+scatter(ϵ, r,
+    grid = false,
+    title = "model setup", label = "",
+    xlabel = "relative extinction (μ/λ)",
+    ylabel = "net-div rate (λ-μ)")
+
 η = 0.001
 model = bdsmodel(λ, μ, η)
 
-μ ./ λ
-λ .- μ
 
 
 #########################################
@@ -70,11 +77,11 @@ model = bdsmodel(λ, μ, η)
 ## simulate trees conditional on survival until time t
 ##
 #########################################
-Random.seed!(12345)
+Random.seed!(123)
 
 maxtime = 100.0
 maxtaxa = 10_000
-n_trees = 300
+n_trees = 1000
 n_states = length(model.λ)
 tree_heights = collect(range(30.0, 100.0; length = 8))
 n_heights = length(tree_heights)
@@ -83,6 +90,17 @@ trees = Array{Tree, 1}(undef, n_trees)
 starting_state = Array{Int64, 1}(undef, n_trees)
 N = Array{Int64, 3}(undef, n_trees, n_states, n_states)
 
+##################
+##
+## Simulation criteria (rejections)
+##
+##  * All lineages went extinct
+##  * One of the two subtrees from the root went extinct
+##  * Too many taxa (10_000)
+##  * Too few taxa (100)
+##  * At least one rate shift occurred
+##
+
 prog = ProgressUnknown("Complete trees sim:")
 i = 1
 rejection_all_extinct = 0
@@ -90,7 +108,8 @@ rejection_too_many_taxa = 0
 rejection_one_subtree_extinct = 0
 rejection_atleast_one_shift = 0
 while i <= n_trees
-    state = rand((1:9))
+    #state = rand((1:9))
+    state = ((n^2)+1)÷2 ## the state with intermediate rates
     maxtime = 50.0
     tree = sim_bdshift(model, maxtime, maxtaxa, state)
     if length(tree.Leaves) < maxtaxa ## reject complete trees that termined when too many taxa
@@ -105,6 +124,7 @@ while i <= n_trees
                     trees[i] = tree
                     starting_state[i] = state
                     i += 1
+                    ProgressMeter.next!(prog)
                 else
                     rejection_atleast_one_shift += 1
                 end
@@ -117,7 +137,6 @@ while i <= n_trees
     else
         rejection_too_many_taxa += 1
     end
-    ProgressMeter.next!(prog)
 end
 ProgressMeter.finish!(prog)
 
@@ -126,6 +145,7 @@ println("reject (all taxa extinct): \t", rejection_all_extinct)
 println("reject (one subtree extinct): \t", rejection_one_subtree_extinct)
 println("reject (zero shifts): \t\t", rejection_atleast_one_shift)
 println("accepted: \t\t\t", size(trees)[1])
+
 
 y = [sum(starting_state .== i) for i in 1:9]
 x = collect(range(1,9))
@@ -138,10 +158,6 @@ heatmap(λq, μq, reshape(y, (3,3))',
     xtick = round.(λq, digits = 3),
     ytick = round.(μq, digits = 3))
    
-
-
-
-    
 
 histogram([ntaxa(tree) for tree in trees], xlabel = "number of taxa",
         bins = 50, ylabel = "frequency (trees)")
@@ -212,9 +228,7 @@ function count_shifts(N, model)
 end
 
 maximum(N)
-
 ys = [count_shifts(N[i,:,:], model) for i in 1:n_trees]
-
 
 xb = [
     "λ+",
@@ -272,11 +286,17 @@ plot!(p, [2.7, 3.3], [1 - 2*prior_single, 1 - 2*prior_single], linewidth = 3, co
     label = "")
 p
 
+scatter(1:300, m[:,1])
+scatter!(301:600, m[:,2])
+scatter!(601:900, m[:,3])
+
+histogram(m[:,3], bins = 20)
+histogram(m[:,2], bins = 20)
+scatter([ntaxa(tree) for tree in trees], m[:,3])
 
 
+mean(m, dims = 1)
 m
-
-
 r = λ .- μ
 Δr = r .- r'
 
