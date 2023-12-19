@@ -36,7 +36,7 @@ end
 
 #########################################
 ##
-## Set up a 3x3 model with small rate variation
+## Set up a 5x5 model with small rate variation
 ##
 #########################################
 λmean = 0.25

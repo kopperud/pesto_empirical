@@ -19,6 +19,9 @@ list_to_array <- function(l){
 shift_fractions <- function(N, lambda, mu, tree_index, label){
   n <- 5
   K <- n^2
+  if(length(dim(N)) != 3){
+    stop("N must have 3 dimensions")
+  }
   
   delta_mu <- matrix(mu, K, K) - t(matrix(mu, K, K))
   delta_lambda <- matrix(lambda, K, K) - t(matrix(lambda, K, K))
@@ -31,11 +34,12 @@ shift_fractions <- function(N, lambda, mu, tree_index, label){
   is_only_lambda <- is_lambda & !is_mu
   is_both <- is_mu & is_lambda
   
+  N1 <- colSums(N, dims = 1) ## it's not really a column but I don't know why R names it this way
   
   N_sum <- sum(N)
-  N_mu <- N[is_only_mu] |> sum() / N_sum
-  N_lambda <- N[is_only_lambda] |> sum() / N_sum
-  N_both <- N[is_both] |> sum() / N_sum
+  N_mu <- (N1[is_only_mu] |> sum()) / N_sum
+  N_lambda <- (N1[is_only_lambda] |> sum()) / N_sum
+  N_both <- (N1[is_both] |> sum()) / N_sum
   res <- tibble(
     "N_lambda" = N_lambda,
     "N_mu" = N_mu,
@@ -48,13 +52,11 @@ shift_fractions <- function(N, lambda, mu, tree_index, label){
 }
 
 
-tree_index <- 3
-
 foo <- function(tree_index){
-  fpath <- paste0("data/simulations/rate_shift_type/", tree_index, ".tre")
-  phy_true <- read.beast.newick(fpath)
-  fpath <- paste0("output/simulations/rate_shift_type/newick/", tree_index, ".tre")
-  phy <- read.beast.newick(fpath)
+  #fpath <- paste0("data/simulations/rate_shift_type/", tree_index, ".tre")
+  #phy_true <- read.beast.newick(fpath)
+  #fpath <- paste0("output/simulations/rate_shift_type/newick/", tree_index, ".tre")
+  #phy <- read.beast.newick(fpath)
   
   fpath <- paste0("output/simulations/rate_shift_type/jld2/", tree_index, ".jld2")
   mu <- h5read(fpath, "mu")
@@ -65,32 +67,32 @@ foo <- function(tree_index){
   Ns <- h5read(fpath, "Nsum")
   N <- h5read(fpath, "N")
   
-  
   fpath <- paste0("output/simulations/rate_shift_type/rates/", tree_index, ".csv")
   df <- read.csv(fpath) |> as_tibble()
   
-  
   ## true
-  N_true <- list_to_array(phy_true@data$N)
-  df1 <- shift_fractions(N_true, lambda, mu, tree_index, "true")
+  #N_true <- list_to_array(phy_true@data$N)
+  #df1 <- shift_fractions(N_true, lambda, mu, tree_index, "true")
   
   ## estimated, all
   df2 <- shift_fractions(N, lambda, mu, tree_index, "estimate, all pooled")
   
   ## estimated, only supported branches
-  df5 <- phy@data[order(phy@data$edge),]
-  df5 <- df5 %>% 
+  #df5 <- phy@data[order(phy@data$edge),]
+  df5 <- df[order(df$edge),]
+  df5 <- df5 %>%
     dplyr::filter(shift_bf > 10, nshift > 0.5)
-  
-  N_supported <- N[df$edge,,,drop=FALSE]
+    
+  N_supported <- N[df5$edge,,,drop=FALSE]
   df3 <- shift_fractions(N_supported, lambda, mu, tree_index, "estimate, strong support")
   
-  df4 <- bind_rows(df1, df2, df3)
+  #df4 <- bind_rows(df1, df2, df3)
+  df4 <- bind_rows(df2, df3)
   return(df4)
 }
 
 dfs <- list()
-ix <- 500
+ix <- 1000
 pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
 for (i in 1:ix){
   dfs[[i]] <- foo(i)
@@ -99,41 +101,53 @@ for (i in 1:ix){
 
 df <- bind_rows(dfs)
 
+#shift_fractions(N, lambda, mu, tree_index, "mu")
+#tree_index <- 3
+
+x <- df %>%
+  dplyr::filter(type == "estimate, strong support") %>%
+  filter(N_sum > 0)
+
+x$N_lambda |> mean()
+x$N_mu |> mean()
+x$N_both |> mean()
+plot(x$N_sum, x$N_lambda)
+
+
+
 p1 <- ggplot(df, aes(color = type, y = N_lambda, x = 1)) +
   geom_boxplot() +
   theme_classic() +
   geom_hline(yintercept = 4/24, linetype = "dashed") +
-  ggtitle("lambda")
+  ggtitle("shift in speciation rate")
   
 p2 <- ggplot(df, aes(color = type, y = N_both, x = 1)) +
   geom_boxplot() +
   theme_classic() +
   geom_hline(yintercept = (4^2)/24, linetype = "dashed") +
-  ggtitle("both")
+  ggtitle("shift in both rates")
 
 p3 <- ggplot(df, aes(color = type, y = N_mu, x = 1)) +
   geom_boxplot() +
   theme_classic() +
   geom_hline(yintercept = 4/24, linetype = "dashed") +
-  ggtitle("mu")
+  ggtitle("shift in extinction rate")
+
+p1 | p2 | p3
+
+
 
 p3a <- ggplot(df, aes(y = N_mu)) +#, x = type)) +
   geom_histogram() +
   theme_classic() +
   geom_hline(yintercept = 4/24, linetype = "dashed") +
-  ggtitle("mu")
+  ggtitle("shift in extinction rate")
 p3a
 
-ggplot(df, aes(x = N_mu, fill = type)) +
+ggplot(df, aes(x = N_both, fill = type)) +
   geom_histogram() +
   facet_wrap(~ type)
 
-
-
-
-p1 | p2 | p3
-
-  
 
 
 df[df$type=="true","N_lambda"]$N_lambda |> mean()

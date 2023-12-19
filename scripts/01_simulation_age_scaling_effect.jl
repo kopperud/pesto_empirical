@@ -38,13 +38,17 @@ for j in 1:n_heights
         state = 1
         tree = sim_bdshift(model, maxtime, maxtaxa, state)
         if length(tree.Leaves) < maxtaxa ## reject complete trees that termined when too many taxa
-            if length(tree.Leaves) > 1 ## Reject completete trees where all taxa went extinct
+            if length(tree.Leaves) > 5 ## Reject completete trees where all taxa went extinct
                 prune_extinct!(tree)
                 if abs(treeheight(tree) - maxtime) < 0.001 ## reject complete trees where both root children did not survive
                     N0 = +([branch.N for (idx, branch) in tree.Branches]...)
-                    N[i,j,:,:] .= N0
-                    trees[i,j] = tree
-                    i += 1
+
+
+                    if sum(N0) > 0 ## reject trees without any shifts
+                        N[i,j,:,:] .= N0
+                        trees[i,j] = tree
+                        i += 1
+                     end
                 end
             end
         end
@@ -56,8 +60,6 @@ end
 
 
 Ns = sum(N, dims = (3,4))[:,:,1,1]
-
-
 
 
 prog = Progress(n_heights * n_trees, "Writing trees:")
