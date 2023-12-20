@@ -58,7 +58,8 @@ readNumberOfShifts <- function(fpath){
     "muml" = muml,
     "etaml" = etaml,
     "lambdaml" = lambdaml,
-    "type" = "pooled"
+    "type" = "pooled",
+    "how_many_supported" = nrow(df11)
   )
   
   df2 <- tibble(
@@ -69,8 +70,10 @@ readNumberOfShifts <- function(fpath){
     "muml" = muml,
     "etaml" = etaml,
     "lambdaml" = lambdaml,
-    "type" = "strong support"
+    "type" = "strong support",
+    "how_many_supported" = nrow(df11)
   )
+  
   df <- bind_rows(df1, df2)
   return(df)
 }
@@ -89,6 +92,7 @@ for (i in 1:ix){
 
 df <- bind_rows(dfs)
 df[["N_per_time"]] <- df$N_total / df$treelength
+df[["support_per_time"]] <- df$how_many_supported / df$treelength
 
 
 library(ggplot2)
@@ -111,10 +115,30 @@ p2 <- df %>%
   ggtitle("strongly supported branches") +
   theme_classic()
 
+p3 <- df %>%
+  filter(type == "strong support") %>% 
+  ggplot(aes(x = height, y = how_many_supported)) +
+  geom_point() +
+  xlim(c(0.0, 110)) +
+  labs(y = "no. supported branches") +
+  ggtitle("strongly supported branches") +
+  theme_classic()
 
-p1 | p2
+p4 <- df %>%
+  filter(type == "strong support") %>% 
+  ggplot(aes(x = height, y = support_per_time)) +
+  geom_point() +
+  xlim(c(0.0, 110)) +
+  labs(y = "no. supported branches per time") +
+  ggtitle("strongly supported branches") +
+  theme_classic()
 
 
+(p1 | p2 | p3 | p4) &
+  xlab("tree height (Ma)")
+
+
+df$how_many_supported
 
 
 
