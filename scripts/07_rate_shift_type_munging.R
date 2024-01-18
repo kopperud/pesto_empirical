@@ -113,6 +113,34 @@ x$N_mu |> mean()
 x$N_both |> mean()
 plot(x$N_sum, x$N_lambda)
 
+library(tidyr)
+df_long <- df %>% pivot_longer(
+  cols = c("N_lambda", "N_mu", "N_both", "N_sum"),
+  names_to = "Ntype",
+  values_to = "N"
+)
+
+write.csv(df, "output/rate_shift_type_munged.csv")
+write.csv(df_long, "output/rate_shift_type_munged_long.csv")
+
+
+p1 <- df_long %>%
+  filter(type == "estimate, strong support") %>%
+  filter(Ntype != "N_sum") %>%
+  ggplot(aes(color = Ntype, y = N)) +
+  geom_boxplot() +
+  theme_classic() +
+  ggtitle("estimate, strong support")
+
+p2 <- df_long %>%
+  filter(type == "estimate, all pooled") %>%
+  filter(Ntype != "N_sum") %>%
+  ggplot(aes(color = Ntype, y = N)) +
+  geom_boxplot() +
+  theme_classic() +
+  ggtitle("estimate, all pooled")
+
+p1 | p2 + plot_layout(guides = "collect")
 
 
 p1 <- ggplot(df, aes(color = type, y = N_lambda, x = 1)) +

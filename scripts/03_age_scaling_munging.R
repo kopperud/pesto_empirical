@@ -94,6 +94,7 @@ df <- bind_rows(dfs)
 df[["N_per_time"]] <- df$N_total / df$treelength
 df[["support_per_time"]] <- df$how_many_supported / df$treelength
 
+write.csv(df, "output/age_scaling_effect_munged.csv")
 
 library(ggplot2)
 
