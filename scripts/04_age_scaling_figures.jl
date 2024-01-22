@@ -8,7 +8,11 @@ using Printf
 ms = ["NA", "NAN", "NULL", "NaN"]
 df = CSV.read("output/age_scaling_effect_munged.csv", DataFrame; missingstring = ms)
 
-df
+#df = df[df[!,:type] .== "pooled",:]
+df = df[df[!,:type] .== "strong support",:]
+
+## filter for at least one strongly supported shift
+df = df[df[!,:how_many_supported ] .> 0,:]
 
 df[:,["N_total", "N_per_time", "how_many_supported", "support_per_time"]]
 
@@ -22,11 +26,8 @@ topspinevisible = false,
 rightspinevisible = false,
 xgridvisible = false,
 ygridvisible = false,
-titlealign = :left,
-#yscale = Makie.sqrt,
-#xticks = (1:3, [L"\lambda", L"\mu", L"\text{both}"]),
+titlealign = :center,
 xticks = (xt, [@sprintf("%.0f", x) for x in xt])
-#yticks = (yt, ytl)
 )
 
 ax1 = Axis(fig[1,1]; 
@@ -56,57 +57,43 @@ rainclouds!(ax1,
 fig
 
 
-fig2 = Makie.Figure(size = (450, 220), fontsize = 14, figure_padding = (1,1,1,1))
+fig2 = Makie.Figure(size = (450, 450), fontsize = 14, figure_padding = (1,1,1,1))
 
-ax2 = Axis(fig2[1,1]; 
-    ylabel = L"N/t",
-    xlabel = "tree height (Ma)",
-    #title = "a) all pooled (n = $a)",       
-    #ylabel = L"N_\text{rate} / N_\text{all}",
+n = size(df)[1]
+ax1 = Axis(fig2[1,1]; 
+    ylabel = L"\hat{N}/t \text{ (all branches)}",
+    #xlabel = "tree height (Ma)",
+    title = L"\text{simulated trees, filtered for }\geq 1\text{ supported branch }(n = %$n)",
+    titlealign = :center,
+    kwargs...)
+
+ax2 = Axis(fig2[2,1]; 
+    ylabel = L"\text{no. supported branches}/t",
+    xlabel = L"\text{tree height (Ma)}",
     kwargs...)
 
 for h in unique(df[!,:height])
     y = df[df[!,:height] .== h,:N_per_time]
-    #hist!(ax2, y, offset = h, scale_to = -5, direction = :x)
-    boxplot!(repeat([h], 1000), y, show_outliers = false, width = 5)
+    hist!(ax1, y, offset = h, scale_to = -5, direction = :x, bins = 50)
+    boxplot!(ax1, repeat([h+2.5], length(y)), y, show_outliers = true, width = 5)
+
+    y = df[df[!,:height] .== h,:support_per_time]
+    hist!(ax2, y, offset = h, scale_to = -5, direction = :x, bins = 50)
+    boxplot!(ax2, repeat([h+2.5], length(y)), y, show_outliers = true, width = 5)
     #boxplot!(repeat([h+2.5], 1000), y, show_outliers = true, width = 5)
 end
 
+#ylims!(ax2, -0.001, 0.03)
+rowgap!(fig2.layout, 1.0)
 fig2
 
-
-function foobaz(x::T, y) where {T<:Real}
-    x+y
-end
-
-function foobaz(x::T, y::T, z) where {T<:Real}
-    x+y+z
-end
-
-@code_warntype foobaz(1.0, 2.0, 3.0)
-
-@code_lowered foobaz(1.0, 2.0)
-
-@code_native foobaz(1.0, 2.0)
-@code_native foobaz(Float16(1.0), Float16(2.0))
-
-l = Float64[]
-append!(l, Int64(0))
+save("figures/age_scaling_effect.pdf", fig2)
 
 
-function barfoo()
-    r = rand(1)[1]
 
-    if r > 0.5
-        x = 3.0
-    else
-        x = [3.0, 2.0]
-    end
 
-    return(x)
-end
 
-@code_warntype barfoo()
+
 
 
 
