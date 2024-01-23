@@ -6,3 +6,4 @@ data/empirical/*.tree
 output/**/*.jld2
 output/**/*.tre
 output/**/*.csv
+figures/*.pdf
