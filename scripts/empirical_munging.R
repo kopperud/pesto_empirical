@@ -10,9 +10,14 @@ library(readr)
 
 setwd("~/projects/pesto_empirical/")
 
+#phy <- read.beast.newick("")
 
-readNumberOfShifts <- function(name){
-  fpath <- paste0("output/empirical/jld2/", name, ".jld2")
+
+
+
+
+readNumberOfShifts <- function(name, subdir = "empirical"){
+  fpath <- paste0("output/", subdir, "/jld2/", name, ".jld2")
   mu <- h5read(fpath, "mu")
   lambda <- h5read(fpath, "lambda")
   lambdaml <- h5read(fpath, "lambdaml")
@@ -24,14 +29,25 @@ readNumberOfShifts <- function(name){
   
   Ntotal <- sum(N)
   
-  fpath <- paste0("output/empirical/rates/", name, ".csv")
+  fpath <- paste0("output/", subdir, "/rates/", name, ".csv")
   df10 <- read.csv(fpath) |> as_tibble()
   df11 <- df10 %>%
     filter(shift_bf > 10, nshift > 0.5)
   N_supported <- N[df11$edge,,,drop=FALSE]
   
-  phypath <- paste0("output/empirical/newick/", name, ".tre")
-  phy <- read.tree(phypath)
+  phypath <- paste0("output/", subdir, "/newick/", name, ".tre")
+  tree <- read.beast.newick(phypath)
+  edge_df <- tree@data
+  edge_df <- arrange(edge_df, edge)
+  
+  bls <- tree@phylo$edge.length
+  tree_netdiv <- sum(edge_df$mean_netdiv * bls) / sum(bls)
+  tree_lambda <- sum(edge_df$mean_lambda * bls) / sum(bls)
+  tree_mu <- sum(edge_df$mean_mu * bls) / sum(bls)
+  tree_relext <- sum(edge_df$mean_relext * bls) / sum(bls)
+  
+  #phy <- read.tree(phypath)
+  phy <- tree@phylo
   height <- max(node.depth.edgelength(phy))
   tl <- sum(phy$edge.length)
   
@@ -43,6 +59,11 @@ readNumberOfShifts <- function(name){
     "muml" = muml,
     "etaml" = etaml,
     "lambdaml" = lambdaml,
+    "tree_netdiv" = tree_netdiv,
+    "tree_lambda" = tree_lambda,
+    "tree_mu" = tree_mu,
+    "tree_relext" = tree_relext,
+    "inference" = subdir,
     "type" = "pooled",
     "how_many_supported" = nrow(df11)
   )
@@ -55,6 +76,11 @@ readNumberOfShifts <- function(name){
     "muml" = muml,
     "etaml" = etaml,
     "lambdaml" = lambdaml,
+    "tree_netdiv" = tree_netdiv,
+    "tree_lambda" = tree_lambda,
+    "tree_mu" = tree_mu,
+    "tree_relext" = tree_relext,
+    "inference" = subdir,
     "type" = "strong support",
     "how_many_supported" = nrow(df11)
   )
@@ -65,25 +91,84 @@ readNumberOfShifts <- function(name){
 
 
 
-fpaths <- Sys.glob("output/empirical/jld2/*.jld2")
+
+fpaths1 <- Sys.glob("output/empirical/jld2/*.jld2")
 #fpath <- fpaths[1]
 
-dfs <- list()
-ix <- length(fpaths)
+dfs1 <- list()
+ix <- length(fpaths1)
 pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
 for (i in 1:ix){
   fpath <- fpaths[i]
   name <- strsplit(basename(fpath), "\\.")[[1]][[1]]
-  dfs[[i]] <- readNumberOfShifts(name)
+  dfs1[[i]] <- readNumberOfShifts(name, "empirical")
   setTxtProgressBar(pb,i)
 };close(pb)
 
+fpaths2 <- Sys.glob("output/empirical_fixedprior/jld2/*.jld2")
 
-df <- bind_rows(dfs)
+dfs2 <- list()
+ix <- length(fpaths2)
+pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
+for (i in 1:ix){
+  fpath <- fpaths[i]
+  name <- strsplit(basename(fpath), "\\.")[[1]][[1]]
+  dfs2[[i]] <- readNumberOfShifts(name, "empirical_fixedprior")
+  setTxtProgressBar(pb,i)
+};close(pb)
+
+df <- bind_rows(
+  bind_rows(dfs1),
+  bind_rows(dfs2)
+)
+
+
+#df <- bind_rows(dfs)
 df[["N_per_time"]] <- df$N_total / df$treelength
 df[["support_per_time"]] <- df$how_many_supported / df$treelength
 
 write.csv(df, "output/empirical_munged.csv")
+
+######################
+##
+## calculating which branches had the largest shifts (in netdiv)
+##
+#######################
+
+fpaths <- Sys.glob("output/empirical_fixedprior/rates/*.csv")
+names1 <- gsub("\\.csv", "", basename(fpaths))
+
+rates1 <- lapply(fpaths, read.csv)
+for (i in seq_along(rates1)){
+  rates1[[i]][["name"]] <- names1[[i]]
+}
+
+#for (i in 1:43){
+#  print(unique(rates1[[i]]$name))
+#}
+
+rates <- bind_rows(rates1)
+
+rates %>% 
+  as_tibble() %>%
+  filter(shift_bf > 10) %>%
+  filter(nshift > 0.5) %>%
+  dplyr::arrange(-delta_netdiv) %>%
+  print(n = 50)
+
+#tr <- read.beast.newick("output/empirical/newick/Asteraceae_Palazzesi2022.tre")
+
+
+#keep.tip()
+
+treeheight <- function(phy) max(node.depth.edgelength(phy))
+
+extract.clade(tr@phylo, 3071)
+
+#treeheight(tr@phylo)
+
+
+
 
 library(ggplot2)
 

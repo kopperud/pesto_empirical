@@ -8,6 +8,7 @@ using Glob
 
 
 df = CSV.read("output/empirical_munged.csv", DataFrame)
+df = df[df[!,:inference] .== "empirical_fixedprior",:]
 
 df[!,:type] = String.(df[!,:type]) ## ensure it's a string
 
@@ -23,7 +24,10 @@ shift_df = DataFrame(
     "log_eta" => log10.(df2[!,:etaml]),
     "log_N" => log10.(df2[!,:N_total]),
     "log_N_by_t" => log10.(df2[!,:N_per_time]),
-    "log_netdiv" => log10.(df2[!,:lambdaml] .- df2[!,:muml])
+    #"log_netdiv" => log10.(df2[!,:lambdaml] .- df2[!,:muml])
+    "log_netdiv" => log10.(df2[!,:tree_netdiv]),
+    "log_mu" => log10.(df2[!,:tree_mu]),
+    "log_lambda" => log10.(df2[!,:tree_lambda])
 )
 
 
@@ -174,7 +178,7 @@ function foobar!(fig, xvars, xlabs, shift_df, xdigits = [2,1], ydigits = [1,4])
         tag = replace(tag, "-"=> "- ")
         tag = replace(tag, "log"=> "\\log")
         tag = LaTeXString(string("\$", tag, "\$"))
-        text!(axs[i+offset], minimum(xt[i])*1.1, maximum(yt2)*0.8, text = tag, fontsize = 7)
+        text!(axs[i+offset], minimum(xt[i])*1.1, maximum(yt2)*0.65, text = tag, fontsize = 7)
     end
 
 
@@ -196,12 +200,16 @@ end
 
 fig1 = Figure(size=(350, 300), fontsize = 14);
 xlabs = [
-    L"\hat{\lambda} - \hat{\mu}",
-    L"\text{tree height (Ma)}"
+    #L"\lambda",
+    #L"\mu",
+    L"\lambda - \mu",
+    L"\text{tree height (Ma)}",
 ]
 xvars = [
+    #shift_df[!,:log_lambda],
+    #shift_df[!,:log_mu],
     shift_df[!,:log_netdiv],
-    shift_df[!,:log_height]
+    shift_df[!,:log_height],
 ]
 xdigits = [2, 1]
 ydigits = [1, 4]
@@ -213,8 +221,8 @@ fig1
 xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
 
 rowgap!(fig1.layout, 7)
-CairoMakie.save("figures/scatter1.pdf", fig1)
 fig1
+CairoMakie.save("figures/scatter1.pdf", fig1)
 
 ### only the significantly supported branches
 
@@ -226,13 +234,14 @@ shift_df_filtered = DataFrame(
     "log_eta" => log10.(df4[!,:etaml]),
     "log_N" => log10.(df4[!,:N_total]),
     "log_N_by_t" => log10.(df4[!,:N_per_time]),
-    "log_netdiv" => log10.(df4[!,:lambdaml] .- df4[!,:muml])
+    #"log_netdiv" => log10.(df4[!,:lambdaml] .- df4[!,:muml])
+    "log_netdiv" => log10.(df4[!,:tree_netdiv])
 )
 
 
 fig2 = Figure(size=(350, 300), fontsize = 14);
 xlabs = [
-    L"\hat{\lambda} - \hat{\mu}",
+    L"\lambda - \mu",
     L"\text{tree height (Ma)}"
 ]
 xvars = [
@@ -250,6 +259,8 @@ xlabel = Label(fig2[0,1:2], L"\text{filtered for strongly supported branches}")
 rowgap!(fig2.layout, 7)
 fig2
 CairoMakie.save("figures/scatter2.pdf", fig2)
+
+
 
 
 

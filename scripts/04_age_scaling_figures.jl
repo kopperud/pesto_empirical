@@ -10,6 +10,8 @@ df = CSV.read("output/age_scaling_effect_munged.csv", DataFrame; missingstring =
 
 #df = df[df[!,:type] .== "pooled",:]
 df = df[df[!,:type] .== "strong support",:]
+#df = df[df[!,:inference] .== "age_scaling_effect",:]
+df = df[df[!,:inference] .== "age_scaling_effect_fixedprior",:]
 
 ## filter for at least one strongly supported shift
 df = df[df[!,:how_many_supported ] .> 0,:]
@@ -53,7 +55,6 @@ rainclouds!(ax1,
     markersize = 4,
     label = "label",
     jitter_width = 4)
-
 fig
 
 
@@ -88,6 +89,11 @@ rowgap!(fig2.layout, 1.0)
 fig2
 
 save("figures/age_scaling_effect.pdf", fig2)
+
+
+#### TODO
+## need to replicate the scatter plot regression, 
+## and calculate the slope for the simulated data
 
 
 

@@ -41,7 +41,7 @@ skipped_trees = [
     "Seed_plants_Smith&Brown2018_GBMB_binary", ## same, it's binary but shitty
     "Mimosoideae_Ringelberg2023", ## skip because negative branch lengths
     "Nymphalidae_Chazot2021", ## negative branch lenghts
-    "Solanaceae_Sarkinen2013"
+    "Solanaceae_Sarkinen2013" ## ??
 ]
 
 ## verify that all trees can be read
@@ -58,9 +58,9 @@ for fpath in fpaths
 end
 
 completed_jobs = [
-    split(Base.basename(x), ".")[1] for x in Glob.glob("output/empirical/jld2/*.jld2")
+    split(Base.basename(x), ".")[1] for x in Glob.glob("output/empirical_fixedprior/jld2/*.jld2")
 ]
-   
+
 
 n_iters = length(fpaths)
 n_iters - length(completed_jobs)
@@ -82,13 +82,15 @@ for fpath in fpaths
     ρ = ρs[basename(fpath)]
     data = SSEdata(phy, ρ);
 
-    λml, μml = estimate_constant_bdp(data)
+    #λml, μml = estimate_constant_bdp(data)
+    λml = 0.15
+    μml = 0.10
 
     H = 0.587
     n = 10
 
-    dλ = LogNormal(log(λml), H)
-    dμ = LogNormal(log(µml), H)
+    dλ = LogNormal(log(λml), 2*H)
+    dμ = LogNormal(log(µml), 2*H)
 
     λquantiles = make_quantiles(dλ, n)
     µquantiles = make_quantiles(dμ, n)
@@ -96,6 +98,7 @@ for fpath in fpaths
 
     ηml = optimize_eta(λ, µ, data);
     model = SSEconstant(λ, μ, ηml);
+    logl = logL_root(model, data)
 
     Ds, Fs = backwards_forwards_pass(model, data);
     Ss = ancestral_state_probabilities(data, Ds, Fs);
@@ -116,13 +119,13 @@ for fpath in fpaths
 
 
     ## save data
-    fpath = string("output/empirical/newick/", name, ".tre")
+    fpath = string("output/empirical_fixedprior/newick/", name, ".tre")
     writenewick(fpath, data, rates)
 
-    fpath = string("output/empirical/rates/", name, ".csv")
+    fpath = string("output/empirical_fixedprior/rates/", name, ".csv")
     CSV.write(fpath, rates)
 
-    fpath = string("output/empirical/jld2/", name, ".jld2")
+    fpath = string("output/empirical_fixedprior/jld2/", name, ".jld2")
     Nsum = sum(N, dims = 1)[1,:,:]
     save(fpath, 
         "N", N,
