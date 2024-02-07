@@ -96,6 +96,7 @@ for fpath in fpaths
 
     ηml = optimize_eta(λ, µ, data);
     model = SSEconstant(λ, μ, ηml);
+    logl = logL_root(model, data);
 
     Ds, Fs = backwards_forwards_pass(model, data);
     Ss = ancestral_state_probabilities(data, Ds, Fs);

@@ -51,10 +51,9 @@ for fpath in fpaths
         continue
     end
 
-    println(name)
     phy = readtree(fpath)
     data = SSEdata(phy, 1.0)
-    println(fpath, ",\t n = ", length(data.tiplab))
+    println(name, ",\t n = ", length(data.tiplab))
 end
 
 completed_jobs = [

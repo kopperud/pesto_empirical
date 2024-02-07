@@ -99,7 +99,7 @@ dfs1 <- list()
 ix <- length(fpaths1)
 pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
 for (i in 1:ix){
-  fpath <- fpaths[i]
+  fpath <- fpaths1[i]
   name <- strsplit(basename(fpath), "\\.")[[1]][[1]]
   dfs1[[i]] <- readNumberOfShifts(name, "empirical")
   setTxtProgressBar(pb,i)
@@ -111,7 +111,7 @@ dfs2 <- list()
 ix <- length(fpaths2)
 pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
 for (i in 1:ix){
-  fpath <- fpaths[i]
+  fpath <- fpaths2[i]
   name <- strsplit(basename(fpath), "\\.")[[1]][[1]]
   dfs2[[i]] <- readNumberOfShifts(name, "empirical_fixedprior")
   setTxtProgressBar(pb,i)
@@ -122,12 +122,40 @@ df <- bind_rows(
   bind_rows(dfs2)
 )
 
+###############
+##
+## some quick plots
+##
+#############
 
 #df <- bind_rows(dfs)
 df[["N_per_time"]] <- df$N_total / df$treelength
 df[["support_per_time"]] <- df$how_many_supported / df$treelength
-
 write.csv(df, "output/empirical_munged.csv")
+
+###
+
+df_empirical_bayes <- df %>% 
+  filter(inference == "empirical_fixedprior") %>%
+  #filter(inference == "empirical") %>%
+  filter(type == "pooled")
+
+df_empirical_bayes %>%
+  select(c(name, tree_lambda, tree_mu)) %>%
+  mutate(r = tree_lambda - tree_mu) %>%
+  arrange(-tree_mu) %>%
+  print(n = 44)
+
+df_empirical_bayes$lambaml
+
+df_empirical_bayes %>%
+  select(c(name, lambdaml, muml)) %>%
+  mutate(r = lambdaml - muml) %>%
+  print(n = 44)
+
+#df %>%
+#  filter(inference == "empirical_fixedprior") %>%
+  
 
 ######################
 ##
@@ -142,10 +170,6 @@ rates1 <- lapply(fpaths, read.csv)
 for (i in seq_along(rates1)){
   rates1[[i]][["name"]] <- names1[[i]]
 }
-
-#for (i in 1:43){
-#  print(unique(rates1[[i]]$name))
-#}
 
 rates <- bind_rows(rates1)
 

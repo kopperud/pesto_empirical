@@ -37,16 +37,16 @@ end
 
 
 df = CSV.read("output/empirical_munged.csv", DataFrame)
+df = df[df[!,:inference] .== "empirical_fixedprior",:]
 
 d = Dict()
 names = unique(df[!,:name])
-fpaths = Glob.glob("output/empirical/jld2/*.jld2")
-for fpath in fpaths
+fpaths = Glob.glob("output/empirical_fixedprior/jld2/*.jld2")
+@showprogress for fpath in fpaths
     name = split(Base.basename(fpath), ".")[1]
     x = JLD2.load(fpath)
     d[name] = x
 end
-
 
 models = Dict{String, SSEconstant}()
 for name in names
@@ -83,6 +83,8 @@ end
 trees = Dict()
 datasets = Dict()
 for fpath in fpaths
+    #fpath = replace(fpath, "Toninietal2016" => "Toninietal.2016")
+    #fpath = replace(fpath, "Zanneetal2014rooteddated" => "Zanne.et.al.2014rooted.dated")
     println(fpath)
     tree = readtree(fpath)
     
@@ -96,9 +98,8 @@ end
 heights = [maximum(d.node_depth) for (key, d) in datasets]
 
 
-
-function support_vector(name)
-    df = CSV.read("output/empirical/rates/" * name * ".csv", DataFrame)
+function support_vector(name, subdir)
+    df = CSV.read("output/" * subdir * "/rates/" * name * ".csv", DataFrame)
     sort!(df, [:edge])
     df = df[2:end,:]
 
@@ -116,14 +117,14 @@ function support_vector(name)
 end
 
 
-print(support_vector("Primates_Springer2012"))
+#print(support_vector("Primates_Springer2012"))
 
 
 function compute_ratios(name, model, dataset, filter = "")
     N = d[name]["N"]
 
     if filter == "support"
-        is_supported = support_vector(name)
+        is_supported = support_vector(name, "empirical_fixedprior")
         N = N[is_supported,:,:]
     end
 
@@ -237,10 +238,9 @@ end
 
 
 
-
-
 netdiv_extrema = [-1.2, 1.2]
 
+ratios = zeros(length(name_subset), 3)
 
 for (q, name) in enumerate(name_subset)
     model = models[name]
@@ -276,7 +276,6 @@ for (q, name) in enumerate(name_subset)
     Nall = sum([Nλ, Nμ, Njoint])
     rs = [Nλ, Nμ, Njoint] ./ Nall
     ratios[q,:] .= rs
-
 
 
 
@@ -325,14 +324,17 @@ ratios2 = zeros(length(datasets), 3)
 for (dataset_index, name) in enumerate(names)
     model = models[name]
 
+    dname = replace(name, "Toninietal2016" => "Toninietal.2016")
+    dname = replace(name, "Zanneetal2014rooteddated" => "Zanne.et.al.2014rooted.dated")
+
     rs1 = compute_ratios(name, 
             models[name],
-            datasets[name * ".tree"], 
+            datasets[dname * ".tree"], 
             "")
 
     rs2 = compute_ratios(name, 
             models[name],
-            datasets[name * ".tree"], 
+            datasets[dname * ".tree"], 
             "support")
 
 
@@ -376,8 +378,11 @@ prior_ratios = zeros(length(datasets), 3)
 for i in 1:size(prior_ratios)[1]
     prior_ratios[i,:] .= priors
 end
-is_larger = ratios .> prior_ratios
-sum(is_larger, dims = 1)
+
+is_larger1 = ratios1 .> prior_ratios
+is_larger2 = ratios1 .> prior_ratios
+sum(is_larger1, dims = 1)
+sum(is_larger2, dims = 1)
 
 for (i, prior) in enumerate(priors)
     x = [i-0.5, i+0.5]
@@ -430,7 +435,7 @@ linkaxes!(ax_scatter1, ax_scatter2)
 
 fig
 #set_theme!(fig, figure_padding = 0)
-CairoMakie.save("figures/fig1.pdf", fig)
+CairoMakie.save("figures/fig1_fixedprior.pdf", fig)
 #CairoMakie.save("figures/histogram_magnitude_etaoneshift.pdf", fig)
 
 
