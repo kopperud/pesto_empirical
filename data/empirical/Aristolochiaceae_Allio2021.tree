@@ -1,0 +1,507 @@
+#NEXUS
+[R-package APE, Wed Mar  1 12:18:44 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 247;
+	TAXLABELS
+		Aristolochia_acuminata
+		Aristolochia_acutifolia
+		Aristolochia_albida
+		Aristolochia_anguicida
+		Aristolochia_arborea
+		Aristolochia_arcuata
+		Aristolochia_argentina
+		Aristolochia_asclepiadifolia
+		Aristolochia_austroyunnanensis
+		Aristolochia_baetica
+		Aristolochia_bianorii
+		Aristolochia_bottae
+		Aristolochia_bracteolata
+		Aristolochia_burelae
+		Aristolochia_californica
+		Aristolochia_cauliflora
+		Aristolochia_chamissonis
+		Aristolochia_championii
+		Aristolochia_chiapensis
+		Aristolochia_chilensis
+		Aristolochia_clematitis
+		Aristolochia_clusii
+		Aristolochia_cordiflora
+		Aristolochia_cruenta
+		Aristolochia_cucurbitifolia
+		Aristolochia_cucurbitoides
+		Aristolochia_cymbifera
+		Aristolochia_cynanchifolia
+		Aristolochia_debilis
+		Aristolochia_delavayi
+		Aristolochia_elegans
+		Aristolochia_elongata
+		Aristolochia_erecta
+		Aristolochia_eriantha
+		Aristolochia_esperanzae
+		Aristolochia_fimbriata
+		Aristolochia_fordiana
+		Aristolochia_foveolata
+		Aristolochia_galeata
+		Aristolochia_gaudichaudii
+		Aristolochia_gibertii
+		Aristolochia_gigantea
+		Aristolochia_goldieana
+		Aristolochia_goliathiana
+		Aristolochia_gorgona
+		Aristolochia_grandiflora
+		Aristolochia_grandis
+		Aristolochia_griffithii
+		Aristolochia_heppii
+		Aristolochia_hirta
+		Aristolochia_hockii
+		Aristolochia_holostylis
+		Aristolochia_iberica
+		Aristolochia_impudica
+		Aristolochia_incisa
+		Aristolochia_indica
+		Aristolochia_jackii
+		Aristolochia_kaempferi
+		Aristolochia_kalebii
+		Aristolochia_kankauensis
+		Aristolochia_kerrii
+		Aristolochia_krisagathra
+		Aristolochia_kwangsiensis
+		Aristolochia_labiata
+		Aristolochia_leuconeura
+		Aristolochia_lindneri
+		Aristolochia_littoralis
+		Aristolochia_liukiuensis
+		Aristolochia_lutea
+		Aristolochia_macrophylla
+		Aristolochia_macroura
+		Aristolochia_malacophylla
+		Aristolochia_manshuriensis
+		Aristolochia_maurorum
+		Aristolochia_maxima
+		Aristolochia_melastoma
+		Aristolochia_merxmuelleri
+		Aristolochia_micrantha
+		Aristolochia_microstoma
+		Aristolochia_moupinensis
+		Aristolochia_nakaoi
+		Aristolochia_navicularis
+		Aristolochia_nelsonii
+		Aristolochia_neolongifolia
+		Aristolochia_nummularifolia
+		Aristolochia_odoratissima
+		Aristolochia_onoei
+		Aristolochia_ovalifolia
+		Aristolochia_pallida
+		Aristolochia_panamensis
+		Aristolochia_papillifolia
+		Aristolochia_paracleta
+		Aristolochia_parvifolia
+		Aristolochia_passiflorifolia
+		Aristolochia_paulistana
+		Aristolochia_pentandra
+		Aristolochia_peruviana
+		Aristolochia_petersiana
+		Aristolochia_pichinchensis
+		Aristolochia_pierrei
+		Aristolochia_pilosa
+		Aristolochia_pistolochia
+		Aristolochia_pontica
+		Aristolochia_praevenosa
+		Aristolochia_promissa
+		Aristolochia_reniformis
+		Aristolochia_reticulata
+		Aristolochia_rigida
+		Aristolochia_ringens
+		Aristolochia_rojasiana
+		Aristolochia_rotunda
+		Aristolochia_saccata
+		Aristolochia_salvadorensis
+		Aristolochia_sempervirens
+		Aristolochia_serpentaria
+		Aristolochia_shimadai
+		Aristolochia_sicula
+		Aristolochia_stevensii
+		Aristolochia_tagala
+		Aristolochia_taliscana
+		Aristolochia_tentaculata
+		Aristolochia_tomentosa
+		Aristolochia_tonduzii
+		Aristolochia_triactina
+		Aristolochia_triangularis
+		Aristolochia_tricaudata
+		Aristolochia_trilobata
+		Aristolochia_tubiflora
+		Aristolochia_tyrrhena
+		Aristolochia_veracruzana
+		Aristolochia_wardiana
+		Aristolochia_westlandii
+		Aristolochia_zollingeriana
+		Asarum_arifolium
+		Asarum_asaroides
+		Asarum_asperum
+		Asarum_bashanense
+		Asarum_blumei
+		Asarum_campaniflorum
+		Asarum_canadense
+		Asarum_cardiophyllum
+		Asarum_caudatum
+		Asarum_caudigerellum
+		Asarum_caudigerum
+		Asarum_caulescens
+		Asarum_chengkouense
+		Asarum_chinense
+		Asarum_chingchengense
+		Asarum_contractum
+		Asarum_cordifolium
+		Asarum_costatum
+		Asarum_crassum
+		Asarum_crispulatum
+		Asarum_debile
+		Asarum_delavayi
+		Asarum_dimidiatum
+		Asarum_dissitum
+		Asarum_epigynum
+		Asarum_europaeum
+		Asarum_fauriei
+		Asarum_forbesii
+		Asarum_fudsinoi
+		Asarum_gelasinum
+		Asarum_geophilum
+		Asarum_glabrum
+		Asarum_gusk
+		Asarum_hartwegii
+		Asarum_hatsushimae
+		Asarum_heterophyllum
+		Asarum_heterotropoides
+		Asarum_hexalobum
+		Asarum_himalaicum
+		Asarum_hongkongense
+		Asarum_ichangense
+		Asarum_inflatum
+		Asarum_insigne
+		Asarum_kumageanum
+		Asarum_lemmonii
+		Asarum_lewisii
+		Asarum_longerhizomatosum
+		Asarum_maculatum
+		Asarum_magnificum
+		Asarum_maruyamae
+		Asarum_maximum
+		Asarum_megacalyx
+		Asarum_memmingeri
+		Asarum_mikuniense
+		Asarum_minamitanianum
+		Asarum_minus
+		Asarum_misandrum
+		Asarum_monodoriflorum
+		Asarum_muramatsui
+		Asarum_nanchuanense
+		Asarum_naniflorum
+		Asarum_nipponicum
+		Asarum_okinawense
+		Asarum_patens
+		Asarum_pellucidum
+		Asarum_porphyronotum
+		Asarum_pulchellum
+		Asarum_sagittarioides
+		Asarum_sakawanum
+		Asarum_satsumense
+		Asarum_savatieri
+		Asarum_senkakuinsulare
+		Asarum_shuttleworthii
+		Asarum_sieboldii
+		Asarum_simile
+		Asarum_speciosum
+		Asarum_splendens
+		Asarum_subglobosum
+		Asarum_takaoi
+		Asarum_tamaense
+		Asarum_tamaensis
+		Asarum_tohokuense
+		Asarum_tokarense
+		Asarum_trinacriforme
+		Asarum_unzen
+		Asarum_versicolor
+		Asarum_virginicum
+		Asarum_wulingense
+		Asarum_yaeyamense
+		Asarum_yakusimense
+		Asarum_yunnanense
+		Holostylis_reniformis
+		Lactoris_fernandeziana
+		Pararistolochia_australopithecurus
+		Pararistolochia_laheyana
+		Saruma_henryi
+		Thottea_abrahamii
+		Thottea_barberi
+		Thottea_borneensis
+		Thottea_corymbosa
+		Thottea_dalzellii
+		Thottea_dependens
+		Thottea_dinghoui
+		Thottea_duchartrei
+		Thottea_grandiflora
+		Thottea_idukkiana
+		Thottea_macrantha
+		Thottea_parviflora
+		Thottea_penitilobata
+		Thottea_piperiformis
+		Thottea_ponmudiana
+		Thottea_siliquosa
+		Thottea_sivarajanii
+		Thottea_tomentosa
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Aristolochia_acuminata,
+		2	Aristolochia_acutifolia,
+		3	Aristolochia_albida,
+		4	Aristolochia_anguicida,
+		5	Aristolochia_arborea,
+		6	Aristolochia_arcuata,
+		7	Aristolochia_argentina,
+		8	Aristolochia_asclepiadifolia,
+		9	Aristolochia_austroyunnanensis,
+		10	Aristolochia_baetica,
+		11	Aristolochia_bianorii,
+		12	Aristolochia_bottae,
+		13	Aristolochia_bracteolata,
+		14	Aristolochia_burelae,
+		15	Aristolochia_californica,
+		16	Aristolochia_cauliflora,
+		17	Aristolochia_chamissonis,
+		18	Aristolochia_championii,
+		19	Aristolochia_chiapensis,
+		20	Aristolochia_chilensis,
+		21	Aristolochia_clematitis,
+		22	Aristolochia_clusii,
+		23	Aristolochia_cordiflora,
+		24	Aristolochia_cruenta,
+		25	Aristolochia_cucurbitifolia,
+		26	Aristolochia_cucurbitoides,
+		27	Aristolochia_cymbifera,
+		28	Aristolochia_cynanchifolia,
+		29	Aristolochia_debilis,
+		30	Aristolochia_delavayi,
+		31	Aristolochia_elegans,
+		32	Aristolochia_elongata,
+		33	Aristolochia_erecta,
+		34	Aristolochia_eriantha,
+		35	Aristolochia_esperanzae,
+		36	Aristolochia_fimbriata,
+		37	Aristolochia_fordiana,
+		38	Aristolochia_foveolata,
+		39	Aristolochia_galeata,
+		40	Aristolochia_gaudichaudii,
+		41	Aristolochia_gibertii,
+		42	Aristolochia_gigantea,
+		43	Aristolochia_goldieana,
+		44	Aristolochia_goliathiana,
+		45	Aristolochia_gorgona,
+		46	Aristolochia_grandiflora,
+		47	Aristolochia_grandis,
+		48	Aristolochia_griffithii,
+		49	Aristolochia_heppii,
+		50	Aristolochia_hirta,
+		51	Aristolochia_hockii,
+		52	Aristolochia_holostylis,
+		53	Aristolochia_iberica,
+		54	Aristolochia_impudica,
+		55	Aristolochia_incisa,
+		56	Aristolochia_indica,
+		57	Aristolochia_jackii,
+		58	Aristolochia_kaempferi,
+		59	Aristolochia_kalebii,
+		60	Aristolochia_kankauensis,
+		61	Aristolochia_kerrii,
+		62	Aristolochia_krisagathra,
+		63	Aristolochia_kwangsiensis,
+		64	Aristolochia_labiata,
+		65	Aristolochia_leuconeura,
+		66	Aristolochia_lindneri,
+		67	Aristolochia_littoralis,
+		68	Aristolochia_liukiuensis,
+		69	Aristolochia_lutea,
+		70	Aristolochia_macrophylla,
+		71	Aristolochia_macroura,
+		72	Aristolochia_malacophylla,
+		73	Aristolochia_manshuriensis,
+		74	Aristolochia_maurorum,
+		75	Aristolochia_maxima,
+		76	Aristolochia_melastoma,
+		77	Aristolochia_merxmuelleri,
+		78	Aristolochia_micrantha,
+		79	Aristolochia_microstoma,
+		80	Aristolochia_moupinensis,
+		81	Aristolochia_nakaoi,
+		82	Aristolochia_navicularis,
+		83	Aristolochia_nelsonii,
+		84	Aristolochia_neolongifolia,
+		85	Aristolochia_nummularifolia,
+		86	Aristolochia_odoratissima,
+		87	Aristolochia_onoei,
+		88	Aristolochia_ovalifolia,
+		89	Aristolochia_pallida,
+		90	Aristolochia_panamensis,
+		91	Aristolochia_papillifolia,
+		92	Aristolochia_paracleta,
+		93	Aristolochia_parvifolia,
+		94	Aristolochia_passiflorifolia,
+		95	Aristolochia_paulistana,
+		96	Aristolochia_pentandra,
+		97	Aristolochia_peruviana,
+		98	Aristolochia_petersiana,
+		99	Aristolochia_pichinchensis,
+		100	Aristolochia_pierrei,
+		101	Aristolochia_pilosa,
+		102	Aristolochia_pistolochia,
+		103	Aristolochia_pontica,
+		104	Aristolochia_praevenosa,
+		105	Aristolochia_promissa,
+		106	Aristolochia_reniformis,
+		107	Aristolochia_reticulata,
+		108	Aristolochia_rigida,
+		109	Aristolochia_ringens,
+		110	Aristolochia_rojasiana,
+		111	Aristolochia_rotunda,
+		112	Aristolochia_saccata,
+		113	Aristolochia_salvadorensis,
+		114	Aristolochia_sempervirens,
+		115	Aristolochia_serpentaria,
+		116	Aristolochia_shimadai,
+		117	Aristolochia_sicula,
+		118	Aristolochia_stevensii,
+		119	Aristolochia_tagala,
+		120	Aristolochia_taliscana,
+		121	Aristolochia_tentaculata,
+		122	Aristolochia_tomentosa,
+		123	Aristolochia_tonduzii,
+		124	Aristolochia_triactina,
+		125	Aristolochia_triangularis,
+		126	Aristolochia_tricaudata,
+		127	Aristolochia_trilobata,
+		128	Aristolochia_tubiflora,
+		129	Aristolochia_tyrrhena,
+		130	Aristolochia_veracruzana,
+		131	Aristolochia_wardiana,
+		132	Aristolochia_westlandii,
+		133	Aristolochia_zollingeriana,
+		134	Asarum_arifolium,
+		135	Asarum_asaroides,
+		136	Asarum_asperum,
+		137	Asarum_bashanense,
+		138	Asarum_blumei,
+		139	Asarum_campaniflorum,
+		140	Asarum_canadense,
+		141	Asarum_cardiophyllum,
+		142	Asarum_caudatum,
+		143	Asarum_caudigerellum,
+		144	Asarum_caudigerum,
+		145	Asarum_caulescens,
+		146	Asarum_chengkouense,
+		147	Asarum_chinense,
+		148	Asarum_chingchengense,
+		149	Asarum_contractum,
+		150	Asarum_cordifolium,
+		151	Asarum_costatum,
+		152	Asarum_crassum,
+		153	Asarum_crispulatum,
+		154	Asarum_debile,
+		155	Asarum_delavayi,
+		156	Asarum_dimidiatum,
+		157	Asarum_dissitum,
+		158	Asarum_epigynum,
+		159	Asarum_europaeum,
+		160	Asarum_fauriei,
+		161	Asarum_forbesii,
+		162	Asarum_fudsinoi,
+		163	Asarum_gelasinum,
+		164	Asarum_geophilum,
+		165	Asarum_glabrum,
+		166	Asarum_gusk,
+		167	Asarum_hartwegii,
+		168	Asarum_hatsushimae,
+		169	Asarum_heterophyllum,
+		170	Asarum_heterotropoides,
+		171	Asarum_hexalobum,
+		172	Asarum_himalaicum,
+		173	Asarum_hongkongense,
+		174	Asarum_ichangense,
+		175	Asarum_inflatum,
+		176	Asarum_insigne,
+		177	Asarum_kumageanum,
+		178	Asarum_lemmonii,
+		179	Asarum_lewisii,
+		180	Asarum_longerhizomatosum,
+		181	Asarum_maculatum,
+		182	Asarum_magnificum,
+		183	Asarum_maruyamae,
+		184	Asarum_maximum,
+		185	Asarum_megacalyx,
+		186	Asarum_memmingeri,
+		187	Asarum_mikuniense,
+		188	Asarum_minamitanianum,
+		189	Asarum_minus,
+		190	Asarum_misandrum,
+		191	Asarum_monodoriflorum,
+		192	Asarum_muramatsui,
+		193	Asarum_nanchuanense,
+		194	Asarum_naniflorum,
+		195	Asarum_nipponicum,
+		196	Asarum_okinawense,
+		197	Asarum_patens,
+		198	Asarum_pellucidum,
+		199	Asarum_porphyronotum,
+		200	Asarum_pulchellum,
+		201	Asarum_sagittarioides,
+		202	Asarum_sakawanum,
+		203	Asarum_satsumense,
+		204	Asarum_savatieri,
+		205	Asarum_senkakuinsulare,
+		206	Asarum_shuttleworthii,
+		207	Asarum_sieboldii,
+		208	Asarum_simile,
+		209	Asarum_speciosum,
+		210	Asarum_splendens,
+		211	Asarum_subglobosum,
+		212	Asarum_takaoi,
+		213	Asarum_tamaense,
+		214	Asarum_tamaensis,
+		215	Asarum_tohokuense,
+		216	Asarum_tokarense,
+		217	Asarum_trinacriforme,
+		218	Asarum_unzen,
+		219	Asarum_versicolor,
+		220	Asarum_virginicum,
+		221	Asarum_wulingense,
+		222	Asarum_yaeyamense,
+		223	Asarum_yakusimense,
+		224	Asarum_yunnanense,
+		225	Holostylis_reniformis,
+		226	Lactoris_fernandeziana,
+		227	Pararistolochia_australopithecurus,
+		228	Pararistolochia_laheyana,
+		229	Saruma_henryi,
+		230	Thottea_abrahamii,
+		231	Thottea_barberi,
+		232	Thottea_borneensis,
+		233	Thottea_corymbosa,
+		234	Thottea_dalzellii,
+		235	Thottea_dependens,
+		236	Thottea_dinghoui,
+		237	Thottea_duchartrei,
+		238	Thottea_grandiflora,
+		239	Thottea_idukkiana,
+		240	Thottea_macrantha,
+		241	Thottea_parviflora,
+		242	Thottea_penitilobata,
+		243	Thottea_piperiformis,
+		244	Thottea_ponmudiana,
+		245	Thottea_siliquosa,
+		246	Thottea_sivarajanii,
+		247	Thottea_tomentosa
+	;
+	TREE * UNTITLED = [&R] ((229:22.43193626,((150:3.607191453,(141:0.6813070344,144:0.6813070344):2.925884419):8.663380569,(200:11.21835159,(((190:2.709151838,((170:0.6172524232,219:0.6172524232):0.948484818,(187:0.6182958784,215:0.6182958784):0.9474413627):1.143414597):2.532946117,((183:1.177523129,(156:0.483828103,197:0.483828103):0.6936950259):1.113439526,(207:0.7801839327,(165:0.3891109939,181:0.3891109939):0.3910729388):1.510778722):2.9511353):4.78590027,(172:9.602167335,((145:5.152022269,((143:1.368136793,154:1.368136793):2.16748214,(159:2.933592386,(140:2.271283982,(167:1.052874461,(142:0.2592399978,178:0.2592399978):0.7936344634):1.21840952):0.6623084048):0.602026546):1.616403336):2.880752197,(((157:3.010326455,(191:0.7162008711,222:0.7162008711):2.294125584):1.945836172,(164:1.588234612,(158:0.5980481702,224:0.5980481702):0.9901864417):3.367928016):2.080761436,((134:1.884808469,209:1.884808469):4.446056482,((179:3.551873331,(206:1.369439001,((189:0.5311314188,220:0.5311314188):0.4191154795,((149:0.2241563703,169:0.2241563703):0.3828883039,(186:0.342729674,194:0.342729674):0.2643150001):0.3432022241):0.419192103):2.18243433):2.271690624,(((184:3.519354462,((139:1.547043788,176:1.547043788):1.328733122,(173:2.376516318,(201:2.074713322,(182:1.536303292,(180:0.5079447367,221:0.5079447367):1.028358555):0.5384100304):0.3018029953):0.4992605927):0.6435775517):0.7618815281,((137:2.077671754,(146:1.527053008,193:1.527053008):0.550618746):0.9410246164,((175:1.780993165,(147:0.7962207084,174:0.7962207084):0.9847724562):0.5374152524,(153:1.560351101,((148:0.2311552088,210:0.2311552088):0.9285030485,(155:0.3325385936,199:0.3325385936):0.8271196636):0.400692844):0.7580573157):0.7002879531):1.26253962):1.065388295,(166:4.955469039,(198:4.639716712,(217:4.371170935,((216:1.262246585,223:1.262246585):2.879576108,((161:3.083354942,((192:1.473976141,(135:0.5572179835,(205:0.2322865109,218:0.2322865109):0.3249314726):0.9167581572):1.085737404,(162:2.174345088,(177:1.71726004,(203:1.550396631,((163:0.2198618878,168:0.2198618878):0.4443908696,(196:0.3934923445,208:0.3934923445):0.2707604129):0.8861438733):0.1668634097):0.4570850472):0.3853684572):0.5236413974):0.3311526086,((211:0.7765496831,214:0.7765496831):2.249667205,(152:2.626620994,(188:2.119008688,((195:1.108318772,(204:0.5104056304,212:0.5104056304):0.5979131411):0.4581703239,(202:1.314052881,((160:0.4036807453,213:0.4036807453):0.65431115,(151:0.8347499022,(138:0.6535621416,(171:0.3366253277,(136:0.1295118263,185:0.1295118263):0.2071135014):0.3169368139):0.1811877606):0.2232419931):0.2560609859):0.2524362143):0.5525195925):0.5076123061):0.3995958944):0.3882906625):0.7273151428):0.2293482412):0.268545777):0.3157523272):0.3911552459):0.4769396696):0.5073009958):0.706059114):0.9958504008):1.56939287):0.4258308896):1.190353364):1.052220433):10.16136424):88.94587432,(226:97.02445814,((247:39.65946412,(243:31.79047102,((230:1.111801024,236:1.111801024):22.7039369,((231:14.72399777,(244:6.461658938,((237:0.4391146577,239:0.4391146577):3.293656627,(234:2.944281782,(245:2.252802456,246:2.252802456):0.6914793265):0.7884895028):2.728887653):8.262338827):3.637802044,(233:13.44822285,(241:7.608863386,(232:5.321437555,(240:4.034688394,(242:3.151493388,(235:2.206769639,238:2.206769639):0.9447237489):0.8831950064):1.28674916):2.287425831):5.839359464):4.913576959):5.453938116):7.974733092):7.868993105):36.93341405,(((107:3.3627223,115:3.3627223):24.13730463,((90:11.09001659,((92:1.636100623,(72:0.5079091092,118:0.5079091092):1.128191514):6.556299371,((113:2.672713983,(54:1.087284132,(5:0.3938345418,59:0.3938345418):0.6934495903):1.585429851):3.146526279,(19:4.484270864,(126:2.744314477,(8:0.9343992261,130:0.9343992261):1.809915251):1.739956387):1.334969398):2.373159732):2.897616597):5.768999076,((70:6.957452517,(73:4.657394695,122:4.657394695):2.300057822):4.962155862,(128:10.28564898,((15:7.599711392,((26:1.320634292,131:1.320634292):4.865044918,(80:4.685600933,((47:1.746768609,112:1.746768609):1.728881035,(132:1.542985282,(9:0.5066918851,63:0.5066918851):1.036293397):1.932664362):1.209951289):1.500078276):1.414032183):0.9805039034,(18:7.518325849,((84:5.250406007,(48:1.10671017,81:1.10671017):4.143695837):1.00653139,(58:1.891056527,((25:0.6109380866,116:0.6109380866):0.5199303913,(68:0.4097579932,87:0.4097579932):0.7211104848):0.7601880488):4.36588087):1.261388452):1.061889446):1.705433681):1.633959402):4.939407288):10.64101126):28.08329422,(((43:14.59474228,(105:7.703255275,124:7.703255275):6.891487004):17.21310603,(104:10.41720915,(227:5.565624133,228:5.565624133):4.851585017):21.39063916):11.33538742,((14:22.41698879,(66:13.68638161,((33:6.005480041,96:6.005480041):2.2345256,(78:5.658959685,83:5.658959685):2.581045956):5.446375968):8.730607178):16.3525248,(((110:15.53485831,((16:3.73108653,65:3.73108653):8.098371,(120:0.7041452211,121:0.7041452211):11.12531231):3.705400776):5.097945394,((94:7.132264471,(20:1.52712086,36:1.52712086):5.605143611):10.81493314,(85:16.33871739,(((17:5.830760417,95:5.830760417):7.877553723,(125:10.19942957,(41:6.622515592,((71:0.4570956481,127:0.4570956481):4.434137816,(109:2.952391274,((27:0.7437088913,74:0.7437088913):1.567917575,(35:1.843909449,(39:1.210601713,64:1.210601713):0.6333077355):0.4677170174):0.6407648082):1.93884219):1.731282127):3.576913975):3.508884573):1.269917194,(((6:6.058623665,101:6.058623665):6.42307249,((28:6.651625361,(4:2.565562257,86:2.565562257):4.086063103):2.1862405,(42:7.101588692,(31:2.131989954,67:2.131989954):4.969598738):1.736277168):3.643830294):1.420128391,((7:10.92150656,(225:5.625644302,(52:2.751288906,106:2.751288906):2.874355396):5.295862262):1.259632705,(34:9.728724713,(97:5.953207581,(23:4.390921113,24:4.390921113):1.562286468):3.775517132):2.452414556):1.720685276):1.076406789):1.360486059):1.608480218):2.685606089):15.90108498,((76:26.15615825,(75:12.14944011,(2:4.696286022,(88:2.487607766,123:2.487607766):2.208678256):7.453154085):14.00671814):8.706480976,((46:6.952849753,(45:4.01066238,99:4.01066238):2.942187373):25.64722856,((61:20.99024027,((60:0.5950343914,133:0.5950343914):16.08264657,((100:7.034499055,(1:1.946859147,119:1.946859147):5.087639908):5.79736979,(40:11.06882978,((13:7.90949701,(56:4.580806247,62:4.580806247):3.328690763):1.715767489,((49:3.560541774,51:3.560541774):2.772439352,(57:2.297400186,(3:1.740899625,98:1.740899625):0.5565005608):4.035580941):3.292283373):1.443565278):1.763039068):3.845812115):4.312559311):7.975315215,(108:26.37825832,(((21:12.69364051,29:12.69364051):5.881605089,((37:6.806358654,38:6.806358654):7.914835708,(44:7.188112232,91:7.188112232):7.533082129):3.854051241):1.737057804,((30:14.0921046,102:14.0921046):3.216721023,((53:4.922292563,(103:3.485344271,(12:2.360744451,(50:0.3232398712,55:0.3232398712):2.03750458):1.12459982):1.436948292):11.15535415,(((10:7.730087091,114:7.730087091):5.960332551,(22:6.670837874,(117:1.973016669,129:1.973016669):4.697821205):7.019581768):1.247192995,(((11:1.60128518,111:1.60128518):5.005712605,(82:3.977501337,93:3.977501337):2.629496448):3.6851755,((32:3.415697741,79:3.415697741):1.428303379,(77:3.179999869,(69:1.553774558,89:1.553774558):1.626225311):1.664001251):5.448172165):4.645439351):1.14003408):1.231178906):3.003477785):6.065954913):2.587297167):3.634522822):2.262560918):1.671249452):2.235624908):4.37372215):12.44008541):21.00955703):20.43157997):14.35335243);
+END;

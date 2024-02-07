@@ -1,0 +1,1847 @@
+#NEXUS
+[R-package APE, Mon Mar  6 16:47:28 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 917;
+	TAXLABELS
+		Aeginetia_indica
+		Agalinis_acuta
+		Agalinis_aphylla
+		Agalinis_aspera
+		Agalinis_auriculata
+		Agalinis_calycina
+		Agalinis_decemloba
+		Agalinis_divaricata
+		Agalinis_edwardsiana
+		Agalinis_fasciculata
+		Agalinis_filicaulis
+		Agalinis_gattingeri
+		Agalinis_georgiana
+		Agalinis_harperi
+		Agalinis_heterophylla
+		Agalinis_homalantha
+		Agalinis_laxa
+		Agalinis_linifolia
+		Agalinis_maritima
+		Agalinis_navasotensis
+		Agalinis_neoscotica
+		Agalinis_obtusifolia
+		Agalinis_oligophylla
+		Agalinis_paupercula
+		Agalinis_plukenetii
+		Agalinis_pulchella
+		Agalinis_purpurea
+		Agalinis_setacea
+		Agalinis_skinneriana
+		Agalinis_strictifolia
+		Agalinis_tenella
+		Agalinis_tenuifolia
+		Agalinis_viridis
+		Alectra_aspera
+		Alectra_aurantiaca
+		Alectra_capensis
+		Alectra_fruticosa
+		Alectra_humbertii
+		Alectra_orobanchoides
+		Alectra_rigida
+		Alectra_sessiliflora
+		Alectra_stricta
+		Alectra_vogelii
+		Aphyllon_arenosum
+		Aphyllon_arizonicum
+		Aphyllon_californicum
+		Aphyllon_chilense
+		Aphyllon_cooperi
+		Aphyllon_corymbosum
+		Aphyllon_dugesii
+		Aphyllon_fasciculatum
+		Aphyllon_ludovicianum
+		Aphyllon_multiflorum
+		Aphyllon_parishii
+		Aphyllon_pinorum
+		Aphyllon_riparium
+		Aphyllon_tacnaense
+		Aphyllon_tarapacanum
+		Aphyllon_tuberosum
+		Aphyllon_uniflorum
+		Aphyllon_validum
+		Aphyllon_vallicola
+		Asepalum_erianthemum
+		Aureolaria_flava
+		Aureolaria_laevigata
+		Aureolaria_pectinata
+		Aureolaria_pedicularia
+		Aureolaria_virginica
+		Bardotia_ankaranensis
+		Bartsia_alpina
+		Bartsiella_rameauana
+		Bellardia_trixago
+		Bellardia_viscosa
+		Boschniakia_himalaica
+		Boschniakia_rossica
+		Boulardia_latisquama
+		Brachystigma_wrightii
+		Brandisia_hancei
+		Brandisia_racemosa
+		Brandisia_swinglei
+		Buchnera_americana
+		Buchnera_cruciata
+		Buchnera_cryptocephala
+		Buchnera_floridana
+		Buchnera_foliosa
+		Buchnera_glabrata
+		Buchnera_hispida
+		Buchnera_pusilla
+		Buchnera_welwitschii
+		Bungea_trifida
+		Castilleja_affinis
+		Castilleja_alpicola
+		Castilleja_ambigua
+		Castilleja_angustifolia
+		Castilleja_applegatei
+		Castilleja_arachnoidea
+		Castilleja_arvensis
+		Castilleja_attenuata
+		Castilleja_auriculata
+		Castilleja_beldingii
+		Castilleja_brevistyla
+		Castilleja_campestris
+		Castilleja_caudata
+		Castilleja_cerroana
+		Castilleja_cervina
+		Castilleja_chromosa
+		Castilleja_coccinea
+		Castilleja_conzattii
+		Castilleja_crista_galli
+		Castilleja_cusickii
+		Castilleja_densiflora
+		Castilleja_elata
+		Castilleja_elegans
+		Castilleja_elmeri
+		Castilleja_exilis
+		Castilleja_exserta
+		Castilleja_fissifolia
+		Castilleja_hispida
+		Castilleja_hyperborea
+		Castilleja_indivisa
+		Castilleja_integra
+		Castilleja_integrifolia
+		Castilleja_lacera
+		Castilleja_laciniata
+		Castilleja_lasiorhyncha
+		Castilleja_lemmonii
+		Castilleja_levisecta
+		Castilleja_linariifolia
+		Castilleja_lineariloba
+		Castilleja_lutescens
+		Castilleja_miniata
+		Castilleja_minor
+		Castilleja_nana
+		Castilleja_nivibractea
+		Castilleja_nubigena
+		Castilleja_occidentalis
+		Castilleja_ophiocephala
+		Castilleja_oresbia
+		Castilleja_pallida
+		Castilleja_parviflora
+		Castilleja_peckiana
+		Castilleja_peirsonii
+		Castilleja_peruviana
+		Castilleja_pilosa
+		Castilleja_plagiotoma
+		Castilleja_praeterita
+		Castilleja_profunda
+		Castilleja_pruinosa
+		Castilleja_pumila
+		Castilleja_racemosa
+		Castilleja_raupii
+		Castilleja_rhexiifolia
+		Castilleja_rubicundula
+		Castilleja_rupicola
+		Castilleja_scorzonerifolia
+		Castilleja_septentrionalis
+		Castilleja_sessiliflora
+		Castilleja_sulphurea
+		Castilleja_tenuiflora
+		Castilleja_tenuis
+		Castilleja_thompsonii
+		Castilleja_unalaschcensis
+		Castilleja_vadosa
+		Castilleja_virgata
+		Castilleja_xanthotricha
+		Castilleja_yukonis
+		Castilleja_zempoaltepetlensis
+		Centranthera_cochinchinensis
+		Chloropyron_maritimum
+		Chloropyron_molle
+		Chloropyron_palmatum
+		Chloropyron_tecopense
+		Christisonia_siamensis
+		Cistanche_armena
+		Cistanche_deserticola
+		Cistanche_phelypaea
+		Cistanche_salsa
+		Cistanche_sinensis
+		Cistanche_tubulosa
+		Cistanche_violacea
+		Conopholis_alpina
+		Conopholis_americana
+		Cordylanthus_capitatus
+		Cordylanthus_eremicus
+		Cordylanthus_kingii
+		Cordylanthus_pilosus
+		Cordylanthus_pringlei
+		Cordylanthus_ramosus
+		Cordylanthus_rigidus
+		Cordylanthus_tenuis
+		Cordylanthus_wrightii
+		Cyclocheilon_physocalyx
+		Cyclocheilon_somaliense
+		Cycnium_adonense
+		Cycnium_herzfeldianum
+		Cycnium_racemosum
+		Cycnium_tubulosum
+		Cycnium_volkensii
+		Cymbaria_mongolica
+		Dasistoma_macrophylla
+		Dicranostegia_orcuttiana
+		Diphelypaea_coccinea
+		Diphelypaea_tournefortii
+		Epifagus_virginiana
+		Escobedia_crassipes
+		Escobedia_grandiflora
+		Escobedia_laevis
+		Esterhazya_campestris
+		Euphrasia_alpina
+		Euphrasia_alsa
+		Euphrasia_anglica
+		Euphrasia_arctica
+		Euphrasia_azorica
+		Euphrasia_bella
+		Euphrasia_borealis
+		Euphrasia_borneensis
+		Euphrasia_callosa
+		Euphrasia_cambrica
+		Euphrasia_campbellae
+		Euphrasia_christii
+		Euphrasia_chrysantha
+		Euphrasia_cisalpina
+		Euphrasia_cockayniana
+		Euphrasia_collina
+		Euphrasia_confusa
+		Euphrasia_cuneata
+		Euphrasia_dinarica
+		Euphrasia_disjuncta
+		Euphrasia_disperma
+		Euphrasia_durietziana
+		Euphrasia_fedtschenkoana
+		Euphrasia_fennica
+		Euphrasia_formosissima
+		Euphrasia_foulaensis
+		Euphrasia_frigida
+		Euphrasia_glabrescens
+		Euphrasia_grandiflora
+		Euphrasia_heslop_harrisonii
+		Euphrasia_hirtella
+		Euphrasia_hookeri
+		Euphrasia_hudsoniana
+		Euphrasia_inopinata
+		Euphrasia_insignis
+		Euphrasia_kashmiriana
+		Euphrasia_kerneri
+		Euphrasia_marchesettii
+		Euphrasia_marshallii
+		Euphrasia_maximowiczii
+		Euphrasia_micrantha
+		Euphrasia_minima
+		Euphrasia_mirabilis
+		Euphrasia_mollis
+		Euphrasia_nankotaizanensis
+		Euphrasia_nemorosa
+		Euphrasia_oakesii
+		Euphrasia_officinalis
+		Euphrasia_ostenfeldii
+		Euphrasia_parviflora
+		Euphrasia_pectinata
+		Euphrasia_petiolaris
+		Euphrasia_philippinensis
+		Euphrasia_phragmostoma
+		Euphrasia_picta
+		Euphrasia_pseudokerneri
+		Euphrasia_randii
+		Euphrasia_regelii
+		Euphrasia_revoluta
+		Euphrasia_rivularis
+		Euphrasia_rostkoviana
+		Euphrasia_rotundifolia
+		Euphrasia_salisburgensis
+		Euphrasia_scabra
+		Euphrasia_scottica
+		Euphrasia_sevanensis
+		Euphrasia_spectabilis
+		Euphrasia_stricta
+		Euphrasia_subarctica
+		Euphrasia_suborbicularis
+		Euphrasia_tarokoana
+		Euphrasia_tatarica
+		Euphrasia_taurica
+		Euphrasia_tetraquetra
+		Euphrasia_transmorrisonensis
+		Euphrasia_tricuspidata
+		Euphrasia_vigursii
+		Euphrasia_wettsteiniana
+		Euphrasia_wettsteinii
+		Euphrasia_willkommii
+		Gleadovia_mupinensis
+		Graderia_fruticosa
+		Graderia_scabra
+		Harveya_alba
+		Harveya_alectroides
+		Harveya_bolusii
+		Harveya_capensis
+		Harveya_coccinea
+		Harveya_huttonii
+		Harveya_hyobanchoides
+		Harveya_leucopharynx
+		Harveya_obtusifolia
+		Harveya_pauciflora
+		Harveya_pulchra
+		Harveya_pumila
+		Harveya_purpurea
+		Harveya_scarlatina
+		Harveya_silvatica
+		Harveya_speciosa
+		Harveya_squamosa
+		Harveya_stenosiphon
+		Hedbergia_abyssinica
+		Hedbergia_decurva
+		Hedbergia_longiflora
+		Hyobanche_atropurpurea
+		Hyobanche_glabrata
+		Hyobanche_rubra
+		Hyobanche_sanguinea
+		Kopsiopsis_hookeri
+		Kopsiopsis_strobilacea
+		Lamourouxia_dasyantha
+		Lamourouxia_rhinanthifolia
+		Lamourouxia_viscosa
+		Lathraea_clandestina
+		Lathraea_japonica
+		Lathraea_squamaria
+		Leptorhabdos_parviflora
+		Leucosalpa_poissonii
+		Lindenbergia_grandiflora
+		Lindenbergia_indica
+		Lindenbergia_muraria
+		Lindenbergia_philippensis
+		Lindenbergia_siniaca
+		Lindenbergia_sokotrana
+		Macranthera_flammea
+		Mannagettaea_hummelii
+		Melampyrum_arvense
+		Melampyrum_carstiense
+		Melampyrum_cristatum
+		Melampyrum_italicum
+		Melampyrum_klebelsbergianum
+		Melampyrum_lineare
+		Melampyrum_nemorosum
+		Melampyrum_pratense
+		Melampyrum_roseum
+		Melampyrum_saxosum
+		Melampyrum_setaceum
+		Melampyrum_sylvaticum
+		Melampyrum_velebiticum
+		Melasma_calycinum
+		Melasma_physalodes
+		Melasma_rhinanthoides
+		Melasma_scabrum
+		Micrargeria_filiformis
+		Monochasma_savatieri
+		Monochasma_sheareri
+		Neobartsia_canescens
+		Neobartsia_crenata
+		Neobartsia_crenoloba
+		Neobartsia_laniflora
+		Neobartsia_laticrenata
+		Neobartsia_melampyroides
+		Neobartsia_mutica
+		Neobartsia_pedicularoides
+		Neobartsia_pyricarpa
+		Neobartsia_ramosa
+		Neobartsia_santolinifolia
+		Neobartsia_sericea
+		Neobartsia_stricta
+		Neobartsia_tenuis
+		Neobartsia_thiantha
+		Nesogenes_africanus
+		Nesogenes_dupontii
+		Nothobartsia_aspera
+		Nothobartsia_asperrima
+		Nothobartsia_spicata
+		Odontitella_virgata
+		Odontites_alshehbazianus
+		Odontites_aucheri
+		Odontites_bocconei
+		Odontites_bolligeri
+		Odontites_cebennensis
+		Odontites_corsicus
+		Odontites_cyprius
+		Odontites_discolor
+		Odontites_foliosus
+		Odontites_glutinosus
+		Odontites_hispidulus
+		Odontites_hollianus
+		Odontites_jaubertianus
+		Odontites_kaliformis
+		Odontites_lanceolatus
+		Odontites_lapiei
+		Odontites_linkii
+		Odontites_litoralis
+		Odontites_longiflorus
+		Odontites_maroccanus
+		Odontites_powellii
+		Odontites_recordonii
+		Odontites_rigidifolius
+		Odontites_sillettii
+		Odontites_triboutii
+		Odontites_vernus
+		Odontites_violaceus
+		Odontites_vulcanicus
+		Odontites_vulgaris
+		Omphalotrix_longipes
+		Orobanche_alsatica
+		Orobanche_amethystea
+		Orobanche_anatolica
+		Orobanche_artemisiae_campestris
+		Orobanche_austrohispanica
+		Orobanche_ballotae
+		Orobanche_bartlingii
+		Orobanche_boninsimae
+		Orobanche_caryophyllacea
+		Orobanche_coerulescens
+		Orobanche_colorata
+		Orobanche_crenata
+		Orobanche_crinita
+		Orobanche_densiflora
+		Orobanche_elatior
+		Orobanche_flava
+		Orobanche_foetida
+		Orobanche_gracilis
+		Orobanche_grenieri
+		Orobanche_grossheimii
+		Orobanche_haenseleri
+		Orobanche_hederae
+		Orobanche_inulae
+		Orobanche_kochii
+		Orobanche_krylowii
+		Orobanche_laxissima
+		Orobanche_leptantha
+		Orobanche_lucorum
+		Orobanche_lutea
+		Orobanche_lycoctoni
+		Orobanche_mayeri
+		Orobanche_minor
+		Orobanche_mlokosiewiczii
+		Orobanche_owerinii
+		Orobanche_ozanonis
+		Orobanche_pallidiflora
+		Orobanche_pancicii
+		Orobanche_picridis
+		Orobanche_pubescens
+		Orobanche_raddeana
+		Orobanche_rapum_genistae
+		Orobanche_reticulata
+		Orobanche_rigens
+		Orobanche_ritro
+		Orobanche_salviae
+		Orobanche_santolinae
+		Orobanche_sintenisii
+		Orobanche_teucrii
+		Orobanche_transcaucasica
+		Orthocarpus_barbatus
+		Orthocarpus_bracteosus
+		Orthocarpus_cuspidatus
+		Orthocarpus_imbricatus
+		Orthocarpus_luteus
+		Orthocarpus_pachystachyus
+		Orthocarpus_purpureoalbus
+		Orthocarpus_tenuifolius
+		Orthocarpus_tolmiei
+		Parentucellia_latifolia
+		Pedicularis_abrotanifolia
+		Pedicularis_achilleifolia
+		Pedicularis_adunca
+		Pedicularis_alaschanica
+		Pedicularis_alatauica
+		Pedicularis_albertii
+		Pedicularis_albida
+		Pedicularis_albolabiata
+		Pedicularis_aloensis
+		Pedicularis_alopecuroides
+		Pedicularis_alopecuros
+		Pedicularis_altaica
+		Pedicularis_amoena
+		Pedicularis_amoeniflora
+		Pedicularis_amplituba
+		Pedicularis_anas
+		Pedicularis_angustifolia
+		Pedicularis_angustilabris
+		Pedicularis_angustiloba
+		Pedicularis_anserantha
+		Pedicularis_anthemifolia
+		Pedicularis_arguteserrata
+		Pedicularis_armata
+		Pedicularis_armena
+		Pedicularis_artselaeri
+		Pedicularis_ascendens
+		Pedicularis_aspleniifolia
+		Pedicularis_atropurpurea
+		Pedicularis_attollens
+		Pedicularis_atuntsiensis
+		Pedicularis_aurata
+		Pedicularis_axillaris
+		Pedicularis_batangensis
+		Pedicularis_bella
+		Pedicularis_bidentata
+		Pedicularis_bietii
+		Pedicularis_bifida
+		Pedicularis_brachystachys
+		Pedicularis_bracteosa
+		Pedicularis_brevilabris
+		Pedicularis_canadensis
+		Pedicularis_capitata
+		Pedicularis_caucasica
+		Pedicularis_centranthera
+		Pedicularis_cephalantha
+		Pedicularis_cernua
+		Pedicularis_chamissonis
+		Pedicularis_cheilanthifolia
+		Pedicularis_chenocephala
+		Pedicularis_chinensis
+		Pedicularis_cinerascens
+		Pedicularis_clarkei
+		Pedicularis_comosa
+		Pedicularis_compacta
+		Pedicularis_comptoniifolia
+		Pedicularis_confertiflora
+		Pedicularis_confluens
+		Pedicularis_contorta
+		Pedicularis_cornigera
+		Pedicularis_coronata
+		Pedicularis_corydaloides
+		Pedicularis_cranolopha
+		Pedicularis_crassirostris
+		Pedicularis_crenata
+		Pedicularis_crenularis
+		Pedicularis_crenulata
+		Pedicularis_cristatella
+		Pedicularis_croizatiana
+		Pedicularis_cryptantha
+		Pedicularis_cyathophylla
+		Pedicularis_cyathophylloides
+		Pedicularis_cyclorhyncha
+		Pedicularis_cymbalaria
+		Pedicularis_cystopteridifolia
+		Pedicularis_dasyantha
+		Pedicularis_dasystachys
+		Pedicularis_daucifolia
+		Pedicularis_davidii
+		Pedicularis_debilis
+		Pedicularis_decora
+		Pedicularis_decorissima
+		Pedicularis_deltoidea
+		Pedicularis_densiflora
+		Pedicularis_densispica
+		Pedicularis_dichotoma
+		Pedicularis_diffusa
+		Pedicularis_dissectifolia
+		Pedicularis_dolichantha
+		Pedicularis_dolichocymba
+		Pedicularis_dolichoglossa
+		Pedicularis_dolichorrhiza
+		Pedicularis_dubia
+		Pedicularis_duclouxii
+		Pedicularis_dudleyi
+		Pedicularis_dulongensis
+		Pedicularis_dunniana
+		Pedicularis_elata
+		Pedicularis_elongata
+		Pedicularis_elwesii
+		Pedicularis_eriantha
+		Pedicularis_eriophora
+		Pedicularis_exaltata
+		Pedicularis_fargesii
+		Pedicularis_fengii
+		Pedicularis_fetisowii
+		Pedicularis_filicifolia
+		Pedicularis_filicula
+		Pedicularis_fissa
+		Pedicularis_flaccida
+		Pedicularis_flammea
+		Pedicularis_flava
+		Pedicularis_fletcherii
+		Pedicularis_flexosoides
+		Pedicularis_flexuosa
+		Pedicularis_floribunda
+		Pedicularis_foliosa
+		Pedicularis_fragarioides
+		Pedicularis_franchetiana
+		Pedicularis_furbishiae
+		Pedicularis_furfuracea
+		Pedicularis_galeata
+		Pedicularis_gammieana
+		Pedicularis_geosiphon
+		Pedicularis_glabrescens
+		Pedicularis_globifera
+		Pedicularis_gloriosa
+		Pedicularis_gongshanensis
+		Pedicularis_gracilicaulis
+		Pedicularis_gracilis
+		Pedicularis_gracilituba
+		Pedicularis_grandiflora
+		Pedicularis_grayi
+		Pedicularis_groenlandica
+		Pedicularis_gruina
+		Pedicularis_gyirongensis
+		Pedicularis_gyroflexa
+		Pedicularis_gyrorhyncha
+		Pedicularis_hacquetii
+		Pedicularis_hemsleyana
+		Pedicularis_henryi
+		Pedicularis_hirsuta
+		Pedicularis_hoffmeisteri
+		Pedicularis_howellii
+		Pedicularis_inaequilobata
+		Pedicularis_incarnata
+		Pedicularis_inconspicua
+		Pedicularis_ingens
+		Pedicularis_insignis
+		Pedicularis_integrifolia
+		Pedicularis_interior
+		Pedicularis_interrupta
+		Pedicularis_ishidoyana
+		Pedicularis_iwatensis
+		Pedicularis_julica
+		Pedicularis_kanei
+		Pedicularis_kangtingensis
+		Pedicularis_kansuensis
+		Pedicularis_karatavica
+		Pedicularis_keiskei
+		Pedicularis_kerneri
+		Pedicularis_kiangsiensis
+		Pedicularis_korolkowii
+		Pedicularis_krylovii
+		Pedicularis_kusnetzovii
+		Pedicularis_labordei
+		Pedicularis_labradorica
+		Pedicularis_lachnoglossa
+		Pedicularis_lanata
+		Pedicularis_lanceolata
+		Pedicularis_langsdorffii
+		Pedicularis_lapponica
+		Pedicularis_lasiophrys
+		Pedicularis_lasiostachys
+		Pedicularis_latituba
+		Pedicularis_laxiflora
+		Pedicularis_lecomtei
+		Pedicularis_legendrei
+		Pedicularis_leptosiphon
+		Pedicularis_likiangensis
+		Pedicularis_lineata
+		Pedicularis_longicaulis
+		Pedicularis_longiflora
+		Pedicularis_longipes
+		Pedicularis_lophotricha
+		Pedicularis_ludwigii
+		Pedicularis_lutescens
+		Pedicularis_lyrata
+		Pedicularis_macilenta
+		Pedicularis_macrochila
+		Pedicularis_macrorhyncha
+		Pedicularis_macrosiphon
+		Pedicularis_mandshurica
+		Pedicularis_mariae
+		Pedicularis_maximowiczii
+		Pedicularis_maxonii
+		Pedicularis_mayana
+		Pedicularis_megalantha
+		Pedicularis_megalochila
+		Pedicularis_membranacea
+		Pedicularis_merrilliana
+		Pedicularis_metaszetschuanica
+		Pedicularis_micrantha
+		Pedicularis_microchila
+		Pedicularis_mixta
+		Pedicularis_mollis
+		Pedicularis_moschata
+		Pedicularis_moupinensis
+		Pedicularis_muscicola
+		Pedicularis_muscoides
+		Pedicularis_mussotii
+		Pedicularis_mychophila
+		Pedicularis_myriophylla
+		Pedicularis_nasturtiifolia
+		Pedicularis_nasuta
+		Pedicularis_nigra
+		Pedicularis_nipponica
+		Pedicularis_nodosa
+		Pedicularis_obliquigaleata
+		Pedicularis_ochiaiana
+		Pedicularis_oederi
+		Pedicularis_oliveriana
+		Pedicularis_omiiana
+		Pedicularis_ornithorhyncha
+		Pedicularis_orthocoryne
+		Pedicularis_oxycarpa
+		Pedicularis_oxyrhyncha
+		Pedicularis_pacifica
+		Pedicularis_paiana
+		Pedicularis_pallasii
+		Pedicularis_palustris
+		Pedicularis_pantlingii
+		Pedicularis_parryi
+		Pedicularis_parviflora
+		Pedicularis_pectinatiformis
+		Pedicularis_peduncularis
+		Pedicularis_pennellii
+		Pedicularis_pentagona
+		Pedicularis_petelotii
+		Pedicularis_pheulpinii
+		Pedicularis_physocalyx
+		Pedicularis_pilostachya
+		Pedicularis_pinetorum
+		Pedicularis_plicata
+		Pedicularis_polyodonta
+		Pedicularis_pontica
+		Pedicularis_popovii
+		Pedicularis_praeruptorum
+		Pedicularis_proboscidea
+		Pedicularis_procera
+		Pedicularis_przewalskii
+		Pedicularis_pseudomelampyriflora
+		Pedicularis_pseudoversicolor
+		Pedicularis_pubiflora
+		Pedicularis_pulchella
+		Pedicularis_pulchra
+		Pedicularis_punctata
+		Pedicularis_pycnantha
+		Pedicularis_pygmaea
+		Pedicularis_pyrenaica
+		Pedicularis_qinghaiensis
+		Pedicularis_racemosa
+		Pedicularis_rainierensis
+		Pedicularis_ramosissima
+		Pedicularis_recurva
+		Pedicularis_recutita
+		Pedicularis_refracta
+		Pedicularis_remotiloba
+		Pedicularis_resupinata
+		Pedicularis_rex
+		Pedicularis_rhinanthoides
+		Pedicularis_rhizomatosa
+		Pedicularis_rhodotricha
+		Pedicularis_rhynchodonta
+		Pedicularis_rhynchotricha
+		Pedicularis_rigida
+		Pedicularis_rizhaoensis
+		Pedicularis_rosea
+		Pedicularis_roseialba
+		Pedicularis_rostratocapitata
+		Pedicularis_roylei
+		Pedicularis_rubens
+		Pedicularis_rudis
+		Pedicularis_rupicola
+		Pedicularis_salicifolia
+		Pedicularis_salviiflora
+		Pedicularis_sceptrum_carolinum
+		Pedicularis_schistostegia
+		Pedicularis_schizorrhyncha
+		Pedicularis_schugnana
+		Pedicularis_scolopax
+		Pedicularis_scopulorum
+		Pedicularis_scullyana
+		Pedicularis_semenowii
+		Pedicularis_semibarbata
+		Pedicularis_semitorta
+		Pedicularis_sherriffii
+		Pedicularis_sibirica
+		Pedicularis_sibthorpii
+		Pedicularis_sigmoidea
+		Pedicularis_sikangensis
+		Pedicularis_sima
+		Pedicularis_siphonantha
+		Pedicularis_smithiana
+		Pedicularis_sorbifolia
+		Pedicularis_souliei
+		Pedicularis_sphaerantha
+		Pedicularis_spicata
+		Pedicularis_steiningeri
+		Pedicularis_stenocorys
+		Pedicularis_stewardii
+		Pedicularis_streptorhyncha
+		Pedicularis_striata
+		Pedicularis_strobilacea
+		Pedicularis_stylosa
+		Pedicularis_sudetica
+		Pedicularis_superba
+		Pedicularis_sylvatica
+		Pedicularis_szetschuanica
+		Pedicularis_tachanensis
+		Pedicularis_tahaiensis
+		Pedicularis_talassica
+		Pedicularis_tantalorhyncha
+		Pedicularis_tatarinowii
+		Pedicularis_tatsienensis
+		Pedicularis_tayloriana
+		Pedicularis_tenacifolia
+		Pedicularis_tenuisecta
+		Pedicularis_ternata
+		Pedicularis_thamnophila
+		Pedicularis_tianschanica
+		Pedicularis_tibetica
+		Pedicularis_tomentosa
+		Pedicularis_tongolensis
+		Pedicularis_torta
+		Pedicularis_triangularidens
+		Pedicularis_trichocymba
+		Pedicularis_trichoglossa
+		Pedicularis_trichomata
+		Pedicularis_tricolor
+		Pedicularis_tristis
+		Pedicularis_tsangchanensis
+		Pedicularis_tsarungensis
+		Pedicularis_tsekouensis
+		Pedicularis_tuberosa
+		Pedicularis_uliginosa
+		Pedicularis_umbelliformis
+		Pedicularis_uralensis
+		Pedicularis_urceolata
+		Pedicularis_vagans
+		Pedicularis_variegata
+		Pedicularis_venusta
+		Pedicularis_verbenifolia
+		Pedicularis_veronicifolia
+		Pedicularis_verticillata
+		Pedicularis_vialii
+		Pedicularis_villosa
+		Pedicularis_violascens
+		Pedicularis_waldheimii
+		Pedicularis_wanghongiae
+		Pedicularis_wilhelmsiana
+		Pedicularis_xiangchengensis
+		Pedicularis_yezoensis
+		Pedicularis_yui
+		Pedicularis_yunnanensis
+		Phacellanthus_tubiflorus
+		Phelipanche_aegyptiaca
+		Phelipanche_arenaria
+		Phelipanche_bungeana
+		Phelipanche_caesia
+		Phelipanche_coelestis
+		Phelipanche_georgii_reuteri
+		Phelipanche_gratiosa
+		Phelipanche_hirtiflora
+		Phelipanche_inexspectata
+		Phelipanche_lavandulacea
+		Phelipanche_mutelii
+		Phelipanche_nana
+		Phelipanche_nowackiana
+		Phelipanche_oxyloba
+		Phelipanche_portoilicitana
+		Phelipanche_pulchella
+		Phelipanche_purpurea
+		Phelipanche_ramosa
+		Phelipanche_rosmarina
+		Phelipanche_tunetana
+		Phtheirospermum_japonicum
+		Pseudobartsia_yunnanensis
+		Pterygiella_cylindrica
+		Pterygiella_duclouxii
+		Pterygiella_muliensis
+		Pterygiella_nigrescens
+		Pterygiella_parishii
+		Pterygiella_tenuisecta
+		Radamaea_montana
+		Rehmannia_angulata
+		Rehmannia_chingii
+		Rehmannia_chrysantha
+		Rehmannia_elata
+		Rehmannia_glutinosa
+		Rehmannia_henryi
+		Rehmannia_japonica
+		Rehmannia_piasezkii
+		Rehmannia_solanifolia
+		Rhinanthus_angustifolius
+		Rhinanthus_aristatus
+		Rhinanthus_crista_galli
+		Rhinanthus_cristatus
+		Rhinanthus_glacialis
+		Rhinanthus_kyrollae
+		Rhinanthus_mediterraneus
+		Rhinanthus_rumelicus
+		Rhinanthus_serotinus
+		Rhynchocorys_elephas
+		Rhynchocorys_kurdica
+		Rhynchocorys_maxima
+		Rhynchocorys_odontophylla
+		Rhynchocorys_orientalis
+		Rhynchocorys_stricta
+		Schwalbea_americana
+		Seymeria_cassioides
+		Seymeria_laciniata
+		Seymeria_pectinata
+		Sieversandreas_madagascarianus
+		Siphonostegia_chinensis
+		Siphonostegia_laeta
+		Siphonostegia_syriaca
+		Sopubia_cana
+		Sopubia_karaguensis
+		Sopubia_lanata
+		Sopubia_lemuriana
+		Sopubia_mannii
+		Sopubia_ramosa
+		Sopubia_simplex
+		Sopubia_triphylla
+		Striga_asiatica
+		Striga_bilabiata
+		Striga_elegans
+		Striga_forbesii
+		Striga_gesnerioides
+		Striga_hermonthica
+		Striga_passargei
+		Tozzia_alpina
+		Triaenophora_rupestris
+		Triaenophora_shennongjiaensis
+		Triphysaria_eriantha
+		Triphysaria_floribunda
+		Triphysaria_micrantha
+		Triphysaria_pusilla
+		Triphysaria_versicolor
+		Xizangia_bartschioides
+		Xylocalyx_aculeolatus
+		Xylocalyx_asper
+		Xylocalyx_carterae
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Aeginetia_indica,
+		2	Agalinis_acuta,
+		3	Agalinis_aphylla,
+		4	Agalinis_aspera,
+		5	Agalinis_auriculata,
+		6	Agalinis_calycina,
+		7	Agalinis_decemloba,
+		8	Agalinis_divaricata,
+		9	Agalinis_edwardsiana,
+		10	Agalinis_fasciculata,
+		11	Agalinis_filicaulis,
+		12	Agalinis_gattingeri,
+		13	Agalinis_georgiana,
+		14	Agalinis_harperi,
+		15	Agalinis_heterophylla,
+		16	Agalinis_homalantha,
+		17	Agalinis_laxa,
+		18	Agalinis_linifolia,
+		19	Agalinis_maritima,
+		20	Agalinis_navasotensis,
+		21	Agalinis_neoscotica,
+		22	Agalinis_obtusifolia,
+		23	Agalinis_oligophylla,
+		24	Agalinis_paupercula,
+		25	Agalinis_plukenetii,
+		26	Agalinis_pulchella,
+		27	Agalinis_purpurea,
+		28	Agalinis_setacea,
+		29	Agalinis_skinneriana,
+		30	Agalinis_strictifolia,
+		31	Agalinis_tenella,
+		32	Agalinis_tenuifolia,
+		33	Agalinis_viridis,
+		34	Alectra_aspera,
+		35	Alectra_aurantiaca,
+		36	Alectra_capensis,
+		37	Alectra_fruticosa,
+		38	Alectra_humbertii,
+		39	Alectra_orobanchoides,
+		40	Alectra_rigida,
+		41	Alectra_sessiliflora,
+		42	Alectra_stricta,
+		43	Alectra_vogelii,
+		44	Aphyllon_arenosum,
+		45	Aphyllon_arizonicum,
+		46	Aphyllon_californicum,
+		47	Aphyllon_chilense,
+		48	Aphyllon_cooperi,
+		49	Aphyllon_corymbosum,
+		50	Aphyllon_dugesii,
+		51	Aphyllon_fasciculatum,
+		52	Aphyllon_ludovicianum,
+		53	Aphyllon_multiflorum,
+		54	Aphyllon_parishii,
+		55	Aphyllon_pinorum,
+		56	Aphyllon_riparium,
+		57	Aphyllon_tacnaense,
+		58	Aphyllon_tarapacanum,
+		59	Aphyllon_tuberosum,
+		60	Aphyllon_uniflorum,
+		61	Aphyllon_validum,
+		62	Aphyllon_vallicola,
+		63	Asepalum_erianthemum,
+		64	Aureolaria_flava,
+		65	Aureolaria_laevigata,
+		66	Aureolaria_pectinata,
+		67	Aureolaria_pedicularia,
+		68	Aureolaria_virginica,
+		69	Bardotia_ankaranensis,
+		70	Bartsia_alpina,
+		71	Bartsiella_rameauana,
+		72	Bellardia_trixago,
+		73	Bellardia_viscosa,
+		74	Boschniakia_himalaica,
+		75	Boschniakia_rossica,
+		76	Boulardia_latisquama,
+		77	Brachystigma_wrightii,
+		78	Brandisia_hancei,
+		79	Brandisia_racemosa,
+		80	Brandisia_swinglei,
+		81	Buchnera_americana,
+		82	Buchnera_cruciata,
+		83	Buchnera_cryptocephala,
+		84	Buchnera_floridana,
+		85	Buchnera_foliosa,
+		86	Buchnera_glabrata,
+		87	Buchnera_hispida,
+		88	Buchnera_pusilla,
+		89	Buchnera_welwitschii,
+		90	Bungea_trifida,
+		91	Castilleja_affinis,
+		92	Castilleja_alpicola,
+		93	Castilleja_ambigua,
+		94	Castilleja_angustifolia,
+		95	Castilleja_applegatei,
+		96	Castilleja_arachnoidea,
+		97	Castilleja_arvensis,
+		98	Castilleja_attenuata,
+		99	Castilleja_auriculata,
+		100	Castilleja_beldingii,
+		101	Castilleja_brevistyla,
+		102	Castilleja_campestris,
+		103	Castilleja_caudata,
+		104	Castilleja_cerroana,
+		105	Castilleja_cervina,
+		106	Castilleja_chromosa,
+		107	Castilleja_coccinea,
+		108	Castilleja_conzattii,
+		109	Castilleja_crista_galli,
+		110	Castilleja_cusickii,
+		111	Castilleja_densiflora,
+		112	Castilleja_elata,
+		113	Castilleja_elegans,
+		114	Castilleja_elmeri,
+		115	Castilleja_exilis,
+		116	Castilleja_exserta,
+		117	Castilleja_fissifolia,
+		118	Castilleja_hispida,
+		119	Castilleja_hyperborea,
+		120	Castilleja_indivisa,
+		121	Castilleja_integra,
+		122	Castilleja_integrifolia,
+		123	Castilleja_lacera,
+		124	Castilleja_laciniata,
+		125	Castilleja_lasiorhyncha,
+		126	Castilleja_lemmonii,
+		127	Castilleja_levisecta,
+		128	Castilleja_linariifolia,
+		129	Castilleja_lineariloba,
+		130	Castilleja_lutescens,
+		131	Castilleja_miniata,
+		132	Castilleja_minor,
+		133	Castilleja_nana,
+		134	Castilleja_nivibractea,
+		135	Castilleja_nubigena,
+		136	Castilleja_occidentalis,
+		137	Castilleja_ophiocephala,
+		138	Castilleja_oresbia,
+		139	Castilleja_pallida,
+		140	Castilleja_parviflora,
+		141	Castilleja_peckiana,
+		142	Castilleja_peirsonii,
+		143	Castilleja_peruviana,
+		144	Castilleja_pilosa,
+		145	Castilleja_plagiotoma,
+		146	Castilleja_praeterita,
+		147	Castilleja_profunda,
+		148	Castilleja_pruinosa,
+		149	Castilleja_pumila,
+		150	Castilleja_racemosa,
+		151	Castilleja_raupii,
+		152	Castilleja_rhexiifolia,
+		153	Castilleja_rubicundula,
+		154	Castilleja_rupicola,
+		155	Castilleja_scorzonerifolia,
+		156	Castilleja_septentrionalis,
+		157	Castilleja_sessiliflora,
+		158	Castilleja_sulphurea,
+		159	Castilleja_tenuiflora,
+		160	Castilleja_tenuis,
+		161	Castilleja_thompsonii,
+		162	Castilleja_unalaschcensis,
+		163	Castilleja_vadosa,
+		164	Castilleja_virgata,
+		165	Castilleja_xanthotricha,
+		166	Castilleja_yukonis,
+		167	Castilleja_zempoaltepetlensis,
+		168	Centranthera_cochinchinensis,
+		169	Chloropyron_maritimum,
+		170	Chloropyron_molle,
+		171	Chloropyron_palmatum,
+		172	Chloropyron_tecopense,
+		173	Christisonia_siamensis,
+		174	Cistanche_armena,
+		175	Cistanche_deserticola,
+		176	Cistanche_phelypaea,
+		177	Cistanche_salsa,
+		178	Cistanche_sinensis,
+		179	Cistanche_tubulosa,
+		180	Cistanche_violacea,
+		181	Conopholis_alpina,
+		182	Conopholis_americana,
+		183	Cordylanthus_capitatus,
+		184	Cordylanthus_eremicus,
+		185	Cordylanthus_kingii,
+		186	Cordylanthus_pilosus,
+		187	Cordylanthus_pringlei,
+		188	Cordylanthus_ramosus,
+		189	Cordylanthus_rigidus,
+		190	Cordylanthus_tenuis,
+		191	Cordylanthus_wrightii,
+		192	Cyclocheilon_physocalyx,
+		193	Cyclocheilon_somaliense,
+		194	Cycnium_adonense,
+		195	Cycnium_herzfeldianum,
+		196	Cycnium_racemosum,
+		197	Cycnium_tubulosum,
+		198	Cycnium_volkensii,
+		199	Cymbaria_mongolica,
+		200	Dasistoma_macrophylla,
+		201	Dicranostegia_orcuttiana,
+		202	Diphelypaea_coccinea,
+		203	Diphelypaea_tournefortii,
+		204	Epifagus_virginiana,
+		205	Escobedia_crassipes,
+		206	Escobedia_grandiflora,
+		207	Escobedia_laevis,
+		208	Esterhazya_campestris,
+		209	Euphrasia_alpina,
+		210	Euphrasia_alsa,
+		211	Euphrasia_anglica,
+		212	Euphrasia_arctica,
+		213	Euphrasia_azorica,
+		214	Euphrasia_bella,
+		215	Euphrasia_borealis,
+		216	Euphrasia_borneensis,
+		217	Euphrasia_callosa,
+		218	Euphrasia_cambrica,
+		219	Euphrasia_campbellae,
+		220	Euphrasia_christii,
+		221	Euphrasia_chrysantha,
+		222	Euphrasia_cisalpina,
+		223	Euphrasia_cockayniana,
+		224	Euphrasia_collina,
+		225	Euphrasia_confusa,
+		226	Euphrasia_cuneata,
+		227	Euphrasia_dinarica,
+		228	Euphrasia_disjuncta,
+		229	Euphrasia_disperma,
+		230	Euphrasia_durietziana,
+		231	Euphrasia_fedtschenkoana,
+		232	Euphrasia_fennica,
+		233	Euphrasia_formosissima,
+		234	Euphrasia_foulaensis,
+		235	Euphrasia_frigida,
+		236	Euphrasia_glabrescens,
+		237	Euphrasia_grandiflora,
+		238	Euphrasia_heslop_harrisonii,
+		239	Euphrasia_hirtella,
+		240	Euphrasia_hookeri,
+		241	Euphrasia_hudsoniana,
+		242	Euphrasia_inopinata,
+		243	Euphrasia_insignis,
+		244	Euphrasia_kashmiriana,
+		245	Euphrasia_kerneri,
+		246	Euphrasia_marchesettii,
+		247	Euphrasia_marshallii,
+		248	Euphrasia_maximowiczii,
+		249	Euphrasia_micrantha,
+		250	Euphrasia_minima,
+		251	Euphrasia_mirabilis,
+		252	Euphrasia_mollis,
+		253	Euphrasia_nankotaizanensis,
+		254	Euphrasia_nemorosa,
+		255	Euphrasia_oakesii,
+		256	Euphrasia_officinalis,
+		257	Euphrasia_ostenfeldii,
+		258	Euphrasia_parviflora,
+		259	Euphrasia_pectinata,
+		260	Euphrasia_petiolaris,
+		261	Euphrasia_philippinensis,
+		262	Euphrasia_phragmostoma,
+		263	Euphrasia_picta,
+		264	Euphrasia_pseudokerneri,
+		265	Euphrasia_randii,
+		266	Euphrasia_regelii,
+		267	Euphrasia_revoluta,
+		268	Euphrasia_rivularis,
+		269	Euphrasia_rostkoviana,
+		270	Euphrasia_rotundifolia,
+		271	Euphrasia_salisburgensis,
+		272	Euphrasia_scabra,
+		273	Euphrasia_scottica,
+		274	Euphrasia_sevanensis,
+		275	Euphrasia_spectabilis,
+		276	Euphrasia_stricta,
+		277	Euphrasia_subarctica,
+		278	Euphrasia_suborbicularis,
+		279	Euphrasia_tarokoana,
+		280	Euphrasia_tatarica,
+		281	Euphrasia_taurica,
+		282	Euphrasia_tetraquetra,
+		283	Euphrasia_transmorrisonensis,
+		284	Euphrasia_tricuspidata,
+		285	Euphrasia_vigursii,
+		286	Euphrasia_wettsteiniana,
+		287	Euphrasia_wettsteinii,
+		288	Euphrasia_willkommii,
+		289	Gleadovia_mupinensis,
+		290	Graderia_fruticosa,
+		291	Graderia_scabra,
+		292	Harveya_alba,
+		293	Harveya_alectroides,
+		294	Harveya_bolusii,
+		295	Harveya_capensis,
+		296	Harveya_coccinea,
+		297	Harveya_huttonii,
+		298	Harveya_hyobanchoides,
+		299	Harveya_leucopharynx,
+		300	Harveya_obtusifolia,
+		301	Harveya_pauciflora,
+		302	Harveya_pulchra,
+		303	Harveya_pumila,
+		304	Harveya_purpurea,
+		305	Harveya_scarlatina,
+		306	Harveya_silvatica,
+		307	Harveya_speciosa,
+		308	Harveya_squamosa,
+		309	Harveya_stenosiphon,
+		310	Hedbergia_abyssinica,
+		311	Hedbergia_decurva,
+		312	Hedbergia_longiflora,
+		313	Hyobanche_atropurpurea,
+		314	Hyobanche_glabrata,
+		315	Hyobanche_rubra,
+		316	Hyobanche_sanguinea,
+		317	Kopsiopsis_hookeri,
+		318	Kopsiopsis_strobilacea,
+		319	Lamourouxia_dasyantha,
+		320	Lamourouxia_rhinanthifolia,
+		321	Lamourouxia_viscosa,
+		322	Lathraea_clandestina,
+		323	Lathraea_japonica,
+		324	Lathraea_squamaria,
+		325	Leptorhabdos_parviflora,
+		326	Leucosalpa_poissonii,
+		327	Lindenbergia_grandiflora,
+		328	Lindenbergia_indica,
+		329	Lindenbergia_muraria,
+		330	Lindenbergia_philippensis,
+		331	Lindenbergia_siniaca,
+		332	Lindenbergia_sokotrana,
+		333	Macranthera_flammea,
+		334	Mannagettaea_hummelii,
+		335	Melampyrum_arvense,
+		336	Melampyrum_carstiense,
+		337	Melampyrum_cristatum,
+		338	Melampyrum_italicum,
+		339	Melampyrum_klebelsbergianum,
+		340	Melampyrum_lineare,
+		341	Melampyrum_nemorosum,
+		342	Melampyrum_pratense,
+		343	Melampyrum_roseum,
+		344	Melampyrum_saxosum,
+		345	Melampyrum_setaceum,
+		346	Melampyrum_sylvaticum,
+		347	Melampyrum_velebiticum,
+		348	Melasma_calycinum,
+		349	Melasma_physalodes,
+		350	Melasma_rhinanthoides,
+		351	Melasma_scabrum,
+		352	Micrargeria_filiformis,
+		353	Monochasma_savatieri,
+		354	Monochasma_sheareri,
+		355	Neobartsia_canescens,
+		356	Neobartsia_crenata,
+		357	Neobartsia_crenoloba,
+		358	Neobartsia_laniflora,
+		359	Neobartsia_laticrenata,
+		360	Neobartsia_melampyroides,
+		361	Neobartsia_mutica,
+		362	Neobartsia_pedicularoides,
+		363	Neobartsia_pyricarpa,
+		364	Neobartsia_ramosa,
+		365	Neobartsia_santolinifolia,
+		366	Neobartsia_sericea,
+		367	Neobartsia_stricta,
+		368	Neobartsia_tenuis,
+		369	Neobartsia_thiantha,
+		370	Nesogenes_africanus,
+		371	Nesogenes_dupontii,
+		372	Nothobartsia_aspera,
+		373	Nothobartsia_asperrima,
+		374	Nothobartsia_spicata,
+		375	Odontitella_virgata,
+		376	Odontites_alshehbazianus,
+		377	Odontites_aucheri,
+		378	Odontites_bocconei,
+		379	Odontites_bolligeri,
+		380	Odontites_cebennensis,
+		381	Odontites_corsicus,
+		382	Odontites_cyprius,
+		383	Odontites_discolor,
+		384	Odontites_foliosus,
+		385	Odontites_glutinosus,
+		386	Odontites_hispidulus,
+		387	Odontites_hollianus,
+		388	Odontites_jaubertianus,
+		389	Odontites_kaliformis,
+		390	Odontites_lanceolatus,
+		391	Odontites_lapiei,
+		392	Odontites_linkii,
+		393	Odontites_litoralis,
+		394	Odontites_longiflorus,
+		395	Odontites_maroccanus,
+		396	Odontites_powellii,
+		397	Odontites_recordonii,
+		398	Odontites_rigidifolius,
+		399	Odontites_sillettii,
+		400	Odontites_triboutii,
+		401	Odontites_vernus,
+		402	Odontites_violaceus,
+		403	Odontites_vulcanicus,
+		404	Odontites_vulgaris,
+		405	Omphalotrix_longipes,
+		406	Orobanche_alsatica,
+		407	Orobanche_amethystea,
+		408	Orobanche_anatolica,
+		409	Orobanche_artemisiae_campestris,
+		410	Orobanche_austrohispanica,
+		411	Orobanche_ballotae,
+		412	Orobanche_bartlingii,
+		413	Orobanche_boninsimae,
+		414	Orobanche_caryophyllacea,
+		415	Orobanche_coerulescens,
+		416	Orobanche_colorata,
+		417	Orobanche_crenata,
+		418	Orobanche_crinita,
+		419	Orobanche_densiflora,
+		420	Orobanche_elatior,
+		421	Orobanche_flava,
+		422	Orobanche_foetida,
+		423	Orobanche_gracilis,
+		424	Orobanche_grenieri,
+		425	Orobanche_grossheimii,
+		426	Orobanche_haenseleri,
+		427	Orobanche_hederae,
+		428	Orobanche_inulae,
+		429	Orobanche_kochii,
+		430	Orobanche_krylowii,
+		431	Orobanche_laxissima,
+		432	Orobanche_leptantha,
+		433	Orobanche_lucorum,
+		434	Orobanche_lutea,
+		435	Orobanche_lycoctoni,
+		436	Orobanche_mayeri,
+		437	Orobanche_minor,
+		438	Orobanche_mlokosiewiczii,
+		439	Orobanche_owerinii,
+		440	Orobanche_ozanonis,
+		441	Orobanche_pallidiflora,
+		442	Orobanche_pancicii,
+		443	Orobanche_picridis,
+		444	Orobanche_pubescens,
+		445	Orobanche_raddeana,
+		446	Orobanche_rapum_genistae,
+		447	Orobanche_reticulata,
+		448	Orobanche_rigens,
+		449	Orobanche_ritro,
+		450	Orobanche_salviae,
+		451	Orobanche_santolinae,
+		452	Orobanche_sintenisii,
+		453	Orobanche_teucrii,
+		454	Orobanche_transcaucasica,
+		455	Orthocarpus_barbatus,
+		456	Orthocarpus_bracteosus,
+		457	Orthocarpus_cuspidatus,
+		458	Orthocarpus_imbricatus,
+		459	Orthocarpus_luteus,
+		460	Orthocarpus_pachystachyus,
+		461	Orthocarpus_purpureoalbus,
+		462	Orthocarpus_tenuifolius,
+		463	Orthocarpus_tolmiei,
+		464	Parentucellia_latifolia,
+		465	Pedicularis_abrotanifolia,
+		466	Pedicularis_achilleifolia,
+		467	Pedicularis_adunca,
+		468	Pedicularis_alaschanica,
+		469	Pedicularis_alatauica,
+		470	Pedicularis_albertii,
+		471	Pedicularis_albida,
+		472	Pedicularis_albolabiata,
+		473	Pedicularis_aloensis,
+		474	Pedicularis_alopecuroides,
+		475	Pedicularis_alopecuros,
+		476	Pedicularis_altaica,
+		477	Pedicularis_amoena,
+		478	Pedicularis_amoeniflora,
+		479	Pedicularis_amplituba,
+		480	Pedicularis_anas,
+		481	Pedicularis_angustifolia,
+		482	Pedicularis_angustilabris,
+		483	Pedicularis_angustiloba,
+		484	Pedicularis_anserantha,
+		485	Pedicularis_anthemifolia,
+		486	Pedicularis_arguteserrata,
+		487	Pedicularis_armata,
+		488	Pedicularis_armena,
+		489	Pedicularis_artselaeri,
+		490	Pedicularis_ascendens,
+		491	Pedicularis_aspleniifolia,
+		492	Pedicularis_atropurpurea,
+		493	Pedicularis_attollens,
+		494	Pedicularis_atuntsiensis,
+		495	Pedicularis_aurata,
+		496	Pedicularis_axillaris,
+		497	Pedicularis_batangensis,
+		498	Pedicularis_bella,
+		499	Pedicularis_bidentata,
+		500	Pedicularis_bietii,
+		501	Pedicularis_bifida,
+		502	Pedicularis_brachystachys,
+		503	Pedicularis_bracteosa,
+		504	Pedicularis_brevilabris,
+		505	Pedicularis_canadensis,
+		506	Pedicularis_capitata,
+		507	Pedicularis_caucasica,
+		508	Pedicularis_centranthera,
+		509	Pedicularis_cephalantha,
+		510	Pedicularis_cernua,
+		511	Pedicularis_chamissonis,
+		512	Pedicularis_cheilanthifolia,
+		513	Pedicularis_chenocephala,
+		514	Pedicularis_chinensis,
+		515	Pedicularis_cinerascens,
+		516	Pedicularis_clarkei,
+		517	Pedicularis_comosa,
+		518	Pedicularis_compacta,
+		519	Pedicularis_comptoniifolia,
+		520	Pedicularis_confertiflora,
+		521	Pedicularis_confluens,
+		522	Pedicularis_contorta,
+		523	Pedicularis_cornigera,
+		524	Pedicularis_coronata,
+		525	Pedicularis_corydaloides,
+		526	Pedicularis_cranolopha,
+		527	Pedicularis_crassirostris,
+		528	Pedicularis_crenata,
+		529	Pedicularis_crenularis,
+		530	Pedicularis_crenulata,
+		531	Pedicularis_cristatella,
+		532	Pedicularis_croizatiana,
+		533	Pedicularis_cryptantha,
+		534	Pedicularis_cyathophylla,
+		535	Pedicularis_cyathophylloides,
+		536	Pedicularis_cyclorhyncha,
+		537	Pedicularis_cymbalaria,
+		538	Pedicularis_cystopteridifolia,
+		539	Pedicularis_dasyantha,
+		540	Pedicularis_dasystachys,
+		541	Pedicularis_daucifolia,
+		542	Pedicularis_davidii,
+		543	Pedicularis_debilis,
+		544	Pedicularis_decora,
+		545	Pedicularis_decorissima,
+		546	Pedicularis_deltoidea,
+		547	Pedicularis_densiflora,
+		548	Pedicularis_densispica,
+		549	Pedicularis_dichotoma,
+		550	Pedicularis_diffusa,
+		551	Pedicularis_dissectifolia,
+		552	Pedicularis_dolichantha,
+		553	Pedicularis_dolichocymba,
+		554	Pedicularis_dolichoglossa,
+		555	Pedicularis_dolichorrhiza,
+		556	Pedicularis_dubia,
+		557	Pedicularis_duclouxii,
+		558	Pedicularis_dudleyi,
+		559	Pedicularis_dulongensis,
+		560	Pedicularis_dunniana,
+		561	Pedicularis_elata,
+		562	Pedicularis_elongata,
+		563	Pedicularis_elwesii,
+		564	Pedicularis_eriantha,
+		565	Pedicularis_eriophora,
+		566	Pedicularis_exaltata,
+		567	Pedicularis_fargesii,
+		568	Pedicularis_fengii,
+		569	Pedicularis_fetisowii,
+		570	Pedicularis_filicifolia,
+		571	Pedicularis_filicula,
+		572	Pedicularis_fissa,
+		573	Pedicularis_flaccida,
+		574	Pedicularis_flammea,
+		575	Pedicularis_flava,
+		576	Pedicularis_fletcherii,
+		577	Pedicularis_flexosoides,
+		578	Pedicularis_flexuosa,
+		579	Pedicularis_floribunda,
+		580	Pedicularis_foliosa,
+		581	Pedicularis_fragarioides,
+		582	Pedicularis_franchetiana,
+		583	Pedicularis_furbishiae,
+		584	Pedicularis_furfuracea,
+		585	Pedicularis_galeata,
+		586	Pedicularis_gammieana,
+		587	Pedicularis_geosiphon,
+		588	Pedicularis_glabrescens,
+		589	Pedicularis_globifera,
+		590	Pedicularis_gloriosa,
+		591	Pedicularis_gongshanensis,
+		592	Pedicularis_gracilicaulis,
+		593	Pedicularis_gracilis,
+		594	Pedicularis_gracilituba,
+		595	Pedicularis_grandiflora,
+		596	Pedicularis_grayi,
+		597	Pedicularis_groenlandica,
+		598	Pedicularis_gruina,
+		599	Pedicularis_gyirongensis,
+		600	Pedicularis_gyroflexa,
+		601	Pedicularis_gyrorhyncha,
+		602	Pedicularis_hacquetii,
+		603	Pedicularis_hemsleyana,
+		604	Pedicularis_henryi,
+		605	Pedicularis_hirsuta,
+		606	Pedicularis_hoffmeisteri,
+		607	Pedicularis_howellii,
+		608	Pedicularis_inaequilobata,
+		609	Pedicularis_incarnata,
+		610	Pedicularis_inconspicua,
+		611	Pedicularis_ingens,
+		612	Pedicularis_insignis,
+		613	Pedicularis_integrifolia,
+		614	Pedicularis_interior,
+		615	Pedicularis_interrupta,
+		616	Pedicularis_ishidoyana,
+		617	Pedicularis_iwatensis,
+		618	Pedicularis_julica,
+		619	Pedicularis_kanei,
+		620	Pedicularis_kangtingensis,
+		621	Pedicularis_kansuensis,
+		622	Pedicularis_karatavica,
+		623	Pedicularis_keiskei,
+		624	Pedicularis_kerneri,
+		625	Pedicularis_kiangsiensis,
+		626	Pedicularis_korolkowii,
+		627	Pedicularis_krylovii,
+		628	Pedicularis_kusnetzovii,
+		629	Pedicularis_labordei,
+		630	Pedicularis_labradorica,
+		631	Pedicularis_lachnoglossa,
+		632	Pedicularis_lanata,
+		633	Pedicularis_lanceolata,
+		634	Pedicularis_langsdorffii,
+		635	Pedicularis_lapponica,
+		636	Pedicularis_lasiophrys,
+		637	Pedicularis_lasiostachys,
+		638	Pedicularis_latituba,
+		639	Pedicularis_laxiflora,
+		640	Pedicularis_lecomtei,
+		641	Pedicularis_legendrei,
+		642	Pedicularis_leptosiphon,
+		643	Pedicularis_likiangensis,
+		644	Pedicularis_lineata,
+		645	Pedicularis_longicaulis,
+		646	Pedicularis_longiflora,
+		647	Pedicularis_longipes,
+		648	Pedicularis_lophotricha,
+		649	Pedicularis_ludwigii,
+		650	Pedicularis_lutescens,
+		651	Pedicularis_lyrata,
+		652	Pedicularis_macilenta,
+		653	Pedicularis_macrochila,
+		654	Pedicularis_macrorhyncha,
+		655	Pedicularis_macrosiphon,
+		656	Pedicularis_mandshurica,
+		657	Pedicularis_mariae,
+		658	Pedicularis_maximowiczii,
+		659	Pedicularis_maxonii,
+		660	Pedicularis_mayana,
+		661	Pedicularis_megalantha,
+		662	Pedicularis_megalochila,
+		663	Pedicularis_membranacea,
+		664	Pedicularis_merrilliana,
+		665	Pedicularis_metaszetschuanica,
+		666	Pedicularis_micrantha,
+		667	Pedicularis_microchila,
+		668	Pedicularis_mixta,
+		669	Pedicularis_mollis,
+		670	Pedicularis_moschata,
+		671	Pedicularis_moupinensis,
+		672	Pedicularis_muscicola,
+		673	Pedicularis_muscoides,
+		674	Pedicularis_mussotii,
+		675	Pedicularis_mychophila,
+		676	Pedicularis_myriophylla,
+		677	Pedicularis_nasturtiifolia,
+		678	Pedicularis_nasuta,
+		679	Pedicularis_nigra,
+		680	Pedicularis_nipponica,
+		681	Pedicularis_nodosa,
+		682	Pedicularis_obliquigaleata,
+		683	Pedicularis_ochiaiana,
+		684	Pedicularis_oederi,
+		685	Pedicularis_oliveriana,
+		686	Pedicularis_omiiana,
+		687	Pedicularis_ornithorhyncha,
+		688	Pedicularis_orthocoryne,
+		689	Pedicularis_oxycarpa,
+		690	Pedicularis_oxyrhyncha,
+		691	Pedicularis_pacifica,
+		692	Pedicularis_paiana,
+		693	Pedicularis_pallasii,
+		694	Pedicularis_palustris,
+		695	Pedicularis_pantlingii,
+		696	Pedicularis_parryi,
+		697	Pedicularis_parviflora,
+		698	Pedicularis_pectinatiformis,
+		699	Pedicularis_peduncularis,
+		700	Pedicularis_pennellii,
+		701	Pedicularis_pentagona,
+		702	Pedicularis_petelotii,
+		703	Pedicularis_pheulpinii,
+		704	Pedicularis_physocalyx,
+		705	Pedicularis_pilostachya,
+		706	Pedicularis_pinetorum,
+		707	Pedicularis_plicata,
+		708	Pedicularis_polyodonta,
+		709	Pedicularis_pontica,
+		710	Pedicularis_popovii,
+		711	Pedicularis_praeruptorum,
+		712	Pedicularis_proboscidea,
+		713	Pedicularis_procera,
+		714	Pedicularis_przewalskii,
+		715	Pedicularis_pseudomelampyriflora,
+		716	Pedicularis_pseudoversicolor,
+		717	Pedicularis_pubiflora,
+		718	Pedicularis_pulchella,
+		719	Pedicularis_pulchra,
+		720	Pedicularis_punctata,
+		721	Pedicularis_pycnantha,
+		722	Pedicularis_pygmaea,
+		723	Pedicularis_pyrenaica,
+		724	Pedicularis_qinghaiensis,
+		725	Pedicularis_racemosa,
+		726	Pedicularis_rainierensis,
+		727	Pedicularis_ramosissima,
+		728	Pedicularis_recurva,
+		729	Pedicularis_recutita,
+		730	Pedicularis_refracta,
+		731	Pedicularis_remotiloba,
+		732	Pedicularis_resupinata,
+		733	Pedicularis_rex,
+		734	Pedicularis_rhinanthoides,
+		735	Pedicularis_rhizomatosa,
+		736	Pedicularis_rhodotricha,
+		737	Pedicularis_rhynchodonta,
+		738	Pedicularis_rhynchotricha,
+		739	Pedicularis_rigida,
+		740	Pedicularis_rizhaoensis,
+		741	Pedicularis_rosea,
+		742	Pedicularis_roseialba,
+		743	Pedicularis_rostratocapitata,
+		744	Pedicularis_roylei,
+		745	Pedicularis_rubens,
+		746	Pedicularis_rudis,
+		747	Pedicularis_rupicola,
+		748	Pedicularis_salicifolia,
+		749	Pedicularis_salviiflora,
+		750	Pedicularis_sceptrum_carolinum,
+		751	Pedicularis_schistostegia,
+		752	Pedicularis_schizorrhyncha,
+		753	Pedicularis_schugnana,
+		754	Pedicularis_scolopax,
+		755	Pedicularis_scopulorum,
+		756	Pedicularis_scullyana,
+		757	Pedicularis_semenowii,
+		758	Pedicularis_semibarbata,
+		759	Pedicularis_semitorta,
+		760	Pedicularis_sherriffii,
+		761	Pedicularis_sibirica,
+		762	Pedicularis_sibthorpii,
+		763	Pedicularis_sigmoidea,
+		764	Pedicularis_sikangensis,
+		765	Pedicularis_sima,
+		766	Pedicularis_siphonantha,
+		767	Pedicularis_smithiana,
+		768	Pedicularis_sorbifolia,
+		769	Pedicularis_souliei,
+		770	Pedicularis_sphaerantha,
+		771	Pedicularis_spicata,
+		772	Pedicularis_steiningeri,
+		773	Pedicularis_stenocorys,
+		774	Pedicularis_stewardii,
+		775	Pedicularis_streptorhyncha,
+		776	Pedicularis_striata,
+		777	Pedicularis_strobilacea,
+		778	Pedicularis_stylosa,
+		779	Pedicularis_sudetica,
+		780	Pedicularis_superba,
+		781	Pedicularis_sylvatica,
+		782	Pedicularis_szetschuanica,
+		783	Pedicularis_tachanensis,
+		784	Pedicularis_tahaiensis,
+		785	Pedicularis_talassica,
+		786	Pedicularis_tantalorhyncha,
+		787	Pedicularis_tatarinowii,
+		788	Pedicularis_tatsienensis,
+		789	Pedicularis_tayloriana,
+		790	Pedicularis_tenacifolia,
+		791	Pedicularis_tenuisecta,
+		792	Pedicularis_ternata,
+		793	Pedicularis_thamnophila,
+		794	Pedicularis_tianschanica,
+		795	Pedicularis_tibetica,
+		796	Pedicularis_tomentosa,
+		797	Pedicularis_tongolensis,
+		798	Pedicularis_torta,
+		799	Pedicularis_triangularidens,
+		800	Pedicularis_trichocymba,
+		801	Pedicularis_trichoglossa,
+		802	Pedicularis_trichomata,
+		803	Pedicularis_tricolor,
+		804	Pedicularis_tristis,
+		805	Pedicularis_tsangchanensis,
+		806	Pedicularis_tsarungensis,
+		807	Pedicularis_tsekouensis,
+		808	Pedicularis_tuberosa,
+		809	Pedicularis_uliginosa,
+		810	Pedicularis_umbelliformis,
+		811	Pedicularis_uralensis,
+		812	Pedicularis_urceolata,
+		813	Pedicularis_vagans,
+		814	Pedicularis_variegata,
+		815	Pedicularis_venusta,
+		816	Pedicularis_verbenifolia,
+		817	Pedicularis_veronicifolia,
+		818	Pedicularis_verticillata,
+		819	Pedicularis_vialii,
+		820	Pedicularis_villosa,
+		821	Pedicularis_violascens,
+		822	Pedicularis_waldheimii,
+		823	Pedicularis_wanghongiae,
+		824	Pedicularis_wilhelmsiana,
+		825	Pedicularis_xiangchengensis,
+		826	Pedicularis_yezoensis,
+		827	Pedicularis_yui,
+		828	Pedicularis_yunnanensis,
+		829	Phacellanthus_tubiflorus,
+		830	Phelipanche_aegyptiaca,
+		831	Phelipanche_arenaria,
+		832	Phelipanche_bungeana,
+		833	Phelipanche_caesia,
+		834	Phelipanche_coelestis,
+		835	Phelipanche_georgii_reuteri,
+		836	Phelipanche_gratiosa,
+		837	Phelipanche_hirtiflora,
+		838	Phelipanche_inexspectata,
+		839	Phelipanche_lavandulacea,
+		840	Phelipanche_mutelii,
+		841	Phelipanche_nana,
+		842	Phelipanche_nowackiana,
+		843	Phelipanche_oxyloba,
+		844	Phelipanche_portoilicitana,
+		845	Phelipanche_pulchella,
+		846	Phelipanche_purpurea,
+		847	Phelipanche_ramosa,
+		848	Phelipanche_rosmarina,
+		849	Phelipanche_tunetana,
+		850	Phtheirospermum_japonicum,
+		851	Pseudobartsia_yunnanensis,
+		852	Pterygiella_cylindrica,
+		853	Pterygiella_duclouxii,
+		854	Pterygiella_muliensis,
+		855	Pterygiella_nigrescens,
+		856	Pterygiella_parishii,
+		857	Pterygiella_tenuisecta,
+		858	Radamaea_montana,
+		859	Rehmannia_angulata,
+		860	Rehmannia_chingii,
+		861	Rehmannia_chrysantha,
+		862	Rehmannia_elata,
+		863	Rehmannia_glutinosa,
+		864	Rehmannia_henryi,
+		865	Rehmannia_japonica,
+		866	Rehmannia_piasezkii,
+		867	Rehmannia_solanifolia,
+		868	Rhinanthus_angustifolius,
+		869	Rhinanthus_aristatus,
+		870	Rhinanthus_crista_galli,
+		871	Rhinanthus_cristatus,
+		872	Rhinanthus_glacialis,
+		873	Rhinanthus_kyrollae,
+		874	Rhinanthus_mediterraneus,
+		875	Rhinanthus_rumelicus,
+		876	Rhinanthus_serotinus,
+		877	Rhynchocorys_elephas,
+		878	Rhynchocorys_kurdica,
+		879	Rhynchocorys_maxima,
+		880	Rhynchocorys_odontophylla,
+		881	Rhynchocorys_orientalis,
+		882	Rhynchocorys_stricta,
+		883	Schwalbea_americana,
+		884	Seymeria_cassioides,
+		885	Seymeria_laciniata,
+		886	Seymeria_pectinata,
+		887	Sieversandreas_madagascarianus,
+		888	Siphonostegia_chinensis,
+		889	Siphonostegia_laeta,
+		890	Siphonostegia_syriaca,
+		891	Sopubia_cana,
+		892	Sopubia_karaguensis,
+		893	Sopubia_lanata,
+		894	Sopubia_lemuriana,
+		895	Sopubia_mannii,
+		896	Sopubia_ramosa,
+		897	Sopubia_simplex,
+		898	Sopubia_triphylla,
+		899	Striga_asiatica,
+		900	Striga_bilabiata,
+		901	Striga_elegans,
+		902	Striga_forbesii,
+		903	Striga_gesnerioides,
+		904	Striga_hermonthica,
+		905	Striga_passargei,
+		906	Tozzia_alpina,
+		907	Triaenophora_rupestris,
+		908	Triaenophora_shennongjiaensis,
+		909	Triphysaria_eriantha,
+		910	Triphysaria_floribunda,
+		911	Triphysaria_micrantha,
+		912	Triphysaria_pusilla,
+		913	Triphysaria_versicolor,
+		914	Xizangia_bartschioides,
+		915	Xylocalyx_aculeolatus,
+		916	Xylocalyx_asper,
+		917	Xylocalyx_carterae
+	;
+	TREE * UNTITLED = [&R] ((((((((((((((1:5.3783755,173:5.3783755):4.8434125,(((292:3.079997,293:3.079997):1.0641555,300:4.1441525):3.5852985,(((((((((294:2.034876,(308:1.458246,309:1.458246):0.57663):0.2297355,(296:0.9033075,302:0.9033075):1.361304):0.5297795,304:2.794391):0.628559,298:3.42295):0.2726945,295:3.6956445):0.476264,306:4.1719085):0.001196,307:4.1731045):0.523785,305:4.6968895):1.3096305,(297:2.6570775,((299:0.5584915,301:0.5584915):1.609068,303:2.1675595):0.489518):3.3494425):1.722931):2.492337):1.161872,((313:1.072946,315:1.072946):1.2201055,(314:0.649708,316:0.649708):1.6433435):9.0906085):3.969458,((((((34:1.990539,42:1.990539):1.359077,(36:2.877807,((39:0.7686405,43:0.7686405):1.9751775,41:2.743818):0.133989):0.471809):0.675733,((35:1.352657,40:1.352657):1.886687,38:3.239344):0.786005):2.365609,((((205:1.3818545,206:1.3818545):0.0001775,207:1.382032):0.8619165,349:2.2439485):3.464678,350:5.7086265):0.6823315):3.2880415,(37:7.7529135,(348:3.0868665,351:3.0868665):4.666047):1.926086):1.63012,168:11.3091195):4.0439985):1.439763,((((((((69:1.032646,371:1.032646):2.437827,370:3.470473):4.531352,887:8.001825):1.857576,858:9.859401):3.6153505,(290:10.4684285,(915:3.7439025,(916:2.1518145,917:2.1518145):1.592088):6.724526):3.006323):1.7393545,((((((((81:0.0004655,84:0.0004655):0.990558,88:0.9910235):2.266574,(83:1.7993875,85:1.7993875):1.45821):0.732762,((82:0.3231485,86:0.3231485):1.539048,87:1.8621965):2.128163):2.6053945,89:6.595754):1.607091,(((899:1.4455975,901:1.4455975):4.079808,((900:2.5643355,903:2.5643355):1.2636465,(904:3.580787,905:3.580787):0.247195):1.6974235):1.0191105,902:6.544516):1.658329):0.5546945,((195:3.108796,197:3.108796):2.5124215,196:5.6212175):3.136322):1.718735,(194:9.4073265,198:9.4073265):1.068948):4.7378315):0.7014345,(352:6.2485595,((((((891:0.166523,897:0.166523):0.3207085,895:0.4872315):0.2034455,892:0.690677):0.20229,(894:0.892601,898:0.892601):0.000366):0.66343,896:1.556397):1.1867315,893:2.7431285):3.505431):9.666981):0.28528,291:16.2008205):0.5920605):8.85e-05,326:16.7929695):1.0938735,((63:4.629776,192:4.629776):3.597599,193:8.227375):9.659468):5.032899,((((((((((((((((((2:0.648926,(7:0.5735475,31:0.5735475):0.0753785):2.3997535,29:3.0486795):0.452699,22:3.5013785):1.1944495,23:4.695828):0.129122,3:4.82495):0.179109,33:5.004059):0.16294,(((((4:0.951766,20:0.951766):1.847748,(16:2.567725,26:2.567725):0.231789):0.0787905,9:2.8783045):0.000147,13:2.8784515):0.777671,30:3.6561225):1.5108765):0.210062,18:5.377061):0.118943,((((((10:1.9931045,((21:0.2492935,24:0.2492935):0.0001105,27:0.249404):1.7437005):1.8994355,14:3.89254):0.819159,12:4.711699):0.230407,19:4.942106):0.082267,(25:3.8181585,28:3.8181585):1.2062145):0.0731795,(17:4.9432755,32:4.9432755):0.154277):0.3984515):0.0955495,5:5.5915535):0.063049,(8:4.1593215,11:4.1593215):1.495281):0.1673485,(6:1.198315,15:1.198315):4.623636):0.07187,208:5.893821):2.0515105,((((((64:4.023743,(200:3.9291315,333:3.9291315):0.0946115):0.000194,(66:0.1064935,67:0.1064935):3.9174435):0.6964865,((884:2.175099,886:2.175099):2.1913835,885:4.3664825):0.353941):0.1337375,68:4.854161):0.0002065,65:4.8543675):1.047164,77:5.9015315):2.0438):1.978591,((319:2.609447,320:2.609447):0.4014205,321:3.0108675):6.913055):0.96457,(((((((((((((((((((((((((((91:0.1445945,145:0.1445945):0.2031695,133:0.347764):0.175758,148:0.523522):0.024227,165:0.547749):0.0180575,95:0.5658065):0.0595715,138:0.625378):0.0151685,130:0.6405465):0.044311,141:0.6848575):0.0365165,114:0.721374):0.118486,140:0.83986):0.029112,119:0.868972):7.6e-05,(103:0.202394,113:0.202394):0.666654):0.000147,126:0.869195):0.0597975,((((((((105:6.599999998e-05,166:6.599999998e-05):4.700000001e-05,161:0.000113):4.800000001e-05,139:0.000161):5.699999999e-05,118:0.000218):7.700000001e-05,154:0.000295):0.000142,162:0.000437):0.278011,(109:0.210423,(136:0.1386755,151:0.1386755):0.0717475):0.068025):0.055222,158:0.33367):0.5953225):0.1319975,152:1.06099):0.098702,(((107:0.4930265,120:0.4930265):0.001302,157:0.4943285):0.00058,(127:0.000385,131:0.000385):0.4945235):0.6647835):0.1671345,(99:0.2578275,159:0.2578275):1.068999):0.1457805,(((((97:0.6107355,155:0.6107355):0.064255,(122:0.429166,167:0.429166):0.2458245):0.0002445,134:0.675235):0.0492175,156:0.7244525):0.54654,((104:0.8635405,(108:0.805854,((135:0.198805,164:0.198805):0.593627,150:0.792432):0.013422):0.0576865):0.052767,(117:0.4987325,149:0.4987325):0.417575):0.354685):0.2016145):0.214661,((((((94:0.000184,106:0.000184):0.000279,132:0.000463):0.0003325,121:0.0007955):0.6583775,128:0.659173):0.2896795,115:0.9488525):0.261553,(((((96:0.3279855,144:0.3279855):0.234198,112:0.5621835):0.000311,110:0.5624945):0.060191,146:0.6226855):0.057925,142:0.6806105):0.529795):0.4768625):0.203235,(100:1.5080425,137:1.5080425):0.3824605):0.385136,(102:0.2713995,125:0.2713995):2.0042395):0.504452,116:2.780091):0.365099,(((((92:0.1828125,163:0.1828125):0.0227885,143:0.205601):0.7477865,124:0.9533875):1.1050955,((93:1.619095,153:1.619095):0.2328735,((98:0.25149,111:0.25149):0.448658,101:0.700148):1.1518205):0.2065145):0.6699455,((123:1.4860545,(147:1.429377,160:1.429377):0.0566775):0.761458,129:2.2475125):0.480916):0.4167615):1.893501,((909:0.0445125,911:0.0445125):2.3288225,((910:0.3871705,913:0.3871705):0.350188,912:0.7373585):1.6359765):2.665356):2.4111315,(((169:3.7885245,172:3.7885245):0.905837,(170:2.7838325,171:2.7838325):1.910529):1.987426,201:6.6817875):0.768035):0.8120105,(((455:2.869875,(458:2.090429,462:2.090429):0.779446):0.609191,((456:3.055684,461:3.055684):0.229494,(457:1.6984385,460:1.6984385):1.5867395):0.193888):1.253934,(459:4.2194665,463:4.2194665):0.5135335):3.528833):0.299908,(183:5.5227735,(((184:0.823618,(185:0.2698865,191:0.2698865):0.5537315):1.7332625,188:2.5568805):2.133599,(((186:0.274845,190:0.274845):3.2994205,187:3.5742655):0.0008185,189:3.575084):1.1153955):0.832294):3.0389675):2.3267515):3.271757,(325:13.1857715,((((((((((((((((((((((((465:0.000259,615:0.000259):0.18504,670:0.185299):0.8893375,649:1.0746365):0.581798,511:1.6564345):0.461399,705:2.1178335):0.7426415,((504:0.6526125,765:0.6526125):1.800259,((676:0.557876,787:0.557876):0.8097025,759:1.3675785):1.085293):0.4076035):0.0002015,((((494:1.923316,(543:0.8247545,722:0.8247545):1.0985615):0.2575525,816:2.1808685):0.294203,690:2.4750715):0.2922185,((513:2.1066395,788:2.1066395):0.4101005,773:2.51674):0.25055):0.0933865):0.075231,((475:2.779374,((((537:0.682432,(546:0.65149,(608:0.557306,796:0.557306):0.094184):0.030942):0.212825,((651:0.267716,708:0.267716):0.374219,740:0.641935):0.253322):0.744505,650:1.639762):0.934652,554:2.574414):0.20496):0.107667,((((((520:0.671723,659:0.671723):0.6822855,770:1.3540085):1.1790795,812:2.533088):0.030412,(601:0.504211,698:0.504211):2.059289):0.0987745,(531:2.2909535,548:2.2909535):0.371321):0.062758,588:2.7250325):0.1620085):0.0488665):0.026463,(((((485:1.79287,621:1.79287):0.7226085,681:2.5154785):0.150687,550:2.6661655):0.1588235,541:2.824989):0.089261,(((519:0.258832,739:0.258832):1.5503465,(645:1.412919,727:1.412919):0.3962595):0.245599,(579:1.897784,715:1.897784):0.1569935):0.8594725):0.0481205):1.4420345,(573:2.7076775,667:2.7076775):1.6967275):0.5840005,((((((471:0.000308,512:0.000308):0.940737,480:0.941045):0.0952415,(589:0.7052355,707:0.7052355):0.331051):0.8969765,747:1.933263):1.1059415,744:3.0392045):1.4127815,(643:3.648819,703:3.648819):0.803167):0.5364195):0.0003385,((((((((470:0.59541,757:0.59541):0.086376,622:0.681786):0.359603,(710:0.9335305,822:0.9335305):0.1078585):0.4677355,794:1.5091245):0.0003225,(((478:0.2932235,610:0.2932235):0.0870375,721:0.380261):0.0002995,719:0.3805605):1.1288865):1.058035,792:2.567482):0.7296845,((((477:0.6192065,565:0.6192065):0.1159075,486:0.735114):0.4668055,((488:0.1065565,527:0.1065565):0.459193,(507:0.3820595,709:0.3820595):0.18369):0.63617):1.3730835,(569:2.1617975,(((626:0.50273,821:0.50273):0.316681,653:0.819411):0.1825925,658:1.0020035):1.159794):0.4132055):0.7221635):1.54328,(((500:1.101817,581:1.101817):3.379488,(((521:2.99511,771:2.99511):0.4168035,(((644:2.6506255,(782:1.7035445,799:1.7035445):0.947081):0.000252,665:2.6508775):0.4815065,764:3.132384):0.2795295):0.260181,(730:0.692556,818:0.692556):2.9795385):0.8092105):0.1353955,767:4.6167005):0.223746):0.1482975):0.116515,(((468:0.7326325,754:0.7326325):2.577367,((549:1.1149075,701:1.1149075):0.6749315,748:1.789839):1.5201605):1.5049405,((((557:1.6034245,685:1.6034245):1.261068,738:2.8644925):0.763761,613:3.6282535):0.884218,(593:3.795607,671:3.795607):0.7168645):0.3024685):0.290319):0.502827,(497:4.990819,((((((534:0.77113,825:0.77113):0.9061235,(733:0.467461,793:0.467461):1.2097925):0.1321645,780:1.809418):0.113574,535:1.922992):1.4575815,((612:2.0080805,756:2.0080805):0.7340345,714:2.742115):0.6384585):0.533373,775:3.9139465):1.0768725):0.617267):0.075195,((((466:0.223302,637:0.223302):3.059449,((((((((472:0.3270975,(614:0.3267905,779:0.3267905):0.000307):0.0004295,678:0.327527):0.290651,755:0.618178):0.096691,540:0.714869):0.9725865,(((((((476:0.434599,815:0.434599):0.7257055,(517:0.0885105,761:0.0885105):1.071794):0.1229275,(751:1.1685645,820:1.1685645):0.1146675):0.0890755,(((555:0.703701,627:0.703701):0.349238,(657:0.359369,753:0.359369):0.69357):0.2489075,(704:1.0275535,(762:0.2877455,811:0.2877455):0.739808):0.274293):0.070461):0.000267,518:1.3725745):0.0005355,691:1.37311):0.1948765,561:1.5679865):0.119469):0.0672195,575:1.754675):0.215373,(((572:1.3986225,745:1.3986225):0.258068,(656:1.5197675,776:1.5197675):0.136923):0.15553,(609:0.191765,712:0.191765):1.6204555):0.1578275):1.0234425,809:2.9934905):0.2892605):0.852224,(((((((((467:1.962897,700:1.962897):0.74854,(694:1.7499645,697:1.7499645):0.9614725):0.5787915,718:3.2902285):0.22044,522:3.5106685):0.1874855,((((481:2.342833,((505:1.7796265,725:1.7796265):0.2501075,530:2.029734):0.313099):0.1369055,635:2.4797385):0.6292165,(625:1.477768,732:1.477768):1.631187):0.1119955,(((623:0.9663875,628:0.9663875):1.123721,630:2.0901085):0.8514905,826:2.941599):0.2793515):0.4772035):0.1850265,633:3.8831805):0.0292985,((493:0.841814,597:0.841814):2.597462,(687:2.9300245,696:2.9300245):0.5092515):0.473203):0.0709585,(((((((474:0.3379575,(539:0.2854865,619:0.2854865):0.052471):0.1184155,632:0.456373):0.000253,693:0.456626):1.2379295,605:1.6945555):0.091325,634:1.7858805):1.750937,((((((((((490:0.0002745,562:0.0002745):0.0003415,618:0.000616):0.7633425,(491:0.6864995,729:0.6864995):0.077459):0.1960365,(600:0.6529745,(808:0.4414385,824:0.4414385):0.211536):0.3070205):0.0031035,741:0.9630985):0.0738195,668:1.036918):0.2139535,(624:0.737714,743:0.737714):0.5131575):0.4279565,723:1.678828):0.0014675,(492:1.034543,(564:0.9517855,((566:0.000332,602:0.000332):0.409589,580:0.409921):0.5418645):0.0827575):0.6457525):1.764594,781:3.4448895):0.091928):0.2390615,524:3.775879):0.2075585):0.083986,((469:0.6723265,(556:0.204084,785:0.204084):0.4682425):1.4042205,717:2.076547):1.9908765):0.0675515):1.1506395,((((536:0.706159,(699:0.4935565,734:0.4935565):0.2126025):1.0154685,720:1.7216275):1.087864,567:2.8094915):1.521975,((((((570:2.1841285,(((639:0.3506885,686:0.3506885):1.1547825,655:1.505471):0.1566175,(672:1.51018,768:1.51018):0.1519085):0.52204):0.0602315,677:2.24436):0.292848,(587:0.000355,594:0.000355):2.536853):0.107285,(663:2.1366745,813:2.1366745):0.5078185):0.404523,647:3.049016):0.120773,603:3.169789):1.1616775):0.954148):0.3976665):0.107903,669:5.791184):0.048698,(((((((((((((479:1.575233,783:1.575233):1.2403005,(((552:1.4748365,763:1.4748365):0.313799,814:1.7886355):0.552524,(642:1.4405385,766:1.4405385):0.900621):0.474374):0.6277885,((((501:0.93171,599:0.93171):0.2722115,817:1.2039215):0.03551,((528:0.226336,529:0.226336):0.0007615,679:0.2270975):1.012334):1.513623,(((598:0.7757445,791:0.7757445):0.599936,(604:1.012632,629:1.012632):0.3630485):0.9459275,706:2.321608):0.4314465):0.6902675):0.1859205,(((509:0.459257,568:0.459257):0.353153,551:0.81241):2.473219,(652:2.2345705,784:2.2345705):1.0510585):0.3436135):0.1626465,((666:0.442716,823:0.442716):0.7807885,711:1.2235045):2.5683845):0.3663345,(((((487:2.106934,(582:0.7514555,646:0.7514555):1.3554785):0.2427405,545:2.3496745):0.9010605,(((514:2.8337775,((526:0.3554265,532:0.3554265):2.150911,803:2.5063375):0.32744):0.060979,638:2.8947565):0.173744,576:3.0685005):0.1822345):0.419465,((((542:1.403409,774:1.403409):0.520225,798:1.923634):0.9277,(689:1.915816,795:1.915816):0.935518):0.586541,674:3.437875):0.232325):0.2738175,((499:3.812193,682:3.812193):0.1312565,((559:2.707677,(563:2.542463,(675:0.974741,789:0.974741):1.567722):0.165214):0.884511,769:3.592188):0.3512615):0.000568):0.214206):0.0001175,((592:1.792737,777:1.792737):1.3709565,828:3.1636935):0.9946475):0.3739635,496:4.5323045):0.6417915,735:5.174096):0.405728,((525:2.7214405,533:2.7214405):2.732463,(577:0.000249,742:0.000249):5.4536545):0.1259205):0.138835,578:5.718659):0.022771,(498:5.489902,((((((510:0.4432225,591:0.4432225):1.0251585,786:1.468381):1.161779,805:2.63016):0.5034935,((571:1.840365,((574:1.5866715,((684:1.4287995,737:1.4287995):0.0002315,778:1.429031):0.1576405):0.000445,(((640:1.035412,716:1.035412):0.000648,724:1.03606):0.44164,654:1.4777):0.1094165):0.2532485):1.0482935,806:2.8886585):0.244995):1.7638205,752:4.897474):0.442339,((586:3.2469035,760:3.2469035):0.000607,731:3.2475105):2.0923025):0.150089):0.251528):0.037938,(((523:1.166563,(606:0.198703,661:0.198703):0.96786):1.333706,662:2.500269):2.1259925,(584:3.213154,695:3.213154):1.4131075):1.1531065):0.060514):0.0960535,(((660:1.438102,810:1.438102):1.6083665,(790:0.271015,827:0.271015):2.7754535):1.3475515,664:4.39402):1.5419155):0.2331575,616:6.169093):0.1486935,502:6.3177865):0.385043,(631:6.1916595,749:6.1916595):0.51117):0.6849805,((((((((483:0.2873625,797:0.2873625):0.615646,(611:0.716426,(((648:0.495174,800:0.495174):0.000876,802:0.49605):0.000249,772:0.496299):0.220127):0.1865825):0.0908645,515:0.993873):0.3910055,(736:0.704999,801:0.704999):0.6798795):0.5709465,(484:0.215847,516:0.215847):1.739978):0.7417475,((((544:0.260414,560:0.260414):0.001715,746:0.262129):1.212243,(692:0.4441585,804:0.4441585):1.0302135):1.106352,(553:0.4203925,585:0.4203925):2.1603315):0.1168485):0.666102,636:3.3636745):2.1784385,(673:1.367999,688:1.367999):4.174114):1.845697):0.361808,702:7.749618):0.5319295,(((((473:0.868609,495:0.868609):2.2517985,641:3.1204075):1.1238185,(((((503:0.000295,583:0.000295):2.333865,726:2.33416):0.6982325,506:3.0323925):0.153507,(((508:1.930479,758:1.930479):0.4961115,(547:1.27624,558:1.27624):1.1503505):0.278629,607:2.7052195):0.48068):0.7134555,(((((590:1.828591,617:1.828591):0.0925555,683:1.9211465):0.8576355,680:2.778782):0.1683765,750:2.9471585):0.7939175,595:3.741076):0.158279):0.344871):0.417614,((((482:0.0425825,(620:0.0374505,728:0.0374505):0.005132):3.5861545,(538:2.286727,(596:0.1632625,713:0.1632625):2.1234645):1.34201):0.337416,819:3.966153):0.506004,489:4.472157):0.189683):0.4505745,807:5.1124145):3.169133):4.904224):0.974478):1.213542,850:15.3737915):7.5459505):2.44291,((((70:12.551822,((((((((71:3.513903,((((((378:0.338744,(398:0.0239015,399:0.0239015):0.3148425):0.183694,382:0.522438):0.0005135,392:0.5229515):1.8084825,(((379:1.4227215,384:1.4227215):0.0004705,402:1.423192):0.6055855,((383:0.1810975,391:0.1810975):0.035229,400:0.2163265):1.812451):0.3026565):0.28158,(396:1.403774,403:1.403774):1.20924):0.3935095,395:3.0065235):0.5073795):1.0041395,380:4.5180425):1.182757,((376:0.2221165,377:0.2221165):3.746842,(((((381:0.357607,390:0.357607):0.389842,387:0.747449):0.355611,397:1.10306):0.001082,((386:0.705007,(388:0.1866425,(393:0.000328,401:0.000328):0.1863145):0.5183645):0.247452,404:0.952459):0.151683):0.07593,389:1.180072):2.7888865):1.731841):1.395881,(385:2.4412515,394:2.4412515):4.655429):1.828043,((72:4.846169,(73:3.1227995,((355:1.037115,((363:0.8576405,366:0.8576405):0.0424605,368:0.900101):0.137014):0.5531545,(((356:0.4646605,361:0.4646605):0.0003645,357:0.465025):1.0398425,(((((358:0.410845,365:0.410845):0.1796355,(364:0.3948265,(367:0.3943445,369:0.3943445):0.000482):0.195654):0.254818,360:0.8452985):0.402485,362:1.2477835):0.207151,359:1.4549345):0.049933):0.085402):1.53253):1.7233695):0.9305935,464:5.7767625):3.147961):0.7056805,906:9.630404):0.133055,((310:3.5447065,(311:3.2237475,312:3.2237475):0.320959):5.5968075,(((372:0.0362155,373:0.0362155):1.4830925,374:1.519308):4.332505,375:5.851813):3.289701):0.621945):0.886033,(((((((209:1.2074585,(222:0.969568,250:0.969568):0.2378905):0.0002945,220:1.207753):2.3182995,((((((((((((((((211:0.2381765,268:0.2381765):0.1697425,269:0.407919):0.0002065,(247:0.1474605,285:0.1474605):0.260665):0.212369,239:0.6204945):8.1e-05,(263:0.1154245,277:0.1154245):0.505151):9.2e-05,245:0.6206675):0.193368,(246:0.148496,275:0.148496):0.6655395):0.00013,228:0.8141655):0.0013365,(255:0.278148,265:0.278148):0.537354):0.1799415,273:0.9954435):0.3352715,241:1.330715):0.0004415,((((218:0.000143,219:0.000143):0.0732075,238:0.0733505):0.145901,257:0.2192515):0.838747,(227:0.821577,((231:0.5787255,244:0.5787255):0.2426565,(248:0.1390225,259:0.1390225):0.6823595):0.000195):0.2364215):0.273158):0.0003185,(225:0.306954,(256:0.306688,258:0.306688):0.000266):1.024521):0.2788165,264:1.6102915):1.2744015,(((((212:0.385639,((249:0.24618,282:0.24618):0.139276,(270:0.2251605,288:0.2251605):0.1602955):0.000183):0.086756,232:0.472395):0.722824,(((236:0.2880485,276:0.2880485):0.285685,254:0.5737335):0.3501885,(266:0.36713,280:0.36713):0.556792):0.271297):0.082499,(215:0.456139,(((234:0.1468635,287:0.1468635):0.225184,242:0.3720475):0.0838765,235:0.455924):0.000215):0.821579):0.643156,252:1.920874):0.963819):0.4749645,271:3.3596575):0.166395):1.6804555,(((((((210:1.738293,(((224:0.099715,262:0.099715):0.6616955,240:0.7614105):0.0690365,272:0.830447):0.907846):0.0001895,214:1.7384825):1.2080845,((223:1.444602,267:1.444602):0.000628,229:1.44523):1.501337):0.2131085,(217:2.4968755,251:2.4968755):0.6628):0.0002345,278:3.15991):0.6787565,226:3.8386665):0.5257285,243:4.364395):0.842113):0.067938,((((213:0.4246255,237:0.4246255):2.689434,286:3.1140595):0.429804,284:3.5438635):0.6757205,((216:1.4231515,(((230:0.1809285,((253:0.000209,283:0.000209):0.133629,279:0.133838):0.0470905):1.016939,261:1.1978675):0.225037,405:1.4229045):0.000247):2.36917,((260:0.724916,274:0.724916):0.000282,281:0.725198):3.0671235):0.4272625):1.054862):0.1769085,233:5.4513545):0.0002465,221:5.451601):5.197891):1.90233):1.095149,((((322:3.365012,323:3.365012):0.9083545,324:4.2733665):4.1960395,((868:0.0004305,874:0.0004305):1.3909595,(((((869:0.451953,873:0.451953):0.0001545,870:0.4521075):0.155132,875:0.6072395):0.433122,876:1.0403615):0.1614355,(871:0.637931,872:0.637931):0.563866):0.189593):7.078016):3.0197905,((877:4.334031,((878:2.3782995,880:2.3782995):1.7227925,(879:2.057776,882:2.057776):2.043316):0.232939):2.716298,881:7.050329):4.4388675):2.1577745):2.21948,(((((335:3.323573,336:3.323573):2.5270875,(((338:1.4034685,(340:1.277064,347:1.277064):0.1264045):0.3478115,341:1.75128):0.3159385,(344:1.0720705,346:1.0720705):0.995148):3.783442):0.3789465,337:6.229607):1.1236225,((339:0.7817815,343:0.7817815):1.033509,345:1.8152905):5.537939):1.608199,342:8.9614285):6.9050225):5.817219,((851:6.614087,((852:1.2761595,(853:0.45407,855:0.45407):0.8220895):1.381658,(854:2.0531415,(856:1.324015,857:1.324015):0.7291265):0.604676):3.9562695):5.766152,914:12.380239):9.303431):3.678982):1.7879055,((78:4.5465925,80:4.5465925):0.577788,79:5.1243805):22.026177):1.2877825,(((((((((((((44:1.3184725,((45:0.5164005,56:0.5164005):0.3528475,(47:0.4088785,57:0.4088785):0.4603695):0.4492245):0.585434,52:1.9039065):0.2746515,53:2.178558):0.352402,(46:1.958365,(54:1.743952,62:1.743952):0.214413):0.572595):0.189059,55:2.720019):0.328574,49:3.048593):0.9962665,(((48:0.646208,50:0.646208):2.036956,58:2.683164):1.0744985,61:3.7576625):0.287197):0.7655865,59:4.810446):8.0670145,(51:5.6205215,60:5.6205215):7.256939):8.196161,(76:20.5568805,(((202:3.5189515,203:3.5189515):12.519905,((((((((((((406:0.6421885,412:0.6421885):1.211896,((429:0.499753,452:0.499753):0.304175,449:0.803928):1.0501565):0.3188855,((((407:0.290558,427:0.290558):1.0029715,451:1.2935295):0.0002835,((((((409:0.3830935,443:0.3830935):0.0004,437:0.3834935):0.0530435,439:0.436537):0.2510045,411:0.6875415):0.0304395,(417:0.6387045,(431:0.000191,454:0.000191):0.6385135):0.0792765):0.302741,444:1.020722):0.273091):0.551336,((420:0.2948945,432:0.2948945):1.3041345,440:1.599029):0.24612):0.327821):1.791484,(((((421:0.5551085,436:0.5551085):0.162811,426:0.7179195):0.2673295,(433:0.917156,450:0.917156):0.068093):1.362505,(435:2.0576065,((441:0.192618,447:0.192618):0.566858,442:0.759476):1.2981305):0.2901475):0.316471,425:2.664225):1.300229):0.8241155,((414:1.3530405,453:1.3530405):2.8370015,434:4.190042):0.5985275):0.3148625,(((428:0.7548025,430:0.7548025):0.001461,438:0.7562635):3.868884,445:4.6251475):0.4782845):0.4324135,(446:0.9222205,448:0.9222205):4.613625):0.594481,((410:0.8592755,423:0.8592755):3.1344945,(418:0.3572405,(419:0.287988,422:0.287988):0.0692525):3.6365295):2.1365565):0.782809,(413:2.5318065,415:2.5318065):4.381329):0.0103565,424:6.923492):3.885739,829:10.809231):2.639112,(408:1.2376745,416:1.2376745):12.2106685):2.5905135):2.622306,((830:3.450717,847:3.450717):6.0329245,((((831:2.9640115,833:2.9640115):0.8281785,846:3.79219):0.415714,842:4.207904):1.0304895,(((((((832:0.000447,844:0.000447):1.0003085,(((835:0.6881935,849:0.6881935):0.000109,843:0.6883025):0.253186,845:0.9414885):0.059267):0.2251375,841:1.225893):0.1728525,((836:0.0615525,(837:0.000235,840:0.000235):0.0613175):0.20103,839:0.2625825):1.136163):0.3212545,848:1.72):0.0001985,838:1.7201985):0.3831965,834:2.103395):3.1349985):4.245248):9.177521):1.895718):0.516741):0.436388,(289:19.253626,334:19.253626):2.2563835):0.72429,(((174:3.6873835,(175:0.8262825,177:0.8262825):2.861101):5.954491,((176:4.4535565,179:4.4535565):0.60639,180:5.0599465):4.581928):11.0909255,178:20.7328):1.5014995):1.491771,((74:8.0548895,75:8.0548895):9.8489225,(((181:2.320495,182:2.320495):5.536602,204:7.857097):6.6814205,(317:1.650094,318:1.650094):12.8884235):3.3652945):5.8222585):4.7122695):1.6223505,(((90:4.274427,199:4.274427):7.804355,(353:0.498033,354:0.498033):11.580749):7.4956905,(883:4.5253515,((888:2.5958455,889:2.5958455):0.4821295,890:3.077975):1.4473765):15.049121):10.486218):2.1011325,(((327:3.311136,(328:0.5104795,329:0.5104795):2.8006565):4.092117,(331:2.7111715,332:2.7111715):4.6920815):4.900816,330:12.304069):19.857754):3.21237,((((((859:0.553623,862:0.553623):0.125582,866:0.679205):0.3043715,(861:0.3105725,(863:0.1913405,867:0.1913405):0.119232):0.673004):0.149455,864:1.1330315):0.462314,(860:0.0006155,865:0.0006155):1.59473):13.870043,(907:0.6446655,908:0.6446655):14.820723):19.9088045):0;
+END;

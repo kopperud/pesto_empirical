@@ -1,7 +1,7 @@
 **/*/history.txt
 data/simulations/**/*.tre
-data/empirical/*.tre
-data/empirical/*.tree
+#data/empirical/*.tre
+#data/empirical/*.tree
 .Rhistory
 output/**/*.jld2
 output/**/*.tre

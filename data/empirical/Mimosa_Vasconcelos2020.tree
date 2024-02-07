@@ -1,0 +1,771 @@
+#NEXUS
+[R-package APE, Mon Mar  6 15:08:43 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 379;
+	TAXLABELS
+		Mimosa_longepedunculata
+		Mimosa_oedoclada
+		Mimosa_setosissima
+		Mimosa_foliolosa_brevibractea
+		Mimosa_densa_alligantina
+		Mimosa_claussenii_prorsiseta
+		Mimosa_manidea
+		Mimosa_ulei_grallator
+		Mimosa_foliolosa_paranani
+		Mimosa_vernicosa_ciliata
+		Mimosa_lithoreas
+		Mimosa_rheiptera
+		Mimosa_decorticans
+		Mimosa_ulei_ulei
+		Mimosa_rhodostegia
+		Mimosa_tocantina
+		Mimosa_nitens
+		Mimosa_foliolosa_pubescens
+		Mimosa_stylosa
+		Mimosa_splendida
+		Mimosa_viperina
+		Mimosa_foliolosa_gravida
+		Mimosa_pachycarpoides
+		Mimosa_heringeri
+		Mimosa_cryptothamnos
+		Mimosa_claussenii_microphyllidia
+		Mimosa_claussenii_megistophylla
+		Mimosa_foliolosa_multipinna
+		Mimosa_foliolosa_peregrina
+		Mimosa_melanocarpa
+		Mimosa_dominarum
+		Mimosa_foliolosa_franciscana
+		Mimosa_regina
+		Mimosa_densa_densa
+		Mimosa_antrorsa
+		Mimosa_foliolosa_vernicosa
+		Mimosa_laniceps
+		Mimosa_claussenii_claviceps
+		Mimosa_oligosperma
+		Mimosa_chiliomera
+		Mimosa_maguirei
+		Mimosa_acroconica
+		Mimosa_bispiculata
+		Mimosa_setosa_paludosa
+		Mimosa_myrioglandulosa
+		Mimosa_foliolosa_foliolosa
+		Mimosa_diminuta
+		Mimosa_kalunga
+		Mimosa_setosa_nitens
+		Mimosa_foliolosa_grandibractea
+		Mimosa_setosa_granitica
+		Mimosa_sp1
+		Mimosa_leiocephala
+		Mimosa_foliolosa_pachycarpa
+		Mimosa_claussenii
+		Mimosa_caliciadenia
+		Mimosa_adenotricha
+		Mimosa_humivagans
+		Mimosa_prorepens
+		Mimosa_foliolosa_foederalis
+		Mimosa_setosa_urbana
+		Mimosa_speciosissima
+		Mimosa_albolanata
+		Mimosa_setosa_urbica
+		Mimosa_albolanata_brasiliana
+		Mimosa_albolanata_paucipinna
+		Mimosa_setosa_setosa
+		Mimosa_accedens
+		Mimosa_corynadenia
+		Mimosa_uliginosa
+		Mimosa_uraguensis
+		Mimosa_hatschbachii
+		Mimosa_cruenta
+		Mimosa_bifurca
+		Mimosa_sanguinolenta
+		Mimosa_sp3
+		Mimosa_strobiliflora
+		Mimosa_lepidota
+		Mimosa_piresii
+		Mimosa_orbignyana
+		Mimosa_sp4
+		Mimosa_riedelii
+		Mimosa_aguapeia
+		Mimosa_suberosa
+		Mimosa_elliptica
+		Mimosa_pigra_dehiscens
+		Mimosa_pigra_berlandieri
+		Mimosa_strigillosa
+		Mimosa_weddelliana
+		Mimosa_dormiens
+		Mimosa_ferricola
+		Mimosa_spixiana
+		Mimosa_lewisii
+		Mimosa_nothopteris
+		Mimosa_adenophylla_adenophylla
+		Mimosa_hebecarpa
+		Mimosa_adenophylla_mitis
+		Mimosa_pteridifolia
+		Mimosa_gemmulata_gemmulata
+		Mimosa_coruscocaesia
+		Mimosa_amnis_atri
+		Mimosa_sericantha
+		Mimosa_verrucosa
+		Mimosa_trianae
+		Mimosa_artemisiana
+		Mimosa_fiebrigii
+		Mimosa_craspedisetosa
+		Mimosa_schomburgkii
+		Mimosa_dalyi
+		Mimosa_interrupta
+		Mimosa_glutinosa
+		Mimosa_xavantinae
+		Mimosa_apodocarpa
+		Mimosa_tenuiflora
+		Mimosa_insignis
+		Mimosa_auriculata
+		Mimosa_josephina
+		Mimosa_rastrera
+		Mimosa_neptunioides
+		Mimosa_occidentalis
+		Mimosa_camporum
+		Mimosa_cisparanensis
+		Mimosa_orthocarpa
+		Mimosa_somnians_lupulina
+		Mimosa_brachycarpa
+		Mimosa_somnians_lasiocarpa
+		Mimosa_somnambulans
+		Mimosa_somnians_viscida
+		Mimosa_somnians_velascoensis
+		Mimosa_poculata
+		Mimosa_adenocarpa
+		Mimosa_deamii
+		Mimosa_tricephala_nelsonii
+		Mimosa_sicyocarpa
+		Mimosa_psilocarpa
+		Mimosa_sousae
+		Mimosa_goldmanii
+		Mimosa_acapulcensis
+		Mimosa_caerulea
+		Mimosa_lactiflua
+		Mimosa_xanti
+		Mimosa_polycarpa_subandina
+		Mimosa_brevipetiolata_hirtula
+		Mimosa_flagellaris
+		Mimosa_polycarpa_redundans
+		Mimosa_lamolina
+		Mimosa_ctenodes
+		Mimosa_incarum
+		Mimosa_polycarpa
+		Mimosa_loxensis
+		Mimosa_pectinatipinna
+		Mimosa_rusbyana
+		Mimosa_boliviana
+		Mimosa_woodii
+		Mimosa_urticaria
+		Mimosa_aurivillus_aurivillus
+		Mimosa_aurivillus
+		Mimosa_bathyrrena
+		Mimosa_hirsutula
+		Mimosa_taimbensis
+		Mimosa_crassipes
+		Mimosa_incana
+		Mimosa_montis
+		Mimosa_parviceps
+		Mimosa_kuhnisteroides
+		Mimosa_pseudocalosa
+		Mimosa_orthacantha
+		Mimosa_sp6
+		Mimosa_adpressa
+		Mimosa_niederlenii
+		Mimosa_schleidenii
+		Mimosa_pedersenii
+		Mimosa_fachinalensis
+		Mimosa_dutrae
+		Mimosa_atlantica
+		Mimosa_ramulosa
+		Mimosa_parvipinna
+		Mimosa_sprengellii
+		Mimosa_ramboi
+		Mimosa_dolens_dolens
+		Mimosa_dolens_rigida
+		Mimosa_dryandroides_extratropica
+		Mimosa_oblonga
+		Mimosa_ramossissima
+		Mimosa_adamantina_adamantina
+		Mimosa_myriophylla
+		Mimosa_per_dusenii
+		Mimosa_coniflora
+		Mimosa_micropteris
+		Mimosa_callidryas
+		Mimosa_chartostegia
+		Mimosa_sp5
+		Mimosa_pilulifera
+		Mimosa_daleoides
+		Mimosa_mogolensis
+		Mimosa_lepidorepens
+		Mimosa_involucrata
+		Mimosa_gymnas
+		Mimosa_furfuracea
+		Mimosa_barretoi
+		Mimosa_calothamnus_calothamnus
+		Mimosa_leprosa_parviceps
+		Mimosa_aurivillus_calothamnus
+		Mimosa_flocculosa
+		Mimosa_caracensis
+		Mimosa_scabrella
+		Mimosa_chrysastra
+		Mimosa_macedoana
+		Mimosa_debilis_debilis
+		Mimosa_nuda
+		Mimosa_tequilana
+		Mimosa_velloziana_velloziana
+		Mimosa_sensitiva
+		Mimosa_albida_albida
+		Mimosa_casta
+		Mimosa_sp7
+		Mimosa_sp2
+		Mimosa_xanthocentra_tremula
+		Mimosa_jacobita
+		Mimosa_xanthocentra_subsericea
+		Mimosa_chochisensis
+		Mimosa_verecunda
+		Mimosa_pudica
+		Mimosa_affinis
+		Mimosa_polydactyla
+		Mimosa_rufipila
+		Mimosa_procurrens
+		Mimosa_sp8
+		Mimosa_discobola
+		Mimosa_pseudoradula
+		Mimosa_hypoglauca_hypoglauca
+		Mimosa_papposa
+		Mimosa_lanuginosa_lanuginosa
+		Mimosa_cyclophylla
+		Mimosa_virgula
+		Mimosa_pyrenea
+		Mimosa_radula
+		Mimosa_callithrix
+		Mimosa_chrysothrix
+		Mimosa_sp9
+		Mimosa_polycephala
+		Mimosa_vennatorum
+		Mimosa_dicerastes
+		Mimosa_hirsutissima_grossa
+		Mimosa_hirsutissima_barbigera
+		Mimosa_skinneri_desmodioides
+		Mimosa_vestita
+		Mimosa_modesta
+		Mimosa_honesta
+		Mimosa_ursina
+		Mimosa_chiquitanensis
+		Mimosa_cordistipula
+		Mimosa_misera
+		Mimosa_morroensis
+		Mimosa_guaranitica
+		Mimosa_ulbrichiana
+		Mimosa_lepthantha
+		Mimosa_setuligera
+		Mimosa_xiquexiquensis
+		Mimosa_blanchetii
+		Mimosa_minarum
+		Mimosa_eurystegia
+		Mimosa_gatesiae
+		Mimosa_gracilis_stipitata
+		Mimosa_cuiabensis
+		Mimosa_diplotricha_diplotricha
+		Mimosa_gracilis_invisiformis
+		Mimosa_echinocaula
+		Mimosa_paucifolia
+		Mimosa_campicola_planipes
+		Mimosa_crumenarioides
+		Mimosa_polydidyma
+		Mimosa_filipes
+		Mimosa_sinaloensis
+		Mimosa_robusta
+		Mimosa_rupertiana
+		Mimosa_nuttallii
+		Mimosa_candollei
+		Mimosa_quadrivalvis
+		Mimosa_antioquensis_isthmensis
+		Mimosa_invisa_invisa
+		Mimosa_vilersii
+		Mimosa_myriocephala
+		Mimosa_menabeensis
+		Mimosa_volubilis
+		Mimosa_grandidieri
+		Mimosa_onilahensis
+		Mimosa_delicatula
+		Mimosa_latispinosa
+		Mimosa_nossibiensis
+		Mimosa_levenensis
+		Mimosa_psoralea
+		Mimosa_himalayana
+		Mimosa_hamata
+		Mimosa_prainiana
+		Mimosa_mossambicensis
+		Mimosa_busseana
+		Mimosa_hafomantsina
+		Mimosa_waterlotii
+		Mimosa_ceratonia_interior
+		Mimosa_ceratonia_ceratonia
+		Mimosa_caesalpiniifolia
+		Mimosa_laticifera
+		Mimosa_acutistipula_acutistipula
+		Mimosa_bimucronata
+		Mimosa_pseudosepiaria
+		Mimosa_farinosa
+		Mimosa_arenosa_leiocarpa
+		Mimosa_ophthalmocentra
+		Mimosa_hapaloclada
+		Mimosa_mensicola
+		Mimosa_arenosa_arenosa
+		Mimosa_spirocarpa
+		Mimosa_distachya_oligacantha
+		Mimosa_polyantha
+		Mimosa_aspera
+		Mimosa_guatemalensis
+		Mimosa_mollis
+		Mimosa_calcicola
+		Mimosa_tejupilcana
+		Mimosa_monancistra
+		Mimosa_similis
+		Mimosa_dysocarpa
+		Mimosa_costenya
+		Mimosa_emoryana
+		Mimosa_grahamii
+		Mimosa_depauperata
+		Mimosa_lacerata
+		Mimosa_biuncifera
+		Mimosa_texana_texana
+		Mimosa_texana_filipes
+		Mimosa_palmeri
+		Mimosa_nanchititlana
+		Mimosa_adenantheroides
+		Mimosa_minutifolia
+		Mimosa_rhodocarpa
+		Mimosa_aculeaticarpa
+		Mimosa_dominguensis
+		Mimosa_galleotti
+		Mimosa_benthami
+		Mimosa_luisana
+		Mimosa_adenantheroides_hystricosa
+		Mimosa_unipinnata
+		Mimosa_borealis
+		Mimosa_zygophylla
+		Mimosa_purpusii
+		Mimosa_acantholoba_acantholoba
+		Mimosa_platycarpa
+		Mimosa_acantholoba_eurycarpa
+		Mimosa_ervendbergii
+		Mimosa_hondurana
+		Mimosa_leptocarpa
+		Mimosa_leucaenoides
+		Mimosa_martindelcampoi
+		Mimosa_malacophylla
+		Mimosa_torresiae
+		Mimosa_ephedroides
+		Mimosa_detinens
+		Mimosa_quitensis
+		Mimosa_andina
+		Mimosa_hexandra
+		Mimosa_caduca
+		Mimosa_montana_montana
+		Mimosa_weberbaueri
+		Mimosa_jaenensis
+		Mimosa_montana_sandemanii
+		Mimosa_bahamensis
+		Mimosa_dichroa
+		Mimosa_guilandinae
+		Mimosa_rufescens
+		Mimosa_watsonii
+		Mimosa_colombiana
+		Mimosa_lepidophora
+		Mimosa_myriadenia
+		Mimosa_irrigua
+		Mimosa_pithecolobioides
+		Mimosa_townsendii
+		Mimosa_nothacacia
+		Mimosa_revoluta
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Mimosa_longepedunculata,
+		2	Mimosa_oedoclada,
+		3	Mimosa_setosissima,
+		4	Mimosa_foliolosa_brevibractea,
+		5	Mimosa_densa_alligantina,
+		6	Mimosa_claussenii_prorsiseta,
+		7	Mimosa_manidea,
+		8	Mimosa_ulei_grallator,
+		9	Mimosa_foliolosa_paranani,
+		10	Mimosa_vernicosa_ciliata,
+		11	Mimosa_lithoreas,
+		12	Mimosa_rheiptera,
+		13	Mimosa_decorticans,
+		14	Mimosa_ulei_ulei,
+		15	Mimosa_rhodostegia,
+		16	Mimosa_tocantina,
+		17	Mimosa_nitens,
+		18	Mimosa_foliolosa_pubescens,
+		19	Mimosa_stylosa,
+		20	Mimosa_splendida,
+		21	Mimosa_viperina,
+		22	Mimosa_foliolosa_gravida,
+		23	Mimosa_pachycarpoides,
+		24	Mimosa_heringeri,
+		25	Mimosa_cryptothamnos,
+		26	Mimosa_claussenii_microphyllidia,
+		27	Mimosa_claussenii_megistophylla,
+		28	Mimosa_foliolosa_multipinna,
+		29	Mimosa_foliolosa_peregrina,
+		30	Mimosa_melanocarpa,
+		31	Mimosa_dominarum,
+		32	Mimosa_foliolosa_franciscana,
+		33	Mimosa_regina,
+		34	Mimosa_densa_densa,
+		35	Mimosa_antrorsa,
+		36	Mimosa_foliolosa_vernicosa,
+		37	Mimosa_laniceps,
+		38	Mimosa_claussenii_claviceps,
+		39	Mimosa_oligosperma,
+		40	Mimosa_chiliomera,
+		41	Mimosa_maguirei,
+		42	Mimosa_acroconica,
+		43	Mimosa_bispiculata,
+		44	Mimosa_setosa_paludosa,
+		45	Mimosa_myrioglandulosa,
+		46	Mimosa_foliolosa_foliolosa,
+		47	Mimosa_diminuta,
+		48	Mimosa_kalunga,
+		49	Mimosa_setosa_nitens,
+		50	Mimosa_foliolosa_grandibractea,
+		51	Mimosa_setosa_granitica,
+		52	Mimosa_sp1,
+		53	Mimosa_leiocephala,
+		54	Mimosa_foliolosa_pachycarpa,
+		55	Mimosa_claussenii,
+		56	Mimosa_caliciadenia,
+		57	Mimosa_adenotricha,
+		58	Mimosa_humivagans,
+		59	Mimosa_prorepens,
+		60	Mimosa_foliolosa_foederalis,
+		61	Mimosa_setosa_urbana,
+		62	Mimosa_speciosissima,
+		63	Mimosa_albolanata,
+		64	Mimosa_setosa_urbica,
+		65	Mimosa_albolanata_brasiliana,
+		66	Mimosa_albolanata_paucipinna,
+		67	Mimosa_setosa_setosa,
+		68	Mimosa_accedens,
+		69	Mimosa_corynadenia,
+		70	Mimosa_uliginosa,
+		71	Mimosa_uraguensis,
+		72	Mimosa_hatschbachii,
+		73	Mimosa_cruenta,
+		74	Mimosa_bifurca,
+		75	Mimosa_sanguinolenta,
+		76	Mimosa_sp3,
+		77	Mimosa_strobiliflora,
+		78	Mimosa_lepidota,
+		79	Mimosa_piresii,
+		80	Mimosa_orbignyana,
+		81	Mimosa_sp4,
+		82	Mimosa_riedelii,
+		83	Mimosa_aguapeia,
+		84	Mimosa_suberosa,
+		85	Mimosa_elliptica,
+		86	Mimosa_pigra_dehiscens,
+		87	Mimosa_pigra_berlandieri,
+		88	Mimosa_strigillosa,
+		89	Mimosa_weddelliana,
+		90	Mimosa_dormiens,
+		91	Mimosa_ferricola,
+		92	Mimosa_spixiana,
+		93	Mimosa_lewisii,
+		94	Mimosa_nothopteris,
+		95	Mimosa_adenophylla_adenophylla,
+		96	Mimosa_hebecarpa,
+		97	Mimosa_adenophylla_mitis,
+		98	Mimosa_pteridifolia,
+		99	Mimosa_gemmulata_gemmulata,
+		100	Mimosa_coruscocaesia,
+		101	Mimosa_amnis_atri,
+		102	Mimosa_sericantha,
+		103	Mimosa_verrucosa,
+		104	Mimosa_trianae,
+		105	Mimosa_artemisiana,
+		106	Mimosa_fiebrigii,
+		107	Mimosa_craspedisetosa,
+		108	Mimosa_schomburgkii,
+		109	Mimosa_dalyi,
+		110	Mimosa_interrupta,
+		111	Mimosa_glutinosa,
+		112	Mimosa_xavantinae,
+		113	Mimosa_apodocarpa,
+		114	Mimosa_tenuiflora,
+		115	Mimosa_insignis,
+		116	Mimosa_auriculata,
+		117	Mimosa_josephina,
+		118	Mimosa_rastrera,
+		119	Mimosa_neptunioides,
+		120	Mimosa_occidentalis,
+		121	Mimosa_camporum,
+		122	Mimosa_cisparanensis,
+		123	Mimosa_orthocarpa,
+		124	Mimosa_somnians_lupulina,
+		125	Mimosa_brachycarpa,
+		126	Mimosa_somnians_lasiocarpa,
+		127	Mimosa_somnambulans,
+		128	Mimosa_somnians_viscida,
+		129	Mimosa_somnians_velascoensis,
+		130	Mimosa_poculata,
+		131	Mimosa_adenocarpa,
+		132	Mimosa_deamii,
+		133	Mimosa_tricephala_nelsonii,
+		134	Mimosa_sicyocarpa,
+		135	Mimosa_psilocarpa,
+		136	Mimosa_sousae,
+		137	Mimosa_goldmanii,
+		138	Mimosa_acapulcensis,
+		139	Mimosa_caerulea,
+		140	Mimosa_lactiflua,
+		141	Mimosa_xanti,
+		142	Mimosa_polycarpa_subandina,
+		143	Mimosa_brevipetiolata_hirtula,
+		144	Mimosa_flagellaris,
+		145	Mimosa_polycarpa_redundans,
+		146	Mimosa_lamolina,
+		147	Mimosa_ctenodes,
+		148	Mimosa_incarum,
+		149	Mimosa_polycarpa,
+		150	Mimosa_loxensis,
+		151	Mimosa_pectinatipinna,
+		152	Mimosa_rusbyana,
+		153	Mimosa_boliviana,
+		154	Mimosa_woodii,
+		155	Mimosa_urticaria,
+		156	Mimosa_aurivillus_aurivillus,
+		157	Mimosa_aurivillus,
+		158	Mimosa_bathyrrena,
+		159	Mimosa_hirsutula,
+		160	Mimosa_taimbensis,
+		161	Mimosa_crassipes,
+		162	Mimosa_incana,
+		163	Mimosa_montis,
+		164	Mimosa_parviceps,
+		165	Mimosa_kuhnisteroides,
+		166	Mimosa_pseudocalosa,
+		167	Mimosa_orthacantha,
+		168	Mimosa_sp6,
+		169	Mimosa_adpressa,
+		170	Mimosa_niederlenii,
+		171	Mimosa_schleidenii,
+		172	Mimosa_pedersenii,
+		173	Mimosa_fachinalensis,
+		174	Mimosa_dutrae,
+		175	Mimosa_atlantica,
+		176	Mimosa_ramulosa,
+		177	Mimosa_parvipinna,
+		178	Mimosa_sprengellii,
+		179	Mimosa_ramboi,
+		180	Mimosa_dolens_dolens,
+		181	Mimosa_dolens_rigida,
+		182	Mimosa_dryandroides_extratropica,
+		183	Mimosa_oblonga,
+		184	Mimosa_ramossissima,
+		185	Mimosa_adamantina_adamantina,
+		186	Mimosa_myriophylla,
+		187	Mimosa_per_dusenii,
+		188	Mimosa_coniflora,
+		189	Mimosa_micropteris,
+		190	Mimosa_callidryas,
+		191	Mimosa_chartostegia,
+		192	Mimosa_sp5,
+		193	Mimosa_pilulifera,
+		194	Mimosa_daleoides,
+		195	Mimosa_mogolensis,
+		196	Mimosa_lepidorepens,
+		197	Mimosa_involucrata,
+		198	Mimosa_gymnas,
+		199	Mimosa_furfuracea,
+		200	Mimosa_barretoi,
+		201	Mimosa_calothamnus_calothamnus,
+		202	Mimosa_leprosa_parviceps,
+		203	Mimosa_aurivillus_calothamnus,
+		204	Mimosa_flocculosa,
+		205	Mimosa_caracensis,
+		206	Mimosa_scabrella,
+		207	Mimosa_chrysastra,
+		208	Mimosa_macedoana,
+		209	Mimosa_debilis_debilis,
+		210	Mimosa_nuda,
+		211	Mimosa_tequilana,
+		212	Mimosa_velloziana_velloziana,
+		213	Mimosa_sensitiva,
+		214	Mimosa_albida_albida,
+		215	Mimosa_casta,
+		216	Mimosa_sp7,
+		217	Mimosa_sp2,
+		218	Mimosa_xanthocentra_tremula,
+		219	Mimosa_jacobita,
+		220	Mimosa_xanthocentra_subsericea,
+		221	Mimosa_chochisensis,
+		222	Mimosa_verecunda,
+		223	Mimosa_pudica,
+		224	Mimosa_affinis,
+		225	Mimosa_polydactyla,
+		226	Mimosa_rufipila,
+		227	Mimosa_procurrens,
+		228	Mimosa_sp8,
+		229	Mimosa_discobola,
+		230	Mimosa_pseudoradula,
+		231	Mimosa_hypoglauca_hypoglauca,
+		232	Mimosa_papposa,
+		233	Mimosa_lanuginosa_lanuginosa,
+		234	Mimosa_cyclophylla,
+		235	Mimosa_virgula,
+		236	Mimosa_pyrenea,
+		237	Mimosa_radula,
+		238	Mimosa_callithrix,
+		239	Mimosa_chrysothrix,
+		240	Mimosa_sp9,
+		241	Mimosa_polycephala,
+		242	Mimosa_vennatorum,
+		243	Mimosa_dicerastes,
+		244	Mimosa_hirsutissima_grossa,
+		245	Mimosa_hirsutissima_barbigera,
+		246	Mimosa_skinneri_desmodioides,
+		247	Mimosa_vestita,
+		248	Mimosa_modesta,
+		249	Mimosa_honesta,
+		250	Mimosa_ursina,
+		251	Mimosa_chiquitanensis,
+		252	Mimosa_cordistipula,
+		253	Mimosa_misera,
+		254	Mimosa_morroensis,
+		255	Mimosa_guaranitica,
+		256	Mimosa_ulbrichiana,
+		257	Mimosa_lepthantha,
+		258	Mimosa_setuligera,
+		259	Mimosa_xiquexiquensis,
+		260	Mimosa_blanchetii,
+		261	Mimosa_minarum,
+		262	Mimosa_eurystegia,
+		263	Mimosa_gatesiae,
+		264	Mimosa_gracilis_stipitata,
+		265	Mimosa_cuiabensis,
+		266	Mimosa_diplotricha_diplotricha,
+		267	Mimosa_gracilis_invisiformis,
+		268	Mimosa_echinocaula,
+		269	Mimosa_paucifolia,
+		270	Mimosa_campicola_planipes,
+		271	Mimosa_crumenarioides,
+		272	Mimosa_polydidyma,
+		273	Mimosa_filipes,
+		274	Mimosa_sinaloensis,
+		275	Mimosa_robusta,
+		276	Mimosa_rupertiana,
+		277	Mimosa_nuttallii,
+		278	Mimosa_candollei,
+		279	Mimosa_quadrivalvis,
+		280	Mimosa_antioquensis_isthmensis,
+		281	Mimosa_invisa_invisa,
+		282	Mimosa_vilersii,
+		283	Mimosa_myriocephala,
+		284	Mimosa_menabeensis,
+		285	Mimosa_volubilis,
+		286	Mimosa_grandidieri,
+		287	Mimosa_onilahensis,
+		288	Mimosa_delicatula,
+		289	Mimosa_latispinosa,
+		290	Mimosa_nossibiensis,
+		291	Mimosa_levenensis,
+		292	Mimosa_psoralea,
+		293	Mimosa_himalayana,
+		294	Mimosa_hamata,
+		295	Mimosa_prainiana,
+		296	Mimosa_mossambicensis,
+		297	Mimosa_busseana,
+		298	Mimosa_hafomantsina,
+		299	Mimosa_waterlotii,
+		300	Mimosa_ceratonia_interior,
+		301	Mimosa_ceratonia_ceratonia,
+		302	Mimosa_caesalpiniifolia,
+		303	Mimosa_laticifera,
+		304	Mimosa_acutistipula_acutistipula,
+		305	Mimosa_bimucronata,
+		306	Mimosa_pseudosepiaria,
+		307	Mimosa_farinosa,
+		308	Mimosa_arenosa_leiocarpa,
+		309	Mimosa_ophthalmocentra,
+		310	Mimosa_hapaloclada,
+		311	Mimosa_mensicola,
+		312	Mimosa_arenosa_arenosa,
+		313	Mimosa_spirocarpa,
+		314	Mimosa_distachya_oligacantha,
+		315	Mimosa_polyantha,
+		316	Mimosa_aspera,
+		317	Mimosa_guatemalensis,
+		318	Mimosa_mollis,
+		319	Mimosa_calcicola,
+		320	Mimosa_tejupilcana,
+		321	Mimosa_monancistra,
+		322	Mimosa_similis,
+		323	Mimosa_dysocarpa,
+		324	Mimosa_costenya,
+		325	Mimosa_emoryana,
+		326	Mimosa_grahamii,
+		327	Mimosa_depauperata,
+		328	Mimosa_lacerata,
+		329	Mimosa_biuncifera,
+		330	Mimosa_texana_texana,
+		331	Mimosa_texana_filipes,
+		332	Mimosa_palmeri,
+		333	Mimosa_nanchititlana,
+		334	Mimosa_adenantheroides,
+		335	Mimosa_minutifolia,
+		336	Mimosa_rhodocarpa,
+		337	Mimosa_aculeaticarpa,
+		338	Mimosa_dominguensis,
+		339	Mimosa_galleotti,
+		340	Mimosa_benthami,
+		341	Mimosa_luisana,
+		342	Mimosa_adenantheroides_hystricosa,
+		343	Mimosa_unipinnata,
+		344	Mimosa_borealis,
+		345	Mimosa_zygophylla,
+		346	Mimosa_purpusii,
+		347	Mimosa_acantholoba_acantholoba,
+		348	Mimosa_platycarpa,
+		349	Mimosa_acantholoba_eurycarpa,
+		350	Mimosa_ervendbergii,
+		351	Mimosa_hondurana,
+		352	Mimosa_leptocarpa,
+		353	Mimosa_leucaenoides,
+		354	Mimosa_martindelcampoi,
+		355	Mimosa_malacophylla,
+		356	Mimosa_torresiae,
+		357	Mimosa_ephedroides,
+		358	Mimosa_detinens,
+		359	Mimosa_quitensis,
+		360	Mimosa_andina,
+		361	Mimosa_hexandra,
+		362	Mimosa_caduca,
+		363	Mimosa_montana_montana,
+		364	Mimosa_weberbaueri,
+		365	Mimosa_jaenensis,
+		366	Mimosa_montana_sandemanii,
+		367	Mimosa_bahamensis,
+		368	Mimosa_dichroa,
+		369	Mimosa_guilandinae,
+		370	Mimosa_rufescens,
+		371	Mimosa_watsonii,
+		372	Mimosa_colombiana,
+		373	Mimosa_lepidophora,
+		374	Mimosa_myriadenia,
+		375	Mimosa_irrigua,
+		376	Mimosa_pithecolobioides,
+		377	Mimosa_townsendii,
+		378	Mimosa_nothacacia,
+		379	Mimosa_revoluta
+	;
+	TREE * UNTITLED = [&R] (((((((((((((((((((((((1:0.9176593984,2:0.9176593984):0.5778948555,3:1.495554254):0.03652779147,4:1.532082045):0.01691204048,(5:0.911625837,6:0.911625837):0.6373682489):0.0169458877,(((7:0.9244202251,8:0.9244202251):0.1634343207,9:1.087854546):0.09484042469,(10:0.9686906672,11:0.9686906672):0.2140043033):0.3832450031):0.003683176734,((12:0.9141730814,13:0.9141730814):0.1596370554,14:1.073810137):0.4958130135):0.609248381,15:2.178871531):0.008146419964,(((16:0.9014052179,17:0.9014052179):0.2352209473,18:1.136626165):0.06944472686,(19:1.085863253,20:1.085863253):0.1202076392):0.9809470593):0.8331973201,21:3.020215271):0.257730463,((((((22:0.2045238456,23:0.2045238456):1.047116208,24:1.251640053):0.3223486181,(25:1.359958735,26:1.359958735):0.2140299368):0.05559245388,((27:1.040581604,28:1.040581604):0.422530043,29:1.463111647):0.1664694785):0.5563971243,(((((30:1.074788544,31:1.074788544):0.2635318972,32:1.338320441):0.1187658293,33:1.45708627):0.0494290699,34:1.50651534):0.09473178492,(35:1.410037717,36:1.410037717):0.191209408):0.5847311245):0.01140520099,((37:1.143878085,38:1.143878085):0.429971495,39:1.57384958):0.6235338706):1.080562284):0.7934415046,(((((40:0.3415522123,41:0.3415522123):0.5215957446,42:0.8631479569):0.03256502553,43:0.8957129825):1.083085436,44:1.978798418):0.1490927743,(((45:1.372577013,46:1.372577013):0.04862218397,47:1.421199197):0.02154418804,48:1.442743385):0.6851478071):1.943496047):0.3246454958,(((49:0.9164856056,50:0.9164856056):0.1237551777,51:1.040240783):1.592698204,52:2.632938987):1.763093748):0.06414613142,(((((53:2.460448521,54:2.460448521):0.3092211069,55:2.769669628):0.2017515333,(56:1.550812005,57:1.550812005):1.420609156):0.2018310253,(((58:0.32412157,59:0.32412157):0.5130551397,60:0.8371767097):1.856105415,(61:2.003614113,62:2.003614113):0.6896680112):0.4799700621):0.145876825,(((((63:0.5043793772,64:0.5043793772):0.2594517256,65:0.7638311028):0.03075479664,66:0.7945858994):0.0276083659,67:0.8221942653):0.01194407937,68:0.8341383447):2.484990667):1.141049855):1.028439684,69:5.48861855):4.01052965,((((((70:0.2027421019,71:0.2027421019):0.6565980448,72:0.8593401467):0.3118604841,(73:0.80353424,74:0.80353424):0.3676663907):0.2643950578,(75:1.146013164,76:1.146013164):0.2895825246):2.380596483,(77:3.193121007,78:3.193121007):0.6230711655):4.786741886,((((79:1.399969448,80:1.399969448):0.1470567479,81:1.547026196):0.09304658058,(82:1.004356493,83:1.004356493):0.6357162832):0.06842646133,84:1.708499238):6.89443482):0.896214142):0.9759576857,(((((85:1.755162562,86:1.755162562):0.4385120954,87:2.193674658):1.637969007,88:3.831643665):0.04533171387,89:3.876975379):2.260015905,90:6.136991284):4.338114601):1.436808738,((((((((((91:2.778271293,92:2.778271293):1.474313983,(93:1.623128962,94:1.623128962):2.629456313):1.525728211,(95:4.687019707,96:4.687019707):1.091293779):0.8654043024,97:6.643717789):0.6271583984,((((98:4.451325615,99:4.451325615):0.5990495185,100:5.050375134):0.06129612042,(101:0.685205583,102:0.685205583):4.426465671):1.032758807,103:6.144430061):1.126446126):0.1462831463,(((104:0.255964994,105:0.255964994):2.077223304,106:2.333188298):2.440439662,(107:2.858772979,108:2.858772979):1.914854981):2.643531373):0.9147606224,109:8.331919956):0.7632520995,(110:3.380975078,111:3.380975078):5.714196977):0.5595385651,(((112:0.6279654127,113:0.6279654127):4.950432272,114:5.578397685):1.496261986,115:7.074659671):2.58005095):1.211024939,(((((((116:0.2071139809,117:0.2071139809):1.230875921,118:1.437989902):0.1294278962,119:1.567417798):2.018919657,((120:0.645520335,121:0.645520335):1.154234844,122:1.799755179):1.786582275):0.3039478472,123:3.890285302):2.22393137,((((124:0.6268048682,125:0.6268048682):0.6389562173,126:1.265761085):1.625433052,127:2.891194138):0.4065056258,((128:0.4878709454,129:0.4878709454):1.002260259,130:1.490131205):1.807568559):2.816516909):3.8024103,131:9.916626972):0.9491085876):1.046179064):2.773730006,((((((((((((((((132:0.8022268793,133:0.8022268793):0.1964983841,134:0.9987252634):0.4274781956,(135:0.2943581379,136:0.2943581379):1.131845321):0.06852147957,(137:1.040023116,138:1.040023116):0.454701822):0.09002540796,139:1.584750346):0.6763700723,(140:1.263468827,141:1.263468827):0.9976515919):2.167242782,((142:0.549835611,143:0.549835611):1.029586033,144:1.579421644):2.848941557):0.3701011798,(((((145:0.2067598037,146:0.2067598037):0.5418351077,(147:0.487565918,148:0.487565918):0.2610289933):0.4368953133,149:1.185490225):0.8188133589,(150:1.756134072,151:1.756134072):0.248169512):1.172412699,((152:1.061299109,153:1.061299109):0.8750139832,154:1.936313092):1.24040319):1.621748099):2.775801434,((((((155:0.8754783125,156:0.8754783125):1.284625601,157:2.160103914):0.6737152067,158:2.833819121):0.7456694272,(159:1.045624921,160:1.045624921):2.533863627):1.771628275,(161:4.381126389,162:4.381126389):0.9699904331):1.712133049,((((163:0.8584982127,164:0.8584982127):0.8056362583,165:1.664134471):1.356342293,166:3.020476764):3.361428215,167:6.381904979):0.6813448924):0.5110159436):0.2025920451,((168:1.258050077,169:1.258050077):0.1544706042,170:1.412520681):6.364337179):0.1059621044,(((((((171:0.3211154873,172:0.3211154873):0.0859235473,173:0.4070390346):0.7022755545,174:1.109314589):3.435252127,175:4.544566716):1.777354577,(((176:0.8684059209,177:0.8684059209):0.4911523435,178:1.359558264):0.9803141339,179:2.339872398):3.982048894):0.02947735422,((((180:0.6727059711,181:0.6727059711):2.314216312,182:2.986922283):0.1370039003,183:3.123926183):0.04947263449,184:3.173398818):3.177999829):0.8841465279,((((((185:3.416822965,186:3.416822965):0.4489491558,(187:2.504415644,188:2.504415644):1.361356477):0.1569394591,189:4.022711579):0.4029846266,190:4.425696206):0.9913863416,191:5.417082548):1.554609831,192:6.971692379):0.2638527957):0.6472747898):0.04221944818,((((((193:2.539659323,194:2.539659323):2.424423623,195:4.964082945):1.877431147,196:6.841514092):0.1772321451,(197:5.224985566,198:5.224985566):1.793760671):0.09657395617,(199:2.187693386,200:2.187693386):4.927626808):0.09968177666,((((((201:0.9959291155,202:0.9959291155):0.07729250293,203:1.073221618):0.9065067419,(204:0.7565526922,205:0.7565526922):1.223175668):0.06545121004,206:2.04517957):0.2083965844,207:2.253576155):3.453758963,208:5.707335117):1.507666853):0.7100374426):1.528998618,((((209:0.678668269,210:0.678668269):1.334346922,211:2.013015191):2.22771444,(212:0.3731252622,213:0.3731252622):3.867604369):0.1449208968,(214:1.482815861,215:1.482815861):2.902834667):5.068387502):2.133248464,((((((216:0.2793560379,217:0.2793560379):0.9304419005,(218:1.075435234,219:1.075435234):0.134362704):0.031690908,(220:0.6976909353,221:0.6976909353):0.543797911):0.5686243015,222:1.810113148):8.989276504,((223:1.723202222,224:1.723202222):2.441105196,225:4.164307418):6.635082234):0.09462219396,(226:1.854882843,227:1.854882843):9.039129003):0.6932746477):0.5286961409,((((((((228:0.193742132,229:0.193742132):1.306253004,230:1.499995136):0.151055284,(231:1.005720349,232:1.005720349):0.6453300707):0.06354668335,(((233:0.8800214384,234:0.8800214384):0.5152434382,(235:1.035181829,236:1.035181829):0.3600830479):0.06955605735,237:1.464820934):0.2497761691):1.421454224,((((238:0.3862908761,239:0.3862908761):0.1472804083,240:0.5335712844):0.8477706385,(241:1.232837124,242:1.232837124):0.1485047988):0.07651162088,243:1.457853544):1.678197783):0.3035155673,(((244:0.4125178917,245:0.4125178917):1.660257527,246:2.072775419):0.9266476824,247:2.999423102):0.4401437925):1.493475081,((248:0.9204863986,249:0.9204863986):1.813568959,250:2.734055357):2.198986618):5.491132919,251:10.42417489):1.691807741):2.056342196,((((((252:0.3947871077,253:0.3947871077):0.101968001,254:0.4967551087):0.04233535601,255:0.5390904647):0.02597465124,256:0.565065116):0.5908127041,257:1.15587782):8.148758696,(((258:1.781761205,259:1.781761205):0.1912613696,260:1.973022575):2.211238448,261:4.184261022):5.120375494):4.867688315):0.5133197989):1.413008037,262:16.09865267):1.305200605,((((((263:0.7028531611,264:0.7028531611):1.484656267,265:2.187509428):4.338089598,266:6.525599026):0.9190846534,((267:0.6976621718,268:0.6976621718):0.1950532438,269:0.8927154156):6.551968264):0.9242466025,(((270:0.1983985885,271:0.1983985885):1.573813453,272:1.772212041):1.803870849,273:3.57608289):4.792847392):2.964169765,(((((274:0.2315582558,275:0.2315582558):1.673659156,276:1.905217412):0.1196111886,277:2.0248286):0.3095370267,(278:1.820468697,279:1.820468697):0.5138969304):6.126109736,(280:2.446431357,281:2.446431357):6.014044006):2.872624685):6.070753225):1.347696055,(((((((((282:0.5481318763,283:0.5481318763):0.4561475351,(284:0.9180031074,285:0.9180031074):0.08627630387):1.215671798,((286:0.6178294991,287:0.6178294991):0.1489089946,288:0.7667384937):1.453212716):0.2103996693,((289:0.4440525826,290:0.4440525826):0.5503611631,291:0.9944137457):1.435937133):0.04423976897,292:2.474590648):1.988829291,((((293:0.4448562048,294:0.4448562048):1.023106785,295:1.46796299):2.412318749,(296:2.028617121,297:2.028617121):1.851664618):0.2046503243,(298:1.009690493,299:1.009690493):3.075241571):0.3784878744):3.185509613,(300:1.25889986,301:1.25889986):6.390029691):1.142338758,(302:1.544349695,303:1.544349695):7.246918614):1.852128839,(((((304:2.860248733,305:2.860248733):2.870668997,306:5.73091773):0.1888953923,307:5.919813122):0.9039038073,(308:3.105739782,309:3.105739782):3.717977147):1.086293628,((310:2.482384968,311:2.482384968):1.952300551,312:4.434685518):3.475325038):2.733386591):8.108152181):3.648832858,((((((((((((((((313:0.7398937734,314:0.7398937734):0.1557885643,315:0.8956823377):0.09026636424,316:0.9859487019):0.1257074868,((317:0.718935557,318:0.718935557):0.2599437813,319:0.9788793382):0.1327768505):1.085747304,((320:0.2992025299,321:0.2992025299):1.8187317,322:2.11793423):0.07946926318):0.7778509636,323:2.975254457):0.1970126079,324:3.172267065):0.2044992191,(((325:1.307156495,326:1.307156495):0.8231458566,327:2.130302351):0.8045882649,(328:2.587486199,329:2.587486199):0.3474044168):0.4418756677):0.01377003628,((((((330:0.7289287301,331:0.7289287301):0.1559584405,332:0.8848871706):0.1147696751,(333:0.7249159967,334:0.7249159967):0.274740849):0.04584840463,(335:0.7239259781,336:0.7239259781):0.3215792723):1.084563934,(337:1.987673234,338:1.987673234):0.1423959507):0.008394235941,339:2.13846342):1.2520729):0.09407190953,((340:0.7759002328,341:0.7759002328):0.1949995631,342:0.9708997959):2.513708434):2.885611402,(((343:0.4558343246,344:0.4558343246):1.55740032,345:2.013234645):0.2422450792,346:2.255479724):4.114739908):0.5208699375,(((((347:0.3993976771,348:0.3993976771):1.398110503,349:1.79750818):2.245811197,(350:1.686462563,351:1.686462563):2.356856814):0.4593771465,352:4.502696524):1.54890208,((353:0.3005736231,354:0.3005736231):5.478385974,355:5.778959597):0.2726390073):0.8394909656):1.041025268,356:7.932114837):1.213514612,(((((357:3.847945167,358:3.847945167):1.256436907,(359:2.230010244,360:2.230010244):2.87437183):0.2511224292,361:5.355504503):0.09108185875,362:5.446586362):0.1376073428,(((363:1.196790832,364:1.196790832):1.265069711,365:2.461860543):2.069577576,366:4.531438119):1.052755586):3.561435744):0.223121202,367:9.368750651):5.343363451,368:14.7121141):7.688268084):3.357890119,(((((((369:0.6593162221,370:0.6593162221):1.867274203,371:2.526590425):1.256922714,372:3.783513139):1.120100365,373:4.903613503):0.02785677282,374:4.931470276):4.153314186,(375:3.558183689,376:3.558183689):5.526600773):4.199358243,((377:2.622354495,378:2.622354495):5.066744721,379:7.689099216):5.595043488):12.4741296);
+END;

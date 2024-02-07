@@ -1,0 +1,787 @@
+#NEXUS
+[R-package APE, Mon Feb 13 17:34:04 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 387;
+	TAXLABELS
+		Abrawayaomys_ruschii
+		Abrothrix_andina
+		Abrothrix_hirta
+		Abrothrix_illutea
+		Abrothrix_jelskii
+		Abrothrix_lanosa
+		Abrothrix_longipilis
+		Abrothrix_manni
+		Abrothrix_olivacea
+		Abrothrix_sanborni
+		Aegialomys_baroni
+		Aegialomys_galapagoensis
+		Aegialomys_ica
+		Aegialomys_xanthaeolus
+		Aepeomys_lugens
+		Akodon_aerosus
+		Akodon_affinis
+		Akodon_albiventer
+		Akodon_azarae
+		Akodon_baliolus
+		Akodon_boliviensis
+		Akodon_budini
+		Akodon_caenosus
+		Akodon_cursor
+		Akodon_dayi
+		Akodon_dolores
+		Akodon_fumeus
+		Akodon_iniscatus
+		Akodon_josemariarguedasi
+		Akodon_juninensis
+		Akodon_kadiweu
+		Akodon_kofordi
+		Akodon_kotosh
+		Akodon_lindberghi
+		Akodon_lutescens
+		Akodon_mimus
+		Akodon_mollis
+		Akodon_montensis
+		Akodon_mystax
+		Akodon_oenos
+		Akodon_orophilus
+		Akodon_paranaensis
+		Akodon_philipmyersi
+		Akodon_polopi
+		Akodon_reigi
+		Akodon_siberiae
+		Akodon_simulator
+		Akodon_spegazzinii
+		Akodon_subfuscus
+		Akodon_surdus
+		Akodon_sylvanus
+		Akodon_toba
+		Akodon_torques
+		Akodon_varius
+		Amphinectomys_savamis
+		Andalgalomys_olrogi
+		Andalgalomys_pearsoni
+		Andinomys_edax
+		Antillomys_rayi
+		Auliscomys_boliviensis
+		Auliscomys_pictus
+		Auliscomys_sublimis
+		Bibimys_chacoensis
+		Bibimys_labiosus
+		Bibimys_torresi
+		Blarinomys_breviceps
+		Brucepattersonius_griserufescens
+		Brucepattersonius_iheringi
+		Brucepattersonius_nebulosus
+		Brucepattersonius_soricinus
+		Calassomys_apicalis
+		Calomys_callidus
+		Calomys_callosus
+		Calomys_cerqueirai
+		Calomys_expulsus
+		Calomys_fecundus
+		Calomys_hummelincki
+		Calomys_laucha
+		Calomys_lepidus
+		Calomys_musculinus
+		Calomys_sorella
+		Calomys_tener
+		Calomys_tocantinsi
+		Calomys_venustus
+		Castoria_angustidens
+		Cerradomys_akroai
+		Cerradomys_goytaca
+		Cerradomys_langguthi
+		Cerradomys_maracajuensis
+		Cerradomys_marinhus
+		Cerradomys_scotti
+		Cerradomys_subflavus
+		Cerradomys_vivoi
+		Chelemys_megalonyx
+		Chilomys_georgeledecii
+		Chilomys_instans
+		Chilomys_neisi
+		Chilomys_percequilloi
+		Chilomys_weksleri
+		Chinchillula_sahamae
+		Delomys_altimontanus
+		Delomys_dorsalis
+		Delomys_sublineatus
+		Deltamys_kempi
+		Drymoreomys_albimaculatus
+		Eligmodontia_bolsonensis
+		Eligmodontia_dunaris
+		Eligmodontia_hirtipes
+		Eligmodontia_moreni
+		Eligmodontia_morgani
+		Eligmodontia_puerulus
+		Eligmodontia_typus
+		Eremoryzomys_polius
+		Euneomys_chinchilloides
+		Euneomys_fossor
+		Euryoryzomys_emmonsae
+		Euryoryzomys_lamia
+		Euryoryzomys_legatus
+		Euryoryzomys_macconnelli
+		Euryoryzomys_nitidus
+		Euryoryzomys_russatus
+		Galenomys_garleppii
+		Geoxus_annectens
+		Geoxus_lafkenche
+		Geoxus_michaelseni
+		Geoxus_valdivianus
+		Graomys_chacoensis
+		Graomys_domorum
+		Graomys_griseoflavus
+		Handleyomys_alfaroi
+		Handleyomys_chapmani
+		Handleyomys_guerrerensis
+		Handleyomys_intectus
+		Handleyomys_melanotis
+		Handleyomys_rostratus
+		Handleyomys_saturatior
+		Holochilus_brasiliensis
+		Holochilus_chacarius
+		Holochilus_nanus
+		Holochilus_sciureus
+		Hylaeamys_acritus
+		Hylaeamys_laticeps
+		Hylaeamys_megacephalus
+		Hylaeamys_perenensis
+		Hylaeamys_yunganus
+		Ichthyomys_stolzmanni
+		Irenomys_tarsalis
+		Juliomys_ossitenuis
+		Juliomys_pictipes
+		Juliomys_rimofrons
+		Juliomys_ximenezi
+		Juscelinomys_huanchacae
+		Kunsia_tomentosus
+		Lenoxus_apicalis
+		Loxodontomys_micropus
+		Lundomys_molitor
+		Megalomys_desmarestii
+		Megalomys_luciae
+		Melanomys_caliginosus
+		Melanomys_chrysomelas
+		Melanomys_columbianus
+		Melanomys_idoneus
+		Microakodontomys_transitorius
+		Microryzomys_altissimus
+		Microryzomys_minutus
+		Mindomys_hammondi
+		Neacomys_aletheia
+		Neacomys_amoenus
+		Neacomys_auriventer
+		Neacomys_carceleni
+		Neacomys_dubosti
+		Neacomys_elieceri
+		Neacomys_guianae
+		Neacomys_jau
+		Neacomys_macedoruizi
+		Neacomys_marajoara
+		Neacomys_minutus
+		Neacomys_musseri
+		Neacomys_paracou
+		Neacomys_rosalindae
+		Neacomys_serranensis
+		Neacomys_spinosus
+		Neacomys_tenuipes
+		Neacomys_vargasllosai
+		Neacomys_vossi
+		Neacomys_xingu
+		Necromys_amoenus
+		Necromys_lactens
+		Necromys_lasiurus
+		Necromys_lenguarum
+		Necromys_lilloi
+		Necromys_obscurus
+		Necromys_urichi
+		Nectomys_apicalis
+		Nectomys_squamipes
+		Neomicroxus_bogotensis
+		Neomicroxus_latebricola
+		Neotomys_ebriosus
+		Nephelomys_albigularis
+		Nephelomys_devius
+		Nephelomys_keaysi
+		Nephelomys_levipes
+		Nephelomys_moerex
+		Nephelomys_ricardopalmai
+		Nesoryzomys_fernandinae
+		Nesoryzomys_indefessus
+		Nesoryzomys_narboroughi
+		Nesoryzomys_swarthi
+		Neusticomys_ferreirai
+		Neusticomys_monticolus
+		Neusticomys_peruviensis
+		Neusticomys_vossi
+		Notiomys_edwardsii
+		Oecomys_auyantepui
+		Oecomys_bicolor
+		Oecomys_catherinae
+		Oecomys_cleberi
+		Oecomys_concolor
+		Oecomys_franciscorum
+		Oecomys_mamorae
+		Oecomys_matogrossensis
+		Oecomys_paricola
+		Oecomys_phaeotis
+		Oecomys_rex
+		Oecomys_roberti
+		Oecomys_rutilus
+		Oecomys_superans
+		Oecomys_sydandersoni
+		Oecomys_tapajinus
+		Oecomys_trinitatis
+		Oligoryzomys_andinus
+		Oligoryzomys_arenalis
+		Oligoryzomys_brendae
+		Oligoryzomys_chacoensis
+		Oligoryzomys_costaricensis
+		Oligoryzomys_delicatus
+		Oligoryzomys_destructor
+		Oligoryzomys_flavescens
+		Oligoryzomys_fulvescens
+		Oligoryzomys_guille
+		Oligoryzomys_longicaudatus
+		Oligoryzomys_mattogrossae
+		Oligoryzomys_messorius
+		Oligoryzomys_microtis
+		Oligoryzomys_moojeni
+		Oligoryzomys_nigripes
+		Oligoryzomys_pachecoi
+		Oligoryzomys_rupestris
+		Oligoryzomys_stramineus
+		Oligoryzomys_utiaritensis
+		Oligoryzomys_vegetus
+		Oreoryzomys_balneator
+		Oryzomys_couesi
+		Oryzomys_palustris
+		Oryzomys_texensis
+		Oxymycterus_amazonicus
+		Oxymycterus_dasytrichus
+		Oxymycterus_delator
+		Oxymycterus_hiska
+		Oxymycterus_inca
+		Oxymycterus_itapeby
+		Oxymycterus_josei
+		Oxymycterus_juliacae
+		Oxymycterus_nasutus
+		Oxymycterus_nigrifrons
+		Oxymycterus_paramensis
+		Oxymycterus_quaestor
+		Oxymycterus_rufus
+		Oxymycterus_wayku
+		Oxymycterus_willkaurco
+		Pattonimus_ecominga
+		Pattonimus_musseri
+		Paynomys_macronyx
+		Pennatomys_nivalis
+		Phaenomys_ferrugineus
+		Phyllotis_alisosiensis
+		Phyllotis_amicus
+		Phyllotis_andium
+		Phyllotis_anitae
+		Phyllotis_bonariensis
+		Phyllotis_camiari
+		Phyllotis_caprinus
+		Phyllotis_darwinii
+		Phyllotis_definitus
+		Phyllotis_gerbillus
+		Phyllotis_haggardi
+		Phyllotis_limatus
+		Phyllotis_magister
+		Phyllotis_nogalaris
+		Phyllotis_occidens
+		Phyllotis_osilae
+		Phyllotis_pearsoni
+		Phyllotis_pehuenche
+		Phyllotis_rupestris
+		Phyllotis_stenops
+		Phyllotis_tucumanus
+		Phyllotis_vaccarum
+		Phyllotis_xanthopygus
+		Podoxymys_roraimae
+		Pseudoryzomys_simplex
+		Punomys_kofordi
+		Reithrodon_auritus
+		Rhagomys_longilingua
+		Rhagomys_rufescens
+		Rhagomys_septentrionalis
+		Rheomys_raptor
+		Rheomys_thomasi
+		Rhipidomys_albujai
+		Rhipidomys_cariri
+		Rhipidomys_emiliae
+		Rhipidomys_gardneri
+		Rhipidomys_ipukensis
+		Rhipidomys_itoan
+		Rhipidomys_latimanus
+		Rhipidomys_leucodactylus
+		Rhipidomys_macconnelli
+		Rhipidomys_macrurus
+		Rhipidomys_mastacalis
+		Rhipidomys_nitela
+		Rhipidomys_tribei
+		Rhipidomys_venezuelae
+		Rhipidomys_venustus
+		Rhipidomys_wetzeli
+		Salinomys_delicatus
+		Scapteromys_aquaticus
+		Scapteromys_meridionalis
+		Scapteromys_tumidus
+		Scolomys_melanops
+		Scolomys_ucayalensis
+		Sigmodon_alleni
+		Sigmodon_alstoni
+		Sigmodon_arizonae
+		Sigmodon_fulviventer
+		Sigmodon_hirsutus
+		Sigmodon_hispidus
+		Sigmodon_leucotis
+		Sigmodon_mascotensis
+		Sigmodon_ochrognathus
+		Sigmodon_peruanus
+		Sigmodon_toltecus
+		Sigmodontomys_alfari
+		Sooretamys_angouya
+		Tanyuromys_aphrastus
+		Tanyuromys_thomasleei
+		Tapecomys_primus
+		Tapecomys_wolffsohni
+		Thalpomys_cerradensis
+		Thalpomys_lasiotis
+		Thaptomys_nigrita
+		Thomasomys_andersoni
+		Thomasomys_antoniobracki
+		Thomasomys_apeco
+		Thomasomys_aureus
+		Thomasomys_auricularis
+		Thomasomys_australis
+		Thomasomys_baeops
+		Thomasomys_bombycinus
+		Thomasomys_caudivarius
+		Thomasomys_cinereus
+		Thomasomys_cinnameus
+		Thomasomys_daphne
+		Thomasomys_erro
+		Thomasomys_fumeus
+		Thomasomys_gracilis
+		Thomasomys_hudsoni
+		Thomasomys_ischyrus
+		Thomasomys_kalinowskii
+		Thomasomys_ladewi
+		Thomasomys_macrotis
+		Thomasomys_notatus
+		Thomasomys_onkiro
+		Thomasomys_oreas
+		Thomasomys_paramorum
+		Thomasomys_pardignasi
+		Thomasomys_praetor
+		Thomasomys_pyrrhonotus
+		Thomasomys_salazari
+		Thomasomys_silvestris
+		Thomasomys_taczanowskii
+		Thomasomys_ucucha
+		Thomasomys_vulcani
+		Transandinomys_bolivaris
+		Transandinomys_talamancae
+		Wiedomys_cerradensis
+		Wiedomys_pyrrhorinos
+		Wilfredomys_oenax
+		Zygodontomys_brevicauda
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Abrawayaomys_ruschii,
+		2	Abrothrix_andina,
+		3	Abrothrix_hirta,
+		4	Abrothrix_illutea,
+		5	Abrothrix_jelskii,
+		6	Abrothrix_lanosa,
+		7	Abrothrix_longipilis,
+		8	Abrothrix_manni,
+		9	Abrothrix_olivacea,
+		10	Abrothrix_sanborni,
+		11	Aegialomys_baroni,
+		12	Aegialomys_galapagoensis,
+		13	Aegialomys_ica,
+		14	Aegialomys_xanthaeolus,
+		15	Aepeomys_lugens,
+		16	Akodon_aerosus,
+		17	Akodon_affinis,
+		18	Akodon_albiventer,
+		19	Akodon_azarae,
+		20	Akodon_baliolus,
+		21	Akodon_boliviensis,
+		22	Akodon_budini,
+		23	Akodon_caenosus,
+		24	Akodon_cursor,
+		25	Akodon_dayi,
+		26	Akodon_dolores,
+		27	Akodon_fumeus,
+		28	Akodon_iniscatus,
+		29	Akodon_josemariarguedasi,
+		30	Akodon_juninensis,
+		31	Akodon_kadiweu,
+		32	Akodon_kofordi,
+		33	Akodon_kotosh,
+		34	Akodon_lindberghi,
+		35	Akodon_lutescens,
+		36	Akodon_mimus,
+		37	Akodon_mollis,
+		38	Akodon_montensis,
+		39	Akodon_mystax,
+		40	Akodon_oenos,
+		41	Akodon_orophilus,
+		42	Akodon_paranaensis,
+		43	Akodon_philipmyersi,
+		44	Akodon_polopi,
+		45	Akodon_reigi,
+		46	Akodon_siberiae,
+		47	Akodon_simulator,
+		48	Akodon_spegazzinii,
+		49	Akodon_subfuscus,
+		50	Akodon_surdus,
+		51	Akodon_sylvanus,
+		52	Akodon_toba,
+		53	Akodon_torques,
+		54	Akodon_varius,
+		55	Amphinectomys_savamis,
+		56	Andalgalomys_olrogi,
+		57	Andalgalomys_pearsoni,
+		58	Andinomys_edax,
+		59	Antillomys_rayi,
+		60	Auliscomys_boliviensis,
+		61	Auliscomys_pictus,
+		62	Auliscomys_sublimis,
+		63	Bibimys_chacoensis,
+		64	Bibimys_labiosus,
+		65	Bibimys_torresi,
+		66	Blarinomys_breviceps,
+		67	Brucepattersonius_griserufescens,
+		68	Brucepattersonius_iheringi,
+		69	Brucepattersonius_nebulosus,
+		70	Brucepattersonius_soricinus,
+		71	Calassomys_apicalis,
+		72	Calomys_callidus,
+		73	Calomys_callosus,
+		74	Calomys_cerqueirai,
+		75	Calomys_expulsus,
+		76	Calomys_fecundus,
+		77	Calomys_hummelincki,
+		78	Calomys_laucha,
+		79	Calomys_lepidus,
+		80	Calomys_musculinus,
+		81	Calomys_sorella,
+		82	Calomys_tener,
+		83	Calomys_tocantinsi,
+		84	Calomys_venustus,
+		85	Castoria_angustidens,
+		86	Cerradomys_akroai,
+		87	Cerradomys_goytaca,
+		88	Cerradomys_langguthi,
+		89	Cerradomys_maracajuensis,
+		90	Cerradomys_marinhus,
+		91	Cerradomys_scotti,
+		92	Cerradomys_subflavus,
+		93	Cerradomys_vivoi,
+		94	Chelemys_megalonyx,
+		95	Chilomys_georgeledecii,
+		96	Chilomys_instans,
+		97	Chilomys_neisi,
+		98	Chilomys_percequilloi,
+		99	Chilomys_weksleri,
+		100	Chinchillula_sahamae,
+		101	Delomys_altimontanus,
+		102	Delomys_dorsalis,
+		103	Delomys_sublineatus,
+		104	Deltamys_kempi,
+		105	Drymoreomys_albimaculatus,
+		106	Eligmodontia_bolsonensis,
+		107	Eligmodontia_dunaris,
+		108	Eligmodontia_hirtipes,
+		109	Eligmodontia_moreni,
+		110	Eligmodontia_morgani,
+		111	Eligmodontia_puerulus,
+		112	Eligmodontia_typus,
+		113	Eremoryzomys_polius,
+		114	Euneomys_chinchilloides,
+		115	Euneomys_fossor,
+		116	Euryoryzomys_emmonsae,
+		117	Euryoryzomys_lamia,
+		118	Euryoryzomys_legatus,
+		119	Euryoryzomys_macconnelli,
+		120	Euryoryzomys_nitidus,
+		121	Euryoryzomys_russatus,
+		122	Galenomys_garleppii,
+		123	Geoxus_annectens,
+		124	Geoxus_lafkenche,
+		125	Geoxus_michaelseni,
+		126	Geoxus_valdivianus,
+		127	Graomys_chacoensis,
+		128	Graomys_domorum,
+		129	Graomys_griseoflavus,
+		130	Handleyomys_alfaroi,
+		131	Handleyomys_chapmani,
+		132	Handleyomys_guerrerensis,
+		133	Handleyomys_intectus,
+		134	Handleyomys_melanotis,
+		135	Handleyomys_rostratus,
+		136	Handleyomys_saturatior,
+		137	Holochilus_brasiliensis,
+		138	Holochilus_chacarius,
+		139	Holochilus_nanus,
+		140	Holochilus_sciureus,
+		141	Hylaeamys_acritus,
+		142	Hylaeamys_laticeps,
+		143	Hylaeamys_megacephalus,
+		144	Hylaeamys_perenensis,
+		145	Hylaeamys_yunganus,
+		146	Ichthyomys_stolzmanni,
+		147	Irenomys_tarsalis,
+		148	Juliomys_ossitenuis,
+		149	Juliomys_pictipes,
+		150	Juliomys_rimofrons,
+		151	Juliomys_ximenezi,
+		152	Juscelinomys_huanchacae,
+		153	Kunsia_tomentosus,
+		154	Lenoxus_apicalis,
+		155	Loxodontomys_micropus,
+		156	Lundomys_molitor,
+		157	Megalomys_desmarestii,
+		158	Megalomys_luciae,
+		159	Melanomys_caliginosus,
+		160	Melanomys_chrysomelas,
+		161	Melanomys_columbianus,
+		162	Melanomys_idoneus,
+		163	Microakodontomys_transitorius,
+		164	Microryzomys_altissimus,
+		165	Microryzomys_minutus,
+		166	Mindomys_hammondi,
+		167	Neacomys_aletheia,
+		168	Neacomys_amoenus,
+		169	Neacomys_auriventer,
+		170	Neacomys_carceleni,
+		171	Neacomys_dubosti,
+		172	Neacomys_elieceri,
+		173	Neacomys_guianae,
+		174	Neacomys_jau,
+		175	Neacomys_macedoruizi,
+		176	Neacomys_marajoara,
+		177	Neacomys_minutus,
+		178	Neacomys_musseri,
+		179	Neacomys_paracou,
+		180	Neacomys_rosalindae,
+		181	Neacomys_serranensis,
+		182	Neacomys_spinosus,
+		183	Neacomys_tenuipes,
+		184	Neacomys_vargasllosai,
+		185	Neacomys_vossi,
+		186	Neacomys_xingu,
+		187	Necromys_amoenus,
+		188	Necromys_lactens,
+		189	Necromys_lasiurus,
+		190	Necromys_lenguarum,
+		191	Necromys_lilloi,
+		192	Necromys_obscurus,
+		193	Necromys_urichi,
+		194	Nectomys_apicalis,
+		195	Nectomys_squamipes,
+		196	Neomicroxus_bogotensis,
+		197	Neomicroxus_latebricola,
+		198	Neotomys_ebriosus,
+		199	Nephelomys_albigularis,
+		200	Nephelomys_devius,
+		201	Nephelomys_keaysi,
+		202	Nephelomys_levipes,
+		203	Nephelomys_moerex,
+		204	Nephelomys_ricardopalmai,
+		205	Nesoryzomys_fernandinae,
+		206	Nesoryzomys_indefessus,
+		207	Nesoryzomys_narboroughi,
+		208	Nesoryzomys_swarthi,
+		209	Neusticomys_ferreirai,
+		210	Neusticomys_monticolus,
+		211	Neusticomys_peruviensis,
+		212	Neusticomys_vossi,
+		213	Notiomys_edwardsii,
+		214	Oecomys_auyantepui,
+		215	Oecomys_bicolor,
+		216	Oecomys_catherinae,
+		217	Oecomys_cleberi,
+		218	Oecomys_concolor,
+		219	Oecomys_franciscorum,
+		220	Oecomys_mamorae,
+		221	Oecomys_matogrossensis,
+		222	Oecomys_paricola,
+		223	Oecomys_phaeotis,
+		224	Oecomys_rex,
+		225	Oecomys_roberti,
+		226	Oecomys_rutilus,
+		227	Oecomys_superans,
+		228	Oecomys_sydandersoni,
+		229	Oecomys_tapajinus,
+		230	Oecomys_trinitatis,
+		231	Oligoryzomys_andinus,
+		232	Oligoryzomys_arenalis,
+		233	Oligoryzomys_brendae,
+		234	Oligoryzomys_chacoensis,
+		235	Oligoryzomys_costaricensis,
+		236	Oligoryzomys_delicatus,
+		237	Oligoryzomys_destructor,
+		238	Oligoryzomys_flavescens,
+		239	Oligoryzomys_fulvescens,
+		240	Oligoryzomys_guille,
+		241	Oligoryzomys_longicaudatus,
+		242	Oligoryzomys_mattogrossae,
+		243	Oligoryzomys_messorius,
+		244	Oligoryzomys_microtis,
+		245	Oligoryzomys_moojeni,
+		246	Oligoryzomys_nigripes,
+		247	Oligoryzomys_pachecoi,
+		248	Oligoryzomys_rupestris,
+		249	Oligoryzomys_stramineus,
+		250	Oligoryzomys_utiaritensis,
+		251	Oligoryzomys_vegetus,
+		252	Oreoryzomys_balneator,
+		253	Oryzomys_couesi,
+		254	Oryzomys_palustris,
+		255	Oryzomys_texensis,
+		256	Oxymycterus_amazonicus,
+		257	Oxymycterus_dasytrichus,
+		258	Oxymycterus_delator,
+		259	Oxymycterus_hiska,
+		260	Oxymycterus_inca,
+		261	Oxymycterus_itapeby,
+		262	Oxymycterus_josei,
+		263	Oxymycterus_juliacae,
+		264	Oxymycterus_nasutus,
+		265	Oxymycterus_nigrifrons,
+		266	Oxymycterus_paramensis,
+		267	Oxymycterus_quaestor,
+		268	Oxymycterus_rufus,
+		269	Oxymycterus_wayku,
+		270	Oxymycterus_willkaurco,
+		271	Pattonimus_ecominga,
+		272	Pattonimus_musseri,
+		273	Paynomys_macronyx,
+		274	Pennatomys_nivalis,
+		275	Phaenomys_ferrugineus,
+		276	Phyllotis_alisosiensis,
+		277	Phyllotis_amicus,
+		278	Phyllotis_andium,
+		279	Phyllotis_anitae,
+		280	Phyllotis_bonariensis,
+		281	Phyllotis_camiari,
+		282	Phyllotis_caprinus,
+		283	Phyllotis_darwinii,
+		284	Phyllotis_definitus,
+		285	Phyllotis_gerbillus,
+		286	Phyllotis_haggardi,
+		287	Phyllotis_limatus,
+		288	Phyllotis_magister,
+		289	Phyllotis_nogalaris,
+		290	Phyllotis_occidens,
+		291	Phyllotis_osilae,
+		292	Phyllotis_pearsoni,
+		293	Phyllotis_pehuenche,
+		294	Phyllotis_rupestris,
+		295	Phyllotis_stenops,
+		296	Phyllotis_tucumanus,
+		297	Phyllotis_vaccarum,
+		298	Phyllotis_xanthopygus,
+		299	Podoxymys_roraimae,
+		300	Pseudoryzomys_simplex,
+		301	Punomys_kofordi,
+		302	Reithrodon_auritus,
+		303	Rhagomys_longilingua,
+		304	Rhagomys_rufescens,
+		305	Rhagomys_septentrionalis,
+		306	Rheomys_raptor,
+		307	Rheomys_thomasi,
+		308	Rhipidomys_albujai,
+		309	Rhipidomys_cariri,
+		310	Rhipidomys_emiliae,
+		311	Rhipidomys_gardneri,
+		312	Rhipidomys_ipukensis,
+		313	Rhipidomys_itoan,
+		314	Rhipidomys_latimanus,
+		315	Rhipidomys_leucodactylus,
+		316	Rhipidomys_macconnelli,
+		317	Rhipidomys_macrurus,
+		318	Rhipidomys_mastacalis,
+		319	Rhipidomys_nitela,
+		320	Rhipidomys_tribei,
+		321	Rhipidomys_venezuelae,
+		322	Rhipidomys_venustus,
+		323	Rhipidomys_wetzeli,
+		324	Salinomys_delicatus,
+		325	Scapteromys_aquaticus,
+		326	Scapteromys_meridionalis,
+		327	Scapteromys_tumidus,
+		328	Scolomys_melanops,
+		329	Scolomys_ucayalensis,
+		330	Sigmodon_alleni,
+		331	Sigmodon_alstoni,
+		332	Sigmodon_arizonae,
+		333	Sigmodon_fulviventer,
+		334	Sigmodon_hirsutus,
+		335	Sigmodon_hispidus,
+		336	Sigmodon_leucotis,
+		337	Sigmodon_mascotensis,
+		338	Sigmodon_ochrognathus,
+		339	Sigmodon_peruanus,
+		340	Sigmodon_toltecus,
+		341	Sigmodontomys_alfari,
+		342	Sooretamys_angouya,
+		343	Tanyuromys_aphrastus,
+		344	Tanyuromys_thomasleei,
+		345	Tapecomys_primus,
+		346	Tapecomys_wolffsohni,
+		347	Thalpomys_cerradensis,
+		348	Thalpomys_lasiotis,
+		349	Thaptomys_nigrita,
+		350	Thomasomys_andersoni,
+		351	Thomasomys_antoniobracki,
+		352	Thomasomys_apeco,
+		353	Thomasomys_aureus,
+		354	Thomasomys_auricularis,
+		355	Thomasomys_australis,
+		356	Thomasomys_baeops,
+		357	Thomasomys_bombycinus,
+		358	Thomasomys_caudivarius,
+		359	Thomasomys_cinereus,
+		360	Thomasomys_cinnameus,
+		361	Thomasomys_daphne,
+		362	Thomasomys_erro,
+		363	Thomasomys_fumeus,
+		364	Thomasomys_gracilis,
+		365	Thomasomys_hudsoni,
+		366	Thomasomys_ischyrus,
+		367	Thomasomys_kalinowskii,
+		368	Thomasomys_ladewi,
+		369	Thomasomys_macrotis,
+		370	Thomasomys_notatus,
+		371	Thomasomys_onkiro,
+		372	Thomasomys_oreas,
+		373	Thomasomys_paramorum,
+		374	Thomasomys_pardignasi,
+		375	Thomasomys_praetor,
+		376	Thomasomys_pyrrhonotus,
+		377	Thomasomys_salazari,
+		378	Thomasomys_silvestris,
+		379	Thomasomys_taczanowskii,
+		380	Thomasomys_ucucha,
+		381	Thomasomys_vulcani,
+		382	Transandinomys_bolivaris,
+		383	Transandinomys_talamancae,
+		384	Wiedomys_cerradensis,
+		385	Wiedomys_pyrrhorinos,
+		386	Wilfredomys_oenax,
+		387	Zygodontomys_brevicauda
+	;
+	TREE * UNTITLED = [&R] ((((((1:7.003203303,302:7.003203303)0.911909795630726:1.11979778,(196:1.517287149,197:1.517287149)1:6.605713933)0.792811839323467:0.272859777,((((((((2:1.333794374,9:1.333794374)1:1.027556351,(4:2.018273923,5:2.018273923)0.929527836504581:0.3430768019)1:0.3310009203,((3:1.78158526,7:1.78158526)1:0.7214235087,((6:0.8537745711,10:0.8537745711)0.958421423537703:0.2936356388,8:1.14741021)1:1.355598559)0.995771670190275:0.1893428769)1:1.115549655,(((94:1.730807529,273:1.730807529)1:0.8160000108,213:2.546807539)0.548273431994362:0.04179112911,((123:1.550870427,126:1.550870427)1:0.4012056178,(124:0.5367812181,125:0.5367812181)1:1.415294827)0.966878083157153:0.6365226237)1:1.219302632)1:2.902858949,((((148:2.277845526,149:2.277845526)0.812544045102185:0.8758911197,(150:1.942448685,151:1.942448685)1:1.211287961)1:3.166971236,275:6.320707881)0.439746300211416:0.2042848667,((384:2.175735558,385:2.175735558)0.973220577871741:0.828247302,386:3.00398286)1:3.521009888)1:0.1857675017)1:0.4994685479,((((((56:2.411618153,57:2.411618153)1:2.095465558,((((((60:0.4858629839,61:0.4858629839)1:1.386357606,62:1.87222059)1:1.041947779,122:2.914168368)0.801268498942918:0.2297817621,155:3.14395013)0.997885835095137:0.7733965683,(324:2.964276008,(345:1.166390911,346:1.166390911)1:1.797885096)0.987315010570824:0.953070691)0.961240310077519:0.1473243758,(((276:0.0780949258,279:0.0780949258)1:2.4490071,(289:1.516850776,(291:1.052666458,296:1.052666458)0.999295278365046:0.4641843178)0.962649753347428:1.010251251)1:1.476138459,(((277:0.9208034057,285:0.9208034057)1:1.344245671,((((278:0.48409776,286:0.48409776)0.362226920366455:0.2235492022,295:0.7076469623)0.29245947850599:0.05640067469,290:0.764047637)1:1.057675516,(284:1.094518671,292:1.094518671)1:0.7272044817)0.999295278365046:0.4433259241)1:1.581833343,((((280:0.9087471623,298:0.9087471623)0.81677237491191:0.592390658,282:1.50113782)0.5630725863284:0.3339323535,((281:1.087239805,294:1.087239805)0.313601127554616:0.4640754968,((287:0.2492703968,297:0.2492703968)1:1.095131872,293:1.344402269)0.501761804087385:0.2069130323)0.0810429880197322:0.2837548724)1:0.6827679265,(283:1.915682459,288:1.915682459)0.999295278365046:0.6021556418)1:1.32904432)0.908386187455955:0.1563580647)0.976039464411557:0.06143058899)1:0.4424126363)0.179704016913319:0.1413876576,(((106:0.3055213774,112:0.3055213774)1:1.396273288,((((107:0.8644263022,111:0.8644263022)1:0.1313979965,109:0.9958242987)0.998590556730092:0.2967314283,108:1.292555727)0.651162790697674:0.1991989618,110:1.491754689)0.996476391825229:0.2100399764)1:2.634272474,((127:1.185923919,129:1.185923919)0.476391825229035:0.0819424687,128:1.267866387)1:3.068200752)0.780831571529246:0.3124042291)1:1.121393025,(((((((72:0.695242993,(((73:0.1172934968,83:0.1172934968)1:0.1641551602,76:0.281448657)0.866102889358703:0.09997838285,84:0.3814270398)0.924594785059901:0.3138159531)0.214940098661029:0.07028449612,74:0.7655274891)0.732205778717407:1.82390356,78:2.58943105)0.472163495419309:0.3197062621,75:2.909137312)0.859760394644116:0.185839123,77:3.094976435)0.998590556730092:0.6132797814,82:3.708256216)1:0.5661638644,(79:2.204624819,(80:1.073964174,81:1.073964174)1:1.130660645)1:2.069795262)1:1.495444312)0.997885835095137:0.3450287138,71:6.114893107)1:0.6146610622,((101:1.13480242,102:1.13480242)0.992952783650458:0.4357889246,103:1.570591345)1:5.158962824)1:0.4806746289)1:0.6736372745,((58:2.172162944,301:2.172162944)1:5.412419906,(100:7.410081675,(((114:2.976534323,115:2.976534323)1:1.11487237,198:4.091406693)0.54122621564482:0.7550233864,147:4.84643008)1:2.563651595)0.930937279774489:0.1745011758)0.911205073995772:0.2992832219)0.898520084566596:0.4053103346,((((((((((((16:0.03396155722,50:0.03396155722)1:0.9835318992,(17:0.71940698,20:0.71940698)1:0.2980864765)0.515151515151515:0.1585689139,((((29:0.04785156891,41:0.04785156891)1:0.1910992924,37:0.2389508613)1:0.3839260015,53:0.6228768628)1:0.3202260237,33:0.9431028866)0.535588442565187:0.2329594838)0.948555320648344:0.3718480654,(18:1.407504669,(47:0.7698707222,54:0.7698707222)1:0.6376339464)0.607470049330514:0.1404057672)0.570824524312896:0.09550101643,(22:0.2854758061,46:0.2854758061)1:1.357935646)1:0.4750149955,((25:0.7701516325,(26:0.2844856133,52:0.2844856133)1:0.4856660192)1:0.6176625137,28:1.387814146)1:0.7306123015)0.733615221987315:0.1701150149,(((19:1.296441318,(24:1.034373883,(38:0.9615585504,(42:0.8325778321,45:0.8325778321)0.980972515856237:0.1289807183)0.389711064129669:0.07281533239)0.997885835095137:0.262067435)0.995066948555321:0.2487001931,((((((21:0.3929614994,(40:0.2203567273,48:0.2203567273)0.623678646934461:0.1726047721)1:0.1823568171,44:0.5753183165)0.725158562367865:0.08681835661,51:0.6621366731)1:0.4068821162,((23:0.2441582202,35:0.2441582202)1:0.3846845597,49:0.6288427799)1:0.4401760094)0.978858350951374:0.2036129017,((27:0.4261036991,32:0.4261036991)1:0.6611077041,30:1.087211403)0.995066948555321:0.1854202879)0.644115574348132:0.1088522236,31:1.381483915)0.902748414376321:0.1636575963)0.999295278365046:0.4243924246,((34:0.1713394791,39:0.1713394791)1:1.4960507,43:1.667390179)0.922480620155039:0.3021437564)1:0.3190075271)0.982381959126145:0.446954587,36:2.73549605)1:0.760912233,(85:3.435224871,104:3.435224871)0.451726568005638:0.06118341178)1:0.583030875,(((((187:2.547260736,191:2.547260736)0.760394644115574:0.2221568942,((188:2.274084034,((189:1.093587919,190:1.093587919)1:1.088855755,192:2.182443674)0.787174066243834:0.09164035986)0.924594785059901:0.3496629475,193:2.623746982)0.428470754052149:0.1456706483)0.998590556730092:0.6444811327,(347:1.585129796,348:1.585129796)1:1.828768967)0.689217758985201:0.2788446091,299:3.692743372)1:0.2550657399,349:3.947809112)0.793516560958421:0.1316300459)1:1.257975001,(152:2.30518278,(((((256:0.3915685168,258:0.3915685168)0.964059196617336:0.2203039559,261:0.6118724727)1:0.5370846865,257:1.148957159)0.924594785059901:0.1757011872,264:1.324658346)0.226215644820296:0.2369666405,(((259:1.098130341,266:1.098130341)0.12262156448203:0.1753837699,265:1.273514111)0.12262156448203:0.07587559364,((((260:0.5239072442,(262:0.1656391455,268:0.1656391455)1:0.3582680988)1:0.2732419006,267:0.7971491448)0.952783650458069:0.2939037676,269:1.091052912)0.37138830162086:0.04542195446,(263:0.5348119972,270:0.5348119972)0.985200845665962:0.6016628697)0.0133897110641297:0.2129148378)0.96969696969697:0.2122352821)0.977448907681466:0.7435577932)1:3.032231378)1:0.5190608394,((((63:0.09296255998,64:0.09296255998)1:1.861381893,65:1.954344453)1:3.010583039,((66:3.331059648,((67:1.251579216,69:1.251579216)0.99154334038055:0.5781889395,(68:1.044240417,70:1.044240417)0.997885835095137:0.7855277391)0.996476391825229:1.501291492)0.999295278365046:0.7975812582,154:4.128640907)1:0.8362865853)0.883016208597604:0.4113316598,(153:4.497849628,((325:0.6095421405,327:0.6095421405)0.84707540521494:0.5068370589,326:1.116379199)1:3.381470429)1:0.8784095236)1:0.4802158462)1:2.432701409)0.153629316420014:0.1066844524)1:0.09144333092,((((((15:0.03896211341,99:0.03896211341)0.186046511627907:1.682084986,(97:0.8914462309,98:0.8914462309)0.812544045102185:0.8296008689)0.186751233262861:0.09136564888,(95:0.7271718588,96:0.7271718588)0.804087385482734:1.08524089)0.801973220577872:3.833705274,((((350:1.968758273,372:1.968758273)0.983791402396054:1.284211091,364:3.252969363)0.93446088794926:0.2916383546,(((352:2.403053826,(356:1.003884561,(366:0.03726740881,379:0.03726740881)1:0.9666171523)1:1.399169265)0.481324876673714:0.506958327,(367:2.686447479,(368:1.767448999,369:1.767448999)0.943622269203665:0.9189984798)0.330514446793517:0.2235646744)0.652572233967583:0.285214339,370:3.195226492)0.743481324876674:0.3493812257)0.151515151515152:0.04008102119,(((351:1.86004749,375:1.86004749)0.483439041578576:0.3370485058,((353:0.6192104849,374:0.6192104849)0.995771670190275:1.356829065,(354:1.380945443,376:1.380945443)0.994362226920366:0.5950941065)0.709654686398872:0.2210564459)0.981677237491191:1.17721652,((355:1.116690963,361:1.116690963)0.987315010570824:1.85352071,((((357:1.376690312,381:1.376690312)0.979563072586328:0.2858228341,363:1.662513146)0.971811134601832:0.7909247718,362:2.453437918)0.44538407329105:0.3071222633,((((358:1.211260441,360:1.211260441)0.523608174770965:0.5072015026,(((359:1.266372899,377:1.266372899)0.384073291050035:0.1410974866,365:1.407470386)0.512332628611698:0.2076875675,373:1.615157953)0.451021846370684:0.1033039907)0.515151515151515:0.02433399508,(378:0.9253461958,380:0.9253461958)0.992952783650458:0.817449743)0.949260042283298:0.6037512639,371:2.346547203)0.605355884425652:0.4140129782)0.346018322762509:0.2096514926)0.870331219168428:0.4041008424)0.331219168428471:0.2103762231)0.837209302325581:2.061429284)0.976039464411557:0.9573646587,(((308:4.403094701,((((((309:0.8619831085,317:0.8619831085)0.972515856236786:0.5003882925,(((310:0.219525646,312:0.219525646)1:0.2784593761,318:0.497985022)0.985200845665962:0.3998446468,319:0.8978296688)1:0.4645417322)0.918252290345314:0.2010665735,311:1.563437974)0.529245947850599:0.2312391947,((313:0.9135308779,320:0.9135308779)0.998590556730092:0.5603208714,321:1.473851749)0.631430584918957:0.32082542)0.610993657505285:1.20452802,(314:2.972119599,315:2.972119599)0.213530655391121:0.02708558961)0.71599718111346:0.3398574272,322:3.339062616)0.575052854122622:1.064032085)0.973925299506695:0.3101485824,316:4.713243283)0.90415785764623:1.126697865,323:5.839941148)0.992248062015504:0.7635415338)1:0.2667645818,((303:2.583563898,305:2.583563898)1:1.048744889,304:3.632308787)1:3.237938476)1:1.617056927)1:0.09842829732,((((((((((((((((11:0.1129024446,13:0.1129024446)0.999295278365046:0.1889268121,12:0.3018292567)1:0.8369080855,14:1.138737342)1:1.499806697,(205:1.779737769,((206:1.543947779,208:1.543947779)0.159971811134602:0.1315165651,207:1.675464344)0.228329809725159:0.1042734249)0.995771670190275:0.8588062704)0.984496124031008:0.2773014636,((157:0.1862375915,158:0.1862375915)1:2.559635451,((159:1.27854839,(160:1.000551793,((161:0.7368454214,162:0.7368454214)0.909795630725863:0.1809933611,341:0.9178387825)0.83861874559549:0.0827130109)0.952783650458069:0.277996597)1:1.183823677,274:2.462372067)0.321353065539112:0.2835009753)0.698379140239605:0.1699724601)0.287526427061311:0.1428195772,(343:1.786493757,344:1.786493757)1:1.272171323)0.997885835095137:0.8459483689,(253:2.44884932,(254:1.143590466,255:1.143590466)1:1.305258854)1:1.455764128)0.743481324876674:0.3131488724,(55:3.236622617,(194:0.8912095181,195:0.8912095181)1:2.345413099)1:0.9811397036)1:0.6789423773,((137:2.710488334,((138:0.9677778501,139:0.9677778501)0.998590556730092:0.6119432103,140:1.57972106)1:1.130767274)1:0.7981048521,300:3.508593186)1:1.388111512)0.361522198731501:0.0152824252,((((86:0.7525038617,91:0.7525038617)1:1.402122271,(((87:0.06667948089,92:0.06667948089)0.944326990838619:0.1116118881,93:0.178291369)1:0.6546741697,88:0.8329655386)1:1.321660594)1:1.001676227,(89:1.635655157,90:1.635655157)1:1.520647202)1:1.430571099,342:4.586873458)0.725863284002819:0.3251136653)0.96476391825229:0.5480526051,156:5.460039729)0.904862579281184:0.6560037127,((163:4.178274068,((((((((231:0.4397664177,232:0.4397664177)0.907681465821001:0.1815739669,240:0.6213403846)1:0.9846990226,237:1.606039407)0.975334742776603:0.06990584636,(233:0.8417322894,247:0.8417322894)1:0.8342129643)0.998590556730092:0.2062870408,(234:1.529399032,(246:0.9437533993,249:0.9437533993)0.999295278365046:0.585645633)0.997181113460183:0.3528332622)1:0.1831755963,(((((235:1.06644765,(239:0.7733909654,251:0.7733909654)1:0.2930566848)0.873854827343199:0.1803010597,236:1.24674871)0.757575757575758:0.06500455773,243:1.311753268)1:0.2828968497,250:1.594650117)0.68569415081043:0.1346928529,(245:1.320935359,248:1.320935359)1:0.4084076114)1:0.3360649205)0.885835095137421:0.1271805482,(238:1.20662724,241:1.20662724)1:0.9859611991)1:0.3208700419,(242:1.728845208,244:1.728845208)0.957011980267794:0.784613273)0.967582804792107:1.664815587)0.989429175475687:1.110298313,(((164:1.296440637,165:1.296440637)1:2.329590514,252:3.626031151)0.997885835095137:1.016243881,((((((((167:0.0896563817,178:0.0896563817)1:0.466789584,175:0.5564459657)0.990133897110641:0.1326771589,177:0.6891231247)1:1.906291685,((173:0.8940725222,174:0.8940725222)0.977448907681466:1.396670147,(180:1.736549848,183:1.736549848)0.558844256518675:0.5541928216)0.482734319943622:0.3046721398)0.940098661028894:1.108422757,(171:3.367090183,(172:1.680959684,((176:0.8653016698,185:0.8653016698)0.193798449612403:0.01810224764,186:0.8834039174)0.997885835095137:0.7975557669)1:1.686130499)0.989429175475687:0.3367473836)0.981677237491191:0.1006187061,(((168:0.4985555545,170:0.4985555545)1:0.7297849335,182:1.228340488)0.699788583509514:0.3532112344,184:1.581551722)1:2.22290455)0.552501761804087:0.3040651097,(169:2.618800775,181:2.618800775)0.994362226920366:1.489720607)0.996476391825229:0.3487177397,179:4.457239122)0.715292459478506:0.1850359099)1:0.6462973484)0.989429175475687:0.827471061)0.0394644115574348:0.05254746646,(105:3.923440799,113:3.923440799)1:2.245150109)1:0.2962924754,(((59:3.534272515,133:3.534272515)0.460887949260042:1.131132828,(130:3.010115462,(((131:0.8130109825,132:0.8130109825)0.276955602536998:0.1492009244,136:0.9622119069)1:1.81723007,(134:1.374185647,135:1.374185647)1:1.40525633)0.980267794221283:0.2306734848)1:1.655289881)0.420718816067653:0.5535388984,(((((116:2.790613599,((117:1.226280583,(118:0.4198754125,120:0.4198754125)0.999295278365046:0.8064051703)1:0.9843150387,121:2.210595621)0.994362226920366:0.5800179776)1:0.4103049597,119:3.200918559)0.849894291754757:0.3635223051,(382:2.333006584,383:2.333006584)1:1.231434279)1:0.7452583223,((((214:1.644701978,222:1.644701978)0.617336152219873:0.319018609,((((215:0.767355343,217:0.767355343)0.995066948555321:0.4981509732,218:1.265506316)0.404510218463707:0.2131164201,227:1.478622736)0.888653981677238:0.3283263781,((((219:0.4214760707,220:0.4214760707)1:0.7660520876,223:1.187528158)0.813248766737139:0.3273144473,(228:1.372639777,230:1.372639777)0.454545454545455:0.1422028283)0.341085271317829:0.1016115985,(225:1.524006725,229:1.524006725)0.990838618745596:0.09244747878)0.520789288231149:0.1904949103)0.98661028893587:0.1567714725)0.953488372093023:0.7969658407,((216:2.188123373,224:2.188123373)0.226215644820296:0.0537706173,221:2.241893991)0.975334742776603:0.5187924371)0.168428470754052:0.1887227803,226:2.949409208)0.99154334038055:1.360289978)0.81183932346723:0.5109451458,(((((141:1.308417195,144:1.308417195)0.535588442565187:0.3213717017,142:1.629788897)0.962649753347428:0.5522310205,143:2.182019917)1:1.333596583,145:3.515616501)0.993657505285412:0.6528440501,((166:2.868957941,(((((199:0.6957389223,204:0.6957389223)0.990133897110641:0.3124499522,203:1.008188875)0.393939393939394:0.1606986471,200:1.168887522)1:0.6917354796,202:1.860623001)0.732205778717407:0.4262881352,(271:1.240380753,272:1.240380753)1:1.046530383)0.867512332628612:0.5820468046)0.995771670190275:0.4422572684,201:3.311215209)1:0.8572453411)0.937279774489077:0.6521837813)0.642706131078224:0.3982999094)0.96969696969697:1.245939142)0.974630021141649:0.8049670958,387:7.269850479)0.247357293868922:0.1601740619,(328:1.889872641,329:1.889872641)1:5.5401519)1:1.155707947)1:2.207644186,((146:4.807212354,(((209:0.5915761193,211:0.5915761193)0.961945031712474:2.107380738,(210:0.9127021504,212:0.9127021504)1:1.786254707)0.908386187455955:1.638122748,(306:1.764565927,307:1.764565927)0.994362226920366:2.572513678)0.862579281183932:0.4701327492)1:3.930760019,((((((330:1.145974937,334:1.145974937)1:0.6618986724,338:1.807873609)0.99154334038055:0.4294878615,((332:1.671086935,337:1.671086935)1:0.3463187303,(335:1.071675604,340:1.071675604)1:0.9457300607)0.993657505285412:0.2199558058)1:1.026896802,(333:2.487256457,336:2.487256457)1:0.7770018158)0.985200845665962:0.4979827345,339:3.762241007)0.744186046511628:0.4385610964,331:4.200802103)1:4.53717027)1:2.0554043)1:0;
+END;

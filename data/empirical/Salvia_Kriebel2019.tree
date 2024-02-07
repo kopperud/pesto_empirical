@@ -1,0 +1,1051 @@
+#NEXUS
+[R-package APE, Wed Mar  8 17:03:27 2023]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 519;
+	TAXLABELS
+		Salvia_scrophulariifolia
+		Salvia_yangii
+		Salvia_rosmarinus
+		Salvia_lyrata
+		Salvia_roemeriana
+		Salvia_henryi
+		Salvia_summa
+		Salvia_pentstemonoides
+		Salvia_whitehousei
+		Salvia_engelmannii
+		Salvia_texana
+		Salvia_leriifolia
+		Salvia_taraxacifolia
+		Salvia_verticillata_subsp_amasiaca
+		Salvia_verticillata
+		Salvia_judaica
+		Salvia_napifolia
+		Salvia_russellii
+		Salvia_nilotica
+		Salvia_aurita
+		Salvia_somalensis
+		Salvia_stenophylla
+		Salvia_muirii
+		Salvia_leucodermis
+		Salvia_sessilifolia
+		Salvia_scabra
+		Salvia_africanalutea
+		Salvia_lanceolata
+		Salvia_thermarum
+		Salvia_africana
+		Salvia_albicaulis
+		Salvia_chamelaeagnea
+		Salvia_dolomitica
+		Salvia_schlechteri
+		Salvia_namaensis
+		Salvia_repens
+		Salvia_cabulica
+		Salvia_aucheri
+		Salvia_fruticosa
+		Salvia_aramiensis
+		Salvia_tomentosa
+		Salvia_korolkovii
+		Salvia_officinalis
+		Salvia_recognita
+		Salvia_huberi
+		Salvia_bucharica
+		Salvia_hydrangea
+		Salvia_maymanica
+		Salvia_kurdica
+		Salvia_kronenburgii
+		Salvia_sericeotomentosa
+		Salvia_pseudeuphratica
+		Salvia_cerinopruinosa
+		Salvia_euphratica
+		Salvia_scabiosifolia
+		Salvia_pinnata
+		Salvia_multicaulis
+		Salvia_quezelii
+		Salvia_wiedemannii
+		Salvia_blepharochlaena
+		Salvia_caespitosa
+		Salvia_garipensis
+		Salvia_pachystachya
+		Salvia_marashica
+		Salvia_ballsiana
+		Salvia_suffruticosa
+		Salvia_candelabrum
+		Salvia_interrupta
+		Salvia_ringens
+		Salvia_cadmica
+		Salvia_smyrnaea
+		Salvia_adenophylla
+		Salvia_cedronella
+		Salvia_tchihatcheffii
+		Salvia_heldreichiana
+		Salvia_albimaculata
+		Salvia_potentillifolia
+		Salvia_nydeggeri
+		Salvia_pisidica
+		Salvia_viridis
+		Salvia_daghestanica
+		Salvia_lanata
+		Salvia_hypargeia
+		Salvia_montbretii
+		Salvia_phlomoides
+		Salvia_broussonetii
+		Salvia_sclarea
+		Salvia_lanigera
+		Salvia_merjamie
+		Salvia_verbenaca
+		Salvia_austriaca
+		Salvia_hierosolymitana
+		Salvia_jurisicii
+		Salvia_nutans
+		Salvia_pratensis
+		Salvia_disermas
+		Salvia_radula
+		Salvia_deserta
+		Salvia_sylvestris
+		Salvia_viscosa
+		Salvia_sclareoides
+		Salvia_amplexicaulis
+		Salvia_adenocaulon
+		Salvia_dichroantha
+		Salvia_virgata
+		Salvia_dominica
+		Salvia_rhytidea
+		Salvia_palaestina
+		Salvia_moorcroftiana
+		Salvia_sarawschanica
+		Salvia_syriaca
+		Salvia_sharifii
+		Salvia_ariana
+		Salvia_persepolitana
+		Salvia_schimperi
+		Salvia_modesta
+		Salvia_veneris
+		Salvia_chrysophylla
+		Salvia_tobeyi
+		Salvia_cassia
+		Salvia_absconditiflora
+		Salvia_hypoleuca
+		Salvia_chloroleuca
+		Salvia_candidissima
+		Salvia_vermifolia
+		Salvia_limbata
+		Salvia_reuteriana
+		Salvia_sahendica
+		Salvia_staminea
+		Salvia_tingitana
+		Salvia_argentea
+		Salvia_canariensis
+		Salvia_aethiopis
+		Salvia_indica
+		Salvia_brachyantha
+		Salvia_frigida
+		Salvia_atropatana
+		Salvia_anatolica
+		Salvia_xanthocheila
+		Salvia_microstegia
+		Salvia_chionantha
+		Salvia_cyanescens
+		Salvia_poculata
+		Salvia_eriophora
+		Salvia_yosgadensis
+		Salvia_petrophila
+		Salvia_sonchifolia
+		Salvia_plebeia
+		Salvia_plectranthoides
+		Salvia_yunnanensis
+		Salvia_nanchuanensis
+		Salvia_honania
+		Salvia_meiliensis
+		Salvia_miltiorhiza
+		Salvia_bowleyana
+		Salvia_sinica
+		Salvia_dabieshanensis
+		Salvia_paramiltiorrhiza
+		Salvia_arisanensis
+		Salvia_akiensis
+		Salvia_omerocalyx
+		Salvia_isensis
+		Salvia_lutescens
+		Salvia_ranzaniana
+		Salvia_appendiculata
+		Salvia_pygmaea
+		Salvia_kiangsiensis
+		Salvia_scapiformis
+		Salvia_cavaleriei
+		Salvia_baimaensis
+		Salvia_chienii
+		Salvia_chinensis
+		Salvia_japonica
+		Salvia_liguliloba
+		Salvia_chunganensis
+		Salvia_qimenensis
+		Salvia_substolonifera
+		Salvia_trijuga
+		Salvia_umbratica
+		Salvia_roborowskii
+		Salvia_tricuspis
+		Salvia_glutinosa
+		Salvia_nubicola
+		Salvia_koyamae
+		Salvia_glabrescens
+		Salvia_nipponica
+		Salvia_atropurpurea
+		Salvia_pogonochila
+		Salvia_smithii
+		Salvia_bifidocalyx
+		Salvia_brevilabra
+		Salvia_prattii
+		Salvia_potaninii
+		Salvia_wardii
+		Salvia_evansiana
+		Salvia_hians
+		Salvia_hupehensis
+		Salvia_brachyloma
+		Salvia_paohsingensis
+		Salvia_heterochroa
+		Salvia_pauciflora
+		Salvia_hylocharis
+		Salvia_maximowicziana
+		Salvia_przewalskii
+		Salvia_bulleyana
+		Salvia_digitaloides
+		Salvia_flava
+		Salvia_castanea
+		Salvia_campanulata
+		Salvia_schizochila
+		Salvia_sikkimensis
+		Salvia_omeiana
+		Salvia_cynica
+		Salvia_kiaometiensis
+		Salvia_atrorubra
+		Salvia_mairei
+		Salvia_aerea
+		Salvia_cyclostegia
+		Salvia_subpalmatinervis
+		Salvia_handelii
+		Salvia_lankongensis
+		Salvia_aristata
+		Salvia_vvedenskii
+		Salvia_majdae
+		Salvia_margaritae
+		Salvia_trichocalycina
+		Salvia_geminata
+		Salvia_areysiana
+		Salvia_bariensis
+		Salvia_herbanica
+		Salvia_aegyptiaca
+		Salvia_deserti
+		Salvia_dianthera
+		Salvia_dorystaechas
+		Salvia_carduacea
+		Salvia_funerea
+		Salvia_californica
+		Salvia_greatae
+		Salvia_columbariae
+		Salvia_chionopeplica
+		Salvia_leucophylla
+		Salvia_spathacea
+		Salvia_sonomensis
+		Salvia_mohavensis
+		Salvia_dorrii
+		Salvia_pachyphylla
+		Salvia_brandegeei
+		Salvia_mellifera
+		Salvia_apiana
+		Salvia_clevelandii
+		Salvia_eremostachya
+		Salvia_munzii
+		Salvia_vaseyi
+		Salvia_axillaris
+		Salvia_patens
+		Salvia_vitifolia
+		Salvia_cacaliifolia
+		Salvia_scutellarioides
+		Salvia_macrophylla
+		Salvia_sagittata
+		Salvia_fruticulosa
+		Salvia_parryi
+		Salvia_tricuspidata
+		Salvia_manantlanensis
+		Salvia_hintonii
+		Salvia_textitlana
+		Salvia_cinnabarina
+		Salvia_elegans
+		Salvia_ovalifolia
+		Salvia_procurrens
+		Salvia_lachnostachys
+		Salvia_congestiflora
+		Salvia_uliginosa
+		Salvia_pusilla
+		Salvia_nana
+		Salvia_filifolia
+		Salvia_laevis
+		Salvia_glechomifolia
+		Salvia_setulosa
+		Salvia_prunelloides
+		Salvia_forreri
+		Salvia_mocinoi
+		Salvia_clinopodioides
+		Salvia_bullulata
+		Salvia_corrugata
+		Salvia_styphelus
+		Salvia_misella
+		Salvia_occidentalis
+		Salvia_albocaerulea
+		Salvia_sinaloensis
+		Salvia_prunifolia
+		Salvia_rostellata
+		Salvia_acerifolia
+		Salvia_podadena
+		Salvia_tehuacana
+		Salvia_fulgens
+		Salvia_cardinalis
+		Salvia_gesneriiflora
+		Salvia_purpurea
+		Salvia_lineata
+		Salvia_stolonifera
+		Salvia_microphylla
+		Salvia_neurepia
+		Salvia_muelleri
+		Salvia_coahuilensis
+		Salvia_greggii
+		Salvia_lycioides
+		Salvia_villosa
+		Salvia_purpusii
+		Salvia_candicans
+		Salvia_oaxacana
+		Salvia_hidalgensis
+		Salvia_recurva
+		Salvia_concolor
+		Salvia_flaccidifolia
+		Salvia_cuspidata
+		Salvia_flocculosa
+		Salvia_sessei
+		Salvia_pubescens
+		Salvia_betulifolia
+		Salvia_regla
+		Salvia_divinorum
+		Salvia_venulosa
+		Salvia_ballotaeflora
+		Salvia_pinguifolia
+		Salvia_calolophos
+		Salvia_bangii
+		Salvia_gilliesii
+		Salvia_heerii
+		Salvia_retinervia
+		Salvia_madrensis
+		Salvia_adenophora
+		Salvia_disjuncta
+		Salvia_mexiae
+		Salvia_nitida
+		Salvia_bupleuroides
+		Salvia_lasiocephala
+		Salvia_langlassei
+		Salvia_sanctaeluciae
+		Salvia_verecunda
+		Salvia_compsostachys
+		Salvia_lophanthoides
+		Salvia_rubiginosa
+		Salvia_galloana
+		Salvia_discolor
+		Salvia_leucocephala
+		Salvia_karwinskii
+		Salvia_involucrata
+		Salvia_dorisiana
+		Salvia_wagneriana
+		Salvia_holwayi
+		Salvia_pulchella
+		Salvia_curtiflora
+		Salvia_univerticillata
+		Salvia_breviflora
+		Salvia_lasiantha
+		Salvia_ramosa
+		Salvia_melissodora
+		Salvia_rupicola
+		Salvia_keerlii
+		Salvia_semiatrata
+		Salvia_thymoides
+		Salvia_aspera
+		Salvia_chamaedryoides
+		Salvia_tepicensis
+		Salvia_aequidistans
+		Salvia_sphacelifolia
+		Salvia_alamosana
+		Salvia_chapalensis
+		Salvia_quercetorum
+		Salvia_ramamoorthyana
+		Salvia_inconspicua
+		Salvia_nepetoides
+		Salvia_protracta
+		Salvia_thyrsiflora
+		Salvia_coccinea
+		Salvia_angustiarum
+		Salvia_chionophylla
+		Salvia_amethystina
+		Salvia_erythrostoma
+		Salvia_rubescens
+		Salvia_melaleuca
+		Salvia_gachantivana
+		Salvia_gracilipes
+		Salvia_herbacea
+		Salvia_infuscata
+		Salvia_leucochlamys
+		Salvia_urica
+		Salvia_perlonga
+		Salvia_praestans
+		Salvia_buchananii
+		Salvia_cedrosensis
+		Salvia_cualensis
+		Salvia_leptophylla
+		Salvia_azurea
+		Salvia_jaimehintoniana
+		Salvia_prasiifolia
+		Salvia_reptans
+		Salvia_reflexa
+		Salvia_rhombifolia
+		Salvia_hirtella
+		Salvia_sprucei
+		Salvia_blepharophylla
+		Salvia_sharpii
+		Salvia_speciosa
+		Salvia_lobbii
+		Salvia_oppositiflora
+		Salvia_tubiflora
+		Salvia_squalens
+		Salvia_striata
+		Salvia_guaranitica
+		Salvia_scabrida
+		Salvia_confertiflora
+		Salvia_subrotunda
+		Salvia_exserta
+		Salvia_praeclara
+		Salvia_minarum
+		Salvia_nervosa
+		Salvia_orbignaei
+		Salvia_rypara
+		Salvia_sucrensis
+		Salvia_dombeyi
+		Salvia_formosa
+		Salvia_sarmentosa
+		Salvia_alba
+		Salvia_graciliramulosa
+		Salvia_rusbyi
+		Salvia_durifolia
+		Salvia_oxyphora
+		Salvia_haenkei
+		Salvia_platystoma
+		Salvia_melissiflora
+		Salvia_brevipes
+		Salvia_cerradicola
+		Salvia_grewiifolia
+		Salvia_articulata
+		Salvia_hilarii
+		Salvia_splendens
+		Salvia_tomentella
+		Salvia_pallida
+		Salvia_atrocyanea
+		Salvia_sophrona
+		Salvia_stachydifolia
+		Salvia_miniata
+		Salvia_helianthemifolia
+		Salvia_remota
+		Salvia_stachyoides
+		Salvia_heterofolia
+		Salvia_rzedowskii
+		Salvia_lavanduloides
+		Salvia_moniliformis
+		Salvia_cryptodonta
+		Salvia_agnes
+		Salvia_guadalajarensis
+		Salvia_muscarioides
+		Salvia_palmeri
+		Salvia_rosei
+		Salvia_alborosea
+		Salvia_pauciserrata
+		Salvia_pichinchensis
+		Salvia_gravida
+		Salvia_diegoae
+		Salvia_vazquezii
+		Salvia_leucantha
+		Salvia_ibugana
+		Salvia_peninsularis
+		Salvia_amarissima
+		Salvia_santanae
+		Salvia_xalapensis
+		Salvia_angulata
+		Salvia_confertispicata
+		Salvia_mexicana
+		Salvia_languidula
+		Salvia_sapinea
+		Salvia_longispicata
+		Salvia_myriantha
+		Salvia_longistyla
+		Salvia_plurispicata
+		Salvia_arbuscula
+		Salvia_trichostephana
+		Salvia_filipes
+		Salvia_tonaticensis
+		Salvia_areolata
+		Salvia_chiapensis
+		Salvia_ionocalyx
+		Salvia_polystachya
+		Salvia_connivens
+		Salvia_iodantha
+		Salvia_curviflora
+		Salvia_littae
+		Salvia_caudata
+		Salvia_farinacea
+		Salvia_pennellii
+		Salvia_richardsonii
+		Salvia_hispanica
+		Salvia_leptostachys
+		Salvia_rhyacophila
+		Salvia_personata
+		Salvia_tiliifolia
+		Salvia_tubifera
+		Salvia_jorgehintoniana
+		Salvia_nervata
+		Salvia_pansamalensis
+		Salvia_palealis
+		Salvia_carnea
+		Salvia_simulans
+		Salvia_densiflora
+		Salvia_tuerckheimii
+		Salvia_cyanicalyx
+		Salvia_amplifrons
+		Salvia_raymondii
+		Salvia_sordida
+		Salvia_cuatrecasana
+		Salvia_bogotensis
+		Salvia_sphacelioides
+		Salvia_florida
+		Salvia_tortuosa
+		Salvia_rufula
+		Salvia_tolimensis
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Salvia_scrophulariifolia,
+		2	Salvia_yangii,
+		3	Salvia_rosmarinus,
+		4	Salvia_lyrata,
+		5	Salvia_roemeriana,
+		6	Salvia_henryi,
+		7	Salvia_summa,
+		8	Salvia_pentstemonoides,
+		9	Salvia_whitehousei,
+		10	Salvia_engelmannii,
+		11	Salvia_texana,
+		12	Salvia_leriifolia,
+		13	Salvia_taraxacifolia,
+		14	Salvia_verticillata_subsp_amasiaca,
+		15	Salvia_verticillata,
+		16	Salvia_judaica,
+		17	Salvia_napifolia,
+		18	Salvia_russellii,
+		19	Salvia_nilotica,
+		20	Salvia_aurita,
+		21	Salvia_somalensis,
+		22	Salvia_stenophylla,
+		23	Salvia_muirii,
+		24	Salvia_leucodermis,
+		25	Salvia_sessilifolia,
+		26	Salvia_scabra,
+		27	Salvia_africanalutea,
+		28	Salvia_lanceolata,
+		29	Salvia_thermarum,
+		30	Salvia_africana,
+		31	Salvia_albicaulis,
+		32	Salvia_chamelaeagnea,
+		33	Salvia_dolomitica,
+		34	Salvia_schlechteri,
+		35	Salvia_namaensis,
+		36	Salvia_repens,
+		37	Salvia_cabulica,
+		38	Salvia_aucheri,
+		39	Salvia_fruticosa,
+		40	Salvia_aramiensis,
+		41	Salvia_tomentosa,
+		42	Salvia_korolkovii,
+		43	Salvia_officinalis,
+		44	Salvia_recognita,
+		45	Salvia_huberi,
+		46	Salvia_bucharica,
+		47	Salvia_hydrangea,
+		48	Salvia_maymanica,
+		49	Salvia_kurdica,
+		50	Salvia_kronenburgii,
+		51	Salvia_sericeotomentosa,
+		52	Salvia_pseudeuphratica,
+		53	Salvia_cerinopruinosa,
+		54	Salvia_euphratica,
+		55	Salvia_scabiosifolia,
+		56	Salvia_pinnata,
+		57	Salvia_multicaulis,
+		58	Salvia_quezelii,
+		59	Salvia_wiedemannii,
+		60	Salvia_blepharochlaena,
+		61	Salvia_caespitosa,
+		62	Salvia_garipensis,
+		63	Salvia_pachystachya,
+		64	Salvia_marashica,
+		65	Salvia_ballsiana,
+		66	Salvia_suffruticosa,
+		67	Salvia_candelabrum,
+		68	Salvia_interrupta,
+		69	Salvia_ringens,
+		70	Salvia_cadmica,
+		71	Salvia_smyrnaea,
+		72	Salvia_adenophylla,
+		73	Salvia_cedronella,
+		74	Salvia_tchihatcheffii,
+		75	Salvia_heldreichiana,
+		76	Salvia_albimaculata,
+		77	Salvia_potentillifolia,
+		78	Salvia_nydeggeri,
+		79	Salvia_pisidica,
+		80	Salvia_viridis,
+		81	Salvia_daghestanica,
+		82	Salvia_lanata,
+		83	Salvia_hypargeia,
+		84	Salvia_montbretii,
+		85	Salvia_phlomoides,
+		86	Salvia_broussonetii,
+		87	Salvia_sclarea,
+		88	Salvia_lanigera,
+		89	Salvia_merjamie,
+		90	Salvia_verbenaca,
+		91	Salvia_austriaca,
+		92	Salvia_hierosolymitana,
+		93	Salvia_jurisicii,
+		94	Salvia_nutans,
+		95	Salvia_pratensis,
+		96	Salvia_disermas,
+		97	Salvia_radula,
+		98	Salvia_deserta,
+		99	Salvia_sylvestris,
+		100	Salvia_viscosa,
+		101	Salvia_sclareoides,
+		102	Salvia_amplexicaulis,
+		103	Salvia_adenocaulon,
+		104	Salvia_dichroantha,
+		105	Salvia_virgata,
+		106	Salvia_dominica,
+		107	Salvia_rhytidea,
+		108	Salvia_palaestina,
+		109	Salvia_moorcroftiana,
+		110	Salvia_sarawschanica,
+		111	Salvia_syriaca,
+		112	Salvia_sharifii,
+		113	Salvia_ariana,
+		114	Salvia_persepolitana,
+		115	Salvia_schimperi,
+		116	Salvia_modesta,
+		117	Salvia_veneris,
+		118	Salvia_chrysophylla,
+		119	Salvia_tobeyi,
+		120	Salvia_cassia,
+		121	Salvia_absconditiflora,
+		122	Salvia_hypoleuca,
+		123	Salvia_chloroleuca,
+		124	Salvia_candidissima,
+		125	Salvia_vermifolia,
+		126	Salvia_limbata,
+		127	Salvia_reuteriana,
+		128	Salvia_sahendica,
+		129	Salvia_staminea,
+		130	Salvia_tingitana,
+		131	Salvia_argentea,
+		132	Salvia_canariensis,
+		133	Salvia_aethiopis,
+		134	Salvia_indica,
+		135	Salvia_brachyantha,
+		136	Salvia_frigida,
+		137	Salvia_atropatana,
+		138	Salvia_anatolica,
+		139	Salvia_xanthocheila,
+		140	Salvia_microstegia,
+		141	Salvia_chionantha,
+		142	Salvia_cyanescens,
+		143	Salvia_poculata,
+		144	Salvia_eriophora,
+		145	Salvia_yosgadensis,
+		146	Salvia_petrophila,
+		147	Salvia_sonchifolia,
+		148	Salvia_plebeia,
+		149	Salvia_plectranthoides,
+		150	Salvia_yunnanensis,
+		151	Salvia_nanchuanensis,
+		152	Salvia_honania,
+		153	Salvia_meiliensis,
+		154	Salvia_miltiorhiza,
+		155	Salvia_bowleyana,
+		156	Salvia_sinica,
+		157	Salvia_dabieshanensis,
+		158	Salvia_paramiltiorrhiza,
+		159	Salvia_arisanensis,
+		160	Salvia_akiensis,
+		161	Salvia_omerocalyx,
+		162	Salvia_isensis,
+		163	Salvia_lutescens,
+		164	Salvia_ranzaniana,
+		165	Salvia_appendiculata,
+		166	Salvia_pygmaea,
+		167	Salvia_kiangsiensis,
+		168	Salvia_scapiformis,
+		169	Salvia_cavaleriei,
+		170	Salvia_baimaensis,
+		171	Salvia_chienii,
+		172	Salvia_chinensis,
+		173	Salvia_japonica,
+		174	Salvia_liguliloba,
+		175	Salvia_chunganensis,
+		176	Salvia_qimenensis,
+		177	Salvia_substolonifera,
+		178	Salvia_trijuga,
+		179	Salvia_umbratica,
+		180	Salvia_roborowskii,
+		181	Salvia_tricuspis,
+		182	Salvia_glutinosa,
+		183	Salvia_nubicola,
+		184	Salvia_koyamae,
+		185	Salvia_glabrescens,
+		186	Salvia_nipponica,
+		187	Salvia_atropurpurea,
+		188	Salvia_pogonochila,
+		189	Salvia_smithii,
+		190	Salvia_bifidocalyx,
+		191	Salvia_brevilabra,
+		192	Salvia_prattii,
+		193	Salvia_potaninii,
+		194	Salvia_wardii,
+		195	Salvia_evansiana,
+		196	Salvia_hians,
+		197	Salvia_hupehensis,
+		198	Salvia_brachyloma,
+		199	Salvia_paohsingensis,
+		200	Salvia_heterochroa,
+		201	Salvia_pauciflora,
+		202	Salvia_hylocharis,
+		203	Salvia_maximowicziana,
+		204	Salvia_przewalskii,
+		205	Salvia_bulleyana,
+		206	Salvia_digitaloides,
+		207	Salvia_flava,
+		208	Salvia_castanea,
+		209	Salvia_campanulata,
+		210	Salvia_schizochila,
+		211	Salvia_sikkimensis,
+		212	Salvia_omeiana,
+		213	Salvia_cynica,
+		214	Salvia_kiaometiensis,
+		215	Salvia_atrorubra,
+		216	Salvia_mairei,
+		217	Salvia_aerea,
+		218	Salvia_cyclostegia,
+		219	Salvia_subpalmatinervis,
+		220	Salvia_handelii,
+		221	Salvia_lankongensis,
+		222	Salvia_aristata,
+		223	Salvia_vvedenskii,
+		224	Salvia_majdae,
+		225	Salvia_margaritae,
+		226	Salvia_trichocalycina,
+		227	Salvia_geminata,
+		228	Salvia_areysiana,
+		229	Salvia_bariensis,
+		230	Salvia_herbanica,
+		231	Salvia_aegyptiaca,
+		232	Salvia_deserti,
+		233	Salvia_dianthera,
+		234	Salvia_dorystaechas,
+		235	Salvia_carduacea,
+		236	Salvia_funerea,
+		237	Salvia_californica,
+		238	Salvia_greatae,
+		239	Salvia_columbariae,
+		240	Salvia_chionopeplica,
+		241	Salvia_leucophylla,
+		242	Salvia_spathacea,
+		243	Salvia_sonomensis,
+		244	Salvia_mohavensis,
+		245	Salvia_dorrii,
+		246	Salvia_pachyphylla,
+		247	Salvia_brandegeei,
+		248	Salvia_mellifera,
+		249	Salvia_apiana,
+		250	Salvia_clevelandii,
+		251	Salvia_eremostachya,
+		252	Salvia_munzii,
+		253	Salvia_vaseyi,
+		254	Salvia_axillaris,
+		255	Salvia_patens,
+		256	Salvia_vitifolia,
+		257	Salvia_cacaliifolia,
+		258	Salvia_scutellarioides,
+		259	Salvia_macrophylla,
+		260	Salvia_sagittata,
+		261	Salvia_fruticulosa,
+		262	Salvia_parryi,
+		263	Salvia_tricuspidata,
+		264	Salvia_manantlanensis,
+		265	Salvia_hintonii,
+		266	Salvia_textitlana,
+		267	Salvia_cinnabarina,
+		268	Salvia_elegans,
+		269	Salvia_ovalifolia,
+		270	Salvia_procurrens,
+		271	Salvia_lachnostachys,
+		272	Salvia_congestiflora,
+		273	Salvia_uliginosa,
+		274	Salvia_pusilla,
+		275	Salvia_nana,
+		276	Salvia_filifolia,
+		277	Salvia_laevis,
+		278	Salvia_glechomifolia,
+		279	Salvia_setulosa,
+		280	Salvia_prunelloides,
+		281	Salvia_forreri,
+		282	Salvia_mocinoi,
+		283	Salvia_clinopodioides,
+		284	Salvia_bullulata,
+		285	Salvia_corrugata,
+		286	Salvia_styphelus,
+		287	Salvia_misella,
+		288	Salvia_occidentalis,
+		289	Salvia_albocaerulea,
+		290	Salvia_sinaloensis,
+		291	Salvia_prunifolia,
+		292	Salvia_rostellata,
+		293	Salvia_acerifolia,
+		294	Salvia_podadena,
+		295	Salvia_tehuacana,
+		296	Salvia_fulgens,
+		297	Salvia_cardinalis,
+		298	Salvia_gesneriiflora,
+		299	Salvia_purpurea,
+		300	Salvia_lineata,
+		301	Salvia_stolonifera,
+		302	Salvia_microphylla,
+		303	Salvia_neurepia,
+		304	Salvia_muelleri,
+		305	Salvia_coahuilensis,
+		306	Salvia_greggii,
+		307	Salvia_lycioides,
+		308	Salvia_villosa,
+		309	Salvia_purpusii,
+		310	Salvia_candicans,
+		311	Salvia_oaxacana,
+		312	Salvia_hidalgensis,
+		313	Salvia_recurva,
+		314	Salvia_concolor,
+		315	Salvia_flaccidifolia,
+		316	Salvia_cuspidata,
+		317	Salvia_flocculosa,
+		318	Salvia_sessei,
+		319	Salvia_pubescens,
+		320	Salvia_betulifolia,
+		321	Salvia_regla,
+		322	Salvia_divinorum,
+		323	Salvia_venulosa,
+		324	Salvia_ballotaeflora,
+		325	Salvia_pinguifolia,
+		326	Salvia_calolophos,
+		327	Salvia_bangii,
+		328	Salvia_gilliesii,
+		329	Salvia_heerii,
+		330	Salvia_retinervia,
+		331	Salvia_madrensis,
+		332	Salvia_adenophora,
+		333	Salvia_disjuncta,
+		334	Salvia_mexiae,
+		335	Salvia_nitida,
+		336	Salvia_bupleuroides,
+		337	Salvia_lasiocephala,
+		338	Salvia_langlassei,
+		339	Salvia_sanctaeluciae,
+		340	Salvia_verecunda,
+		341	Salvia_compsostachys,
+		342	Salvia_lophanthoides,
+		343	Salvia_rubiginosa,
+		344	Salvia_galloana,
+		345	Salvia_discolor,
+		346	Salvia_leucocephala,
+		347	Salvia_karwinskii,
+		348	Salvia_involucrata,
+		349	Salvia_dorisiana,
+		350	Salvia_wagneriana,
+		351	Salvia_holwayi,
+		352	Salvia_pulchella,
+		353	Salvia_curtiflora,
+		354	Salvia_univerticillata,
+		355	Salvia_breviflora,
+		356	Salvia_lasiantha,
+		357	Salvia_ramosa,
+		358	Salvia_melissodora,
+		359	Salvia_rupicola,
+		360	Salvia_keerlii,
+		361	Salvia_semiatrata,
+		362	Salvia_thymoides,
+		363	Salvia_aspera,
+		364	Salvia_chamaedryoides,
+		365	Salvia_tepicensis,
+		366	Salvia_aequidistans,
+		367	Salvia_sphacelifolia,
+		368	Salvia_alamosana,
+		369	Salvia_chapalensis,
+		370	Salvia_quercetorum,
+		371	Salvia_ramamoorthyana,
+		372	Salvia_inconspicua,
+		373	Salvia_nepetoides,
+		374	Salvia_protracta,
+		375	Salvia_thyrsiflora,
+		376	Salvia_coccinea,
+		377	Salvia_angustiarum,
+		378	Salvia_chionophylla,
+		379	Salvia_amethystina,
+		380	Salvia_erythrostoma,
+		381	Salvia_rubescens,
+		382	Salvia_melaleuca,
+		383	Salvia_gachantivana,
+		384	Salvia_gracilipes,
+		385	Salvia_herbacea,
+		386	Salvia_infuscata,
+		387	Salvia_leucochlamys,
+		388	Salvia_urica,
+		389	Salvia_perlonga,
+		390	Salvia_praestans,
+		391	Salvia_buchananii,
+		392	Salvia_cedrosensis,
+		393	Salvia_cualensis,
+		394	Salvia_leptophylla,
+		395	Salvia_azurea,
+		396	Salvia_jaimehintoniana,
+		397	Salvia_prasiifolia,
+		398	Salvia_reptans,
+		399	Salvia_reflexa,
+		400	Salvia_rhombifolia,
+		401	Salvia_hirtella,
+		402	Salvia_sprucei,
+		403	Salvia_blepharophylla,
+		404	Salvia_sharpii,
+		405	Salvia_speciosa,
+		406	Salvia_lobbii,
+		407	Salvia_oppositiflora,
+		408	Salvia_tubiflora,
+		409	Salvia_squalens,
+		410	Salvia_striata,
+		411	Salvia_guaranitica,
+		412	Salvia_scabrida,
+		413	Salvia_confertiflora,
+		414	Salvia_subrotunda,
+		415	Salvia_exserta,
+		416	Salvia_praeclara,
+		417	Salvia_minarum,
+		418	Salvia_nervosa,
+		419	Salvia_orbignaei,
+		420	Salvia_rypara,
+		421	Salvia_sucrensis,
+		422	Salvia_dombeyi,
+		423	Salvia_formosa,
+		424	Salvia_sarmentosa,
+		425	Salvia_alba,
+		426	Salvia_graciliramulosa,
+		427	Salvia_rusbyi,
+		428	Salvia_durifolia,
+		429	Salvia_oxyphora,
+		430	Salvia_haenkei,
+		431	Salvia_platystoma,
+		432	Salvia_melissiflora,
+		433	Salvia_brevipes,
+		434	Salvia_cerradicola,
+		435	Salvia_grewiifolia,
+		436	Salvia_articulata,
+		437	Salvia_hilarii,
+		438	Salvia_splendens,
+		439	Salvia_tomentella,
+		440	Salvia_pallida,
+		441	Salvia_atrocyanea,
+		442	Salvia_sophrona,
+		443	Salvia_stachydifolia,
+		444	Salvia_miniata,
+		445	Salvia_helianthemifolia,
+		446	Salvia_remota,
+		447	Salvia_stachyoides,
+		448	Salvia_heterofolia,
+		449	Salvia_rzedowskii,
+		450	Salvia_lavanduloides,
+		451	Salvia_moniliformis,
+		452	Salvia_cryptodonta,
+		453	Salvia_agnes,
+		454	Salvia_guadalajarensis,
+		455	Salvia_muscarioides,
+		456	Salvia_palmeri,
+		457	Salvia_rosei,
+		458	Salvia_alborosea,
+		459	Salvia_pauciserrata,
+		460	Salvia_pichinchensis,
+		461	Salvia_gravida,
+		462	Salvia_diegoae,
+		463	Salvia_vazquezii,
+		464	Salvia_leucantha,
+		465	Salvia_ibugana,
+		466	Salvia_peninsularis,
+		467	Salvia_amarissima,
+		468	Salvia_santanae,
+		469	Salvia_xalapensis,
+		470	Salvia_angulata,
+		471	Salvia_confertispicata,
+		472	Salvia_mexicana,
+		473	Salvia_languidula,
+		474	Salvia_sapinea,
+		475	Salvia_longispicata,
+		476	Salvia_myriantha,
+		477	Salvia_longistyla,
+		478	Salvia_plurispicata,
+		479	Salvia_arbuscula,
+		480	Salvia_trichostephana,
+		481	Salvia_filipes,
+		482	Salvia_tonaticensis,
+		483	Salvia_areolata,
+		484	Salvia_chiapensis,
+		485	Salvia_ionocalyx,
+		486	Salvia_polystachya,
+		487	Salvia_connivens,
+		488	Salvia_iodantha,
+		489	Salvia_curviflora,
+		490	Salvia_littae,
+		491	Salvia_caudata,
+		492	Salvia_farinacea,
+		493	Salvia_pennellii,
+		494	Salvia_richardsonii,
+		495	Salvia_hispanica,
+		496	Salvia_leptostachys,
+		497	Salvia_rhyacophila,
+		498	Salvia_personata,
+		499	Salvia_tiliifolia,
+		500	Salvia_tubifera,
+		501	Salvia_jorgehintoniana,
+		502	Salvia_nervata,
+		503	Salvia_pansamalensis,
+		504	Salvia_palealis,
+		505	Salvia_carnea,
+		506	Salvia_simulans,
+		507	Salvia_densiflora,
+		508	Salvia_tuerckheimii,
+		509	Salvia_cyanicalyx,
+		510	Salvia_amplifrons,
+		511	Salvia_raymondii,
+		512	Salvia_sordida,
+		513	Salvia_cuatrecasana,
+		514	Salvia_bogotensis,
+		515	Salvia_sphacelioides,
+		516	Salvia_florida,
+		517	Salvia_tortuosa,
+		518	Salvia_rufula,
+		519	Salvia_tolimensis
+	;
+	TREE * UNTITLED = [&R] (((1:0.7841402885,2:0.7841402885):24.58782535,(3:23.29738015,(((4:10.13937794,((5:3.07355297,(6:2.154733479,7:2.154733479):0.9188194908):4.895444631,(8:4.968012783,(9:2.697977154,(10:2.449843962,11:2.449843962):0.2481331928):2.270035629):3.000984818):2.170380336):4.249156263,(((12:6.498345472,13:6.498345472):2.008319921,(14:4.202766703,(15:3.899904941,(16:1.721384012,(17:0.5635773426,18:0.5635773426):1.15780667):2.178520929):0.3028617626):4.30389869):1.858263093,(19:5.02814837,((20:4.234729354,(21:4.184627418,(22:3.990636106,(23:3.449406225,(24:0.3375987072,25:0.3375987072):3.111807518):0.5412298813):0.1939913113):0.05010193677):0.2473440385,((26:2.927183383,(27:0.8666896838,28:0.8666896838):2.060493699):1.004921029,((29:1.715517188,(30:1.415117552,(31:1.291860993,32:1.291860993):0.1232565583):0.3003996365):2.137031611,(33:3.524063162,(34:3.466033904,(35:1.029424715,36:1.029424715):2.43660919):0.05802925745):0.3284856372):0.07955561252):0.5499689814):0.546074977):5.336780116):4.023605714):3.744242395,((37:10.4073841,(((38:2.789676811,39:2.789676811):1.782008795,((40:3.176335932,41:3.176335932):0.6424424186,(42:3.326568377,43:3.326568377):0.492209973):0.7529072554):3.256792217,(((44:4.850420462,(45:3.704202037,(46:1.943322167,(47:1.829414566,48:1.829414566):0.1139076009):1.760879869):1.146218426):1.615579242,(49:3.850319131,((50:2.449126502,51:2.449126502):0.1160209728,(52:1.797166319,(53:0.7737517247,54:0.7737517247):1.023414594):0.7679811564):1.285171656):2.615680573):0.9537368927,((55:6.885406124,(56:3.43481695,((57:2.81372088,58:2.81372088):0.548574459,((59:0.6920271815,(60:0.6175611925,61:0.6175611925):0.07446598897):1.893699237,(62:1.984913674,(63:1.424726593,(64:0.7686368715,(65:0.6982029613,66:0.6982029613):0.07043391023):0.6560897218):0.5601870804):0.6008127447):0.7765689206):0.07252161101):3.450589174):0.2439987273,((67:1.950539084,68:1.950539084):3.312493239,(69:4.106753191,((70:1.208698974,71:1.208698974):2.177743298,((72:1.030171814,(73:0.4877798734,74:0.4877798734):0.5423919408):1.068178292,(75:2.034892171,((76:0.3415498086,77:0.3415498086):0.6554936046,(78:0.7459230109,79:0.7459230109):0.2511204023):1.037848758):0.06345793501):1.288092165):0.7203109196):1.156279132):1.866372528):0.2903317464):0.4087412255):2.578906277):7.069608794,((80:9.479013828,(81:8.160214487,(82:5.958702791,(83:3.224494749,(84:1.630216384,85:1.630216384):1.594278365):2.734208042):2.201511696):1.318799341):3.936628682,((86:3.851806872,87:3.851806872):6.014744376,(((88:4.256102406,(89:3.17241304,90:3.17241304):1.083689366):1.743402529,(91:4.004013356,(92:2.96705449,(((93:1.449477272,94:1.449477272):1.356706155,(95:2.418778902,(96:0.6860083157,97:0.6860083157):1.732770586):0.3874045252):0.1390215151,((98:0.8002927098,99:0.8002927098):1.007787602,(100:1.722586289,(101:1.64806724,(102:1.000500731,(103:0.9172481212,(104:0.2146182663,105:0.2146182663):0.7026298548):0.08325261001):0.6475665088):0.07451904946):0.0854940222):1.137124631):0.02184954743):1.036958866):1.995491579):1.779820856,(106:5.528672592,((107:4.689238526,(108:2.65277904,((109:1.654721201,(110:1.142156976,111:1.142156976):0.5125642251):0.3714386244,(112:1.952246892,(113:1.789636639,(114:1.545678453,115:1.545678453):0.2439581863):0.1626102521):0.0739129341):0.6266192142):2.036459486):0.2036581977,((116:3.345693732,((117:2.644614114,((118:2.036749325,119:2.036749325):0.5183229561,(120:2.283407903,(121:1.894947927,122:1.894947927):0.3884599762):0.2716643779):0.0895418334):0.4300831704,((123:2.764493381,(124:2.460118424,125:2.460118424):0.3043749566):0.2075762575,(126:2.436549489,((127:0.2882316614,128:0.2882316614):2.059430201,(129:1.900381045,130:1.900381045):0.4472808167):0.08888762706):0.5355201491):0.1026276467):0.2709964471):0.2510234914,((131:2.720972279,(132:1.908231159,(133:1.773037585,(134:1.730648831,(135:1.170881367,136:1.170881367):0.5597674642):0.04238875382):0.1351935739):0.8127411197):0.3297796688,((137:1.098774766,(138:0.9301557226,139:0.9301557226):0.1686190436):1.883878556,((140:2.444817653,(141:1.971808412,142:1.971808412):0.4730092408):0.2786039291,(143:2.371307196,(144:1.970579551,145:1.970579551):0.4007276451):0.3521143866):0.2592317395):0.06809862572):0.5459652759):1.2961795):0.6357758682):2.250653198):2.087225457):3.549091262):4.061350383):0.6557837016):5.164603551):2.07458549):5.981461143,(((146:2.572499588,147:2.572499588):15.5017804,(148:13.10533395,((((149:2.114941696,150:2.114941696):2.963226418,(151:4.544035255,((152:0.6849091578,153:0.6849091578):1.786516409,(154:1.649780067,((155:0.5051499766,156:0.5051499766):0.6589805413,(157:0.4876535937,158:0.4876535937):0.6764769241):0.4856495494):0.8216454999):2.072609687):0.5341328596):1.572860225,(((159:2.653300689,(160:1.433958342,161:1.433958342):1.219342348):1.053029122,(162:2.689960776,(163:2.370368165,164:2.370368165):0.3195926104):1.016369036):0.8481450151,((165:2.367617494,(166:2.24987846,(167:0.8802726143,168:0.8802726143):1.369605845):0.1177390345):0.1224309486,(169:2.23710631,(170:2.068361798,((171:1.749502662,(172:1.499626037,173:1.499626037):0.249876625):0.2583149488,(174:1.752497949,(175:1.502086309,176:1.502086309):0.2504116401):0.2553196617):0.06054418739):0.1687445118):0.2529421328):2.064426384):2.096553513):4.037926847,((177:4.588490287,178:4.588490287):3.735778559,(((179:2.583543988,(180:1.637199973,181:1.637199973):0.9463440142):3.182446452,((182:1.737723769,183:1.737723769):1.800619596,(184:3.418048123,(185:1.380982464,186:1.380982464):2.037065658):0.1202952428):2.227647074):0.7717990216,(((187:2.513736731,(188:1.152158828,189:1.152158828):1.361577903):0.988425313,((190:2.84560888,((191:0.8829700906,192:0.8829700906):0.1944548501,(193:0.9617538252,194:0.9617538252):0.1156711155):1.768183939):0.4384405547,((195:2.566316961,(196:2.444983348,197:2.444983348):0.1213336128):0.1142311656,(198:0.8066548364,(199:0.3265882921,(200:0.2943106913,201:0.2943106913):0.03227760078):0.4800665444):1.87389329):0.6035013081):0.2181126099):0.4165933146,((202:3.093183148,(203:1.191480933,204:1.191480933):1.901702215):0.7700791711,(((205:1.141698914,(206:0.9230654933,207:0.9230654933):0.2186334212):2.489744788,(208:3.192549768,(209:1.075222482,210:1.075222482):2.117327286):0.4388939342):0.1930033655,((211:3.142567054,(212:2.131613526,(213:1.701443132,214:1.701443132):0.4301703941):1.010953528):0.1560507572,((215:2.03792595,216:2.03792595):0.5933294128,((217:1.389596605,218:1.389596605):0.5460879461,(219:1.533347762,(220:0.8249935101,221:0.8249935101):0.7083542517):0.4023367893):0.6955708113):0.6673624485):0.5258292569):0.03881525123):0.05549303978):2.619034102):1.786479385):2.36468634):2.41637876):4.968946039):10.89645167,((((222:4.75336421,223:4.75336421):11.21491406,(224:6.014063256,225:6.014063256):9.954215018):3.115713291,(226:13.60098905,(227:8.045145078,((228:2.104274781,229:2.104274781):3.189344383,(230:2.412616355,(231:0.9255976688,232:0.9255976688):1.487018687):2.881002808):2.751525914):5.555843968):5.483002519):7.893224737,((233:12.82669561,234:12.82669561):11.41283738,(((235:7.212818729,(236:3.863508957,(237:2.441408156,238:2.441408156):1.4221008):3.349309773):11.54339604,(239:11.58574578,((240:1.23162538,241:1.23162538):5.220739386,((242:3.542372204,(243:2.261506655,(244:1.682133758,(245:0.6712505914,246:0.6712505914):1.010883166):0.5793728972):1.280865549):1.10360646,(247:3.241965457,(248:2.306305825,(249:1.639829145,(250:1.554409565,(251:0.9204792357,(252:0.3975534764,253:0.3975534764):0.5229257594):0.6339303294):0.08541958011):0.66647668):0.9356596312):1.404013207):1.806386101):5.133381011):7.170468994):3.406289688,((254:16.32259037,((255:3.748416303,256:3.748416303):4.43393635,(257:6.620436299,(258:4.281009594,(259:0.9552416194,260:0.9552416194):3.325767975):2.339426705):1.561916354):8.140237721):3.810571275,((((261:4.754105075,262:4.754105075):8.038927363,((263:5.122062588,(264:4.029908064,(265:2.981646287,266:2.981646287):1.048261777):1.092154524):6.439595438,((267:3.710984716,268:3.710984716):5.430141306,((269:0.3514286484,270:0.3514286484):7.870389383,(271:4.815532479,(272:2.351159861,273:2.351159861):2.464372618):3.406285553):0.9193079904):2.420532004):1.231374413):2.410945262,((274:9.560652451,(275:3.796222577,((276:3.39141965,277:3.39141965):0.1724783571,((278:0.298296174,279:0.298296174):1.845394244,(280:2.073947445,(281:1.677830684,282:1.677830684):0.3961167607):0.06974297281):1.42020759):0.2323245694):5.764429874):3.282966477,(283:12.0152926,((284:5.964240894,(285:3.805404367,286:3.805404367):2.158836527):4.570393089,((287:2.757362498,288:2.757362498):5.616642407,((289:3.318437011,290:3.318437011):2.942209413,(291:2.91285298,292:2.91285298):3.347793443):2.113358482):2.160629079):1.480658612):0.8283263314):2.360358773):3.135189676,(((293:8.039313275,(294:3.869197748,295:3.869197748):4.170115526):3.414977216,(((296:2.416569217,(297:1.691977247,298:1.691977247):0.7245919702):2.112520823,(299:2.059121837,(300:0.2504832667,301:0.2504832667):1.80863857):2.469968203):0.9127203084,((302:2.150582883,303:2.150582883):0.4227248976,(304:1.30981331,(305:1.255484526,(306:1.098353847,(307:0.4178895414,308:0.4178895414):0.6804643058):0.1571306791):0.05432878375):1.263494471):2.868502567):6.012480142):6.70296455,(((309:15.1676891,(310:1.300218469,311:1.300218469):13.86747063):1.431617561,((312:13.71926463,(313:3.416347402,(314:0.3051657858,315:0.3051657858):3.111181616):10.30291723):1.349468086,((316:6.444698494,317:6.444698494):4.964972043,(318:6.157671022,(319:3.14200991,(320:1.188543241,321:1.188543241):1.95346667):3.015661112):5.251999515):3.659062182):1.530573939):1.516533438,(((322:7.279746534,323:7.279746534):8.852748589,((324:2.892350711,325:2.892350711):5.092925286,(326:3.692847589,((327:1.780610514,328:1.780610514):1.705677298,(329:3.11468093,330:3.11468093):0.3716068825):0.2065597765):4.292428408):8.147219126):1.649184736,(((331:11.65527353,(332:4.589556079,333:4.589556079):7.065717453):0.3270551554,((334:5.253057295,335:5.253057295):2.014033672,((336:5.013751246,337:5.013751246):1.271550251,((338:1.677554753,339:1.677554753):4.120729591,(340:4.925917333,(341:4.455120944,(342:1.898596994,343:1.898596994):2.556523951):0.4707963888):0.872367011):0.4870171521):0.9817894709):4.71523772):2.731617836,(((344:5.914852683,(345:3.009711472,346:3.009711472):2.905141211):3.684664166,((347:3.13487705,(348:2.823867006,(349:2.789114904,(350:2.167214594,(351:1.255538814,(352:1.146668872,(353:0.8287709647,354:0.8287709647):0.3178979074):0.1088699418):0.9116757797):0.6219003102):0.03475210178):0.3110100441):5.687282275,(355:4.52438736,(((356:1.098095374,357:1.098095374):1.350998012,(358:2.028472959,359:2.028472959):0.420620427):1.955402444,((360:2.489361183,361:2.489361183):1.494391396,(362:3.665118696,(363:2.855789184,364:2.855789184):0.809329512):0.318633883):0.4207432511):0.11989153):4.297771965):0.7773575239):4.527939623,((((365:2.256963481,(366:0.6213744341,367:0.6213744341):1.635589046):4.138732499,((368:1.265663431,369:1.265663431):0.8312265531,((370:1.692400102,371:1.692400102):0.374273565,(372:1.552006625,(373:1.523199292,(374:0.6954731669,375:0.6954731669):0.8277261255):0.02880733234):0.5146670423):0.03021631711):4.298805995):5.877387746,((376:6.331083934,(377:6.227748176,378:6.227748176):0.1033357585):4.214231291,(((379:3.727018083,((380:1.232538654,381:1.232538654):1.027542139,(382:1.200929814,(383:1.111134958,384:1.111134958):0.0897948565):1.059150979):1.46693729):6.513758903,(385:8.914590313,(386:7.642021274,((387:1.37988448,388:1.37988448):3.412222672,(389:1.211986703,390:1.211986703):3.58012045):2.849914122):1.272569039):1.326186672):0.2795656837,(391:9.147605718,((392:2.43132362,393:2.43132362):6.104187531,((394:6.760626293,(395:6.251744908,(396:5.842590052,(397:1.102353709,398:1.102353709):4.740236343):0.4091548556):0.508881385):1.49737851,((399:6.214874276,400:6.214874276):1.478226673,((401:3.065851934,402:3.065851934):3.779187517,((403:2.078890687,404:2.078890687):4.735108807,(405:4.212641868,(406:3.671849739,(407:2.311835625,(408:1.484223821,(409:1.416638443,410:1.416638443):0.06758537834):0.8276118042):1.360014114):0.5407921284):2.601357627):0.03103995691):0.8480614981):0.5649038534):0.2775063481):0.6120945668):1.372736951):0.02497255616):1.7277685):0.657833733,(((411:4.180960579,412:4.180960579):5.658672004,(((413:6.489512488,(414:3.358201196,(415:0.5368725417,416:0.5368725417):2.821328654):3.131311292):0.4416587838,(417:5.953485842,(418:5.865300844,(419:3.216962726,(420:2.315673526,421:2.315673526):0.9012891997):2.648338118):0.08818499841):0.9776854296):0.9966267503,((422:3.65031298,(423:2.44152434,424:2.44152434):1.208788641):3.834283218,(((425:1.634698036,426:1.634698036):3.760095307,(427:3.539329085,(428:3.36129472,(429:1.639407181,(430:1.186002788,431:1.186002788):0.4534043929):1.72188754):0.1780343642):1.855464259):1.369210598,((432:2.83460589,(433:1.632632402,434:1.632632402):1.201973489):3.80289599,(435:6.506525025,(((436:1.480622025,437:1.480622025):2.666135243,(438:3.397108113,439:3.397108113):0.7496491561):0.9517222989,(440:4.338622096,(441:2.742753921,(442:2.570975959,443:2.570975959):0.1717779623):1.595868175):0.759857472):1.408045457):0.1309768551):0.1265020613):0.7205922569):0.4432018237):1.91183456):1.779913097,(444:10.54810754,(((445:5.018476171,(446:1.474146896,447:1.474146896):3.544329275):1.303883259,((448:2.952127699,449:2.952127699):3.253270397,((450:2.830554886,451:2.830554886):2.757973251,(452:3.669833447,(453:3.093780324,(454:2.625224917,455:2.625224917):0.4685554071):0.5760531222):1.918694691):0.6168699579):0.1169613349):3.888944251,(((456:2.581642662,457:2.581642662):7.248916208,(((458:5.496870347,(459:5.004427032,460:5.004427032):0.4924433155):3.811825016,(461:7.236518746,(462:4.546199129,463:4.546199129):2.690319616):2.072176617):0.4858893014,(464:6.884575635,((465:6.70841521,466:6.70841521):0.1457574677,((467:2.610589372,468:2.610589372):1.139169813,(469:3.454619169,(470:2.675043537,((471:1.19694657,472:1.19694657):1.054942737,(473:2.009712913,(474:0.7094088675,(475:0.5925163091,476:0.5925163091):0.1168925584):1.300304046):0.2421763935):0.4231542308):0.7795756311):0.2951400159):3.104413493):0.03040295753):2.910009029):0.03597420557):0.2203227081,(477:9.704022513,(((478:3.385014986,(479:0.4311698924,480:0.4311698924):2.953845093):3.657046765,(((481:1.648151686,482:1.648151686):1.07456124,(483:1.921240605,(484:1.24047084,485:1.24047084):0.6807697649):0.8014723207):4.267794071,(486:6.636107143,((487:1.096941426,488:1.096941426):3.233853452,(489:3.475625056,490:3.475625056):0.8551698221):2.305312265):0.3543998535):0.05155475484):2.520176682,((491:7.334377028,((492:3.854945077,(493:0.9082744932,494:0.9082744932):2.946670584):3.158113924,((495:2.81931336,(496:0.7893083225,497:0.7893083225):2.030005037):3.384584747,((498:2.641865212,499:2.641865212):2.171342045,(500:2.339959026,(501:1.036657254,502:1.036657254):1.303301772):2.473248231):1.390690849):0.8091608949):0.3213180271):1.02715924,((503:6.067731955,(504:2.226055268,(505:2.014167061,506:2.014167061):0.2118882075):3.841676687):0.8504907265,(((507:2.759236432,508:2.759236432):2.244874697,(509:2.514615464,(510:0.6765689763,511:0.6765689763):1.838046488):2.489495665):1.02713668,(512:3.996847853,((513:2.947628557,(514:0.2848510759,515:0.2848510759):2.662777481):0.9997998967,((516:2.017256135,517:2.017256135):1.766937409,(518:1.850984007,519:1.850984007):1.933209536):0.1632349101):0.04941939955):2.034399956):0.8869748721):1.443313587):1.200702165):0.1417840799):0.3468590649):0.1604221039):0.3368038634):1.071438135):1.311371779):1.196539013):0.5864900522):3.067733335):0.3341602373):0.04141494391):0.1819123358):1.793994273):2.02934281):2.077028529):2.737683314):1.993515351):2.382695126);
+END;
