@@ -63,7 +63,8 @@ completed_jobs = [
 
 n_iters = length(fpaths)
 n_iters - length(completed_jobs)
-prog = ProgressMeter.Progress(n_iters; desc = "Inference: ");
+io = open("output/prog_empirical_fixedprior.txt","w")
+prog = ProgressMeter.Progress(n_iters; desc = "Inference: ", output = io);
 for fpath in fpaths
     phy = readtree(fpath)
     name = join(split(Base.basename(fpath), ".")[1:end-1])
@@ -141,4 +142,4 @@ finish!(prog)
 
 
 
-
+exit()

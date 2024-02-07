@@ -51,10 +51,9 @@ for fpath in fpaths
         continue
     end
 
-    println(name)
     phy = readtree(fpath)
     data = SSEdata(phy, 1.0)
-    println(fpath, ",\t n = ", length(data.tiplab))
+    println(name, ",\t n = ", length(data.tiplab))
 end
 
 completed_jobs = [
@@ -64,7 +63,8 @@ completed_jobs = [
 
 n_iters = length(fpaths)
 n_iters - length(completed_jobs)
-prog = ProgressMeter.Progress(n_iters; desc = "Inference: ");
+io = open("output/prog_empirical_bayes.txt", "w")
+prog = ProgressMeter.Progress(n_iters; desc = "Inference: ", output = io);
 for fpath in fpaths
     phy = readtree(fpath)
     name = join(split(Base.basename(fpath), ".")[1:end-1])
@@ -137,7 +137,8 @@ for fpath in fpaths
     next!(prog)
 end
 finish!(prog)
+close(io)
 
 
 
-
+exit()
