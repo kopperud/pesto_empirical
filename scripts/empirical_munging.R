@@ -263,6 +263,23 @@ df$how_many_supported
 
 
 
+###############
+## plot some trees
+
+
+#td <- read.beast.newick("output/empirical_fixedprior/newick/Sigmodontinae_VallejosGarrido2023.tre")
+td <- read.beast.newick("output/empirical/newick/Sigmodontinae_VallejosGarrido2023.tre")
+
+td <- read.beast.newick("output/empirical_fixedprior/newick/Mimosa_Vasconcelos2020.tre")
+#td <- read.beast.newick("output/empirical/newick/Mimosa_Vasconcelos2020.tre")
+
+
+ggtree(td, aes(color = mean_netdiv))
+ggtree(td, aes(color = delta_netdiv))
+
+td@data$delta_netdiv |> sum()
+
+
 
 
 

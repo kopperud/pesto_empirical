@@ -6,19 +6,6 @@ using Printf
 using CairoMakie
 using Pesto
 
-#= function recreate_model(λml, µml, η)
-    n = 10
-    H = 0.587
-    dλ = LogNormal(log(λml), H)
-    dμ = LogNormal(log(µml), H)
-
-    λquantiles = make_quantiles(dλ, n)
-    µquantiles = make_quantiles(dμ, n)
-    λ, μ = allpairwise(λquantiles, µquantiles)
-
-    model = SSEconstant(λ, μ, η)
-    return(model)
-end =#
 
 function ols_regression(x, y)
     X = hcat([1 for _ in 1:length(x)], x)
@@ -36,12 +23,17 @@ function ols_regression(x, y)
 end
 
 
+#inference = "empirical_fixedprior"
+inference = "empirical"
+
 df = CSV.read("output/empirical_munged.csv", DataFrame)
-df = df[df[!,:inference] .== "empirical_fixedprior",:]
+df = df[df[!,:inference] .== inference,:]
+#df = df[df[!,:inference] .== "empirical",:]
 
 d = Dict()
 names = unique(df[!,:name])
-fpaths = Glob.glob("output/empirical_fixedprior/jld2/*.jld2")
+fpaths = Glob.glob("output/" * inference * "/jld2/*.jld2")
+#fpaths = Glob.glob("output/empirical/jld2/*.jld2")
 @showprogress for fpath in fpaths
     name = split(Base.basename(fpath), ".")[1]
     x = JLD2.load(fpath)
@@ -95,7 +87,7 @@ for fpath in fpaths
     end
 end
 
-heights = [maximum(d.node_depth) for (key, d) in datasets]
+#heights = [maximum(d.node_depth) for (key, d) in datasets]
 
 
 function support_vector(name, subdir)
@@ -120,11 +112,11 @@ end
 #print(support_vector("Primates_Springer2012"))
 
 
-function compute_ratios(name, model, dataset, filter = "")
+function compute_ratios(name, model, subdir, filter = "")
     N = d[name]["N"]
 
     if filter == "support"
-        is_supported = support_vector(name, "empirical_fixedprior")
+        is_supported = support_vector(name, subdir)
         N = N[is_supported,:,:]
     end
 
@@ -133,10 +125,11 @@ function compute_ratios(name, model, dataset, filter = "")
 
     Ns = zeros(3,nbins)
     filters = ["extinction", "speciation", ""]
+    limits = [-1.2, 1.2]
 
     dfs = []
     for (i, filter) in enumerate(filters)
-        mids, bins = makebins(Nmatrix, model, netdiv_extrema...; filter = filter, nbins = nbins)
+        mids, bins = makebins(Nmatrix, model, limits...; filter = filter, nbins = nbins)
         Ns[i,:] = bins[:,3]
         df = DataFrame(
             "Δr" => bins[:,3],
@@ -327,14 +320,15 @@ for (dataset_index, name) in enumerate(names)
     dname = replace(name, "Toninietal2016" => "Toninietal.2016")
     dname = replace(name, "Zanneetal2014rooteddated" => "Zanne.et.al.2014rooted.dated")
 
+
     rs1 = compute_ratios(name, 
             models[name],
-            datasets[dname * ".tree"], 
+            inference,
             "")
 
     rs2 = compute_ratios(name, 
             models[name],
-            datasets[dname * ".tree"], 
+            inference,
             "support")
 
 
@@ -445,16 +439,10 @@ CairoMakie.save("figures/fig1_fixedprior.pdf", fig)
 #
 ###############
 
-
-fig2 = Figure(resolution = (350, 175), fontsize = 14, 
-                figure_padding = (5,5,1,1))
-
-g2 = fig2[1,1] = GridLayout()
-
-
-
 function magnitude(model, N)
-    shifts_weighted = N .* (model.λ .- model.λ')
+    r = model.λ .- model.μ
+    #shifts_weighted = N .* (model.λ .- model.λ')
+    shifts_weighted = N .* (r .- r')
     mean_magnitude = sum(shifts_weighted) / sum(N)
     return(mean_magnitude)
 end
@@ -474,33 +462,39 @@ function var_bds(model, N)
 end
 
 
-magnitudes = zeros(size(N)[1])
 
-for dataset_index in 1:size(N)[1]
-    λml, μml, ηhat = dat[dataset_index,1:3]
-    model = recreate_model(λml, μml, ηhat)
-    m = magnitude(model, N[dataset_index,:,:,1])
-    magnitudes[dataset_index] = m
+n_datasets = length(datasets)
+magnitudes = zeros(n_datasets)
+heights = zeros(n_datasets)
+
+for (i, name) in enumerate(keys(d))
+    model = models[name]
+    heights[i] = maximum(datasets[name .* ".tree"].node_depth)
+    Nsum = sum(d[name]["N"], dims = 1)[1,:,:]
+    m = magnitude(model, Nsum)
+    magnitudes[i] = m
 end
 
-variances = zeros(size(N)[1])
+variances = zeros(n_datasets)
 
-for dataset_index in 1:size(N)[1]
-    λml, μml, ηhat = dat[dataset_index,1:3]
-    model = recreate_model(λml, μml, ηhat)
+for (i, name) in enumerate(keys(d))
+    model = models[name]
+    Nsum = sum(d[name]["N"], dims = 1)[1,:,:]
 
-    variances[dataset_index] = var_bds(model, N[dataset_index,:,:,1])
+    variances[i] = var_bds(model, Nsum)
 end
 CairoMakie.scatter(log10.(heights), log10.(variances))
 
-magnitudes[1]
 
 
+fig2 = Figure(size = (350, 175), fontsize = 14, 
+                figure_padding = (5,5,1,1))
 
-xt = collect(range(0.0, maximum(magnitudes); length = 5))
+
+xt = collect(range(extrema(magnitudes)...; length = 5))
 xtl = [@sprintf("%.2f", x) for x in xt]
 
-ax_mag_hist = Axis(g2[1,1], 
+ax_mag_hist = Axis(fig2[1,1], 
             ylabel = L"\text{frequency}", 
             xlabel = L"\text{magnitude }(\Delta r)",
             xgridvisible = false, 
@@ -519,40 +513,46 @@ CairoMakie.hist!(ax_mag_hist, magnitudes, bins = 10, color = "gray")
 xt = 10 .^ (collect(range(extrema(log10.(heights))...; length = 5)))
 xtl = [@sprintf("%.1f", x) for x in xt]
 
-yt = 10 .^ (collect(range(extrema(log10.(magnitudes))...; length = 5)))
-ytl = [@sprintf("%.2f", y) for y in yt]
+#yt = 10 .^ (collect(range(extrema(log10.(magnitudes))...; length = 5)))
+#ytl = [@sprintf("%.2f", y) for y in yt]
 
-ax_scatter = Axis(g2[1, 2], 
+ax_scatter = Axis(fig2[1, 2], 
         ylabel = L"\text{magnitude } (\Delta r)", 
         #xlabel = L"\text{tree height (Ma)}",
         xgridvisible = false, 
         ygridvisible = false,
-        yscale = log10, xscale = log10,
+        #yscale = log10, 
+        xscale = log10,
         xticks = (xt, xtl),
-        yticks = (yt, ytl),
+        #yticks = (yt, ytl),
         xlabel = L"\text{tree height (Ma)}",
         topspinevisible = false,
         rightspinevisible = false,
         #xticklabelrotation = π/2,
         xticklabelsize = 9,
         yticklabelsize = 9)
-ylabel2 = Label(g[3, 4], L"\text{tree height (Ma)}")
+#ylabel2 = Label(fig2[3,4], L"\text{tree height (Ma)}")
 
 
 
-β, Varβ, ySE = ols_regression(log10.(heights), log10.(magnitudes))
-linefit(x) = β[1] + β[2]*x
+#β, Varβ, ySE = ols_regression(log10.(heights), log10.(magnitudes))
+β, Varβ, ySE = ols_regression(log10.(heights), magnitudes)
+linefit(x) = β[1] + β[2]*log10.(x)
 x = collect(Pesto.lrange(extrema(heights)..., 20))
-yarithmetic = linefit.(log10.(x))
-yVar = Varβ[1,1] .- 2 .* log10.(x) .* Varβ[1,2] .+ (log10.(x) .^ 2) .* Varβ[2,2]
+#yarithmetic = linefit.(log10.(x))
+yarithmetic = linefit.(x)
+yVar = Varβ[1,1] .+ 2 .* log10.(x) .* Varβ[1,2] .+ (log10.(x) .^ 2) .* Varβ[2,2]
 
-yupper = 10 .^ (yarithmetic .+ sqrt.(yVar))
-ylower = 10 .^ (yarithmetic .- sqrt.(yVar))
+#yupper = 10 .^ (yarithmetic .+ sqrt.(yVar))
+#ylower = 10 .^ (yarithmetic .- sqrt.(yVar))
+yupper = yarithmetic .+ 2*sqrt.(yVar)
+ylower = yarithmetic .- 2*sqrt.(yVar)
 
 #ylower[ylower .< 1.0] .= 1.0
 CairoMakie.band!(ax_scatter, x, ylower, yupper, color = "#e0e0e0")
 
-y = 10 .^(linefit.(log10.(x)))
+#y = 10 .^(linefit.(log10.(x)))
+y = linefit.(x)
 CairoMakie.lines!(ax_scatter, x, y; 
 label = "OLS", markersize = 7, color = "gray", linestyle = :dash)
 
@@ -563,5 +563,28 @@ CairoMakie.scatter!(ax_scatter,
                     color = "black",
                     markersize = 7)
 
-colgap!(g2, 5)
-CairoMakie.save("figures/magnitude_summary.pdf", fig2)
+colgap!(fig2.layout, 5)
+fig2
+
+#CairoMakie.save("figures/magnitude_empiricalbayes.pdf", fig2)
+#CairoMakie.save("figures/magnitude_fixedprior.pdf", fig2)
+
+for (i, name) in enumerate(keys(d))
+    println(name, ": \t", magnitudes[i])
+end
+
+dfm = DataFrame(
+    "name" => collect(keys(d)),
+    "m" => magnitudes
+)
+
+sort(dfm, :m)
+
+
+name = split(Base.basename(fpath), ".")[1]
+x = JLD2.load("output/empirical/jld2/Sigmodontinae_VallejosGarrido2023.jld2")
+
+
+
+
+
