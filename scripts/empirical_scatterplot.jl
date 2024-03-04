@@ -1,5 +1,5 @@
 using Distributions
-using Glob, DataFrames, CSV, RCall, ProgressMeter
+using DataFrames, CSV, RCall, ProgressMeter
 using LaTeXStrings, Measures
 using JLD2
 using Printf
@@ -8,7 +8,8 @@ using Glob
 
 
 df = CSV.read("output/empirical_munged.csv", DataFrame)
-df = df[df[!,:inference] .== "empirical_fixedprior",:]
+inference = "empirical"
+df = df[df[!,:inference] .== inference,:]
 
 df[!,:type] = String.(df[!,:type]) ## ensure it's a string
 
@@ -174,11 +175,14 @@ function foobar!(fig, xvars, xlabs, shift_df, xdigits = [2,1], ydigits = [1,4])
             slope,
             " log(x)"
             )
-        tag = replace(tag, "+ -"=> "- ")
-        tag = replace(tag, "-"=> "- ")
-        tag = replace(tag, "log"=> "\\log")
-        tag = LaTeXString(string("\$", tag, "\$"))
-        text!(axs[i+offset], minimum(xt[i])*1.1, maximum(yt2)*0.65, text = tag, fontsize = 7)
+
+        if false ## print the intercept and slope
+            tag = replace(tag, "+ -"=> "- ")
+            tag = replace(tag, "-"=> "- ")
+            tag = replace(tag, "log"=> "\\log")
+            tag = LaTeXString(string("\$", tag, "\$"))
+            text!(axs[i+offset], minimum(xt[i])*1.1, maximum(yt2)*0.65, text = tag, fontsize = 7)
+        end
     end
 
 
@@ -218,11 +222,12 @@ foobar!(fig1, xvars, xlabs, shift_df, xdigits, ydigits)
 fig1
 
 #ax3 = Axis(fig[0, 1:2], xlabel = "all branches pooled")
-xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
+#xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
 
 rowgap!(fig1.layout, 7)
 fig1
-CairoMakie.save("figures/scatter1.pdf", fig1)
+#CairoMakie.save("figures/scatter1.pdf", fig1)
+#CairoMakie.save("figures/scatter1_empiricalbayes.pdf", fig1)
 
 ### only the significantly supported branches
 
@@ -258,7 +263,7 @@ xlabel = Label(fig2[0,1:2], L"\text{filtered for strongly supported branches}")
 
 rowgap!(fig2.layout, 7)
 fig2
-CairoMakie.save("figures/scatter2.pdf", fig2)
+#CairoMakie.save("figures/scatter2_empiricalbayes.pdf", fig2)
 
 
 
