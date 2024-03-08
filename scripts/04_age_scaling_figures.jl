@@ -5,6 +5,22 @@ using CairoMakie
 using LaTeXStrings
 using Printf
 
+
+function ols_regression(x, y)
+    X = hcat([1 for _ in 1:length(x)], x)
+    n, p = size(X)
+
+    ## OLS
+    β = (X' * X) \ X' * y
+    yhat = X * β
+    #sigma_squared = (1 / (n - p - 1)) * sum((y .- yhat).^2) ## MLE for sigma^2
+    s_squared = (y .- yhat)' * (y .- yhat) ./ (n - p) ## OLS for sigma^2
+    Varβ = inv(X' * X) .* s_squared
+    yVar = x -> Varβ[1,1] + (x^2)*Varβ[2,2] + 2*x*Varβ[1,2]
+    ySE = x -> sqrt.(yVar(x))
+    return(β, Varβ, ySE)
+end
+
 ms = ["NA", "NAN", "NULL", "NaN"]
 df = CSV.read("output/age_scaling_effect_munged.csv", DataFrame; missingstring = ms)
 
@@ -158,8 +174,15 @@ fig3
 save("figures/age_scaling_effect2.pdf", fig3)
 
 
+## regression slopes
+for df1 in (df, df_true)
+    x = df1[!,:height]
+    y = df1[!,:N_per_time]
 
+    β, Varβ, ySE = ols_regression(log.(x), log.(y))
 
+    println(β[2], " ± ", sqrt(Varβ[2,2]))
+end
 
 
 

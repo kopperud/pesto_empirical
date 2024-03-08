@@ -228,6 +228,9 @@ rowgap!(fig1.layout, 7)
 fig1
 #CairoMakie.save("figures/scatter1.pdf", fig1)
 #CairoMakie.save("figures/scatter1_empiricalbayes.pdf", fig1)
+β, Varβ, ySE = ols_regression(xvars[2], shift_df[!,:log_N_by_t])
+
+print(β[2], " ± ", sqrt(Varβ[2,2]))
 
 ### only the significantly supported branches
 
