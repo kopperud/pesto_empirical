@@ -53,10 +53,43 @@ plot(heights, ntips)
 
 plot.phylo(fishtree, show.tip.label = FALSE);nodelabels()
 
-max(node.depth.edgelength(fishtree))
+
+extrema <- function(x){
+  mi <- min(x)
+  ma <- max(x)
+  return(c(mi,ma))
+}
+
+library(treeio)
+library(ggtree)
+library(ggplot2)
+#tr <- read.beast.newick("output/empirical_fish_subtrees/newick/Actinopterygii_node_22326.tre")
+tr <- read.beast.newick("output/empirical_fish_subtrees/newick/Actinopterygii_node_12596.tre")
+
+th <- max(node.depth.edgelength(tr@phylo))
+p1 <- ggtree(tr, aes(color = mean_netdiv)) +
+  theme(legend.position = "top") +
+  ggtitle("net diversification (range 0.54 to 2.51)")
+  #scale_color_continuous(low='darkgreen', high='red') +
+  #xlim(c(0.0, 10.0))
+p2 <- ggtree(tr, aes(color = nshift)) +
+  theme(legend.position = "top") +
+  scale_color_continuous(low='black', high='red') +
+  geom_tiplab(size = 2) +
+  xlim(c(0.0, th+2)) +
+  ggtitle("number of rate shifts (range 0.002 to 12.5)")
 
 
-extract.clade
+p <- p1 | p2
+ggsave("figures/weird_cichlid_clade.pdf", p, height = 200, width = 300, units = "mm")
+
+
+
+
+
+
+
+
 
 
 
