@@ -81,20 +81,59 @@ K = length(model.λ)
 
 Ncomplete = zeros(Int64, ntrees, K, K)
 Nreconstructed = zeros(Int64, ntrees, K, K)
+magnitudes_complete = Float64[]
+magnitudes_reconstructed = Float64[]
+
+reconstructed_trees = Tree[]
 
 for (i, tree) in enumerate(trees)
-    Ncomplete[i,:,:] .= rate_shift_matrix(trees[i], model)
+    N = rate_shift_matrix(trees[i], model)
+    Ncomplete[i,:,:] .= N
+
+    if sum(N) > 0
+        mag = sum(N .* Δr) / sum(N)
+        append!(magnitudes_complete, mag)
+    end
 
     if ntaxa(trees[i]) > 1 ## can't do it for just 1 surviving lineage, not supported
         ## can argue that 1 lineage is not a phylogeny anyway
         ## define phylogeny := at least two lineages that had a common ancestor
         prune_extinct!(trees[i])
-        Nreconstructed[i,:,:] .= rate_shift_matrix(trees[i], model)
+        push!(reconstructed_trees, trees[i])
+        N = rate_shift_matrix(trees[i], model)
+        Nreconstructed[i,:,:] .= N
+
+        if sum(N) > 0
+            mag = sum(N .* Δr) / sum(N)
+            append!(magnitudes_reconstructed, mag)
+        end
     end
 end
 
+
+
+
+## save trees to file
+for (i, tree) in enumerate(reconstructed_trees)
+    fpath = string("data/simulations/up_vs_down/",i,".tre")
+    writenewick(fpath, tree, model)
+end
+
+## tree height are not equal, because either the left or right subtree went extinct,
+## and then the branch leading up to the MRCA was pruned
+treeheights = [treeheight(tree) for tree in reconstructed_trees]
+hist(treeheights)
+
+
+
+
 Nc = sum(Ncomplete, dims = 1)[1,:,:]
 Nr = sum(Nreconstructed, dims = 1)[1,:,:]
+
+
+for i in 1:ntrees
+    sum(N .* Δr) ./ sum(N)
+end
 
 
 println("Number of shifts for complete phylogeny:")
@@ -115,7 +154,8 @@ fig2 = Figure(size = (1000, 600))
 xt = [-0.08, -0.06, -0.04, -0.02, 0.0, 0.02, 0.04, 0.06, 0.08]
 xtl = [@sprintf "%2.2f" x for x in xt]
 
-ax1 = Axis(fig2[1,1], xticks = (xt, xtl),
+ax1 = Axis(
+    fig2[1,1], xticks = (xt, xtl),
     topspinevisible = false,
     rightspinevisible = false,
     xgridvisible = false,
@@ -123,7 +163,8 @@ ax1 = Axis(fig2[1,1], xticks = (xt, xtl),
     ylabel = L"\text{number of rate shifts }(N)",
     xlabel = L"\text{shift size in net diversification rate }(\Delta r)",
     )
-ax2 = Axis(fig2[1,2], xticks = (xt, xtl),
+ax2 = Axis(
+    fig2[1,2], xticks = (xt, xtl),
     topspinevisible = false,
     rightspinevisible = false,
     xgridvisible = false,
@@ -140,6 +181,49 @@ barplot!(ax2, Δr_v, y, label = "")
 
 linkaxes!(ax1, ax2)
 fig2
+
+#########################
+##
+##    magnitudes
+##
+#########################
+
+fig3 = Figure(size = (500, 600))
+
+ax1 = Axis(
+    fig3[1,1], #xticks = (xt, xtl),
+    topspinevisible = false,
+    rightspinevisible = false,
+    xgridvisible = false,
+    ygridvisible = false,
+    ylabel = L"\text{number of trees}",
+    title = "complete trees (≥ 1 shift)",
+    )
+ax2 = Axis(
+    fig3[2,1], #xticks = (xt, xtl),
+    topspinevisible = false,
+    rightspinevisible = false,
+    xgridvisible = false,
+    ygridvisible = false,
+    title = "reconstructed trees (≥ 1 shift)",
+    ylabel = L"\text{number of trees}",
+    xlabel = L"\text{magnitude }=\frac{\sum_{i,j}(r_i-r_j)N_{ij}}{\sum_{i,j}N_{ij}}",
+    )
+
+hist!(ax1, magnitudes_complete, color = :gray)
+lines!(ax1, [0.0, 0.0], [0.0, 150], color = :red, linestyle = :dash)
+hist!(ax2, magnitudes_reconstructed, color = :gray)
+lines!(ax2, [0.0, 0.0], [0.0, 150], color = :red, linestyle = :dash)
+linkaxes!(ax1, ax2)
+fig3
+
+
+
+
+
+
+
+
 
 
 
