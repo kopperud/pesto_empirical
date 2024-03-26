@@ -23,12 +23,21 @@ end
 
 ## do the inference
 n_iters = length(datasets)
-prog = ProgressMeter.Progress(n_iters; desc = "Inference: ");
+io = open("output/prog_up_vs_down_twostep.txt","w")
+prog = ProgressMeter.Progress(n_iters; desc = "Inference (twostep r): ", output = io);
 for (i, data) in datasets
 
     if length(data.tiplab) < 5 ## for small trees none of this works really
         continue
     end
+
+    ## if already did this one
+    fpath_jld2 = string("output/simulations/up_vs_down_twostep/jld2/", i, ".jld2")
+    if isfile(fpath_jld2)
+        continue
+    end
+
+    ntip = length(data.tiplab)
 
     λml, μml = estimate_constant_bdp(data)
 
@@ -61,13 +70,13 @@ for (i, data) in datasets
     rates[!,"shift_bf_log"] = log10.(bf)
 
     ## save data
-    fpath = string("output/simulations/up_vs_down_netdiv_unknown/newick/", i, ".tre")
+    fpath = string("output/simulations/up_vs_down_twostep/newick/", i, ".tre")
     writenewick(fpath, data, rates)
 
-    fpath = string("output/simulations/up_vs_down_netdiv_unknown/rates/", i, ".csv")
+    fpath = string("output/simulations/up_vs_down_twostep/rates/", i, ".csv")
     CSV.write(fpath, rates)
 
-    fpath = string("output/simulations/up_vs_down_netdiv_unknown/jld2/", i, ".jld2")
+    fpath = string("output/simulations/up_vs_down_twostep/jld2/", i, ".jld2")
     Nsum = sum(N, dims = 1)[1,:,:]
     save(fpath, 
         "N", N,
@@ -75,6 +84,7 @@ for (i, data) in datasets
         "μml", μml,
         "λ", λ,
         "μ", μ,
+        "ntip", ntip,
         "Nsum", Nsum,
         "etaml", ηml)
     next!(prog)
@@ -82,4 +92,6 @@ end
 finish!(prog)
 
 
+close(io)
 
+exit()

@@ -22,8 +22,19 @@ end
 
 ## do the inference
 n_iters = length(datasets)
-prog = ProgressMeter.Progress(n_iters; desc = "Inference: ");
+io = open("output/prog_up_vs_down.txt","w")
+prog = ProgressMeter.Progress(n_iters; desc = "Inference (known r): ", output = io);
 for (i, data) in datasets
+
+    if length(data.tiplab) < 5 ## for small trees none of this works really
+        continue
+    end
+
+    ## if already did this one
+    fpath_jld2 = string("output/simulations/up_vs_down/jld2/", i, ".jld2")
+    if isfile(fpath_jld2)
+        continue
+    end
 
     r = [0.01, 0.03, 0.05, 0.07, 0.09]
     ϵ = 2/3
@@ -59,6 +70,7 @@ for (i, data) in datasets
     Nsum = sum(N, dims = 1)[1,:,:]
     save(fpath, 
         "N", N,
+        "ntip", ntip,
         "Nsum", Nsum,
         "etaml", ηml)
     next!(prog)
@@ -66,4 +78,7 @@ end
 finish!(prog)
 
 
+close(io)
+
+exit()
 
