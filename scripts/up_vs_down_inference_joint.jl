@@ -32,7 +32,7 @@ for (i, data) in datasets
     end
 
     ## if already did this one
-    fpath_jld2 = string("output/simulations/up_vs_down_jointhyper/jld2/", i, ".jld2")
+    fpath_jld2 = string("output/simulations/up_vs_down_joint/jld2/", i, ".jld2")
     if isfile(fpath_jld2)
         continue
     end
@@ -63,13 +63,13 @@ for (i, data) in datasets
     rates[!,"shift_bf_log"] = log10.(bf)
 
     ## save data
-    fpath = string("output/simulations/up_vs_down_jointhyper/newick/", i, ".tre")
+    fpath = string("output/simulations/up_vs_down_joint/newick/", i, ".tre")
     writenewick(fpath, data, rates)
 
-    fpath = string("output/simulations/up_vs_down_jointhyper/rates/", i, ".csv")
+    fpath = string("output/simulations/up_vs_down_joint/rates/", i, ".csv")
     CSV.write(fpath, rates)
 
-    fpath = string("output/simulations/up_vs_down_jointhyper/jld2/", i, ".jld2")
+    fpath = string("output/simulations/up_vs_down_joint/jld2/", i, ".jld2")
     Nsum = sum(N, dims = 1)[1,:,:]
     save(fpath, 
         "N", N,
