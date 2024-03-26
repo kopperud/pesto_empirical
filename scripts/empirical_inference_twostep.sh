@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
-#SBATCH --job-name=pesto_empirical
+#SBATCH --job-name=empirical_twostep
 #SBATCH --mail-type=END
 #SBATCH --mail-user=b.kopperud@lmu.de
-#SBATCH --mem-per-cpu=4GB
-#SBATCH --output=logs/empirical.log
-#SBATCH --error=logs/empirical.err
+#SBATCH --mem-per-cpu=8GB
+#SBATCH --output=logs/empirical_twostep.log
+#SBATCH --error=logs/empirical_twostep.err
 #SBATCH --qos=low_prio_res
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
@@ -18,6 +18,5 @@ export R_HOME="/opt/cres/lib/hpc/gcc7/R/4.2.3/lib64/R"
 export LD_LIBRARY_PATH="/opt/cres/lib/hpc/gcc7/R/4.2.3/lib64/R/lib"
 echo ${SLURM_CPUS_PER_TASK} > output/ntasks.txt
 
-julia --threads ${SLURM_CPUS_PER_TASK} scripts/empirical_inference.jl > output/screen.txt
-julia --threads ${SLURM_CPUS_PER_TASK} scripts/empirical_inference_fixedprior.jl > output/screen.txt
+julia --threads ${SLURM_CPUS_PER_TASK} scripts/empirical_inference_twostep.jl > output/screen.txt
 
