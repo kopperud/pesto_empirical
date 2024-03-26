@@ -82,7 +82,7 @@ for fpath in fpaths
     ρ = ρs[basename(fpath)]
     data = SSEdata(phy, ρ);
 
-    optres, model, n_attempts = optimize_hyperparameters(data; n_attempts = 50)
+    optres, model, n_attempts = optimize_hyperparameters(data; n = 10, n_attempts = 50)
 
     λml = optres.minimizer[1] + optres.minimizer[2]
     μml = optres.minimizer[2]
