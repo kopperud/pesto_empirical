@@ -36,6 +36,8 @@ for (i, data) in datasets
         continue
     end
 
+    ntip = length(data.tiplab)
+
     r = [0.01, 0.03, 0.05, 0.07, 0.09]
     ϵ = 2/3
     λ = r ./ (1-ϵ)
