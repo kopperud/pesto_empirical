@@ -41,8 +41,10 @@ for (i, data) in datasets
     optres, model, n_attempts = optimize_hyperparameters(data; upper = upper)
 
     g,h = logistic(upper, 0.5)
-    λml = g(sum(optres.minimizer))
-    μml = g(sum(optres.minimizer[1:2]))
+
+    x = g(optres.minimizer)
+    μml = sum(x[1:2])
+    λml = sum(x)
 
     ntip = length(data.tiplab)
 
