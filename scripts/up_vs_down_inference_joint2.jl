@@ -38,45 +38,47 @@ for (i, data) in datasets
     end
 
     upper = [0.4, 2.0, 1.0]
-    optres, model, n_attempts = optimize_hyperparameters(data; upper = upper)
 
-    g,h = logistic(upper, 0.5)
+    try
+        optres, model, n_attempts = optimize_hyperparameters(data; upper = upper, n_attempts = 20)
 
-    x = g(optres.minimizer)
-    μml = sum(x[1:2])
-    λml = sum(x)
+        g,h = logistic(upper, 0.5)
 
-    ntip = length(data.tiplab)
+        x = g(optres.minimizer)
+        μml = sum(x[1:2])
+        λml = sum(x)
 
-    λ = model.λ
-    μ = model.μ
-    ηml = model.η
+        ntip = length(data.tiplab)
 
-    Ds, Fs = backwards_forwards_pass(model, data);
-    Ss = ancestral_state_probabilities(data, Ds, Fs);
+        λ = model.λ
+        μ = model.μ
+        ηml = model.η
 
-    rates = tree_rates(data, model, Fs, Ss);
-    N = state_shifts(model, data, Ds, Ss);
-    nshift = sum(N, dims = (2,3))[:,1,1];
-    append!(nshift, 0.0)
-    rates[!,"nshift"] = nshift
+        Ds, Fs = backwards_forwards_pass(model, data);
+        Ss = ancestral_state_probabilities(data, Ds, Fs);
+
+        rates = tree_rates(data, model, Fs, Ss);
+        N = state_shifts(model, data, Ds, Ss);
+        nshift = sum(N, dims = (2,3))[:,1,1];
+        append!(nshift, 0.0)
+        rates[!,"nshift"] = nshift
 
 
-    bf = posterior_prior_shift_odds(model,data)
-    append!(bf, NaN)
-    rates[!,"shift_bf"] = bf
-    rates[!,"shift_bf_log"] = log10.(bf)
+        bf = posterior_prior_shift_odds(model,data)
+        append!(bf, NaN)
+        rates[!,"shift_bf"] = bf
+        rates[!,"shift_bf_log"] = log10.(bf)
 
-    ## save data
-    fpath = string("output/simulations/up_vs_down_joint2/newick/", i, ".tre")
-    writenewick(fpath, data, rates)
+        ## save data
+        fpath = string("output/simulations/up_vs_down_joint2/newick/", i, ".tre")
+        writenewick(fpath, data, rates)
 
-    fpath = string("output/simulations/up_vs_down_joint2/rates/", i, ".csv")
-    CSV.write(fpath, rates)
+        fpath = string("output/simulations/up_vs_down_joint2/rates/", i, ".csv")
+        CSV.write(fpath, rates)
 
-    fpath = string("output/simulations/up_vs_down_joint2/jld2/", i, ".jld2")
-    Nsum = sum(N, dims = 1)[1,:,:]
-    save(fpath, 
+        fpath = string("output/simulations/up_vs_down_joint2/jld2/", i, ".jld2")
+        Nsum = sum(N, dims = 1)[1,:,:]
+        save(fpath, 
         "N", N,
         "λml", λml,
         "μml", μml,
@@ -86,6 +88,14 @@ for (i, data) in datasets
         "ntip", ntip,
         "Nsum", Nsum,
         "etaml", ηml)
+    catch e
+        if e isa Pesto.ConvergenceException
+            continue
+        else
+            rethrow(e)
+        end
+    end
+
     next!(prog)
 end
 finish!(prog)
