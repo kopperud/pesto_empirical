@@ -2,7 +2,7 @@
 #SBATCH --job-name=up_vs_down_joint
 #SBATCH --mail-type=END
 #SBATCH --mail-user=b.kopperud@lmu.de
-#SBATCH --mem-per-cpu=4GB
+#SBATCH --mem-per-cpu=8GB
 #SBATCH --output=logs/up_vs_down_joint.log
 #SBATCH --error=logs/up_vs_down_joint.err
 #SBATCH --qos=low_prio_res
