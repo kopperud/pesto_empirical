@@ -27,7 +27,7 @@ io = open("output/prog_up_vs_down_joint2.txt","w")
 prog = ProgressMeter.Progress(n_iters; desc = "Inference (joint r): ", output = io);
 for (i, data) in datasets
 
-    if length(data.tiplab) < 5 ## for small trees none of this works really
+    if length(data.tiplab) < 50 ## for small trees none of this works really
         continue
     end
 
