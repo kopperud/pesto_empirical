@@ -30,6 +30,14 @@ for i in 1:n_iters
             continue
         end
 
+        ## skip if already did this one
+        fpath_jld2 = string("output/simulations/age_scaling_effect/jld2/h", height, "_", i, ".jld2")
+        if isfile(fpath_jld2)
+            continue
+        end
+
+
+
         upper = [0.4, 2.0, 1.0]
 
         try
@@ -82,6 +90,7 @@ for i in 1:n_iters
                 "n_attempts", n_attempts,
                 "ntip", ntip,
                 "etaml", ηml,
+                "treeheight", height,
                 "treelength", treelength)
           
         catch e
