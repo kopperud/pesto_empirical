@@ -84,8 +84,14 @@ for fpath in fpaths
 
     optres, model, n_attempts = optimize_hyperparameters(data; n = 10, n_attempts = 100)
 
-    λml = optres.minimizer[1] + optres.minimizer[2]
-    μml = optres.minimizer[2]
+    upper = [0.4, 2.0, 1.0]
+
+    g,h = logistic(upper, 0.5)
+
+    x = g(optres.minimizer)
+    μml = sum(x[1:2])
+    λml = sum(x)
+
     ntip = length(data.tiplab)
 
     λ = model.λ

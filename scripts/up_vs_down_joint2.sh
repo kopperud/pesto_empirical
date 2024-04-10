@@ -8,7 +8,7 @@
 #SBATCH --qos=low_prio_res
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=60
+#SBATCH --cpus-per-task=80
 #SBATCH --partition=krypton
 
 #module load R/4.2.3 gnu openblas
