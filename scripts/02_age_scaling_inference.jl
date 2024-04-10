@@ -22,7 +22,7 @@ n_heights = length(tree_heights)
 prog = ProgressMeter.Progress(n_iters * n_heights; desc = "Inference: ");
 for i in 1:n_iters
     for height in tree_heights[1:end]
-        phy = readtree(string("data/simulations/age_scaling_effect/h", Int64(h), "_", i ,".tre"))
+        phy = readtree(string("data/simulations/age_scaling_effect/h", height, "_", i ,".tre"))
         ρ = 1.0
         data = SSEdata(phy, ρ);
 
