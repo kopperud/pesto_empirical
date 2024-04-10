@@ -103,16 +103,7 @@ for i in 1:n_iters
         end
     end
 
-    Nsum = sum(N, dims = 1)[1,:,:]
-    save(fpath, 
-        ##"N", N, ## do I need the full N matrix?
-        "Nsum", Nsum,
-        "lambda", λ,
-        "mu", μ,
-        "muml", μml,
-        "lambdaml", λml,
-        "etaml", ηml)
-    next!(prog)
+   next!(prog)
 end
 finish!(prog)
 
