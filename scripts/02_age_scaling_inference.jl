@@ -26,6 +26,10 @@ for i in 1:n_iters
         ρ = 1.0
         data = SSEdata(phy, ρ);
 
+        if length(data.tiplab) < 50 ## for small trees none of this works really
+            continue
+        end
+
         upper = [0.4, 2.0, 1.0]
 
         try
@@ -38,6 +42,7 @@ for i in 1:n_iters
             λml = sum(x)
 
             ntip = length(data.tiplab)
+            treelength = sum(data.branch_lengths);
 
             λ = model.λ
             μ = model.μ
