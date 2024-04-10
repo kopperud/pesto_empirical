@@ -6,6 +6,7 @@ using JLD2
 using DataFrames
 using RCall
 using CairoMakie
+using Statistics
 
 
 
@@ -14,6 +15,10 @@ datapaths_known = Glob.glob("output/simulations/up_vs_down/jld2/*.jld2")
 datapaths_twostep = Glob.glob("output/simulations/up_vs_down_twostep/jld2/*.jld2")
 
 datapaths_joint = Glob.glob("output/simulations/up_vs_down_joint/jld2/*.jld2")
+
+datapaths_joint2 = Glob.glob("output/simulations/up_vs_down_joint2/jld2/*.jld2")
+
+
 
 treepaths = Glob.glob("data/simulations/up_vs_down/*.tre")
 
@@ -129,8 +134,26 @@ for (i, path) in enumerate(datapaths_joint)
 end
 
 
+N_estimated_joint2 = zeros(Float64, ntrees, 36, 36)
+N_estimated_joint2[:,:,:] .= NaN
+magnitudes_estimated_joint2 = zeros(ntrees)
+magnitudes_estimated_joint2[:] .= NaN
+for (i, path) in enumerate(datapaths_joint2)
+    tree_index = parse(Int64, split(basename(path), ".")[1])
+    N_estimated_joint2[tree_index,:,:] .= load(path, "Nsum")
 
-fig = Figure(size = (650, 450))
+    λ = load(path, "λ")
+    μ = load(path, "μ")
+    r = λ .- μ
+    Δr = r .- r'
+
+    mag = sum(N_estimated_joint2[tree_index,:,:] .* Δr) / sum(N_estimated_joint2[tree_index,:,:])
+    magnitudes_estimated_joint2[tree_index] = mag
+end
+
+
+
+fig = Figure(size = (650, 650))
 
 ax1 = Axis(fig[1,1], 
     title = L"\text{true shifts (reconstructed trees)}",
@@ -150,7 +173,12 @@ ax4 = Axis(fig[2,2],
         xlabel = "magnitude",
         xgridvisible = false, ygridvisible = false,
         ylabel = L"\text{number of trees}")
-linkaxes!(ax1, ax2, ax3, ax4)
+ax5 = Axis(fig[3,1], 
+        title = L"\text{estimated shifts, unknown }𝛌,𝛍,η\text{ (joint2})",
+        xlabel = "magnitude",
+        xgridvisible = false, ygridvisible = false,
+        ylabel = L"\text{number of trees}")
+linkaxes!(ax1, ax2, ax3, ax4, ax5)
 #linkxaxes!(ax1, ax4)
 function rm_na(x)
     res = x[.!isnan.(x)]
@@ -161,6 +189,7 @@ hist!(ax1, rm_na(magnitudes_true), bins = 50, color = :black)
 hist!(ax2, rm_na(magnitudes_estimated_known), bins = 50, color = :green)
 hist!(ax3, rm_na(magnitudes_estimated_twostep), bins = 50, color = :orange)
 hist!(ax4, rm_na(magnitudes_estimated_joint), bins = 50, color = :purple)
+hist!(ax5, rm_na(magnitudes_estimated_joint2), bins = 30, color = :teal)
 fig
 #save("figures/up_vs_down_simulation.pdf", fig)
 save("figures/Q2_simulations.pdf", fig)
@@ -190,49 +219,54 @@ function find_number_of_tips(tree_index)
 end
 
 
-
-
-
 ## eta estimates
-η1 = [load(path, "etaml") for path in datapaths_known]
-η2 = [load(path, "etaml") for path in datapaths_twostep]
-η3 = [load(path, "etaml") for path in datapaths_joint]
+η = zeros(ntrees, 4)
+η[:,:] .= NaN
+
+path_sets = [datapaths_known, datapaths_twostep, datapaths_joint, datapaths_joint2]
+for (i, paths) in enumerate(path_sets)
+    for path in paths
+        tree_index = parse(Int64, split(basename(path), ".")[1])
+        η[tree_index, i] = load(path, "etaml")
+    end
+end
+η[η[:,4] .< 1e-10,4] .= 1e-10
 
 
 
-#[load(path,"ntip") for path in datapaths_joint]
-ntip_all = [find_number_of_tips(find_tree_index(fpath)) for fpath in Glob.glob("data/simulations/up_vs_down/*.tre")]
-ntip1 = [find_number_of_tips(find_tree_index(fpath)) for fpath in datapaths_known]
-ntip2 = [find_number_of_tips(find_tree_index(fpath)) for fpath in datapaths_twostep]
-ntip3 = [find_number_of_tips(find_tree_index(fpath)) for fpath in datapaths_joint]
 
-tree_lengths_all = []
+tree_lengths_all = zeros(ntrees)
+ntip_all = zeros(ntrees)
 for fpath in Glob.glob("data/simulations/up_vs_down/*.tre")
-    #fpath = string("data/simulations/up_vs_down/", tree_index, ".tre")
+    tree_index = parse(Int64, split(basename(fpath), ".")[1])
     @rput fpath
     R"""
     tr <- read.tree(fpath)
     tl <- sum(tr$edge.length)
+    ntip <- length(tr$tip.label)
     """
     @rget tl
-    push!(tree_lengths_all, tl)
+    @rget ntip
+    #push!(tree_lengths_all, tl)
+    tree_lengths_all[tree_index] = tl
+    ntip_all[tree_index] = ntip
 end
 
-println("mean magnitude (true): \t $(mean(magnitudes_true))");
+println("mean magnitude (true): \t $(mean(rm_na(magnitudes_true)))");
 println("mean magnitude (estimated, known λ,μ, unknown η): \t $(mean(magnitudes_estimated_known))")
-println("mean magnitude (estimated, unknown λ,μ,η, two-step): \t $(mean(magnitudes_estimated_twostep))")
-println("mean magnitude (estimated, unknown λ,μ,η, joint): \t $(mean(magnitudes_estimated_joint))")
+println("mean magnitude (estimated, unknown λ,μ,η, two-step): \t $(mean(rm_na(magnitudes_estimated_twostep)))")
+println("mean magnitude (estimated, unknown λ,μ,η, joint): \t $(mean(rm_na(magnitudes_estimated_joint)))")
+println("mean magnitude (estimated, unknown λ,μ,η, joint2): \t $(mean(rm_na(magnitudes_estimated_joint2)))")
 
-using Statistics
-println("median magnitude (true): \t $(median(magnitudes_true))");
+println("median magnitude (true): \t $(median(rm_na(magnitudes_true)))");
 println("median magnitude (estimated, known λ,μ, unknown η): \t $(median(magnitudes_estimated_known))")
-println("median magnitude (estimated, unknown λ,μ,η, two-step): \t $(median(magnitudes_estimated_twostep))")
-println("median magnitude (estimated, unknown λ,μ,η, joint): \t $(median(magnitudes_estimated_joint))")
+println("median magnitude (estimated, unknown λ,μ,η, two-step): \t $(median(rm_na(magnitudes_estimated_twostep)))")
+println("median magnitude (estimated, unknown λ,μ,η, joint): \t $(median(rm_na(magnitudes_estimated_joint)))")
+println("median magnitude (estimated, unknown λ,μ,η, joint2): \t $(median(rm_na(magnitudes_estimated_joint2)))")
 
 
 
-
-fig2 = Figure(size = (600, 400));
+fig2 = Figure(size = (600, 600));
 
 ax1 = Axis(fig2[1,1], xscale = log10, yscale = log10, 
     title = L"\text{true}", xticklabelsvisible = false, 
@@ -250,91 +284,41 @@ ax4 = Axis(fig2[2,2], xscale = log10, yscale = log10,
 title = L"\text{estimated }(𝛌,𝛍,η \text{ unknown}), \text{ joint}",
  ylabel = "shift rate (η)", topspinevisible = false, rightspinevisible = false, xgridvisible = false, ygridvisible = false,
  xlabel = "number of tips")
+ax5 = Axis(fig2[3,1], xscale = log10, yscale = log10,
+title = L"\text{estimated }(𝛌,𝛍,η \text{ unknown}), \text{ joint2}",
+ ylabel = "shift rate (η)", topspinevisible = false, rightspinevisible = false, xgridvisible = false, ygridvisible = false,
+ xlabel = "number of tips")
 
-linkaxes!(ax1, ax2, ax3, ax4)
+linkaxes!(ax1, ax2, ax3, ax4, ax5)
 
 true_shift_rate = [sum(item) for item in items] ./ tree_lengths_all
 true_shift_rate[true_shift_rate .== 0] .= 1e-8
 
-scatter!(ax1, ntip_all, true_shift_rate, color = :gray)
-scatter!(ax2, ntip1, η1, bins = 50, color = :green)
-scatter!(ax3, ntip2, η2, bins = 50, color = :orange)
-scatter!(ax4, ntip3, η3, bins = 50, color = :purple)
-for ax in (ax1, ax2, ax3, ax4)
+scatter!(ax1, ntip_all, true_shift_rate, color = (:gray, 0.3))
+scatter!(ax2, ntip_all, η[:,1], color = (:green, 0.3))
+scatter!(ax3, ntip_all, η[:,2], color = (:orange, 0.3))
+scatter!(ax4, ntip_all, η[:,3], color = (:purple, 0.3))
+scatter!(ax5, ntip_all, η[:,4], color = (:teal, 0.3))
+for ax in (ax1, ax2, ax3, ax4, ax5)
     lines!(ax, [2.0, 10_000.0], [0.001, 0.001], color = :red, linestyle = :dash) 
 end
 
 fig2
 save("figures/up_vs_down_shift_rate_estimates.pdf", fig2)
 
-
-### number of attempts
-attempts = [load(path, "n_attempts") for path in datapaths_joint]
-λml = [load(path, "λml") for path in datapaths_joint]
-μml = [load(path, "μml") for path in datapaths_joint]
-rml = λml .- μml
-ηml = [load(path, "etaml") for path in datapaths_joint]
-
-
-fig3 = Figure(size = (700, 500))
-ax1 = Axis(fig3[1,1], xgridvisible = false, ygridvisible = false,
-    ylabel = "number of trees",
-    xlabel = "attempts (convergence)")
-hist!(ax1, attempts, bins = 10)
-
-fig3
-
-ax2 = Axis(fig3[1,2],
-        xgridvisible = false, ygridvisible = false,
-        xlabel = "number of tips",
-        xscale = log10,
-        ylabel = "attempts (convergence)")
-scatter!(ax2, ntip3, attempts)
-
-ax3 = Axis(fig3[2,1],
-        xgridvisible = false, ygridvisible = false,
-        xlabel = "r = λ - μ",
-        xscale = log10,
-        ylabel = "attempts (convergence)")
-scatter!(ax3, rml, attempts)
-
-ax4 = Axis(fig3[2,2],
-        xgridvisible = false, ygridvisible = false,
-        xlabel = "shift rate (η)",
-        xscale = log10,
-        ylabel = "attempts (convergence)")
-scatter!(ax4, ηml, attempts)
-
-ax5 = Axis(fig3[1,3],
-        xgridvisible = false, ygridvisible = false,
-        xlabel = "speciation (λ)",
-        xscale = log10,
-        ylabel = "attempts (convergence)")
-scatter!(ax5, λml, attempts)
-
-ax6 = Axis(fig3[2,3],
-        xgridvisible = false, ygridvisible = false,
-        xlabel = "extinction (μ)",
-        xscale = log10,
-        ylabel = "attempts (convergence)")
-scatter!(ax6, μml, attempts)
-
-save("figures/number_of_attempts_diagnostic.pdf", fig3)
-fig3
-
 ## error
 
-
-fig = Figure(size = (400, 550))
+fig = Figure(size = (400, 750))
 ax1 = Axis(fig[1,1], xgridvisible = false, ygridvisible = false, title = L"\text{known }𝛌,𝛍,\text{ unknown } η")
 ax2 = Axis(fig[2,1], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, two step}")
-ax3 = Axis(fig[3,1], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, joint}", 
+ax3 = Axis(fig[3,1], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, joint}")
+ax4 = Axis(fig[4,1], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, joint2}", 
         xlabel = L"\text{error} = \text{mag}_\text{true} - \text{mag}_\text{estimated}")
 
-mags = (magnitudes_estimated_known, magnitudes_estimated_twostep, magnitudes_estimated_joint)
-axs = (ax1, ax2, ax3)
+mags = (magnitudes_estimated_known, magnitudes_estimated_twostep, magnitudes_estimated_joint, magnitudes_estimated_joint2)
+axs = (ax1, ax2, ax3, ax4)
 
-for (ax, nbin, mag) in zip(axs, [20, 20, 40], mags)
+for (ax, nbin, mag) in zip(axs, [20, 20, 40, 30], mags)
     error = rm_na(magnitudes_true .- mag)
     hist!(ax, error, bins = nbin, strokecolor = :black, strokewidth = 1, label = "error")
     lines!(ax, repeat([0.0], 2), [0.0, 150], linestyle = :dash, color = :red, label = "zero error")
@@ -343,55 +327,33 @@ for (ax, nbin, mag) in zip(axs, [20, 20, 40], mags)
 end
 linkxaxes!(axs...)
 fig
+save("figures/up_vs_down_magnitude_estimation_error.pdf", fig)
 
 
 
 
-fig = Figure(size = (600, 750))
+
+
+fig = Figure(size = (600, 400))
 ax1 = Axis(fig[1,1], xgridvisible = false, ygridvisible = false, title = L"\text{known }𝛌,𝛍,\text{ unknown } η", xscale = log10)
 ax2 = Axis(fig[2,1], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, two step}", xscale = log10)
-ax3 = Axis(fig[3,1], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, joint}", xscale = log10, 
-        ylabel = L"\text{error} = \text{mag}_\text{true} - \text{mag}_\text{estimated}",
-        xlabel = L"\text{number of tips}")
+ax3 = Axis(fig[1,2], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, joint}", xscale = log10)
+ax4 = Axis(fig[2,2], xgridvisible = false, ygridvisible = false, title = L"\text{unknown }𝛌,𝛍,η\text{, joint2}", xscale = log10)
+ylabel = Label(fig[1:2,0], L"\text{error} = \text{mag}_\text{true} - \text{mag}_\text{estimated}", rotation = pi/2)
+xlabel = Label(fig[3,1:2], L"\text{number of tips}")
 
-mags = (magnitudes_estimated_known, magnitudes_estimated_twostep, magnitudes_estimated_joint)
-axs = (ax1, ax2, ax3)
+mags = (magnitudes_estimated_known, magnitudes_estimated_twostep, magnitudes_estimated_joint, magnitudes_estimated_joint2)
+axs = (ax1, ax2, ax3, ax4)
 
-for (ax, nbin, mag) in zip(axs, [20, 20, 40], mags)
+for (ax, mag, ntip) in zip(axs, mags, ntip_set)
     error = magnitudes_true .- mag
-    scatter!(ax, ntip_all, error)
-    #hist!(ax, error, bins = nbin, strokecolor = :black, strokewidth = 1, label = "error")
+    
+    scatter!(ax, ntip_all, error, markersize = 5, color = (:black, 0.2))
     lines!(ax, [extrema(ntip_all)...], repeat([0.0], 2), linestyle = :dash, color = :red, label = "zero error")
-    #lines!(ax, repeat([Statistics.mean(error)], 2), [0.0, 150], linestyle = :dash, color = :orange, label = "mean error")
-    #lines!(ax, repeat([Statistics.median(error)], 2), [0.0, 150], linestyle = :dash, color = :green, label = "median error")
 end
-linkxaxes!(axs...)
+linkaxes!(axs...)
 fig
-
-
-
-
-
-
-
-
-
-
-
-
-magnitudes_true
-
-magnitudes_estimated_joint
-
-
-3+ 5
-
-
-
-
-
-
-
+save("figures/up_vs_down_magnitude_estimation_error_vs_ntip.pdf", fig)
 
 
 

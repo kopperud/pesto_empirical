@@ -8,7 +8,8 @@ using Glob
 
 
 df = CSV.read("output/empirical_munged.csv", DataFrame)
-inference = "empirical"
+#inference = "empirical"
+inference = "empirical_joint"
 df = df[df[!,:inference] .== inference,:]
 
 df[!,:type] = String.(df[!,:type]) ## ensure it's a string
@@ -228,6 +229,7 @@ rowgap!(fig1.layout, 7)
 fig1
 #CairoMakie.save("figures/scatter1.pdf", fig1)
 #CairoMakie.save("figures/scatter1_empiricalbayes.pdf", fig1)
+#CairoMakie.save("figures/scatter1_empirical_joint.pdf", fig1)
 β, Varβ, ySE = ols_regression(xvars[2], shift_df[!,:log_N_by_t])
 
 print(β[2], " ± ", sqrt(Varβ[2,2]))
@@ -267,6 +269,7 @@ xlabel = Label(fig2[0,1:2], L"\text{filtered for strongly supported branches}")
 rowgap!(fig2.layout, 7)
 fig2
 #CairoMakie.save("figures/scatter2_empiricalbayes.pdf", fig2)
+#CairoMakie.save("figures/scatter2_empirical_joint.pdf", fig2)
 
 
 
@@ -274,11 +277,7 @@ fig2
 
 
 
-
-
-
-
-CairoMakie.save("figures/shift-scatter_N.pdf", fig)
+#CairoMakie.save("figures/shift-scatter_N.pdf", fig)
 
 ######################
 ######################

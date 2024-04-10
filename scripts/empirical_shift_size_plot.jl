@@ -88,7 +88,8 @@ end
 
 
 #inference = "empirical_fixedprior"
-inference = "empirical"
+#inference = "empirical"
+inference = "empirical_joint"
 
 df = CSV.read("output/empirical_munged.csv", DataFrame)
 df = df[df[!,:inference] .== inference,:]
@@ -425,7 +426,8 @@ rowgap!(g, 3)
 fig
 #set_theme!(fig, figure_padding = 0)
 #CairoMakie.save("figures/fig1_fixedprior.pdf", fig)
-CairoMakie.save("figures/fig1_empiricalbayes.pdf", fig)
+#CairoMakie.save("figures/fig1_empiricalbayes.pdf", fig)
+#CairoMakie.save("figures/fig1_empirical_joint.pdf", fig)
 #CairoMakie.save("figures/histogram_magnitude_etaoneshift.pdf", fig)
 
 
