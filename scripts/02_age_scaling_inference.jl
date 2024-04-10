@@ -19,7 +19,9 @@ tree_heights = Int.(collect(range(30, 100; length = 8)))
 n_iters = 500
 n_heights = length(tree_heights)
 
-prog = ProgressMeter.Progress(n_iters * n_heights; desc = "Inference: ");
+io = open("output/prog_age_scaling_effect.txt", "w")
+prog = ProgressMeter.Progress(n_iters * n_heights; desc = "Inference (age scaling effect): ", output = io);
+
 for i in 1:n_iters
     for height in tree_heights[1:end]
         phy = readtree(string("data/simulations/age_scaling_effect/h", height, "_", i ,".tre"))

@@ -20,56 +20,92 @@ These are the outputs I want for the inference:
 ## iter 208 was not a good look -- segfault or something
 
 n_iters = 1000
-prog = ProgressMeter.Progress(n_iters; desc = "Inference: ");
-for i in 532:n_iters
+io = open("output/prog_rate_shift_type.txt", "w")
+prog = ProgressMeter.Progress(n_iters; desc = "Inference (rate shift type): ", output = io);
+for i in 1:n_iters
     phy = readtree(string("data/simulations/rate_shift_type/", i ,".tre"))
     ρ = 1.0
     data = SSEdata(phy, ρ);
+    height = maximum(data.node_depth)
 
-    λml, μml = estimate_constant_bdp(data)
+    if length(data.tiplab) < 50 ## for small trees none of this works really
+        continue
+    end
 
-    H = 0.587
-    n = 5
-
-    dλ = LogNormal(log(λml), H)
-    dμ = LogNormal(log(µml), H)
-
-    λquantiles = make_quantiles(dλ, n)
-    µquantiles = make_quantiles(dμ, n)
-    λ, μ = allpairwise(λquantiles, µquantiles)
-
-    ηml = optimize_eta(λ, µ, data);
-    model = SSEconstant(λ, μ, ηml);
-
-    Ds, Fs = backwards_forwards_pass(model, data);
-    Ss = ancestral_state_probabilities(data, Ds, Fs);
-
-    rates = tree_rates(data, model, Fs, Ss);
-    N = state_shifts(model, data, Ds, Ss; ape_order = false);
-    nshift = sum(N, dims = (2,3))[:,1,1];
-    append!(nshift, 0.0)
-    rates[!,"nshift"] = nshift
+    ## skip if already did this one
+    fpath_jld2 = string("output/simulations/rate_shift_type/jld2/", i, ".jld2")
+    if isfile(fpath_jld2)
+        continue
+    end
 
 
-    bf = posterior_prior_shift_odds(model,data)
-    append!(bf, NaN)
-    rates[!,"shift_bf"] = bf
-    rates[!,"shift_bf_log"] = log10.(bf)
+    upper = [0.4, 2.0, 1.0]
 
-    #tip_rates(model, data, Ds, Fs)
+    try
+        optres, model, n_attempts = optimize_hyperparameters(data; upper = upper, n_attempts = 10)
+
+        g,h = logistic(upper, 0.5)
+
+        x = g(optres.minimizer)
+        μml = sum(x[1:2])
+        λml = sum(x)
+
+        ntip = length(data.tiplab)
+        treelength = sum(data.branch_lengths);
+
+        λ = model.λ
+        μ = model.μ
+        ηml = model.η
+
+        Ds, Fs = backwards_forwards_pass(model, data);
+        Ss = ancestral_state_probabilities(data, Ds, Fs);
+
+        rates = tree_rates(data, model, Fs, Ss);
+        N = state_shifts(model, data, Ds, Ss);
+        nshift = sum(N, dims = (2,3))[:,1,1];
+        append!(nshift, 0.0)
+        rates[!,"nshift"] = nshift
 
 
-    ## save data
-    fpath = string("output/simulations/rate_shift_type/newick/", i, ".tre")
-    writenewick(fpath, data, rates)
+        bf = posterior_prior_shift_odds(model,data)
+        append!(bf, NaN)
+        rates[!,"shift_bf"] = bf
+        rates[!,"shift_bf_log"] = log10.(bf)
 
-    fpath = string("output/simulations/rate_shift_type/rates/", i, ".csv")
-    CSV.write(fpath, rates)
+ 
+        ## save data
+        fpath = string("output/simulations/rate_shift_type/newick/", i, ".tre")
+        writenewick(fpath, data, rates)
 
-    fpath = string("output/simulations/rate_shift_type/jld2/", i, ".jld2")
+        fpath = string("output/simulations/rate_shift_type/rates/", i, ".csv")
+        CSV.write(fpath, rates)
+
+        fpath = string("output/simulations/rate_shift_type/jld2/", i, ".jld2")
+        Nsum = sum(N, dims = 1)[1,:,:]
+        save(fpath, 
+            ##"N", N, ## do I need the full N matrix?
+            "Nsum", Nsum,
+            "lambda", λ,
+            "mu", μ,
+            "muml", μml,
+            "lambdaml", λml,
+            "n_attempts", n_attempts,
+            "ntip", ntip,
+            "etaml", ηml,
+            "treeheight", height,
+            "treelength", treelength)
+      
+    catch e
+        if e isa Pesto.ConvergenceException
+            continue
+        else
+            rethrow(e)
+        end
+    end
+
     Nsum = sum(N, dims = 1)[1,:,:]
     save(fpath, 
-        "N", N,
+        ##"N", N, ## do I need the full N matrix?
         "Nsum", Nsum,
         "lambda", λ,
         "mu", μ,
