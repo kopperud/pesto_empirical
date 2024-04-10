@@ -15,13 +15,13 @@ These are the outputs I want for the inference:
     * Estimate for η
 =#
 
-tree_heights = collect(range(30, 100; length = 8))
+tree_heights = Int.(collect(range(30, 100; length = 8)))
 n_iters = 500
 n_heights = length(tree_heights)
 
 prog = ProgressMeter.Progress(n_iters * n_heights; desc = "Inference: ");
 for i in 1:n_iters
-    for h in tree_heights[1:end]
+    for height in tree_heights[1:end]
         phy = readtree(string("data/simulations/age_scaling_effect/h", Int64(h), "_", i ,".tre"))
         ρ = 1.0
         data = SSEdata(phy, ρ);
@@ -59,13 +59,13 @@ for i in 1:n_iters
             rates[!,"shift_bf_log"] = log10.(bf)
 
             ## save data
-            fpath = string("output/simulations/age_scaling_effect/newick/h", Int64(h), "_", i ,".tre")
+            fpath = string("output/simulations/age_scaling_effect/newick/h", height, "_", i ,".tre")
             writenewick(fpath, data, rates)
 
-            fpath = string("output/simulations/age_scaling_effect/rates/h", Int64(h), "_", i ,".csv")
+            fpath = string("output/simulations/age_scaling_effect/rates/h", height, "_", i ,".csv")
             CSV.write(fpath, rates)
 
-            fpath = string("output/simulations/age_scaling_effect/jld2/h", Int64(h), "_", i ,".jld2")
+            fpath = string("output/simulations/age_scaling_effect/jld2/h", height, "_", i ,".jld2")
             Nsum = sum(N, dims = 1)[1,:,:]
             save(fpath, 
                 "N", N,
