@@ -39,16 +39,18 @@ for i in 1:n_iters
     end
 
 
-    upper = [0.4, 2.0, 1.0]
+    lower = [1e-08, 1e-04, 1e-04]
+    upper = [0.3, 1.0, 1.0]
+
 
     try
         optres, model, n_attempts = optimize_hyperparameters(data; upper = upper, n_attempts = 10)
 
-        g,h = logistic(upper, 0.5)
+        g,h = logistic(lower, upper, 0.5)
 
         x = g(optres.minimizer)
-        μml = sum(x[1:2])
-        λml = sum(x)
+        μml = sum(x[2])
+        λml = maximum([5*x[1], x[2]]) + x[3]
 
         ntip = length(data.tiplab)
         treelength = sum(data.branch_lengths);
