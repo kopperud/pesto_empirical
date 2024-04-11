@@ -2,7 +2,7 @@
 #SBATCH --job-name=empirical_joint
 #SBATCH --mail-type=END
 #SBATCH --mail-user=b.kopperud@lmu.de
-#SBATCH --mem-per-cpu=8GB
+#SBATCH --mem-per-cpu=4GB
 #SBATCH --output=logs/empirical_joint.log
 #SBATCH --error=logs/empirical_joint.err
 #SBATCH --qos=low_prio_res
