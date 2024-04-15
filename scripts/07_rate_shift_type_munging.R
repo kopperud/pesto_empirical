@@ -17,11 +17,12 @@ list_to_array <- function(l){
 }
 
 shift_fractions <- function(N, lambda, mu, tree_index, label){
-  n <- 5
+  n <- 6
   K <- n^2
-  if(length(dim(N)) != 3){
-    stop("N must have 3 dimensions")
-  }
+  
+  #if(length(dim(N)) != 3){
+  #  stop("N must have 3 dimensions")
+  #}
   
   delta_mu <- matrix(mu, K, K) - t(matrix(mu, K, K))
   delta_lambda <- matrix(lambda, K, K) - t(matrix(lambda, K, K))
@@ -34,16 +35,24 @@ shift_fractions <- function(N, lambda, mu, tree_index, label){
   is_only_lambda <- is_lambda & !is_mu
   is_both <- is_mu & is_lambda
   
-  N1 <- colSums(N, dims = 1) ## it's not really a column but I don't know why R names it this way
-  
+  #N1 <- colSums(N, dims = 1) ## it's not really a column but I don't know why R names it this way
   N_sum <- sum(N)
-  N_mu <- (N1[is_only_mu] |> sum()) / N_sum
-  N_lambda <- (N1[is_only_lambda] |> sum()) / N_sum
-  N_both <- (N1[is_both] |> sum()) / N_sum
+  N_mu <- (N[is_only_mu] |> sum())
+  N_lambda <- (N[is_only_lambda] |> sum())
+  N_both <- (N[is_both] |> sum())
+  
+  
+  N_mu_ratio <- N_mu / N_sum
+  N_lambda_ratio <- N_lambda / N_sum
+  N_both_ratio <- N_both / N_sum
+  
   res <- tibble(
     "N_lambda" = N_lambda,
     "N_mu" = N_mu,
     "N_both" = N_both,
+    "N_lambda_ratio" = N_lambda_ratio,
+    "N_mu_ratio" = N_mu_ratio,
+    "N_both_ratio" = N_both_ratio,
     "N_sum" = N_sum,
     "type" = label,
     "tree_index" = tree_index
@@ -65,37 +74,45 @@ foo <- function(tree_index){
   muml <- h5read(fpath, "muml")
   etaml <- h5read(fpath, "etaml")
   Ns <- h5read(fpath, "Nsum")
-  N <- h5read(fpath, "N")
+  ntip <- h5read(fpath, "ntip")
+  #N <- h5read(fpath, "N")
   
   fpath <- paste0("output/simulations/rate_shift_type/rates/", tree_index, ".csv")
   df <- read.csv(fpath) |> as_tibble()
+  
   
   ## true
   #N_true <- list_to_array(phy_true@data$N)
   #df1 <- shift_fractions(N_true, lambda, mu, tree_index, "true")
   
   ## estimated, all
-  df2 <- shift_fractions(N, lambda, mu, tree_index, "estimate, all pooled")
+  df2 <- shift_fractions(Ns, lambda, mu, tree_index, "estimate, all pooled")
+  df2$ntip <- ntip
   
   ## estimated, only supported branches
   #df5 <- phy@data[order(phy@data$edge),]
-  df5 <- df[order(df$edge),]
-  df5 <- df5 %>%
-    dplyr::filter(shift_bf > 10, nshift > 0.5)
+  #df5 <- df[order(df$edge),]
+  #df5 <- df5 %>%
+  #  dplyr::filter(shift_bf > 10)#, nshift > 0.5)
     
-  N_supported <- N[df5$edge,,,drop=FALSE]
-  df3 <- shift_fractions(N_supported, lambda, mu, tree_index, "estimate, strong support")
+  #N_supported <- N[df5$edge,,,drop=FALSE]
+  #df3 <- shift_fractions(N_supported, lambda, mu, tree_index, "estimate, strong support")
   
   #df4 <- bind_rows(df1, df2, df3)
-  df4 <- bind_rows(df2, df3)
-  return(df4)
+  #df4 <- bind_rows(df2, df3)
+  return(df2)
 }
+
+fpaths <- Sys.glob("~/projects/pesto_empirical/output/simulations/rate_shift_type/newick/*.tre")
+valid_tree_indices <- as.numeric(gsub(".tre", "", basename(fpaths)))
 
 dfs <- list()
 ix <- 1000
 pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
 for (i in 1:ix){
-  dfs[[i]] <- foo(i)
+  if (i %in% valid_tree_indices){
+    dfs[[i]] <- foo(i)  
+  }
   setTxtProgressBar(pb,i)
 };close(pb)
 
@@ -105,8 +122,8 @@ df <- bind_rows(dfs)
 #tree_index <- 3
 
 x <- df %>%
-  dplyr::filter(type == "estimate, strong support") %>%
-  filter(N_sum > 0)
+  dplyr::filter(type == "estimate, strong support")
+  #filter(N_sum > 0)
 
 x$N_lambda |> mean()
 x$N_mu |> mean()
@@ -115,7 +132,7 @@ plot(x$N_sum, x$N_lambda)
 
 library(tidyr)
 df_long <- df %>% pivot_longer(
-  cols = c("N_lambda", "N_mu", "N_both", "N_sum"),
+  cols = c("N_lambda", "N_mu", "N_both", "N_sum", "N_lambda_ratio", "N_mu_ratio", "N_both_ratio"),
   names_to = "Ntype",
   values_to = "N"
 )
@@ -143,26 +160,32 @@ p2 <- df_long %>%
 p1 | p2 + plot_layout(guides = "collect")
 
 
+n <- 6
+K <- n^2
+
+prior_ratio <- (n-1)/(K-1)
+prior_both_ratio <- ((n-1)^2/(K-1))
+
 p1 <- ggplot(df, aes(color = type, y = N_lambda, x = 1)) +
   geom_boxplot() +
   theme_classic() +
-  geom_hline(yintercept = 4/24, linetype = "dashed") +
+  geom_hline(yintercept = prior_ratio, linetype = "dashed") +
   ggtitle("shift in speciation rate")
   
 p2 <- ggplot(df, aes(color = type, y = N_both, x = 1)) +
   geom_boxplot() +
   theme_classic() +
-  geom_hline(yintercept = (4^2)/24, linetype = "dashed") +
+  geom_hline(yintercept = prior_both_ratio, linetype = "dashed") +
   ggtitle("shift in both rates")
 
 p3 <- ggplot(df, aes(color = type, y = N_mu, x = 1)) +
   geom_boxplot() +
   theme_classic() +
-  geom_hline(yintercept = 4/24, linetype = "dashed") +
+  geom_hline(yintercept = prior_ratio, linetype = "dashed") +
   ggtitle("shift in extinction rate")
 
-p1 | p2 | p3
-
+(p1 | p2 | p3) &
+  ylim(c(0.0, 1.0))
 
 
 p3a <- ggplot(df, aes(y = N_mu)) +#, x = type)) +

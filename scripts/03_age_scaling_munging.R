@@ -35,7 +35,8 @@ readNumberOfShifts <- function(dir = "age_scaling_effect", fpath){
   fpath <- paste0("output/simulations/", dir, "/rates/h", height, "_", tree_index, ".csv")
   df10 <- read.csv(fpath) |> as_tibble()
   df11 <- df10 %>%
-    filter(shift_bf > 10, nshift > 0.5)
+    #filter(shift_bf > 10, nshift > 0.5)
+    filter(shift_bf > 10.0)
   #N_supported <- N[df11$edge,,,drop=FALSE]
   Ntotal <- sum(df10$nshift)
   N_supported <- df11$nshift
@@ -92,24 +93,24 @@ for (i in 1:ix){
 };close(pb)
 df1 <- bind_rows(dfs1)
 
-###########
-## load the trees with fixed prior
-fpaths <- Sys.glob("output/simulations/age_scaling_effect_fixedprior/jld2/*.jld2")
-
-dfs2 <- list()
-ix2 <- length(fpaths)
-pb <- txtProgressBar(min = 1, max = ix2, initial = 1) 
-for (i in 1:ix2){
-  fpath <- fpaths[i]
-  dfs2[[i]] <- readNumberOfShifts(dir = "age_scaling_effect_fixedprior", fpath)
-  setTxtProgressBar(pb,i)
-};close(pb)
-df2 <- bind_rows(dfs2)
-
-df <- bind_rows(
-  df1, df2
-)
-
+# ###########
+# ## load the trees with fixed prior
+# fpaths <- Sys.glob("output/simulations/age_scaling_effect_fixedprior/jld2/*.jld2")
+# 
+# dfs2 <- list()
+# ix2 <- length(fpaths)
+# pb <- txtProgressBar(min = 1, max = ix2, initial = 1) 
+# for (i in 1:ix2){
+#   fpath <- fpaths[i]
+#   dfs2[[i]] <- readNumberOfShifts(dir = "age_scaling_effect_fixedprior", fpath)
+#   setTxtProgressBar(pb,i)
+# };close(pb)
+# df2 <- bind_rows(dfs2)
+# 
+# df <- bind_rows(
+#   df1, df2
+# )
+df <- df1
 df[["N_per_time"]] <- df$N_total / df$treelength
 df[["support_per_time"]] <- df$how_many_supported / df$treelength
 
@@ -123,7 +124,7 @@ write.csv(df, "output/age_scaling_effect_munged.csv")
 ################
 
 ## subsample the empirical hyperprior analyses to match visually
-number_of_samples <- nrow(df2[df2$height == 30 & df2$type == "pooled",])
+number_of_samples <- nrow(df1[df1$height == 30 & df1$type == "pooled",])
 dfx <- df %>%
   filter(type == "pooled") %>%
   filter(inference == "age_scaling_effect") %>%
@@ -133,13 +134,13 @@ dfx <- df %>%
   #ungroup()
 
 df3 <- bind_rows(
-  df2, dfx
+  df1, dfx
 )
 df3[["N_per_time"]] <- df3$N_total / df3$treelength
 
 p_empirical_vs_fixedprior <- df3 %>%
   filter(type == "pooled") %>% 
-  filter(how_many_supported > 0) %>%
+  #filter(how_many_supported > 0) %>%
   ggplot(aes(x = height, y = N_per_time, color = inference)) +
   theme_classic() +
   geom_point() +
@@ -153,7 +154,7 @@ df4 <- df3 %>%
   filter(type == "pooled")
 
 x <- filter(df4, inference == "age_scaling_effect")$etaml
-y = filter(df4, inference == "age_scaling_effect_fixedprior")$etaml
+y <- filter(df4, inference == "age_scaling_effect_fixedprior")$etaml
 
 df5 <- tibble(
   "hyperprior" = x,

@@ -3,18 +3,46 @@ using Pesto
 using ProgressMeter
 using Glob
 
-fpaths = Glob.glob("data/simulations/up_vs_down/*.tre")
+fpaths = Glob.glob("data/simulations/age_scaling_effect/*.tre")
 
-datasets = Dict{Int64, SSEdata}()
+datasets = Dict{Tuple{Int64, Int64}, SSEdata}()
 
 ## read trees
 @showprogress for fpath in fpaths
     ρ = 1.0
     tree = readtree(fpath)
-    tree_index = parse(Int64, split(Base.basename(fpath), ".")[1])
+    bn = split(Base.basename(fpath), ".")[1]
+    a, b = split(bn, "_")
+    height = parse(Int64, replace(a, "h" => ""))
+    tree_index = parse(Int64, b)
+    #height = 
+    #tree_index = parse(Int64, split(Base.basename(fpath), ".")[1])
     data = SSEdata(tree, ρ)
-    datasets[tree_index] = data
+    datasets[height, tree_index] = data
 end
+
+model_eb = empirical_bayes(datasets[100,11])
+logL_root(model_eb, datasets[100, 11])
+
+models = SSEconstant[]
+optres = []
+is = []
+logls = []
+
+for i in 1:5
+    or, model, i = optimize_hyperparameters(datasets[100,11])
+    push!(optres, or)
+    push!(models, model)
+    push!(is, i)
+    push!(logls, logl_root(model, datasets[100,11]))
+end
+    #logL_root(model, datasets[100,11])
+
+
+rates = birth_death_shift(model, datasets[100,11])
+
+using CairoMakie
+treeplot(datasets[100,11], rates)
 
 
 for (i, data) in datasets

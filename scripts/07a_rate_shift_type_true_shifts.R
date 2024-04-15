@@ -21,6 +21,9 @@ shift_fractions <- function(N, lambda, mu, tree_index){
   delta_mu <- matrix(mu, K, K) - t(matrix(mu, K, K))
   delta_lambda <- matrix(lambda, K, K) - t(matrix(lambda, K, K))
   
+  N_delta_mu <- sum(delta_mu * N)
+  N_delta_lambda <- sum(delta_lambda * N)
+  
   eps <- 0.00001
   is_mu <- abs(delta_mu) > eps
   is_lambda <- abs(delta_lambda) > eps
@@ -33,13 +36,26 @@ shift_fractions <- function(N, lambda, mu, tree_index){
   N1 <- N
   
   N_sum <- sum(N)
-  N_mu <- (N1[is_only_mu] |> sum()) / N_sum
-  N_lambda <- (N1[is_only_lambda] |> sum()) / N_sum
-  N_both <- (N1[is_both] |> sum()) / N_sum
+  
+  N_mu <- (N[is_only_mu] |> sum())
+  N_lambda <- (N[is_only_lambda] |> sum())
+  N_both <- (N[is_both] |> sum())
+  
+  
+  N_mu_ratio <- N_mu / N_sum
+  N_lambda_ratio <- N_lambda / N_sum
+  N_both_ratio <- N_both / N_sum
+  
   res <- tibble(
     "N_lambda" = N_lambda,
     "N_mu" = N_mu,
     "N_both" = N_both,
+    "N_lambda_ratio" = N_lambda_ratio,
+    "N_mu_ratio" = N_mu_ratio,
+    "N_both_ratio" = N_both_ratio,
+    "N_delta_mu" = N_delta_mu,
+    "N_delta_lambda" = N_delta_lambda,
+    #"N_delta_both" = N_delta_both,
     "N_sum" = N_sum,
     "tree_index" = tree_index
   )
