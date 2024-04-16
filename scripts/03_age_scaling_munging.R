@@ -44,9 +44,11 @@ readNumberOfShifts <- function(dir = "age_scaling_effect", fpath){
   phypath <- paste0("output/simulations/", dir, "/newick/h", height, "_", tree_index, ".tre")
   phy <- read.tree(phypath)
   tl <- sum(phy$edge.length)
+  ntip <- length(phy$tip.label)
   
   df1 <- tibble(
     "tree_index" = tree_index,
+    "ntip" = ntip,
     "height" = height,
     "N_total" = Ntotal,
     "treelength" = tl,
@@ -60,6 +62,7 @@ readNumberOfShifts <- function(dir = "age_scaling_effect", fpath){
   
   df2 <- tibble(
     "tree_index" = tree_index,
+    "ntip" = ntip,
     "height" = height,
     "N_total" = sum(N_supported),
     "treelength" = tl,
