@@ -56,7 +56,8 @@ end
 
 
 #inference = "empirical_fixedprior"
-inference = "empirical"
+#inference = "empirical"
+inference = "age_scaling_effect"
 
 df = CSV.read("output/age_scaling_effect_munged.csv", DataFrame)
 #df = df[df[!,:inference] .== inference,:]
@@ -79,7 +80,7 @@ fpaths = Glob.glob("output/simulations/age_scaling_effect/jld2/*.jld2")
     fname = split(Base.basename(fpath), ".")[1]
     height, i = split(fname, "_")
     
-    height = parse(Float64, height[2:end])
+    height = parse(Int64, height[2:end])
     i = parse(Int64, i)
 
     x = JLD2.load(fpath)
@@ -89,51 +90,58 @@ end
 #models = Dict{(Float64, Int64), SSEconstant}()
 models = Dict()
 heights = [30, 40, 50, 60, 70, 80, 90, 100]
-iters = collect(1:500)
-#for name in names
-for height in heights
-    for i in iters
-        λ = d[height, i]["lambda"]
-        μ = d[height, i]["mu"]
-        η = d[height, i]["etaml"]
-        models[height, i] = SSEconstant(λ, μ, η)
-    end
+
+for fpath in fpaths
+    fname = split(Base.basename(fpath), ".")[1]
+    height, i = split(fname, "_")
+
+    height = parse(Int64, height[2:end])
+    i = parse(Int64, i)
+
+    λ = d[height, i]["lambda"]
+    μ = d[height, i]["mu"]
+    η = d[height, i]["etaml"]
+    models[height, i] = SSEconstant(λ, μ, η)
 end
 
 
-#trees = Dict()
 datasets = Dict()
-@showprogress for height in heights
-    for i in iters
-        fpath = string("data/simulations/age_scaling_effect/h", height, "_", i, ".tre")
-        tree = readtree(fpath)
-        
-        if all(tree.edge_length .> 0)
-            #bn = Base.Filesystem.basename(fpath)
-            #trees[bn] = tree
-            datasets[height,i] = SSEdata(tree, 1.0) ## complete taxon sampling
-        end
-    end
+treepaths = Glob.glob("output/simulations/age_scaling_effect/newick/h*.tre")
+
+@showprogress for fpath in treepaths
+    tree = readtree(fpath)
+    fname = split(Base.basename(fpath), ".")[1]
+    height, i = split(fname, "_")
+
+    height = parse(Int64, height[2:end])
+    i = parse(Int64, i)
+
+    datasets[height,i] = SSEdata(tree, 1.0) ## complete taxon sampling
 end
 
 
 rates = Dict()
-for height in heights
-    for i in iters
-        fpath = string("output/simulations/age_scaling_effect/rates/h", height, "_", i, ".csv")
-        rates_df = CSV.read(fpath, DataFrame)
-        sort!(rates_df, :edge)
-        rates[height, i] = rates_df[2:end,:]
-    end
+ratepaths = Glob.glob("output/simulations/age_scaling_effect/rates/h*.csv")
+@showprogress for fpath in ratepaths
+    #tree = readtree(fpath)
+    fname = split(Base.basename(fpath), ".")[1]
+    height, i = split(fname, "_")
+
+    height = parse(Int64, height[2:end])
+    i = parse(Int64, i)
+
+        #fpath = string("output/simulations/age_scaling_effect/rates/h", height, "_", i, ".csv")
+    rates_df = CSV.read(fpath, DataFrame)
+    sort!(rates_df, :edge)
+    rates[height, i] = rates_df[2:end,:]
 end
 
 is_supported = Dict()
-for height in heights
-    for i in iters
+for (height, i) in keys(rates)
         rdf = rates[height, i]
-        iss = ((rdf[!,:nshift] .> 0.5) .& (rdf[!,:shift_bf] .> 10))
+        #iss = ((rdf[!,:nshift] .> 0.5) .& (rdf[!,:shift_bf] .> 10))
+        iss = rdf[!,:shift_bf] .> 3.2
         is_supported[height, i] = iss
-    end
 end
 
 ##################
@@ -145,24 +153,30 @@ end
 #n_datasets = length(datasets)
 #n_datasets = length(d)
 #heights = zeros(n_datasets)
-magnitudes = zeros(length(heights), length(iters), 2)
-
+n_iters = 500
+iters = 1:n_iters
+magnitudes = zeros(length(heights), n_iters, 2)
+magnitudes[:,:,:] .= NaN
 
 #for (i, name) in enumerate(keys(d))
 #heights_vector = 
+#for (height, i) in keys(rates)
 for (height_index, height) in enumerate(heights)
     for i in iters
-        model = models[height,i]
-        #heights[i] = maximum(datasets[name .* ".tree"].node_depth)
-        
-        Nsum = sum(d[height,i]["N"], dims = 1)[1,:,:]
-        m = magnitude(model, Nsum)
-        magnitudes[height_index, i, 1] = m
 
-        support = is_supported[height,i]
-        Nsum = sum(d[height,i]["N"][support,:,:], dims = 1)[1,:,:]
-        m = magnitude(model, Nsum)
-        magnitudes[height_index, i, 2] = m
+        if (height, i) in keys(rates)
+            model = models[height,i]
+            #heights[i] = maximum(datasets[name .* ".tree"].node_depth)
+            
+            Nsum = sum(d[height,i]["N"], dims = 1)[1,:,:]
+            m = magnitude(model, Nsum)
+            magnitudes[height_index, i, 1] = m
+
+            support = is_supported[height,i]
+            Nsum = sum(d[height,i]["N"][support,:,:], dims = 1)[1,:,:]
+            m = magnitude(model, Nsum)
+            magnitudes[height_index, i, 2] = m
+        end
     end 
 end
 
@@ -170,11 +184,17 @@ plotdf = DataFrame(
     "magnitudes_pooled" => vcat(magnitudes[:,:,1]...),
     "magnitudes_supported" => vcat(magnitudes[:,:,2]...),
     "heights" => repeat(heights, 500),
-    "replicate" => repeat(collect(1:500), 8)
+    #"replicate" => repeat(collect(1:500), 8)
+    "replicate" => vcat([repeat([i], 8) for i in 1:500]...),
     #"name" => collect(keys(d))
 )
+filter!(:magnitudes_pooled => x -> !isnan(x), plotdf)
 support_df = deepcopy(plotdf)
 filter!(:magnitudes_supported => x -> !isnan(x), support_df)
+
+
+#support_df
+
 
 #magnitudes = plotdf[!,:magnitudes]
 #heights = plotdf[!,:heights]
@@ -355,13 +375,15 @@ mags = Float64[]
 
 for (height_index, height) in enumerate(heights)
     for i in iters
-        tn = length(datasets[height, i].tiplab)
-        append!(ntips, tn)
+        if (height, i) in keys(rates)
+            tn = length(datasets[height, i].tiplab)
+            append!(ntips, tn)
 
-        h = float(height)
-        append!(heights_vector, h)
+            h = float(height)
+            append!(heights_vector, h)
 
-        append!(mags, magnitudes[height_index,i,1])
+            append!(mags, magnitudes[height_index,i,1])
+        end
     end
 end
 
@@ -389,6 +411,128 @@ CairoMakie.save("figures/magnitude_simulatedtrees_empiricalbayes.pdf", fig2)
 
 fig3
 ntips
+
+## estimation error
+## calculate true magnitudes
+
+simulated_tree_paths = Glob.glob("data/simulations/age_scaling_effect/*.tre")
+@rput simulated_tree_paths
+R""" ## this is kind of slow and not necessary, I didn't save the N matrices before
+library(treeio)
+
+items <- list()
+ntrees <- length(simulated_tree_paths)
+tree_indices <- list()
+tree_heights_R <- list()
+
+for (i in 1:ntrees){
+    bn <- strsplit(basename(simulated_tree_paths[i]), "\\.")[[1]][[1]]
+    height <- as.numeric(gsub("h", "", strsplit(bn, "_")[[1]][1]))
+    tree_index <- as.numeric(strsplit(bn, "_")[[1]][2])
+
+    tr <- read.beast.newick(simulated_tree_paths[i])
+    l <- lapply(tr@data$N, function(x) matrix(x, 3, 3))
+    N <- Reduce("+", l)
+    items[[i]] <- N
+    tree_indices[[i]] <- tree_index
+    tree_heights_R[[i]] <- height
+}
+"""
+@rget items
+@rget tree_indices
+@rget tree_heights_R
+
+tree_indices = Int64.(tree_indices)
+tree_heights_R = Int64.(tree_heights_R)
+
+N_true = Dict()
+for i in eachindex(items)
+    N_true[tree_heights_R[i], tree_indices[i]] = items[i]
+end
+
+
+
+
+r0 = 0.04
+r = [r0, 0.07, 0.10]
+ϵ = 2/3
+λ = r ./ (1 - ϵ)
+μ = λ .- r
+
+Δr = r .- r'
+n_heights = length(heights)
+Ntrue = zeros(Int64, n_heights, n_iters, 3, 3)
+magnitudes_true = zeros(Float64, n_heights, n_iters)
+for i in 1:4000
+    height = tree_heights_R[i]
+    height_index = argmax(height .== heights)
+
+    tree_index = tree_indices[i]
+#for (height_index, height) in enumerate(heights)
+ #   for tree_index in 1:n_iters
+    Ntrue[height_index, tree_index,:,:] .= items[i]
+    mag = sum(Ntrue[height_index, tree_index,:,:] .* Δr) / sum(Ntrue[height_index, tree_index,:,:])
+    magnitudes_true[height_index, tree_index] = mag
+    #end
+end
+
+
+magnitudes_estimated = magnitudes[:,:,1]
+error = magnitudes_estimated .- magnitudes_true
+
+function rm_na(x)
+    res = x[.!isnan.(x)]
+    return(res)
+end
+
+
+fig6 = Figure()
+
+ax1 = Axis(fig6[1,1],
+    xticks = heights,
+    #xlabel = L"\text{tree height (Ma)}",
+    ylabel = L"\text{magnitude}",
+    topspinevisible = false,
+    rightspinevisible = false,
+    xgridvisible = false,
+    ygridvisible = false)
+
+#xt = collect(range(30,100; length = 8))
+ax3 = Axis(fig6[2,1],
+    xticks = heights,
+    xlabel = L"\text{tree height (Ma)}",
+    ylabel = L"\text{estimation error (}\text{mag}_\text{estimated} - \text{mag}_\text{true})",
+    topspinevisible = false,
+    rightspinevisible = false,
+    xgridvisible = false,
+    ygridvisible = false)
+
+
+for (i, height) in enumerate(heights)
+    these_true = rm_na(magnitudes_true[i,:])
+    these_estimated = rm_na(magnitudes_estimated[i,:])
+    
+    hist!(ax1, these_true, offset = height, scale_to = 8.0, direction = :x, bins = 25, color = (:black, 0.6), label = "true")
+    hist!(ax1, these_estimated, offset = height, scale_to = 8.0, direction = :x, bins = 25, color = (:orange, 0.6), label = "estimated")
+
+    these_errors = rm_na(error[i,:])
+    hist!(ax3, these_errors, offset = height, 
+            scale_to = 8.0, direction = :x, bins = 25, color = (:black, 0.6), label = "simulated trees")
+
+
+end
+lines!(ax3, [25, 110], [0.0, 0.0], linestyle = :dash, color = :red, label = "zero error")
+axislegend(ax1, position = :lt, unique = true)
+axislegend(ax3, position = :lt, unique = true)
+
+fig6
+
+[length(rm_na(error[i,:])) for i in 1:8]
+
+
+
+
+
 
 
 
