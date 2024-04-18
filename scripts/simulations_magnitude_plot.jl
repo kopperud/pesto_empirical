@@ -148,7 +148,7 @@ end
 ##
 ##     calculate magnitudes
 ##
-###############
+##################
 
 #n_datasets = length(datasets)
 #n_datasets = length(d)
@@ -501,7 +501,7 @@ ax1 = Axis(fig6[1,1],
 ax3 = Axis(fig6[2,1],
     xticks = heights,
     xlabel = L"\text{tree height (Ma)}",
-    ylabel = L"\text{estimation error (}\text{mag}_\text{estimated} - \text{mag}_\text{true})",
+    ylabel = L"\text{error (}\text{mag}_\text{estimated} - \text{mag}_\text{true})",
     topspinevisible = false,
     rightspinevisible = false,
     xgridvisible = false,
@@ -518,16 +518,17 @@ for (i, height) in enumerate(heights)
     these_errors = rm_na(error[i,:])
     hist!(ax3, these_errors, offset = height, 
             scale_to = 8.0, direction = :x, bins = 25, color = (:black, 0.6), label = "simulated trees")
-
-
 end
 lines!(ax3, [25, 110], [0.0, 0.0], linestyle = :dash, color = :red, label = "zero error")
 axislegend(ax1, position = :lt, unique = true)
 axislegend(ax3, position = :lt, unique = true)
 
 fig6
-
 [length(rm_na(error[i,:])) for i in 1:8]
+
+save("figures/magnitude_vs_age_estimation_error.pdf", fig6)
+
+
 
 
 
