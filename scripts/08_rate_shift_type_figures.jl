@@ -4,6 +4,7 @@ using DataFrames
 using CairoMakie
 using LaTeXStrings
 using Printf
+using Statistics
 
 ms = ["NA", "NAN", "NULL", "NaN"]
 df = CSV.read("output/rate_shift_type_munged.csv", DataFrame; missingstring = ms)
@@ -125,19 +126,11 @@ df_true[!,"N_sum_true"] = df_true[!,"N_sum"]
 #hcat(df_true, df; makeunique=true)
 dfx = innerjoin(df, df_true, on = :tree_index; makeunique = true)
 
-#for (i, row) in eachrow(dfx)
-#    e = N_lambda - N_lambda_1
-#    d = 
-#end
-using Statistics
+
 
 function lrange2(from::Float64, to::Float64, length::Int64 = 6)
     exp.(collect(range(log(from), log(to); length = length)))
 end
-
-
-#error = dfx[!,:N_lambda_ratio] .- dfx[!,:N_lambda_ratio_1]
-
 
 mean(dfx[!,:N_lambda] .- dfx[!,:N_lambda_true])
 ntip = dfx[!,:ntip]
@@ -155,81 +148,49 @@ kwargs2 = (;
 
 error = dfx[!,:N_lambda] .- dfx[!,:N_lambda_true]
 relative_error = error ./ dfx[!,:N_sum_true]
-N_rate = dfx[!,:N_lambda]
-N_rate_true = dfx[!,:N_lambda_true]
 
 
-fig2 = Figure()
+#################
+fig2 = Figure(size = (650, 400))
+
 ax1 = Axis(fig2[1,1];
-        title = "relative error",
-        ylabel = L"\text{number of trees}",
-        xlabel = L"\text{error in speciation shifts (}\frac{\hat{N}_{\lambda} - N_{\lambda,\text{true}}}{N_{\text{true}}})",
+        title = L"\text{true}", 
         kwargs2...)
 ax2 = Axis(fig2[2,1];
-        xscale = log10,
-        xticks = (xt, xtl),
-        title = "relative error",
-        ylabel = L"\text{error, }\frac{\hat{N}_{\lambda} - N_{\lambda,\text{true}}}{N_{\text{true}}}",
-        xlabel = L"\text{number of taxa}",
+        title = L"\text{estimated}",
+        xlabel = L"\text{number of trees}",
         kwargs2...)
-ax3 = Axis(fig2[1,2];
-        title = "estimated", 
-        ylabel = L"\text{number of trees}",
-        xlabel = L"\text{change in speciation rate (}\sum N_\lambda Δ\lambda)",
+ax3 = Axis(fig2[1,3];
+        title = L"\text{true}",
         kwargs2...)
-ax4 = Axis(fig2[2,2];
-        title = "true", 
-        ylabel = L"\text{number of trees}",
-        xlabel = L"\text{change in speciation rate (}\sum N_\lambda Δ\lambda)",
+ax4 = Axis(fig2[2,3];
+        title = L"\text{estimated}",
+        xlabel = L"\text{number of trees}",
         kwargs2...)
-hist!(ax1, relative_error, bins = 30, color = :steelblue)
-scatter!(ax2, ntip, relative_error, color = (:steelblue, 1.0), markersize = 5)
-hist!(ax3, N_rate, label = "estimated", bins = 30)
-hist!(ax4, N_rate_true, label = "true", bins = 20)
 
-linkaxes!(ax3, ax4)
-fig2
-save("figures/rate_shift_type_2.pdf", fig2)
+N_rate = dfx[!,:N_lambda]
+N_rate_true = dfx[!,:N_lambda_true]
+h_sp = hist!(ax1, N_rate_true, label = "true", bins = 20, direction = :x)
+hist!(ax2, N_rate, label = "estimated", bins = 30, direction = :x)
 
-
-error = dfx[!,:N_mu] .- dfx[!,:N_mu_true]
-relative_error = error ./ dfx[!,:N_sum_true]
 N_rate = dfx[!,:N_mu]
 N_rate_true = dfx[!,:N_mu_true]
+h_mu = hist!(ax3, N_rate_true, label = "true", bins = 20, color = :orange, direction = :x)
+hist!(ax4, N_rate, label = "estimated", bins = 30, color = :orange, direction = :x)
 
+linkxaxes!(ax1, ax2, ax3, ax4)
+linkyaxes!(ax1, ax3)
+linkyaxes!(ax2, ax4)
 
-fig3 = Figure()
-ax1 = Axis(fig3[1,1];
-        title = "relative error",
-        ylabel = L"\text{number of trees}",
-        xlabel = L"\text{error in extinction shifts (}\frac{\hat{N}_{\mu} - N_{\mu,\text{true}}}{N_{\text{true}}})",
-        kwargs2...)
-ax2 = Axis(fig3[2,1];
-        xscale = log10,
-        xticks = (xt, xtl),
-        title = "relative error",
-        ylabel = L"\text{error, }\frac{\hat{N}_{\mu} - N_{\mu,\text{true}}}{N_{\text{true}}}",
-        xlabel = L"\text{number of taxa}",
-        kwargs2...)
-ax3 = Axis(fig3[1,2];
-        title = "estimated", 
-        ylabel = L"\text{number of trees}",
-        xlabel = L"\text{change in extinction rate (}\sum N_\mu Δ\mu)",
-        kwargs2...)
-ax4 = Axis(fig3[2,2];
-        title = "true", 
-        ylabel = L"\text{number of trees}",
-        xlabel = L"\text{change in extinction rate (}\sum N_\mu Δ\mu)",
-        kwargs2...)
-hist!(ax1, relative_error, bins = 30, color = :orange)
-scatter!(ax2, ntip, relative_error, color = (:orange, 1.0), markersize = 5)
-hist!(ax3, N_rate, label = "estimated", bins = 30, color = :orange)
-hist!(ax4, N_rate_true, label = "true", bins = 20, color = :orange)
-linkaxes!(ax3, ax4)
-fig3
-save("figures/rate_shift_type_3.pdf", fig3)
+Label(fig2[1:2,0], L"\text{no. shifts in speciation rate (}N_\lambda)", rotation = pi/2)
+Label(fig2[1:2,2], L"\text{no. shifts in extinction rate (}N_\mu)", rotation = pi/2)
 
-
+Legend(fig2[1:2,4], 
+    [h_sp, h_mu], 
+    [L"\text{speciation}", L"\text{extinction}"]
+    )
+fig2
+save("figures/rate_shift_type_2.pdf", fig2)
 
 
 ### now for the ratios
@@ -237,30 +198,51 @@ error_lambda = dfx[!,:N_lambda_ratio] .- dfx[!,:N_lambda_ratio_true]
 error_mu = dfx[!,:N_mu_ratio] .- dfx[!,:N_mu_ratio_true]
 
 
-fig4 = Figure(size = (600, 400))
-ax1 = Axis(fig4[1,1];
-    ylabel = L"\text{number of trees}",
-    xlabel = L"\text{error, }\frac{\hat{N}_\lambda}{\hat{N}} - \frac{N_{\lambda,\text{true}}}{N_\text{true}}",
-    title = L"\text{speciation rate}",
+fig3 = Figure(size = (600, 400))
+ax1 = Axis(fig3[1,1];
+    xlabel = L"\text{number of trees}",
+    title = L"\text{shifts in speciation rate}",
     kwargs2...)
-ax2 = Axis(fig4[1,2];
-    ylabel = L"\text{number of trees}",
-    xlabel = L"\text{error, }\frac{\hat{N}_\mu}{\hat{N}} - \frac{N_{\mu,\text{true}}}{N_\text{true}}",
-    title = L"\text{extinction rate}",
+ax2 = Axis(fig3[1,2];
+    xlabel = L"\text{number of trees}",
+    title = L"\text{shifts in extinction rate}",
+    yticklabelsvisible = false,
     kwargs2...)
-hist!(ax1, error_lambda, bins = 30, color = :steelblue, label = "estimation error")
-lines!(ax1, [0.0, 0.0], [0.0, 400], linestyle = :dash, color = :black, label = "zero error")
+ax3 = Axis(fig3[2,1];
+    xlabel = L"\text{number of tips}",
+    xt = [0, ]
+    kwargs2...)
+ax4 = Axis(fig3[2,2];
+    xlabel = L"\text{number of tips}",
+    yticklabelsvisible = false,
+    kwargs2...)
 
-hist!(ax2, error_mu, bins = 30, color = :orange, label = "estimation error")
-lines!(ax2, [0.0, 0.0], [0.0, 400], linestyle = :dash, color = :black, label = "zero error")
+h_sp = hist!(ax1, error_lambda, bins = 30, color = :steelblue, label = "estimation error", direction = :x)
+line = lines!(ax1, [0.0, 400], [0.0, 0.0], linestyle = :dash, color = :black, label = "zero error")
+
+h_mu = hist!(ax2, error_mu, bins = 30, color = :orange, label = "estimation error", direction = :x)
+lines!(ax2, [0.0, 400], [0.0, 0.0], linestyle = :dash, color = :black, label = "zero error")
 prior_ratio = (4/24) .- (5/35)
 
-#lines!(ax, [prior_ratio], [0.0, 200], linestyle = :dash, color = :orange, label = "ratio of priors")
-axislegend(ax1; position = :lt )
-axislegend(ax2; position = :lt )
 linkaxes!(ax1, ax2)
-fig4
-save("figures/rate_shift_type_4.pdf", fig4)
+linkaxes!(ax3, ax4)
+
+scatter!(ax3, ntip, error_lambda, markersize = 5, color = :steelblue, label = "estimation error")
+lines!(ax3, [extrema(ntip)...], [0.0, 0.0], linestyle = :dash, color = :black, label = "zero error")
+
+scatter!(ax4, ntip, error_mu, markersize = 5, color = :orange, label = "estimation error")
+lines!(ax4, [extrema(ntip)...], [0.0, 0.0], linestyle = :dash, color = :black, label = "zero error")
+Label(fig3[1:2,0],  L"\text{estimation error }\left (\frac{\hat{N}_\lambda}{\hat{N}} - \frac{N_{\lambda,\text{true}}}{N_\text{true}} \right )", rotation = pi/2)
+Legend(fig3[1:2,3], 
+    [h_sp, h_mu, line], 
+    [L"\text{speciation}", L"\text{extinction}", L"\text{zero error}"]
+    )
+
+rowgap!(fig3.layout, 5.0)
+colgap!(fig3.layout, 10.0)
+fig3
+
+save("figures/rate_shift_type_3.pdf", fig3)
 
 
 

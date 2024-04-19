@@ -223,13 +223,15 @@ foobar!(fig1, xvars, xlabs, shift_df, xdigits, ydigits)
 fig1
 
 #ax3 = Axis(fig[0, 1:2], xlabel = "all branches pooled")
-#xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
+xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
 
 rowgap!(fig1.layout, 7)
 fig1
+
 #CairoMakie.save("figures/scatter1.pdf", fig1)
 #CairoMakie.save("figures/scatter1_empiricalbayes.pdf", fig1)
-#CairoMakie.save("figures/scatter1_empirical_joint.pdf", fig1)
+CairoMakie.save("figures/scatter1_empirical_joint.pdf", fig1)
+
 β, Varβ, ySE = ols_regression(xvars[2], shift_df[!,:log_N_by_t])
 
 print(β[2], " ± ", sqrt(Varβ[2,2]))

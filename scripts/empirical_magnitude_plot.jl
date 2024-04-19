@@ -330,7 +330,7 @@ fig2
 #CairoMakie.save("figures/magnitude_empiricalbayes_log.pdf", fig2)
 #CairoMakie.save("figures/magnitude_empiricalbayes.pdf", fig2)
 #CairoMakie.save("figures/magnitude_fixedprior.pdf", fig2)
-#CairoMakie.save("figures/magnitude_joint.pdf", fig2)
+#CairoMakie.save("figures/magnitude_empirical_joint.pdf", fig2)
 
 for (i, name) in enumerate(keys(d))
     println(name, ": \t", magnitudes[i])

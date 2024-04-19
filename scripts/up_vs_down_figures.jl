@@ -203,7 +203,7 @@ ax3 = Axis(fig2[2,1:2],
     ygridvisible = false,
     xlabel = L"\text{tree height (Ma)}",
     ylabel = L"\text{error (magnitude)}",
-    title = L"\text{c) estimation error } = \text{mag}_\text{true} - \text{mag}_\text{estimated}")
+    title = L"\text{c) estimation error } = \text{mag}_\text{estimated} - \text{mag}_\text{true}")
 
 scatter!(ax3, df[!,:height], df[!,:error], markersize = 5, color = (:orange, 0.5))
 lines!(ax3, [extrema(df[!,:height])...], [0.0, 0.0], markersize = 5, color = :red, linestyle = :dash)
