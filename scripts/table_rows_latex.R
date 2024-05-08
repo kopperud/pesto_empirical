@@ -28,7 +28,10 @@ for (i in 1:nrow(df)){
     cat(format(df$tree_netdiv[i], digits = 3, nsmall = 3))
     cat("  \t &  ")
     cat(format(df$N_per_time[i], digits = 3, nsmall = 3))
-    cat("  \t & \\\\ ")
+    cat("  \t &  ")
+    cite_label <- paste0("\\cite{", df$bibtex_key[i], "}")
+    cat(cite_label)
+    cat("  \t \\\\ ")
 
     cat("\n")
 }
