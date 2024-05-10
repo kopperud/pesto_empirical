@@ -89,8 +89,9 @@ for fpath in fpaths
     g,h = logistic(upper, 0.5)
 
     x = g(optres.minimizer)
-    μml = sum(x[1:2])
-    λml = sum(x)
+    μml = x[2]
+    ##λml = sum(x)
+    λml = maximum([5*x[1], x[2]]) + x[3]
 
     ntip = length(data.tiplab)
 
