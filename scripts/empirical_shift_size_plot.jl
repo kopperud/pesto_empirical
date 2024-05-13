@@ -363,6 +363,97 @@ for name in keys(models)
 end
 
 
+###
+## plot them in a big plot
+##
+
+fig3 = Figure(size = (800, 800));
+
+q = 1
+qnames = [keys(models)...]
+axs = []
+for i in 1:7
+    for j in 1:7
+        if q <= length(keys(models))
+            ax = Axis(fig3[i,j], 
+                xgridvisible = false, 
+                ygridvisible = false,
+                titlesize = 7,
+                title = qnames[q],
+                topspinevisible = false,
+                rightspinevisible = false,
+                xticklabelrotation = π/2,
+                xticklabelsize = 9,
+                yticklabelsize = 9)
+            push!(axs, ax)
+            q += 1
+        end
+    end
+end
+
+i = 1
+for name in keys(models)
+    model = models[name]
+    Nmatrix = sum(d[name]["N"], dims = 1)[1,:,:]
+    nbins = 20
+
+    Ns = zeros(3,nbins)
+    filters = ["extinction", "speciation", ""]
+
+    dfs = []
+    if true
+        netdiv_extrema = [-1.5, 1.5]
+    else
+        r = model.λ .- model.μ
+        Δr = r .- r'
+        netdiv_extrema = extrema(Δr)
+    end
+
+    for (i, filter) in enumerate(filters)
+        mids, bins = makebins(Nmatrix, model, netdiv_extrema...; filter = filter, nbins = nbins)
+        Ns[i,:] = bins[:,3]
+        df = DataFrame(
+            "Δr" => bins[:,3],
+            "mids" => mids,
+            "subset" => [i for _ in 1:nbins]
+        )
+        append!(dfs, [df])
+    end
+
+    df = DataFrame(
+        "Δr" => dfs[3][!, "Δr"] .- dfs[1][!, "Δr"] .- dfs[2][!, "Δr"],
+        "mids" => dfs[3][!, "mids"],
+        "subset" => 3
+    )
+    dfs[3] = df
+    
+    Nλ = sum(dfs[1][!,:Δr])
+    Nμ = sum(dfs[2][!,:Δr])
+    Njoint = sum(dfs[3][!,:Δr])
+    Nall = sum([Nλ, Nμ, Njoint])
+    rs = [Nλ, Nμ, Njoint] ./ Nall
+    #ratios[q,:] .= rs
+
+    bar_df = vcat(dfs...)
+
+
+    ax = axs[i]
+    barplot!(ax, 
+        bar_df[!, "mids"], 
+        bar_df[!, "Δr"], 
+        stack = bar_df[!, "subset"],
+        color = [colors[x] for x in bar_df[!, "subset"]],
+        )
+       
+    i += 1
+end
+
+#CairoMakie.save("figures/shiftsize_free_xlimit.pdf", fig3)
+CairoMakie.save("figures/shiftsize_fixed_xlimit.pdf", fig3)
+
+
+
+
 ## compute the variance
 kingdom = Dict{String, String}()
 for row in eachrow(meta)
@@ -385,6 +476,7 @@ heights = Float64[]
 names = String[]
 kingdoms = String[]
 netdivs = Float64[]
+sp_rates = Float64[]
 
 @showprogress for name in keys(models)
 
@@ -410,10 +502,13 @@ netdivs = Float64[]
     xdf <- tr@data
     xdf <- xdf[order(xdf$edge),]
     netdiv <- sum(xdf$mean_netdiv * tr@phylo$edge.length) / sum(tr@phylo$edge.length)
+    speciationrate <- sum(xdf$mean_lambda * tr@phylo$edge.length) / sum(tr@phylo$edge.length)
     """
     @rget netdiv
+    @rget speciationrate
 
     push!(netdivs, netdiv)
+    push!(sp_rates, speciationrate)
 end
 
 newdf = DataFrame(
@@ -423,6 +518,7 @@ newdf = DataFrame(
     "name" => names,
     "kingdom" => kingdoms,
     "mean_netdiv" => netdivs,
+    "mean_speciation" => sp_rates,
 )
 
 plants = filter(:kingdom => x -> x == "Plantae", newdf)
@@ -431,7 +527,7 @@ fungi = filter(:kingdom => x -> x == "Fungi", newdf)
 
 fig2 = Figure();
 ax1 = Axis(fig2[1,1], 
-        #xscale = log10, 
+        xscale = log10, 
         yscale = log10,
         xgridvisible = false, 
         ygridvisible = false,
@@ -444,14 +540,14 @@ ax1 = Axis(fig2[1,1],
         xticklabelsize = 9,
         yticklabelsize = 9);
 ax2 = Axis(fig2[1,2], 
-        #xscale = log10, 
+        xscale = log10, 
         yscale = log10,
         xgridvisible = false, 
         ygridvisible = false,
         titlesize = 9,
         topspinevisible = false,
         rightspinevisible = false,
-        xlabel = L"\text{mean netdiv rate}",
+        xlabel = L"\text{mean sp rate}",
         ylabel = L"\text{variation in shift size}",
         xticklabelrotation = π/2,
         xticklabelsize = 9,
@@ -459,9 +555,9 @@ ax2 = Axis(fig2[1,2],
 #scatter!(ax, heights, sqrt.(vars))
 for (kng, label) in zip((plants, animals, fungi), ("Plantae", "Animalia", "Fungi"))
     scatter!(ax1, kng[!,:height], kng[!,:variance], label = label)
-    scatter!(ax2, kng[!,:mean_netdiv], kng[!,:variance], label = label)
+    scatter!(ax2, kng[!,:mean_speciation], kng[!,:variance], label = label)
 end
-axislegend(ax1; position = :ct);
+axislegend(ax1; position = :lt);
 #axislegend(ax2; position = :ct);
 fig2
 

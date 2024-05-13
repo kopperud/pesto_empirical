@@ -188,15 +188,15 @@ function foobar!(fig, xvars, xlabs, shift_df, xdigits = [2,1], ydigits = [1,4])
 
 
     for i in 2:offset
-        hideydecorations!(axs[i], ticks = true)
-        hideydecorations!(axs[i+offset], ticks = true)
+        hideydecorations!(axs[i], ticks = false)
+        hideydecorations!(axs[i+offset], ticks = false)
     end
     for i in 1:offset
-        hidexdecorations!(axs[i], ticks = true)
+        hidexdecorations!(axs[i], ticks = false)
     end
 
-    colgap!(fig.layout, 7)
-    rowgap!(fig.layout, 7)
+    colgap!(fig.layout, 8)
+    rowgap!(fig.layout, 8)
 
     return()
 end
@@ -207,8 +207,8 @@ fig1 = Figure(size=(350, 300), fontsize = 14);
 xlabs = [
     #L"\lambda",
     #L"\mu",
-    L"\lambda - \mu",
-    L"\text{tree height (Ma)}",
+    "", #L"\lambda - \mu",
+    "", ##L"\text{tree height (Ma)}",
 ]
 xvars = [
     #shift_df[!,:log_lambda],
@@ -220,12 +220,22 @@ xdigits = [2, 1]
 ydigits = [1, 4]
 
 foobar!(fig1, xvars, xlabs, shift_df, xdigits, ydigits)
+xlabel1 = Label(fig1[3,1], L"\lambda - \mu")
+xlabel2 = Label(fig1[3,2], L"\text{tree height (Ma)}")
 fig1
 
 #ax3 = Axis(fig[0, 1:2], xlabel = "all branches pooled")
-xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
+#xlabel = Label(fig1[0,1:2], L"\text{all branches pooled}")
+rowgap!(fig1.layout, 9)
 
-rowgap!(fig1.layout, 7)
+for i in 1:2
+    colsize!(fig1.layout, i, Relative(0.5))
+    rowsize!(fig1.layout, i, Relative(0.495))
+end
+rowsize!(fig1.layout, 3, Relative(0.01))
+fig1
+
+
 fig1
 
 #CairoMakie.save("figures/scatter1.pdf", fig1)
@@ -267,6 +277,7 @@ foobar!(fig2, xvars, xlabs, shift_df_filtered, xdigits, ydigits)
 
 #ax3 = Axis(fig[0, 1:2], xlabel = "all branches pooled")
 xlabel = Label(fig2[0,1:2], L"\text{filtered for strongly supported branches}")
+
 
 rowgap!(fig2.layout, 7)
 fig2

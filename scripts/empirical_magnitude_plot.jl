@@ -54,7 +54,6 @@ end
 ##
 ##########################
 
-
 #inference = "empirical_fixedprior"
 inference = "empirical_joint"
 
@@ -183,21 +182,22 @@ CairoMakie.scatter(log10.(heights), log10.(variances)) =#
 mag_logscale = false
 
 
-fig2 = Figure(size = (350, 300), fontsize = 14, 
-                figure_padding = (5,8,1,1))
+fig2 = Figure(size = (450, 180), fontsize = 14, 
+                figure_padding = (5,8,1,1));
 
 magnitudes_pooled = plotdf[!,:magnitudes_pooled]
 magnitudes_support = support_df[!, :magnitudes_supported]
 heights_pooled = plotdf[!,:heights]
 heights_support = support_df[!,:heights]
 
-xt = collect(range(extrema(magnitudes_pooled)...; length = 5))
+#xt = collect(range(extrema(magnitudes_pooled)...; length = 5))
+xt = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
 xtl = [@sprintf("%.2f", x) for x in xt]
 
 ax_hist_pooled = Axis(fig2[1,1], 
             ylabel = L"\text{frequency}", 
             xlabel = L"\text{magnitude }(\Delta r)",
-            title = L"\text{all branches pooled}",
+            #title = L"\text{all branches pooled}",
             xgridvisible = false, 
             ygridvisible = false,
             xticks = (xt, xtl),
@@ -206,9 +206,11 @@ ax_hist_pooled = Axis(fig2[1,1],
             xticklabelsize = 9,
             yticklabelsize = 9)
 
-xt = collect(range(extrema(support_df[!,:magnitudes_supported])...; length = 5))
-xtl = [@sprintf("%.2f", x) for x in xt]
+#xt = collect(range(extrema(support_df[!,:magnitudes_supported])...; length = 5))
+#xt = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
+#xtl = [@sprintf("%.2f", x) for x in xt]
 
+#= 
 ax_hist_supported = Axis(fig2[1,2], 
             #ylabel = L"\text{frequency}", 
             xlabel = L"\text{magnitude }(\Delta r)",
@@ -220,12 +222,12 @@ ax_hist_supported = Axis(fig2[1,2],
             rightspinevisible = false,
             xticklabelsize = 9,
             yticklabelsize = 9)
-
-
-CairoMakie.hist!(ax_hist_pooled, 
-    magnitudes_pooled, bins = 10, color = "gray")
 CairoMakie.hist!(ax_hist_supported, 
     support_df[!,:magnitudes_supported], bins = 10, color = "gray")
+ =#
+
+CairoMakie.hist!(ax_hist_pooled, 
+    magnitudes_pooled, bins = 15, color = "gray")
 
 
 xt = 10 .^ (collect(range(extrema(log10.(plotdf[!,:heights]))...; length = 5)))
@@ -237,11 +239,12 @@ if mag_logscale
     yt = 10 .^ (yr)
 else
     yr = collect(range(extrema(plotdf[!,:magnitudes_pooled])...; length = 5))
+    yr = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
     yt = yr
 end
 ytl = [@sprintf("%.2f", y) for y in yt]
 
-ax_scatter_pooled = Axis(fig2[2,1], 
+ax_scatter_pooled = Axis(fig2[1,2], 
         ylabel = L"\text{magnitude } (\Delta r)", 
         xgridvisible = false, 
         ygridvisible = false,
@@ -265,7 +268,7 @@ else
 end
 ytl = [@sprintf("%.2f", y) for y in yt]
 
-ax_scatter_support = Axis(fig2[2,2], 
+#= ax_scatter_support = Axis(fig2[2,2], 
         #ylabel = L"\text{magnitude } (\Delta r)", 
         xgridvisible = false, 
         ygridvisible = false,
@@ -278,11 +281,12 @@ ax_scatter_support = Axis(fig2[2,2],
         rightspinevisible = false,
         xticklabelsize = 9,
         yticklabelsize = 9)
-
+ =#
 
 
 #for (_df, ax) in zip([plotdf, support_df], [ax_scatter_pooled, ax_scatter_support])
-for (magnitudes, heights, ax) in zip([magnitudes_pooled, magnitudes_support], [heights_pooled, heights_support], [ax_scatter_pooled, ax_scatter_support])
+#for (magnitudes, heights, ax) in zip([magnitudes_pooled, magnitudes_support], [heights_pooled, heights_support], [ax_scatter_pooled, ax_scatter_support])
+for (magnitudes, heights, ax) in zip([magnitudes_pooled], [heights_pooled], [ax_scatter_pooled])
     if mag_logscale
         β, Varβ, ySE = ols_regression(log10.(heights), log10.(magnitudes))
     else
@@ -323,9 +327,19 @@ for (magnitudes, heights, ax) in zip([magnitudes_pooled, magnitudes_support], [h
                         markersize = 7)
 end
 
+#lines!(ax_scatter_pooled, [extrema(heights)...], [0.0, 0.0], linestyle = :dash, color = :red)
+
 colgap!(fig2.layout, 5)
 rowgap!(fig2.layout, 5)
 fig2
+
+###################
+
+n_positive = sum(magnitudes_pooled .> 0)
+n_negative = sum(magnitudes_pooled .< 0)
+
+println("$n_positive magnitudes are positive, while $n_negative are negative")
+
 
 #CairoMakie.save("figures/magnitude_empiricalbayes_log.pdf", fig2)
 #CairoMakie.save("figures/magnitude_empiricalbayes.pdf", fig2)
