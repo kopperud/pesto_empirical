@@ -131,15 +131,20 @@ g = fig[1,1] = GridLayout()
 
 name_subset = [
     "Actinopterygii_Rabosky2018",
-    "Chondrichthyes_Stein2018",
-    "Primates_Springer2012",
-    "Sigmodontinae_VallejosGarrido2023",
     "Mammalia_AlvarezCarretero2022",
     "Rosidae_Sun2020",
+    "Chondrichthyes_Stein2018",
+    "Squamata_Tonini2016",
+    "Asteraceae_Palazzesi2022",
+    "Agaricomycetes_SanchezGarcia2020",
+    "Lissamphibia_Jetz2018",
+    "Anthophila_HenriquezPiskulich",
+    "Polypodiophyta_Nitta2022",
+    "Lecanoromycetes_Nelsen2020",
+    #"Primates_Springer2012",
+    #"Sigmodontinae_VallejosGarrido2023",
     #"Rhopalocera_Kawahara2023",
     #"Monocots_Howard2019",
-    "Polypodiophyta_Nitta2022",
-    "Agaricomycetes_SanchezGarcia2020",
 ]
 
 titles = []
@@ -153,8 +158,8 @@ end
 
 axs = []
 q = 1
-for i in 1:3, j in 1:3
-    if (i == 1) & (j == 3)
+for i in 1:3, j in 1:4
+    if (i == 1) & (j == 4)
         #ax = Axis(fig[i,j], scene = false)
         #hidedecorations!(ax)
     else
@@ -166,11 +171,9 @@ for i in 1:3, j in 1:3
 
         title = split(name_subset[q], "_")[1]
 
-        #foo_idx = datasets_order[q]
         ax = Axis(g[i,j], 
         xgridvisible = false, 
         ygridvisible = false,
-        #title = titles[foo_idx],
         title = title,
         titlesize = 9,
         topspinevisible = false,
@@ -194,7 +197,6 @@ end
 
 
 
-netdiv_extrema = [-1.2, 1.2]
 
 ratios = zeros(length(name_subset), 3)
 
@@ -207,6 +209,14 @@ for (q, name) in enumerate(name_subset)
 
     Ns = zeros(3,nbins)
     filters = ["extinction", "speciation", ""]
+
+    if true
+        r = model.λ .- model.μ
+        Δr = r .- r'
+        netdiv_extrema = extrema(Δr)
+    else 
+        netdiv_extrema = [-1.2, 1.2]
+    end
 
     dfs = []
     for (i, filter) in enumerate(filters)
@@ -245,7 +255,7 @@ for (q, name) in enumerate(name_subset)
 end
 
 elements = [PolyElement(polycolor = colors[i]) for i in 1:length(labels)]
-leg = Legend(g[1,3], elements, labels, labelsize=9, 
+leg = Legend(g[1,4], elements, labels, labelsize=9, 
             patchsize = (10.0f0, 10.0f0),
             framevisible = false)
 
@@ -253,17 +263,22 @@ leg.tellheight = true
 leg.tellwidth = true
 
 
-linkxaxes!(axs...)
+#linkxaxes!(axs...)
+linkxaxes!(axs[1], axs[4], axs[8])
+linkxaxes!(axs[2], axs[5], axs[9])
+linkxaxes!(axs[3], axs[6], axs[10])
+linkxaxes!(axs[7], axs[11])
+
 ylabel = Label(g[1:3, 0], L"\text{number of rate shifts }(\hat{N})", rotation = π/2)
-xlabel = Label(g[4, 1:3], L"\text{shift size in net diversification }(\Delta r)")
+xlabel = Label(g[4, 1:4], L"\text{shift size in net diversification }(\Delta r)")
 
 
 
 
 for col in 1:3
-    colsize!(g, col, Relative(0.30))
+    colsize!(g, col, Relative(0.23))
 end
-colsize!(g, 0, Relative(0.1))
+colsize!(g, 0, Relative(0.05))
 
 for i in 1:3
     rowsize!(g, i, Relative(0.30))

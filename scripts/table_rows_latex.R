@@ -23,6 +23,8 @@ for (i in 1:nrow(df)){
     cat("  \t &  ")
     cat(format(df$Root.age[i], digits = 1))
     cat("  \t &  ")
+    cat(format(df$NTips[i], digits = 1))
+    cat("  \t &  ")
     cat(format(df$P.extant.sampling[i], digits = 2, nsmall = 2))
     cat("  \t &  ")
     cat(format(df$tree_netdiv[i], digits = 3, nsmall = 3))
