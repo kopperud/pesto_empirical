@@ -48,3 +48,4 @@ Zaher et al 2019,,Caenophidia,Infraorder,Animalia,56,1266,3014,0.42,Penalized li
 Zanne et al. 2014,"Land plants, mostly flowering plants",Embryophytes,Subkingdom,Plantae,440.2933,31749,529150,0.06,"Maximum likelihood (RAxML), Penalized likelihood (treePL)",mostly angiosperms. they claim over 32k taxa for some reason.,Dryad,Vascular_Plants_Zanne2014.tree,zanne2014three
 Magnusson-Ford et al. 2012,Primates,Primates,Order,Animalia,65.1,233,367,0.6348773842,,,,Primates_MagnussonFord2012.tree,magnuson2012linking
 Springer et al. 2012,Primates,Primates,Order,Animalia,70.4,367,367,1,"Maximum likelihood (RAxML), time tree with autocorrelated rates and soft-bounded constraints",,,Primates_Springer2012.tree,springer2012macroevolutionary
+Quintero et al. 2022,Birds,Aves,Class,Animalia,110.56,9993,9993,1,,,,Aves_Quintero2022.tree,quintero2022macroevolutionary
