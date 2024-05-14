@@ -12,7 +12,10 @@
 #SBATCH --partition=krypton
 
 #module load R/4.2.3 gnu openblas
-module load R/4.3.2 gnu openblas
+#module load openblas
+module load gnu/7
+#module load R/4.3.2
+module load R/4.2.3
 
 export R_HOME="/opt/cres/lib/hpc/gcc7/R/4.2.3/lib64/R"
 export LD_LIBRARY_PATH="/opt/cres/lib/hpc/gcc7/R/4.2.3/lib64/R/lib"
