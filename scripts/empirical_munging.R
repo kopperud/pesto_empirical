@@ -120,10 +120,10 @@ for (i in 1:ix){
 fpaths3 <- Sys.glob("output/empirical_joint/jld2/*.jld2")
 
 dfs3 <- list()
-ix <- length(fpaths2)
+ix <- length(fpaths3)
 pb <- txtProgressBar(min = 1, max = ix, initial = 1) 
 for (i in 1:ix){
-  fpath <- fpaths2[i]
+  fpath <- fpaths3[i]
   name <- strsplit(basename(fpath), "\\.")[[1]][[1]]
   dfs3[[i]] <- readNumberOfShifts(name, "empirical_joint")
   setTxtProgressBar(pb,i)

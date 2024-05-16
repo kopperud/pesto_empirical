@@ -138,13 +138,20 @@ name_subset = [
     "Asteraceae_Palazzesi2022",
     "Agaricomycetes_SanchezGarcia2020",
     "Lissamphibia_Jetz2018",
-    "Anthophila_HenriquezPiskulich",
+    #"Anthophila_HenriquezPiskulich",
+    "Aves_Quintero2022",
     "Polypodiophyta_Nitta2022",
     "Lecanoromycetes_Nelsen2020",
     #"Primates_Springer2012",
     #"Sigmodontinae_VallejosGarrido2023",
     #"Rhopalocera_Kawahara2023",
     #"Monocots_Howard2019",
+]
+
+nbins1 = [
+    20, 20, 10,
+    6, 8, 20, 18,
+    6, 14, 4, 20
 ]
 
 titles = []
@@ -198,14 +205,16 @@ end
 
 
 
-ratios = zeros(length(name_subset), 3)
+#ratios = zeros(length(name_subset), 3)
 
 for (q, name) in enumerate(name_subset)
     model = models[name]
+    println(q, "\t", name)
 
     #Nmatrix = N[dataset_index,:,:,1]
     Nmatrix = sum(d[name]["N"], dims = 1)[1,:,:]
-    nbins = 20
+    #nbins = 20
+    nbins = nbins1[q]
 
     Ns = zeros(3,nbins)
     filters = ["extinction", "speciation", ""]
@@ -287,6 +296,7 @@ rowsize!(g, 4, Relative(0.1))
 
 colgap!(g, 5)
 rowgap!(g, 3)
+
 
 
 #linkaxes!(ax_scatter1, ax_scatter2)
