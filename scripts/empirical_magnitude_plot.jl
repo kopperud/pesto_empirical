@@ -4,7 +4,7 @@ using LaTeXStrings, Measures
 using JLD2
 using Printf
 using CairoMakie
-#using Pesto
+using Pesto
 
 ########################
 ##
@@ -71,6 +71,7 @@ inference = "empirical_joint"
 
 df = CSV.read("output/empirical_munged.csv", DataFrame)
 df = df[df[!,:inference] .== inference,:]
+df = df[df[!,:type] .== "pooled",:]
 
 ########################
 ##
@@ -101,9 +102,9 @@ for name in names
 end
 
 fpaths = ["data/empirical/" * name * ".tree" for name in names]
-df = CSV.read("data/empirical/Phylogenies for DeepILS project.csv", DataFrame)
+meta = CSV.read("data/empirical/Phylogenies for DeepILS project.csv", DataFrame)
 ρs = Dict()
-for row in eachrow(df)
+for row in eachrow(meta)
     fn = row["Filename"]
     ρ = row["P extant sampling"]
     ρs[fn] = ρ
@@ -148,8 +149,10 @@ n_datasets = length(d)
 magnitudes = zeros(n_datasets)
 directions = zeros(n_datasets)
 heights = zeros(n_datasets)
+N_per_time = zeros(n_datasets)
 
 for (i, name) in enumerate(keys(d))
+    println(name)
     model = models[name]
     heights[i] = maximum(datasets[name .* ".tree"].node_depth)
     
@@ -158,12 +161,15 @@ for (i, name) in enumerate(keys(d))
     dir = direction(model, Nsum)
     magnitudes[i] = m    
     directions[i] = dir
+    N_per_time[i] = df[df[:,:name] .== name,:N_per_time][1]
+
 end
 
 plotdf = DataFrame(
     "magnitudes" => magnitudes,
     "heights" => heights,
-    "name" => collect(keys(d))
+    "name" => collect(keys(d)),
+    "N_per_time" => N_per_time,
 )
 ##################
 ##
@@ -175,7 +181,8 @@ fig2 = Figure(size = (600, 180), fontsize = 14,
                 figure_padding = (5,8,1,1));
 
 #xt = collect(range(extrema(magnitudes_pooled)...; length = 5))
-xt = [-0.60, -0.30, 0.0, 0.30, 0.60, 0.90, 1.20]
+#xt = [-0.60, -0.30, 0.0, 0.30, 0.60, 0.90, 1.20]
+xt = [-1.0, -0.50, 0.0, 0.50, 1.0]
 xtl = [@sprintf("%.2f", x) for x in xt]
 
 ax_direction = Axis(fig2[1,1], 
@@ -189,12 +196,14 @@ ax_direction = Axis(fig2[1,1],
             rightspinevisible = false,
             xticklabelsize = 9,
             yticklabelsize = 9)
+xlims!(ax_direction, -1.1, 1.1)
 
 CairoMakie.hist!(ax_direction, 
     directions, bins = 15, color = "gray")
 
 
-xt = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
+#xt = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
+xt = [-1.0, -0.50, 0.0, 0.50, 1.0]
 xtl = [@sprintf("%.2f", x) for x in xt]
 
 ax_magnitude = Axis(fig2[1,2], 
@@ -208,6 +217,7 @@ ax_magnitude = Axis(fig2[1,2],
             rightspinevisible = false,
             xticklabelsize = 9,
             yticklabelsize = 9)
+xlims!(ax_magnitude, -1.35, 1.35)
 
 CairoMakie.hist!(ax_magnitude, 
     magnitudes, bins = 15, color = "gray")
@@ -219,7 +229,8 @@ xtl = [@sprintf("%.1f", x) for x in xt]
 
 
 yr = collect(range(extrema(plotdf[!,:magnitudes])...; length = 5))
-yr = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
+#yr = [-0.25, 0.0, 0.25, 0.50, 0.75, 1.0, 1.25]
+yr = [-1.0, -0.50, 0.0, 0.50, 1.0]
 yt = yr
 ytl = [@sprintf("%.2f", y) for y in yt]
 
@@ -237,9 +248,10 @@ ax_scatter = Axis(fig2[1,3],
         xticklabelsize = 9,
         yticklabelsize = 9)
 
+ylims!(ax_scatter, -1.35, 1.35)
 
 
-yr = collect(range(extrema(support_df[!,:magnitudes_supported])...; length = 5))
+yr = collect(range(extrema(magnitudes)...; length = 5))
 yt = yr
 ytl = [@sprintf("%.2f", y) for y in yt]
 
@@ -313,3 +325,44 @@ for i in 1:5
     end
     print("\\\\ \n")
 end
+
+
+fig4 = Figure();
+ax4 = Axis(fig4[1,1], 
+            ylabel = L"\hat{N}/t", 
+            xlabel = L"\text{magnitude}",
+            #title = L"\text{a) direction}",
+            xgridvisible = false, 
+            ygridvisible = false,
+            #xticks = (xt, xtl),
+            #xscale = log10,
+            #yscale = log10,
+            topspinevisible = false,
+            rightspinevisible = false,
+            xticklabelsize = 9,
+            yticklabelsize = 9)
+
+
+## regression
+β, Varβ, ySE = ols_regression(magnitudes, log10.(N_per_time))
+linefit(x) = β[1] + β[2]*x
+
+## line
+x = [extrema(magnitudes)...]
+y = linefit.(x)
+CairoMakie.lines!(ax4, x, y; 
+            label = "OLS", markersize = 7, color = "gray", linestyle = :dash)
+
+## band
+x = collect(range(extrema(magnitudes)..., 20))
+y = linefit.(x)
+yupper = y .+ 2 .* 10 .^ ySE.(x)
+ylower = y .- 2 .* 10 .^ ySE.(x)
+#ϵ = 1e-6
+ϵ = 1.0 * minimum(log10.(N_per_time))
+ylower[ylower .< ϵ] .= ϵ
+CairoMakie.band!(ax4, x, ylower, yupper, color = "#e0e0e0")
+
+
+scatter!(ax4, magnitudes, log10.(N_per_time))
+#scatter!(ax4, magnitudes, N_per_time)

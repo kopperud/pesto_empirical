@@ -11,47 +11,6 @@ using Pesto
 ##   some helper functions
 ##
 ##########################
-function compute_ratios(name, model, subdir, filter = "")
-    N = d[name]["N"]
-
-    if filter == "support"
-        is_supported = support_vector(name, subdir)
-        N = N[is_supported,:,:]
-    end
-
-    Nmatrix = sum(N, dims = 1)[1,:,:]
-    nbins = 14
-
-    Ns = zeros(3,nbins)
-    filters = ["extinction", "speciation", ""]
-    limits = [-1.2, 1.2]
-
-    dfs = []
-    for (i, filter) in enumerate(filters)
-        mids, bins = makebins(Nmatrix, model, limits...; filter = filter, nbins = nbins)
-        Ns[i,:] = bins[:,3]
-        df = DataFrame(
-            "Δr" => bins[:,3],
-            "mids" => mids,
-            "subset" => [i for _ in 1:nbins]
-        )
-        append!(dfs, [df])
-    end
-    df = DataFrame(
-        "Δr" => dfs[3][!, "Δr"] .- dfs[1][!, "Δr"] .- dfs[2][!, "Δr"],
-        "mids" => dfs[3][!, "mids"],
-        "subset" => 3
-    )
-    dfs[3] = df
-
-    Nλ = sum(dfs[1][!,:Δr])
-    Nμ = sum(dfs[2][!,:Δr])
-    Njoint = sum(dfs[3][!,:Δr])
-    Nall = sum([Nλ, Nμ, Njoint])
-    rs = [Nλ, Nμ, Njoint] ./ Nall
-    return(rs)
-end
-
 
 #inference = "empirical_fixedprior"
 #inference = "empirical"
@@ -114,7 +73,7 @@ end
 
 ####################################
 ##
-##   Fig. 1: The rate shift type (speciation vs extinction)
+##   Fig. 1: The empirical dataset exploration (not for any of the hypotheses in particular)
 ##
 ####################################
 fig = Figure(size = (480, 280), fontsize = 14, 
@@ -150,8 +109,8 @@ name_subset = [
 
 nbins1 = [
     20, 20, 10,
-    6, 8, 20, 18,
-    6, 14, 4, 20
+    6, 6, 20, 18,
+    4, 14, 4, 20
 ]
 
 titles = []
@@ -205,8 +164,6 @@ end
 
 
 
-#ratios = zeros(length(name_subset), 3)
-
 for (q, name) in enumerate(name_subset)
     model = models[name]
     println(q, "\t", name)
@@ -251,7 +208,6 @@ for (q, name) in enumerate(name_subset)
     Njoint = sum(dfs[3][!,:Δr])
     Nall = sum([Nλ, Nμ, Njoint])
     rs = [Nλ, Nμ, Njoint] ./ Nall
-    ratios[q,:] .= rs
 
     bar_df = vcat(dfs...)
 
@@ -356,7 +312,6 @@ for name in keys(models)
     Njoint = sum(dfs[3][!,:Δr])
     Nall = sum([Nλ, Nμ, Njoint])
     rs = [Nλ, Nμ, Njoint] ./ Nall
-    #ratios[q,:] .= rs
 
     bar_df = vcat(dfs...)
 
@@ -457,7 +412,6 @@ for name in keys(models)
     Njoint = sum(dfs[3][!,:Δr])
     Nall = sum([Nλ, Nμ, Njoint])
     rs = [Nλ, Nμ, Njoint] ./ Nall
-    #ratios[q,:] .= rs
 
     bar_df = vcat(dfs...)
 

@@ -10,11 +10,6 @@ library(readr)
 
 setwd("~/projects/pesto_empirical/")
 
-#phy <- read.beast.newick("")
-
-
-
-
 
 readNumberOfShifts <- function(name, subdir = "empirical"){
   fpath <- paste0("output/", subdir, "/jld2/", name, ".jld2")
@@ -137,16 +132,19 @@ df <- bind_rows(
 
 ###############
 ##
-## some quick plots
+## write to file
 ##
 #############
 
-#df <- bind_rows(dfs)
 df[["N_per_time"]] <- df$N_total / df$treelength
 df[["support_per_time"]] <- df$how_many_supported / df$treelength
 write.csv(df, "output/empirical_munged.csv")
 
-###
+###############
+##
+## some quick plots
+##
+#############
 
 df_empirical_bayes <- df %>% 
   filter(inference == "empirical_fixedprior") %>%
@@ -166,9 +164,6 @@ df_empirical_bayes %>%
   mutate(r = lambdaml - muml) %>%
   print(n = 44)
 
-#df %>%
-#  filter(inference == "empirical_fixedprior") %>%
-  
 
 ######################
 ##
@@ -192,19 +187,6 @@ rates %>%
   filter(nshift > 0.5) %>%
   dplyr::arrange(-delta_netdiv) %>%
   print(n = 50)
-
-#tr <- read.beast.newick("output/empirical/newick/Asteraceae_Palazzesi2022.tre")
-
-
-#keep.tip()
-
-treeheight <- function(phy) max(node.depth.edgelength(phy))
-
-extract.clade(tr@phylo, 3071)
-
-#treeheight(tr@phylo)
-
-
 
 
 library(ggplot2)
