@@ -165,12 +165,21 @@ for (i, name) in enumerate(keys(d))
 
 end
 
+## write to a file
+
 plotdf = DataFrame(
-    "magnitudes" => magnitudes,
-    "heights" => heights,
+    "magnitude" => magnitudes,
+    "direction" => directions,
+    "height" => heights,
     "name" => collect(keys(d)),
     "N_per_time" => N_per_time,
 )
+
+meta2 = filter(:Filename => x -> !ismissing(x), meta)
+meta2[:,:name] = map(x -> split(x, ".")[1], meta2.Filename)
+dfx = innerjoin(plotdf, meta2, on = :name)
+CSV.write("output/munged_magnitude.csv", dfx)
+
 ##################
 ##
 ##   set up the makie figure
