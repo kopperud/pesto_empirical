@@ -1,7 +1,10 @@
-
 using Glob
 using DataFrames
 using CSV
+using JLD2
+using CairoMakie
+using LaTeXStrings
+using Printf
 
 fpaths = Glob.glob("output/empirical_fish_subtrees/rates/*.csv")
 
@@ -18,7 +21,6 @@ end
 
 fpaths = Glob.glob("output/empirical_fish_subtrees/jld2/*.jld2")
 
-using JLD2
 
 treeheights = [load(fpath, "treeheight") for fpath in fpaths]
 treelengths = [load(fpath, "treelength") for fpath in fpaths]
@@ -28,14 +30,11 @@ N = [sum(df[!,:nshift]) for df in dfs]
 N_per_time = N ./ treelengths
 
 
-using CairoMakie
-using LaTeXStrings
 
 function lrange(from::Float64, to::Float64, length::Int64 = 6)
     exp.(collect(range(log(from), log(to); length = length)))
 end
 
-using Printf
 
 xt = lrange(2.0, 300.0, 8)
 xtl = [@sprintf "%2.1f" x for x in xt]
@@ -125,7 +124,6 @@ fig
 save("figures/fishtree_subclades.pdf", fig)
 
 
-0.0000000001
 
 
 fig2 = Figure()
@@ -163,28 +161,8 @@ CairoMakie.hist(N[N .< 1.0])
 
 argmin((N_per_time .- 1e-03) .^ 2)
 
-fpaths[5]
-
-
-load(fpaths[1])
 
 
 
-
-
-
-
-
-
-
-
-
-df = vcat(dfs...)
-
-
-
-for i in 1:50
-    N = dfs[i][!,:]
-end
 
 

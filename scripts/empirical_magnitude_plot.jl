@@ -170,15 +170,16 @@ end
 plotdf = DataFrame(
     "magnitude" => magnitudes,
     "direction" => directions,
-    "height" => heights,
+    #"height" => heights,
     "name" => collect(keys(d)),
-    "N_per_time" => N_per_time,
+    #"N_per_time" => N_per_time,
 )
 
 meta2 = filter(:Filename => x -> !ismissing(x), meta)
 meta2[:,:name] = map(x -> split(x, ".")[1], meta2.Filename)
 dfx = innerjoin(plotdf, meta2, on = :name)
-CSV.write("output/munged_magnitude.csv", dfx)
+dfx2 = innerjoin(dfx, df, on = :name)
+CSV.write("output/munged_magnitude.csv", dfx2)
 
 ##################
 ##
