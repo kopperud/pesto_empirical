@@ -34,6 +34,7 @@ df = CSV.read("output/munged_magnitude.csv", DataFrame)
 ntips = df[!,:NTips]
 shifts_per_time = df[!,:N_per_time]
 shifts = df[!,:N_total]
+shifts_per_tips = df[!,:N_total] ./ df[!,:NTips]
 
 
 #xt = 10 .^ (collect(range(extrema(ntips)...; length = 5)))
@@ -41,6 +42,7 @@ shifts = df[!,:N_total]
 xt = collect(lrange3(extrema(Float64.(ntips))..., 5))
 yt = collect(lrange3(extrema(shifts)..., 5))
 yt2 = collect(lrange3(extrema(shifts_per_time)..., 5))
+yt3 = collect(lrange(extrema(shifts_per_tips)..., 5))
 
 fmt = Printf.Format("%.0f")
 xtl = [Printf.format(fmt, x) for x in xt]
@@ -50,14 +52,16 @@ ytl = [Printf.format(fmt, y) for y in yt]
 
 fmt = Printf.Format("%.4f")
 ytl2 = [Printf.format(fmt, y) for y in yt2]
+ytl3 = [Printf.format(fmt, y) for y in yt3]
 
 #fig1 = Figure(size=(350, 300), fontsize = 14);
-fig = Figure(size = (450, 210), fontsize = 14);
+fig = Figure(size = (580, 210), fontsize = 14);
 
 ## number of rate shifts (not per time)
 ax1 = Axis(fig[1,1], 
             ylabel = L"\text{no. shifts }(\hat{N})", 
             xlabel = L"\text{number of tips}",
+            title = L"\text{a) not normalized}",
             xgridvisible = false, 
             ygridvisible = false,
             yscale = log10, xscale = log10,
@@ -96,6 +100,7 @@ CairoMakie.lines!(ax1, x, y;
 ax2 = Axis(fig[1,2], 
             ylabel = L"\text{shifts per time }(\hat{N}/t)", 
             xlabel = L"\text{number of tips}",
+            title = L"\text{b) per time}",
             xgridvisible = false, 
             ygridvisible = false,
             yscale = log10, xscale = log10,
@@ -128,6 +133,64 @@ x = [extrema(Float64.(ntips))...]
 y = 10 .^(linefit.(log10.(x)))
 CairoMakie.lines!(ax2, x, y; 
                 label = "OLS", markersize = 7, color = "gray", linestyle = :dash)
+
+               
+                
+## number of rate shifts per number of tips
+#=
+ax3 = Axis(fig[1,3], 
+            ylabel = L"\text{shifts per tips }(\hat{N}/\text{no. tips})", 
+            xlabel = L"\text{number of tips}",
+            title = L"\text{c) per no. tips}",
+            xgridvisible = false, 
+            ygridvisible = false,
+            yscale = log10, xscale = log10,
+            xticks = (xt, xtl),
+            yticks = (yt3, ytl3),
+            topspinevisible = false,
+            rightspinevisible = false,
+            xticklabelrotation = π/2,
+            xticklabelsize = 9,
+            yticklabelsize = 9)
+
+CairoMakie.ylims!(ax3, minimum(yt3)*0.7, maximum(yt3)*1.3)
+
+β, Varβ, ySE = ols_regression(log10.(ntips), log10.(shifts_per_tips)) 
+linefit(x) = β[1] + β[2]*x
+x = collect(lrange3(Float64.(extrema(ntips))..., 20))
+y = linefit.(log10.(x))
+
+
+yupper = 10 .^ (y .+ 2 .* ySE.(log10.(x)))
+ylower = 10 .^ (y .- 2 .* ySE.(log10.(x)))
+ϵ = 0.7 * minimum(log10.(shifts_per_tips))
+ylower[ylower .< ϵ] .= ϵ
+
+CairoMakie.band!(ax3, x, ylower, yupper, color = "#e0e0e0")
+CairoMakie.scatter!(ax3, ntips, shifts_per_tips; 
+                    label = "asd", markersize = 7, color = "black")
+
+x = [extrema(Float64.(ntips))...]
+y = 10 .^(linefit.(log10.(x)))
+CairoMakie.lines!(ax3, x, y; 
+                label = "OLS", markersize = 7, color = "gray", linestyle = :dash)
+=#
+
+ax3 = Axis(fig[1,3], 
+            yticks = (log10.(yt3), ytl3), 
+            xgridvisible = false, 
+            ygridvisible = false,
+            topspinevisible = false,
+            rightspinevisible = false,
+            title = L"\text{c) per no. tips}",
+            xticklabelrotation = π/2,
+            xticklabelsize = 9,
+            yticklabelsize = 9,
+        xlabel = L"\text{frequency}",
+        ylabel = L"\text{shifts per tip }(\hat{N}/\text{no. tips})")
+
+hist!(ax3, log10.(shifts_per_tips), direction = :x, color = :gray, bins = 20)
+
 
 
 CairoMakie.save("figures/shifts_vs_ntips.pdf", fig)
