@@ -35,6 +35,7 @@ ntips = df[!,:NTips]
 shifts_per_time = df[!,:N_per_time]
 shifts = df[!,:N_total]
 shifts_per_tips = df[!,:N_total] ./ df[!,:NTips]
+tips_per_shift = df[!,:NTips] ./ df[!,:N_total] 
 
 
 #xt = 10 .^ (collect(range(extrema(ntips)...; length = 5)))
@@ -42,7 +43,7 @@ shifts_per_tips = df[!,:N_total] ./ df[!,:NTips]
 xt = collect(lrange3(extrema(Float64.(ntips))..., 5))
 yt = collect(lrange3(extrema(shifts)..., 5))
 yt2 = collect(lrange3(extrema(shifts_per_time)..., 5))
-yt3 = collect(lrange(extrema(shifts_per_tips)..., 5))
+yt3 = collect(lrange(extrema(tips_per_shift)..., 5))
 
 fmt = Printf.Format("%.0f")
 xtl = [Printf.format(fmt, x) for x in xt]
@@ -50,18 +51,20 @@ xtl = [Printf.format(fmt, x) for x in xt]
 fmt = Printf.Format("%.0f")
 ytl = [Printf.format(fmt, y) for y in yt]
 
-fmt = Printf.Format("%.4f")
-ytl2 = [Printf.format(fmt, y) for y in yt2]
-ytl3 = [Printf.format(fmt, y) for y in yt3]
+fmt2 = Printf.Format("%.4f")
+ytl2 = [Printf.format(fmt2, y) for y in yt2]
+
+fmt3 = Printf.Format("%.1f")
+ytl3 = [Printf.format(fmt3, y) for y in yt3]
 
 #fig1 = Figure(size=(350, 300), fontsize = 14);
 fig = Figure(size = (580, 210), fontsize = 14);
 
 ## number of rate shifts (not per time)
 ax1 = Axis(fig[1,1], 
-            ylabel = L"\text{no. shifts }(\hat{N})", 
+            ylabel = L"\hat{N}", 
             xlabel = L"\text{number of tips}",
-            title = L"\text{a) not normalized}",
+            title = L"\text{a) shifts}",
             xgridvisible = false, 
             ygridvisible = false,
             yscale = log10, xscale = log10,
@@ -98,9 +101,9 @@ CairoMakie.lines!(ax1, x, y;
 
 ## number of rate shifts per time
 ax2 = Axis(fig[1,2], 
-            ylabel = L"\text{shifts per time }(\hat{N}/t)", 
+            ylabel = L"\hat{N}/t", 
             xlabel = L"\text{number of tips}",
-            title = L"\text{b) per time}",
+            title = L"\text{b) shifts per time}",
             xgridvisible = false, 
             ygridvisible = false,
             yscale = log10, xscale = log10,
@@ -182,14 +185,16 @@ ax3 = Axis(fig[1,3],
             ygridvisible = false,
             topspinevisible = false,
             rightspinevisible = false,
-            title = L"\text{c) per no. tips}",
+            title = L"\text{c) tips per shift}",
             xticklabelrotation = π/2,
             xticklabelsize = 9,
             yticklabelsize = 9,
         xlabel = L"\text{frequency}",
-        ylabel = L"\text{shifts per tip }(\hat{N}/\text{no. tips})")
+        #ylabel = L"\text{shifts per tip }(\hat{N}/\text{no. tips})")
+        ylabel = L"\text{no. tips}/\hat{N}")
 
-hist!(ax3, log10.(shifts_per_tips), direction = :x, color = :gray, bins = 20)
+#hist!(ax3, log10.(shifts_per_tips), direction = :x, color = :gray, bins = 20)
+hist!(ax3, log10.(tips_per_shift), direction = :x, color = :gray, bins = 20)
 
 
 
