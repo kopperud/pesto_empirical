@@ -349,8 +349,18 @@ end
 
 fig3 = Figure(size = (800, 800));
 
-q = 1
+global q = 1
 qnames = [keys(models)...]
+
+titles2 = []
+dnames = collect(keys(models))
+for dname in dnames
+    item = [split(dname, "_")[1]] 
+    item = replace(item, "Vascular" => "Vascular Plants")
+    append!(titles2, item)
+end
+
+
 axs = []
 for i in 1:7
     for j in 1:7
@@ -359,7 +369,7 @@ for i in 1:7
                 xgridvisible = false, 
                 ygridvisible = false,
                 titlesize = 7,
-                title = qnames[q],
+                title = titles2[q],
                 topspinevisible = false,
                 rightspinevisible = false,
                 xticklabelrotation = π/2,
@@ -381,7 +391,7 @@ for name in keys(models)
     filters = ["extinction", "speciation", ""]
 
     dfs = []
-    if true
+    if false
         netdiv_extrema = [-1.5, 1.5]
     else
         r = model.λ .- model.μ
@@ -427,8 +437,15 @@ for name in keys(models)
     i += 1
 end
 
-#CairoMakie.save("figures/shiftsize_free_xlimit.pdf", fig3)
-CairoMakie.save("figures/shiftsize_fixed_xlimit.pdf", fig3)
+## add x-axis label and y-axis label
+ylabel = Label(fig3[1:7, 0], L"\text{number of rate shifts }(\hat{N})", rotation = π/2)
+xlabel = Label(fig3[8, 1:7], L"\text{shift size in net diversification }(\Delta r)")
+
+colgap!(fig3.layout, 4)
+rowgap!(fig3.layout, 2)
+
+CairoMakie.save("figures/shiftsize_free_xlimit.pdf", fig3)
+#CairoMakie.save("figures/shiftsize_fixed_xlimit.pdf", fig3)
 
 
 
