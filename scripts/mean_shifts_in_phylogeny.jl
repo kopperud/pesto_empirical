@@ -11,10 +11,12 @@ phy = readtree("data/empirical/Actinopterygii_Rabosky2018.tree")
 data = SSEdata(phy, ρ)
 
 optres, model, i = optimize_hyperparameters(data; n = 10)
+
+
 Ds, Fs = backwards_forwards_pass(model, data);
 
 
-function foobar(model::SSEconstant, data::SSEdata, Ds, Fs; alg = OrdinaryDiffEq.Tsit5())
+function nshifts_simple_whole_branch(model::SSEconstant, data::SSEdata, Ds, Fs; alg = OrdinaryDiffEq.Tsit5())
     nbranches = size(data.edges)[1]
     K = Pesto.number_of_states(model)    
     nshifts = Dict()
